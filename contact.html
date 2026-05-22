@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
 </head>
 <body>
 
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
@@ -96,10 +96,15 @@
             <span class="tag tag-pink" data-en="Send a Message" data-es="Envía un Mensaje">Send a Message</span>
             <h2 data-en="Help Form" data-es="Formulario de Ayuda">Help Form</h2>
             <!-- Replace action with Formspree endpoint: https://formspree.io/f/YOUR_ID -->
-            <div id="contact-success" style="display:none; text-align:center; padding: 3rem 1rem;">
-              <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Thank you!" data-es="¡Gracias!">Thank you!</div>
+            <div id="contact-success" class="form-success" style="display:none;">
+              <div class="success-check"></div>
+              <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+              <h3 data-en="Thank you!" data-es="¡Gracias!">Thank you!</h3>
               <p data-en="Your message has been received. We'll be in touch soon." data-es="Tu mensaje fue recibido. Nos pondremos en contacto pronto.">Your message has been received. We'll be in touch soon.</p>
-              <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+              <div class="btn-row">
+                <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+                <a href="mission.html" class="btn btn-secondary" data-en="Our Mission" data-es="Nuestra Misión">Our Mission</a>
+              </div>
             </div>
             <form class="form-stack" style="margin-top: 1.25rem;" action="https://formspree.io/f/xojbdywn" method="POST" data-formspree data-success-target="contact-success">
               <div class="form-row">
@@ -150,7 +155,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
           <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
         </div>
         <div class="footer-col">

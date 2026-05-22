@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
 </head>
 <body>
 
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
@@ -113,10 +113,15 @@
           <p data-en="Fill out this form so we can track incoming donations and reach out to thank you. It also helps us plan our care kits and drives more effectively." data-es="Rellena este formulario para que podamos registrar las donaciones entrantes y agradecerte. También nos ayuda a planificar mejor nuestros kits y colectas.">Fill out this form so we can track incoming donations and reach out to thank you. It also helps us plan our care kits and drives more effectively.</p>
         </div>
 
-        <div id="donate-success" style="display:none; text-align:center; padding: 3rem 1rem;">
-          <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Thank you!" data-es="¡Gracias!">Thank you!</div>
-          <p data-en="Your donation pledge has been received. We appreciate your generosity and will be in touch soon." data-es="Tu promesa de donación fue recibida. Agradecemos tu generosidad y nos pondremos en contacto pronto.">Your donation pledge has been received. We appreciate your generosity and will be in touch soon.</p>
-          <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+        <div id="donate-success" class="form-success" style="display:none;">
+          <div class="success-check"></div>
+          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+          <h3 data-en="Donation received!" data-es="¡Donación recibida!">Donation received!</h3>
+          <p data-en="Thank you for your generosity. We'll be in touch to confirm your package and express our gratitude." data-es="Gracias por tu generosidad. Nos pondremos en contacto para confirmar tu paquete y agradecerte.">Thank you for your generosity. We'll be in touch to confirm your package and express our gratitude.</p>
+          <div class="btn-row">
+            <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+            <a href="care-kit.html" class="btn btn-secondary" data-en="View Kit Editions" data-es="Ver Ediciones de Kits">View Kit Editions</a>
+          </div>
         </div>
         <form class="form-stack" style="margin-top: 1.5rem;" action="https://formspree.io/f/mbdbobzj" method="POST" data-formspree data-success-target="donate-success">
           <div class="form-row">
@@ -202,7 +207,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
           <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
         </div>
         <div class="footer-col">

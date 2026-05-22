@@ -8,14 +8,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
 </head>
 <body>
 
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
@@ -50,6 +51,16 @@
       </div>
     </section>
 
+    <!-- MAP SECTION -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <span class="tag tag-purple" data-en="Interactive Map" data-es="Mapa Interactivo">Interactive Map</span>
+        <h2 data-en="Find Resources Near You" data-es="Encuentra Recursos Cerca de Ti">Find Resources Near You</h2>
+        <p style="margin-bottom: 1.5rem;" data-en="Organizations serving women, children, and families in the greater Lansing area. Click any pin for details and a directions link. Note: some shelter locations are kept confidential for safety — always call ahead." data-es="Organizaciones que sirven a mujeres, niños y familias en el área de Lansing. Haz clic en cualquier marcador. Nota: algunas ubicaciones son confidenciales por seguridad — llama con anticipación.">Organizations serving women, children, and families in the greater Lansing area. Click any pin for details and a directions link. Note: some shelter locations are kept confidential for safety — always call ahead.</p>
+        <div id="resource-map" style="height: 420px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow); border: 1px solid var(--border);"></div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
 
@@ -62,35 +73,35 @@
             <div class="resource-item">
               <div>
                 <div class="name">WISE — Women Involved in Surviving and Empowering</div>
-                <div class="detail" data-en="Domestic violence shelter and advocacy · Lansing, MI" data-es="Albergue y defensa ante violencia doméstica · Lansing, MI">Domestic violence shelter and advocacy · Lansing, MI</div>
+                <div class="detail" data-en="Domestic violence shelter and advocacy · Lansing, MI" data-es="Albergue y defensa ante violencia doméstica · Lansing, MI">Domestic violence shelter and advocacy · Lansing, MI &nbsp;<a href="https://maps.google.com/maps?q=WISE+Women+Involved+Surviving+Empowering+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
               <a href="https://www.wisewomen.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
                 <div class="name" data-en="Greater Lansing Food Bank" data-es="Banco de Alimentos del Gran Lansing">Greater Lansing Food Bank</div>
-                <div class="detail" data-en="Emergency food assistance · Ingham, Clinton &amp; Eaton counties" data-es="Asistencia alimentaria de emergencia · Condados de Ingham, Clinton y Eaton">Emergency food assistance · Ingham, Clinton &amp; Eaton counties</div>
+                <div class="detail" data-en="Emergency food assistance · Ingham, Clinton &amp; Eaton counties" data-es="Asistencia alimentaria de emergencia · Condados de Ingham, Clinton y Eaton">Emergency food assistance · Ingham, Clinton &amp; Eaton counties &nbsp;<a href="https://maps.google.com/maps?q=Gleaners+Food+Bank+2141+S+Cedar+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
               <a href="https://www.gleaners.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
                 <div class="name" data-en="Advent House Ministries" data-es="Ministerios Advent House">Advent House Ministries</div>
-                <div class="detail" data-en="Emergency food, clothing, and household needs · Lansing" data-es="Alimentos de emergencia, ropa y necesidades básicas · Lansing">Emergency food, clothing, and household needs · Lansing</div>
+                <div class="detail" data-en="Emergency food, clothing, and household needs · Lansing" data-es="Alimentos de emergencia, ropa y necesidades básicas · Lansing">Emergency food, clothing, and household needs · Lansing &nbsp;<a href="https://maps.google.com/maps?q=Advent+House+Ministries+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
               <a href="https://www.adventhouse.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
                 <div class="name" data-en="Ingham Community Health Centers" data-es="Centros de Salud Comunitaria de Ingham">Ingham Community Health Centers</div>
-                <div class="detail" data-en="Sliding-scale medical care · Multiple locations in Lansing" data-es="Atención médica a escala móvil · Múltiples ubicaciones en Lansing">Sliding-scale medical care · Multiple locations in Lansing</div>
+                <div class="detail" data-en="Sliding-scale medical care · Multiple locations in Lansing" data-es="Atención médica a escala móvil · Múltiples ubicaciones en Lansing">Sliding-scale medical care · Multiple locations in Lansing &nbsp;<a href="https://maps.google.com/maps?q=Ingham+Community+Health+Centers+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
               <a href="https://www.ichc.net" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
                 <div class="name" data-en="Mid-Michigan Legal Aid / Legal Services of South Central Michigan" data-es="Asistencia Legal del Centro de Michigan">Mid-Michigan Legal Aid / Legal Services of South Central Michigan</div>
-                <div class="detail" data-en="Free legal help for low-income residents, including DV survivors · Greater Lansing" data-es="Ayuda legal gratuita para residentes de bajos ingresos, incluidas sobrevivientes de VD · Gran Lansing">Free legal help for low-income residents, including DV survivors · Greater Lansing</div>
+                <div class="detail" data-en="Free legal help for low-income residents, including DV survivors · Greater Lansing" data-es="Ayuda legal gratuita para residentes de bajos ingresos, incluidas sobrevivientes de VD · Gran Lansing">Free legal help for low-income residents, including DV survivors · Greater Lansing &nbsp;<a href="https://maps.google.com/maps?q=Legal+Services+South+Central+Michigan+Lansing" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
               <a href="https://www.lsscm.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
@@ -141,7 +152,7 @@
             <p data-en="Quality care is available regardless of income. The providers below offer sliding-scale or free services to women and children in the Lansing area." data-es="La atención de calidad está disponible sin importar los ingresos. Los proveedores a continuación ofrecen servicios gratuitos o a tarifas accesibles para mujeres y niños en el área de Lansing.">Quality care is available regardless of income. The providers below offer sliding-scale or free services to women and children in the Lansing area.</p>
             <div class="resource-list">
               <div class="resource-item">
-                <div><div class="name" data-en="Ingham Community Health Centers" data-es="Centros de Salud Comunitaria de Ingham">Ingham Community Health Centers</div><div class="detail" data-en="Sliding-scale fees · Women's health, pediatrics, primary care · Lansing" data-es="Tarifas según ingresos · Salud femenina, pediatría, atención primaria · Lansing">Sliding-scale fees · Women's health, pediatrics, primary care · Lansing</div></div>
+                <div><div class="name" data-en="Ingham Community Health Centers" data-es="Centros de Salud Comunitaria de Ingham">Ingham Community Health Centers</div><div class="detail" data-en="Sliding-scale fees · Women's health, pediatrics, primary care · Lansing" data-es="Tarifas según ingresos · Salud femenina, pediatría, atención primaria · Lansing">Sliding-scale fees · Women's health, pediatrics, primary care · Lansing &nbsp;<a href="https://maps.google.com/maps?q=Ingham+Community+Health+Centers+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div></div>
                 <a href="https://www.ichc.net" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
               </div>
             </div>
@@ -152,7 +163,7 @@
             <p data-en="Legal help for survivors exists — and you don't have to figure it out alone. The organizations below serve low-income residents in the greater Lansing area at no cost." data-es="La ayuda legal para sobrevivientes existe, y no tienes que resolverlo sola. Las organizaciones a continuación sirven a residentes de bajos ingresos en el área de Lansing sin costo.">Legal help for survivors exists — and you don't have to figure it out alone. The organizations below serve low-income residents in the greater Lansing area at no cost.</p>
             <div class="resource-list">
               <div class="resource-item">
-                <div><div class="name" data-en="Legal Services of South Central Michigan" data-es="Servicios Legales del Centro-Sur de Michigan">Legal Services of South Central Michigan</div><div class="detail" data-en="Free civil legal aid for low-income residents · DV, family, housing · Lansing" data-es="Ayuda legal civil gratuita · VD, familia, vivienda · Lansing">Free civil legal aid for low-income residents · DV, family, housing · Lansing</div></div>
+                <div><div class="name" data-en="Legal Services of South Central Michigan" data-es="Servicios Legales del Centro-Sur de Michigan">Legal Services of South Central Michigan</div><div class="detail" data-en="Free civil legal aid for low-income residents · DV, family, housing · Lansing" data-es="Ayuda legal civil gratuita · VD, familia, vivienda · Lansing">Free civil legal aid for low-income residents · DV, family, housing · Lansing &nbsp;<a href="https://maps.google.com/maps?q=Legal+Services+South+Central+Michigan+Lansing" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div></div>
                 <a href="https://www.lsscm.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
               </div>
               <div class="resource-item">
@@ -191,7 +202,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
           <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
         </div>
         <div class="footer-col">
@@ -229,5 +240,78 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+    (function () {
+      var map = L.map('resource-map', { scrollWheelZoom: false }).setView([42.728, -84.555], 13);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        maxZoom: 19
+      }).addTo(map);
+
+      var pinStyle = {
+        radius: 9,
+        fillColor: '#5C2D91',
+        color: '#fff',
+        weight: 2,
+        opacity: 1,
+        fillOpacity: 0.9
+      };
+
+      var locations = [
+        {
+          name: 'WISE — Women Involved in Surviving &amp; Empowering',
+          detail: 'Domestic violence shelter &amp; advocacy · Lansing, MI',
+          note: 'Shelter address is confidential for safety — call for location.',
+          lat: 42.7370, lng: -84.5590,
+          url: 'https://www.wisewomen.org',
+          dir: 'https://maps.google.com/maps?q=WISE+Women+Involved+Surviving+Empowering+Lansing+MI'
+        },
+        {
+          name: 'Greater Lansing Food Bank (Gleaners)',
+          detail: 'Emergency food assistance · Ingham, Clinton &amp; Eaton counties',
+          lat: 42.7170, lng: -84.5570,
+          url: 'https://www.gleaners.org',
+          dir: 'https://maps.google.com/maps?q=Gleaners+Food+Bank+2141+S+Cedar+Lansing+MI'
+        },
+        {
+          name: 'Advent House Ministries',
+          detail: 'Emergency food, clothing, and household needs · Lansing',
+          lat: 42.7212, lng: -84.5705,
+          url: 'https://www.adventhouse.org',
+          dir: 'https://maps.google.com/maps?q=Advent+House+Ministries+Lansing+MI'
+        },
+        {
+          name: 'Ingham Community Health Centers',
+          detail: 'Sliding-scale medical care · Multiple Lansing locations',
+          lat: 42.7415, lng: -84.5535,
+          url: 'https://www.ichc.net',
+          dir: 'https://maps.google.com/maps?q=Ingham+Community+Health+Centers+Lansing+MI'
+        },
+        {
+          name: 'Legal Services of South Central Michigan',
+          detail: 'Free civil legal aid · DV, family, housing · Lansing',
+          lat: 42.7330, lng: -84.5545,
+          url: 'https://www.lsscm.org',
+          dir: 'https://maps.google.com/maps?q=Legal+Services+South+Central+Michigan+Lansing'
+        }
+      ];
+
+      locations.forEach(function (loc) {
+        var note = loc.note ? '<br><em style="font-size:0.82rem;color:#888;">' + loc.note + '</em>' : '';
+        var popup = '<strong>' + loc.name + '</strong><br>'
+          + '<span style="font-size:0.85rem;color:#666;">' + loc.detail + '</span>'
+          + note
+          + '<br><div style="margin-top:0.5rem;display:flex;gap:0.5rem;">'
+          + '<a href="' + loc.url + '" target="_blank" style="font-size:0.82rem;color:#4A7EC4;">Visit Website →</a>'
+          + ' &nbsp; <a href="' + loc.dir + '" target="_blank" style="font-size:0.82rem;color:#5C2D91;">📍 Get Directions</a>'
+          + '</div>';
+        L.circleMarker([loc.lat, loc.lng], pinStyle)
+          .addTo(map)
+          .bindPopup(popup, { maxWidth: 260 });
+      });
+    })();
+  </script>
 </body>
 </html>

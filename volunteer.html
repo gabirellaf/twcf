@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
 </head>
 <body>
 
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
@@ -104,10 +104,15 @@
           <p data-en="Fill out the form below and we'll reach out with details about your selected opportunity." data-es="Rellena el formulario y nos pondremos en contacto con los detalles de la oportunidad que elegiste.">Fill out the form below and we'll reach out with details about your selected opportunity.</p>
         </div>
 
-        <div id="volunteer-success" style="display:none; text-align:center; padding: 3rem 1rem;">
-          <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Thank you!" data-es="¡Gracias!">Thank you!</div>
-          <p data-en="You're signed up! We'll reach out with details about your selected opportunity." data-es="¡Ya estás registrado! Nos pondremos en contacto con los detalles de la oportunidad que elegiste.">You're signed up! We'll reach out with details about your selected opportunity.</p>
-          <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+        <div id="volunteer-success" class="form-success" style="display:none;">
+          <div class="success-check"></div>
+          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+          <h3 data-en="You're signed up!" data-es="¡Ya estás registrado!">You're signed up!</h3>
+          <p data-en="Thank you for volunteering. We'll reach out with details about your selected opportunity." data-es="Gracias por ofrecerte como voluntario. Nos pondremos en contacto con los detalles de tu oportunidad.">Thank you for volunteering. We'll reach out with details about your selected opportunity.</p>
+          <div class="btn-row">
+            <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+            <a href="mission.html#events" class="btn btn-secondary" data-en="See Events" data-es="Ver Eventos">See Events</a>
+          </div>
         </div>
         <form class="form-stack" action="https://formspree.io/f/mgoqkryn" method="POST" data-formspree data-success-target="volunteer-success">
           <div class="form-row">
@@ -159,7 +164,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
           <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
         </div>
         <div class="footer-col">

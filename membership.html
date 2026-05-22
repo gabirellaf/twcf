@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
@@ -16,7 +16,7 @@
   <nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
       <ul class="nav-links">
         <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
@@ -165,10 +165,15 @@
           <p data-en="Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership." data-es="Rellena el formulario y revisaremos tu solicitud. Una vez aprobada, te enviaremos un enlace de pago para completar tu membresía de $20.">Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership.</p>
         </div>
 
-        <div id="apply-success" style="display:none; text-align:center; padding: 3rem 1rem;">
-          <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Application received!" data-es="¡Solicitud recibida!">Application received!</div>
+        <div id="apply-success" class="form-success" style="display:none;">
+          <div class="success-check"></div>
+          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+          <h3 data-en="Application received!" data-es="¡Solicitud recibida!">Application received!</h3>
           <p data-en="Thank you for applying. We'll review your application and send you a payment link once approved." data-es="Gracias por aplicar. Revisaremos tu solicitud y te enviaremos un enlace de pago una vez aprobada.">Thank you for applying. We'll review your application and send you a payment link once approved.</p>
-          <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+          <div class="btn-row">
+            <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+            <a href="volunteer.html" class="btn btn-secondary" data-en="Volunteer Too" data-es="También Voluntariar">Volunteer Too</a>
+          </div>
         </div>
         <form class="form-stack" action="https://formspree.io/f/mwvzoaba" method="POST" data-formspree data-success-target="apply-success">
           <div class="form-row">
@@ -216,7 +221,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
           <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
         </div>
         <div class="footer-col">
