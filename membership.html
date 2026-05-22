@@ -90,7 +90,7 @@
               <li data-en="TWCF hoodie or t-shirt" data-es="Sudadera o camiseta TWCF">TWCF hoodie or t-shirt</li>
               <li data-en="Additional perks — coming soon" data-es="Beneficios adicionales — próximamente">Additional perks — coming soon</li>
             </ul>
-            <a href="#pay" class="btn btn-primary" style="width: 100%; justify-content: center;" data-en="Join — $20 / year" data-es="Unirse — $20 / año" data-tier="student">Join — $20 / year</a>
+            <a href="#apply" class="btn btn-primary" style="width: 100%; justify-content: center;" data-en="Apply — $20 / year" data-es="Solicitar — $20 / año">Apply — $20 / year</a>
           </div>
 
         </div>
@@ -105,7 +105,7 @@
         <div class="section-header">
           <span class="tag tag-purple" data-en="Secure Payment" data-es="Pago Seguro">Secure Payment</span>
           <h2 data-en="Complete Your Membership" data-es="Completa Tu Membresía">Complete Your Membership</h2>
-          <p data-en="Your payment is processed securely via Stripe. We never store your card details." data-es="Tu pago se procesa de forma segura a través de Stripe. Nunca almacenamos los datos de tu tarjeta.">Your payment is processed securely via Stripe. We never store your card details.</p>
+          <p data-en="Your payment is processed securely. We never store your card details." data-es="Tu pago se procesa de forma segura. Nunca almacenamos los datos de tu tarjeta.">Your payment is processed securely. We never store your card details.</p>
         </div>
 
         <!-- Step 1: Select type + info -->
@@ -159,12 +159,11 @@
     <section id="apply" class="section">
       <div class="container" style="max-width: 680px;">
         <div class="section-header">
-          <span class="tag tag-pink" data-en="Application" data-es="Solicitud">Application</span>
-          <h2 data-en="Membership Application" data-es="Solicitud de Membresía">Membership Application</h2>
-          <p data-en="Fill out the form below and we'll be in touch with payment details and next steps." data-es="Rellena el formulario y nos pondremos en contacto con los detalles de pago y los próximos pasos.">Fill out the form below and we'll be in touch with payment details and next steps.</p>
+          <span class="tag tag-pink" data-en="Student Application" data-es="Solicitud Estudiantil">Student Application</span>
+          <h2 data-en="Student Membership Application" data-es="Solicitud de Membresía Estudiantil">Student Membership Application</h2>
+          <p data-en="Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership." data-es="Rellena el formulario y revisaremos tu solicitud. Una vez aprobada, te enviaremos un enlace de pago para completar tu membresía de $20.">Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership.</p>
         </div>
 
-        <!-- Replace action URL with Formspree endpoint when ready -->
         <form class="form-stack" action="https://formspree.io/f/mwvzoaba" method="POST">
           <div class="form-row">
             <div class="form-group">
@@ -251,7 +250,7 @@
   <script src="script.js"></script>
   <script>
     (function () {
-      const STRIPE_PK = 'pk_test_51TZg8ZFt2Fz1ldwZQ8JtSIvh7bdHNlZAt497CQ3J73l2326O6vFdgXsAvwKOuP9QoRkQDUNI004pi3219R';
+      const STRIPE_PK = 'pk_live_51TZg8LFjVlpP57Og7x9EbOhpJbNfZF8uTWmyTN4UqmvHl6REGuuf8V86NV9Anqp11affWmGe6EWwL6kQaZ9PFtGI00ODGPq9Zd';
       const labels  = { general: 'General Membership', student: 'Student Membership (High School)' };
       const amounts = { general: '$35.00', student: '$20.00' };
 
