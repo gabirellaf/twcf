@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drive Hub — TWCF Internal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .hub-notice { background: rgba(92,45,145,0.08); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1.25rem; font-size: 0.88rem; color: var(--muted); margin-bottom: 2rem; }
+    .hub-notice strong { color: var(--purple); }
+    .checklist { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.75rem; }
+    .checklist li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.92rem; color: var(--muted); }
+    .checklist li::before { content: "☐"; color: var(--purple); font-size: 1rem; flex-shrink: 0; line-height: 1.5; }
+    .status-badge { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; }
+    .status-active { background: rgba(74,126,196,0.18); color: #2a5c96; }
+    .status-upcoming { background: rgba(92,45,145,0.15); color: var(--purple); }
+    .status-planning { background: rgba(107,104,128,0.15); color: var(--muted); }
+    .drive-card { border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 1.5rem; background: var(--white); }
+    .drive-card h3 { margin: 0.35rem 0 0.75rem; }
+    .contact-row { display: flex; flex-direction: column; gap: 0.35rem; }
+    .contact-row a { color: var(--pink); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+      </a>
+      <div class="nav-right">
+        <a href="index.html" class="btn btn-secondary" style="font-size: 0.85rem;">← Back to Site</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-purple">Internal Use Only</span>
+        <h1>Drive Hub</h1>
+        <p>Board member coordination page for TWCF drives and events. Not linked publicly — bookmark this page.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <div class="hub-notice">
+          <strong>This page is not linked in the public navigation.</strong> Share the direct URL with board members only: <code>thewomenandchildrenfoundation.org/drive-hub.html</code>
+        </div>
+
+        <!-- CURRENT DRIVES -->
+        <div class="section-header">
+          <span class="tag tag-pink">Drives &amp; Events</span>
+          <h2>2026 Drive Calendar</h2>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem;">
+
+          <div class="drive-card">
+            <span class="status-badge status-active">Active — Summer 2026</span>
+            <h3>The Comfort &amp; Care Drive</h3>
+            <p style="font-size: 0.92rem;">Collecting hygiene products, food, educational materials, and household essentials for women, children, and families experiencing hardship, health-related needs, housing instability, DV recovery, or postpartum need.</p>
+            <ul class="checklist" style="margin-top: 1rem;">
+              <li>Confirm venue for kit assembly</li>
+              <li>Confirm at least 3 drop-off locations (churches, businesses)</li>
+              <li>Design and print flyers (Canva)</li>
+              <li>Post on Instagram + Facebook</li>
+              <li>Confirm recipient organization(s)</li>
+              <li>Schedule volunteer assembly day</li>
+              <li>Arrange pick-up vehicle/driver</li>
+            </ul>
+          </div>
+
+          <div class="drive-card">
+            <span class="status-badge status-upcoming">Upcoming — Fall 2026</span>
+            <h3>Back-to-School Drive</h3>
+            <p style="font-size: 0.92rem;">Collecting school supplies and educational materials for students in need. Target: Lansing School District Title I schools, Head Start programs.</p>
+            <ul class="checklist" style="margin-top: 1rem;">
+              <li>Contact Lansing School District re: partnership</li>
+              <li>Contact Head Start of Ingham County</li>
+              <li>Set dates (target: August 2026)</li>
+              <li>Confirm supply list and collection plan</li>
+            </ul>
+          </div>
+
+          <div class="drive-card">
+            <span class="status-badge status-upcoming">Upcoming — Winter 2026</span>
+            <h3>Hospital Toy Drive</h3>
+            <p style="font-size: 0.92rem;">Collecting toys and comfort items for children in pediatric wings of local hospitals. Call to ask for Child Life Specialist or volunteer coordinator.</p>
+            <ul class="checklist" style="margin-top: 1rem;">
+              <li>Call Sparrow Hospital pediatric unit — (517) 364-1000</li>
+              <li>Call McLaren Greater Lansing pediatrics — (517) 975-6000</li>
+              <li>Confirm what items are most needed</li>
+              <li>Set collection dates and drop-off plan</li>
+            </ul>
+          </div>
+
+          <div class="drive-card">
+            <span class="status-badge status-planning">Planning — Summer 2026</span>
+            <h3>Summer Toy Drive</h3>
+            <p style="font-size: 0.92rem;">Summer toys, water toys, bathing suits, sunscreen, bug spray, books, backpacks. Starting ~2–3 weeks from now.</p>
+            <ul class="checklist" style="margin-top: 1rem;">
+              <li>Contact Boys &amp; Girls Club of Lansing</li>
+              <li>Contact YMCA of Metropolitan Lansing</li>
+              <li>Contact Head Start of Ingham County</li>
+              <li>Contact Child and Family Services of Michigan (Lansing)</li>
+              <li>Post call for donations on social media</li>
+              <li>Set collection window and distribution plan</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- WHAT WE COLLECT -->
+        <div style="margin: 3rem 0;">
+          <span class="tag tag-purple">Supply Reference</span>
+          <h2>Full Accepted Donations List</h2>
+          <div class="grid-2" style="margin-top: 1.5rem; align-items: start;">
+            <div class="card">
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Always Accepted</h3>
+              <ul style="list-style: disc; padding-left: 1.25rem; color: var(--muted); font-size: 0.88rem; line-height: 2;">
+                <li>Hygiene products (shampoo, soap, deodorant, toothpaste, feminine products)</li>
+                <li>Medical supplies (gauze, bandages, Neosporin, pain relievers, thermometers)</li>
+                <li>Non-perishable food (canned goods, pasta, rice, peanut butter, cereal)</li>
+                <li>Children's books</li>
+                <li>School supplies (pencils, notebooks, crayons, folders, backpacks)</li>
+                <li>New socks and underwear (all sizes)</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Drive-Specific</h3>
+              <ul style="list-style: disc; padding-left: 1.25rem; color: var(--muted); font-size: 0.88rem; line-height: 2;">
+                <li>Toys (new or gently used — no broken pieces)</li>
+                <li>Clothing (clean, gently used — note size on bag)</li>
+                <li>Summer: bathing suits, sunscreen, bug spray, water toys, towels</li>
+                <li>Hospital: new toys only, no stuffed animals with loose parts</li>
+                <li>Back-to-school: calculators, folders, educational workbooks</li>
+                <li>Baby items: formula, diapers, wipes, onesies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- BOARD CONTACTS -->
+        <div style="margin: 3rem 0;">
+          <span class="tag tag-pink">Board</span>
+          <h2>Board Member Contacts</h2>
+          <p style="margin-top: 0.5rem;">Update this section as board members are added.</p>
+          <div class="grid-2" style="margin-top: 1.5rem;">
+            <div class="card">
+              <strong>Founder / Director</strong>
+              <div class="contact-row" style="margin-top: 0.5rem;">
+                <span style="color: var(--text);">Gabi Flores</span>
+                <a href="tel:5178361504">517-836-1504</a>
+                <a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a>
+              </div>
+            </div>
+            <div class="card" style="border: 2px dashed var(--border); display: flex; align-items: center; justify-content: center; text-align: center; min-height: 100px;">
+              <p style="font-size: 0.88rem;">Board member slots — add names and contacts here as the board forms.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- QUICK LINKS -->
+        <div style="margin: 3rem 0;">
+          <span class="tag tag-purple">Quick Links</span>
+          <h2>Resources &amp; Tools</h2>
+          <div class="grid-3" style="margin-top: 1.5rem;">
+            <a href="volunteer.html" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Volunteer Sign-Ups</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">See who has signed up to volunteer</p>
+            </a>
+            <a href="donate-supplies.html" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Donation Pledges</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">Public mail-in donation form</p>
+            </a>
+            <a href="contact.html" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Contact Form</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">General inquiries from the public</p>
+            </a>
+            <a href="https://formspree.io" target="_blank" rel="noopener" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Formspree Dashboard</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">See all form submissions</p>
+            </a>
+            <a href="https://app.netlify.com" target="_blank" rel="noopener" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Netlify Dashboard</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">Deploy and manage the website</p>
+            </a>
+            <a href="https://dashboard.stripe.com" target="_blank" rel="noopener" class="card" style="text-decoration: none; display: block;">
+              <strong style="color: var(--purple);">Stripe Dashboard</strong>
+              <p style="font-size: 0.85rem; margin-top: 0.25rem;">View membership payments</p>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
