@@ -73,8 +73,8 @@ img { max-width: 100%; height: auto; display: block; }
   display: flex; align-items: center; justify-content: space-between;
   min-height: 96px; gap: 1rem;
 }
-.nav-logo { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
-.nav-logo img { height: 90px; width: auto; }
+.nav-logo { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; margin-left: -12px; }
+.nav-logo img { height: 100px; width: auto; }
 
 .nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none; }
 .nav-links a {
@@ -244,14 +244,27 @@ img { max-width: 100%; height: auto; display: block; }
 
 .stat-section { padding: 0; }
 .stat-strip {
-  background: var(--white); border-radius: 0;
+  background: var(--white);
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  padding: 1.75rem 0; display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1rem; text-align: center;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0; text-align: center;
 }
-.stat-item .num { font-family: 'Playfair Display', Georgia, serif; font-size: 1.75rem; font-weight: 700; color: var(--pink); display: block; }
-.stat-item .lbl { font-size: 0.8rem; color: var(--muted); }
+.stat-item {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 0.4rem; padding: 2rem 1.5rem;
+  border-right: 1px solid var(--border);
+}
+.stat-item:last-child { border-right: none; }
+.stat-item .num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 2.2rem; font-weight: 700;
+  color: var(--purple); display: block; line-height: 1;
+}
+.stat-item .lbl {
+  font-size: 0.78rem; color: var(--muted);
+  line-height: 1.4; max-width: 18ch;
+}
 
 /* ===== INITIATIVE CARD ===== */
 .initiative-card {
@@ -397,4 +410,6 @@ img { max-width: 100%; height: auto; display: block; }
   .category-grid { grid-template-columns: 1fr 1fr; }
   .footer-grid   { grid-template-columns: 1fr; }
   .stat-strip    { grid-template-columns: 1fr; }
+  .stat-item     { border-right: none; border-bottom: 1px solid var(--border); }
+  .stat-item:last-child { border-bottom: none; }
 }
