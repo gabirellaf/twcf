@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Comfort &amp; Care Drive — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <style>
+    .kit-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .kit-card:last-child { grid-column: 1 / span 2; max-width: 580px; }
+    .kit-card {
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .kit-card h3 { margin: 0.2rem 0 0; font-size: 1.15rem; }
+    .kit-best-for { font-size: 0.82rem; color: var(--muted); }
+    .kit-best-for strong { color: var(--purple); font-weight: 600; }
+    .kit-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 0.25rem; }
+    .kit-table th {
+      text-align: left; font-weight: 600; color: var(--text);
+      padding: 0.35rem 0; border-bottom: 1.5px solid var(--border);
+      font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .kit-table th:last-child { text-align: right; }
+    .kit-table td { padding: 0.5rem 0; color: var(--muted); border-bottom: 1px solid var(--border); }
+    .kit-table td:last-child { text-align: right; font-weight: 500; color: var(--text); white-space: nowrap; }
+    .kit-table tr:last-child td { border-bottom: none; }
+    .kit-optional {
+      font-size: 0.8rem; color: var(--muted); padding-top: 0.75rem;
+      border-top: 1px dashed var(--border); line-height: 1.6;
+    }
+    .kit-optional strong { color: var(--purple); font-weight: 600; font-style: normal; }
+    .step-row {
+      display: flex; gap: 1.25rem; align-items: flex-start;
+      padding: 1.5rem; border: 1.5px solid var(--border);
+      border-radius: var(--radius-lg); background: var(--white);
+    }
+    .step-num {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.25rem; font-weight: 700; color: var(--purple);
+      line-height: 1; flex-shrink: 0; width: 2.25rem; text-align: center;
+    }
+    .step-body h3 { font-size: 1rem; margin-bottom: 0.25rem; }
+    .step-body p  { font-size: 0.88rem; color: var(--muted); margin: 0; }
+    .who-list { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: 0.6rem; }
+    .who-list li { display: flex; gap: 0.65rem; color: var(--muted); font-size: 0.93rem; }
+    .who-list li span:first-child { color: var(--pink); font-weight: 700; flex-shrink: 0; }
+    @media (max-width: 700px) {
+      .kit-grid { grid-template-columns: 1fr; }
+      .kit-card:last-child { grid-column: 1; max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
+        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
+        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
+        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
+        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
+        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Active · Summer 2026" data-es="Activo · Verano 2026">Active · Summer 2026</span>
+        <h1 data-en="The Comfort &amp; Care Drive" data-es="La Colecta de Confort y Cuidado">The Comfort &amp; Care Drive</h1>
+        <p data-en="Collecting care kits and essential supplies for women, children, and families in the greater Lansing area. Every item donated goes directly to someone who needs it." data-es="Recolectando kits de ayuda y artículos esenciales para mujeres, niños y familias en el área de Lansing. Cada artículo donado va directamente a quien lo necesita.">Collecting care kits and essential supplies for women, children, and families in the greater Lansing area. Every item donated goes directly to someone who needs it.</p>
+        <div class="btn-row" style="margin-top: 1.75rem;">
+          <a href="#kit-editions" class="btn btn-primary" data-en="See Kit Editions" data-es="Ver Ediciones de Kits">See Kit Editions</a>
+          <a href="#host-a-bin" class="btn btn-secondary" data-en="Host a Drop-Off Bin" data-es="Organiza un Contenedor">Host a Drop-Off Bin</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 3.5rem;">
+
+          <div>
+            <span class="tag tag-purple" data-en="About the Drive" data-es="Sobre la Colecta">About the Drive</span>
+            <h2 data-en="Who We're Serving." data-es="A Quiénes Servimos.">Who We're Serving.</h2>
+            <p style="margin-top: 0.75rem;" data-en="The Comfort &amp; Care Drive supports women, children, and families in the Lansing and Okemos area who are experiencing:" data-es="La Colecta de Confort y Cuidado apoya a mujeres, niños y familias en el área de Lansing y Okemos que enfrentan:">The Comfort &amp; Care Drive supports women, children, and families in the Lansing and Okemos area who are experiencing:</p>
+            <ul class="who-list">
+              <li><span>✓</span><span data-en="Domestic violence recovery" data-es="Recuperación de violencia doméstica">Domestic violence recovery</span></li>
+              <li><span>✓</span><span data-en="Housing instability or homelessness" data-es="Inestabilidad de vivienda o falta de hogar">Housing instability or homelessness</span></li>
+              <li><span>✓</span><span data-en="Pregnancy or postpartum need" data-es="Necesidad durante el embarazo o posparto">Pregnancy or postpartum need</span></li>
+              <li><span>✓</span><span data-en="Health-related hardship or medical need" data-es="Dificultades de salud o necesidad médica">Health-related hardship or medical need</span></li>
+              <li><span>✓</span><span data-en="Food insecurity" data-es="Inseguridad alimentaria">Food insecurity</span></li>
+              <li><span>✓</span><span data-en="Basic household need" data-es="Necesidades básicas del hogar">Basic household need</span></li>
+            </ul>
+            <p style="margin-top: 1.25rem; font-size: 0.92rem; color: var(--muted);" data-en="Kits are distributed through vetted partner organizations — shelters, domestic violence centers, and family support services — ensuring every donation reaches someone who needs it." data-es="Los kits se distribuyen a través de organizaciones aliadas verificadas, incluyendo albergues, centros de violencia doméstica y servicios de apoyo familiar.">Kits are distributed through vetted partner organizations — shelters, domestic violence centers, and family support services — ensuring every donation reaches someone who needs it.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.75rem; flex-shrink: 0;">📦</div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: 0.25rem;" data-en="Build a Complete Kit" data-es="Construye un Kit Completo">Build a Complete Kit</div>
+                <p style="font-size: 0.88rem; color: var(--muted); margin: 0;" data-en="Choose one of five kit editions below and donate it fully assembled — or just the items inside." data-es="Elige una de las cinco ediciones de kit a continuación y dónala completamente armada, o solo los artículos que contiene.">Choose one of five kit editions below and donate it fully assembled — or just the items inside.</p>
+              </div>
+            </div>
+            <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.75rem; flex-shrink: 0;">🏠</div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: 0.25rem;" data-en="Host a Drop-Off Bin" data-es="Organiza un Contenedor">Host a Drop-Off Bin</div>
+                <p style="font-size: 0.88rem; color: var(--muted); margin: 0;" data-en="Is your church, business, or organization willing to host a collection bin? We'll handle the details." data-es="¿Tu iglesia, negocio u organización está dispuesta a organizar un contenedor de recolección? Nosotros nos encargamos de los detalles.">Is your church, business, or organization willing to host a collection bin? We'll handle the details.</p>
+              </div>
+            </div>
+            <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.75rem; flex-shrink: 0;">✉️</div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: 0.25rem;" data-en="Mail Your Donation" data-es="Envía tu Donación por Correo">Mail Your Donation</div>
+                <p style="font-size: 0.88rem; color: var(--muted); margin: 0;">PO Box 832, East Lansing, MI 48826</p>
+              </div>
+            </div>
+            <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+              <div style="font-size: 1.75rem; flex-shrink: 0;">🤝</div>
+              <div>
+                <div style="font-weight: 600; margin-bottom: 0.25rem;" data-en="Volunteer" data-es="Voluntariado">Volunteer</div>
+                <p style="font-size: 0.88rem; color: var(--muted); margin: 0 0 0.5rem;" data-en="Help us assemble and deliver kits on drive day." data-es="Ayúdanos a armar y entregar kits el día de la colecta.">Help us assemble and deliver kits on drive day.</p>
+                <a href="volunteer.html" class="btn btn-ghost" style="padding: 0.35rem 0.85rem; font-size: 0.82rem;" data-en="Sign Up to Volunteer" data-es="Regístrate como Voluntario">Sign Up to Volunteer</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- KIT EDITIONS -->
+    <section id="kit-editions" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag tag-pink" data-en="Kit Editions" data-es="Ediciones de Kits">Kit Editions</span>
+          <h2 data-en="Choose Your Kit." data-es="Elige Tu Kit.">Choose Your Kit.</h2>
+          <p data-en="Each edition is designed for a specific need. Donate a complete kit — or just contribute whatever items you can. Every item counts." data-es="Cada edición está diseñada para una necesidad específica. Dona un kit completo, o simplemente contribuye con los artículos que puedas. Cada artículo cuenta.">Each edition is designed for a specific need. Donate a complete kit — or just contribute whatever items you can. Every item counts.</p>
+        </div>
+
+        <div class="kit-grid">
+
+          <!-- 1. Essential Care Kit -->
+          <div class="kit-card">
+            <span class="tag tag-purple" style="align-self: flex-start;" data-en="Kit 1" data-es="Kit 1">Kit 1</span>
+            <h3 data-en="Essential Care Kit" data-es="Kit de Cuidado Esencial">Essential Care Kit</h3>
+            <p class="kit-best-for"><strong data-en="Best for:" data-es="Ideal para:">Best for:</strong> <span data-en="Shelters, women's centers, family support organizations" data-es="Albergues, centros para mujeres, organizaciones de apoyo familiar">Shelters, women's centers, family support organizations</span></p>
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Qty" data-es="Cant.">Qty</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Toothbrush" data-es="Cepillo de dientes">Toothbrush</td><td>1</td></tr>
+                <tr><td data-en="Toothpaste" data-es="Pasta de dientes">Toothpaste</td><td>1</td></tr>
+                <tr><td data-en="Soap or body wash" data-es="Jabón o gel de baño">Soap or body wash</td><td>1</td></tr>
+                <tr><td data-en="Shampoo" data-es="Shampoo">Shampoo</td><td>1</td></tr>
+                <tr><td data-en="Conditioner or 2-in-1" data-es="Acondicionador o 2 en 1">Conditioner or 2-in-1</td><td>1</td></tr>
+                <tr><td data-en="Deodorant" data-es="Desodorante">Deodorant</td><td>1</td></tr>
+                <tr><td data-en="Cleansing wipes" data-es="Toallitas limpiadoras">Cleansing wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Comb or brush" data-es="Peine o cepillo">Comb or brush</td><td>1</td></tr>
+                <tr><td data-en="Socks" data-es="Calcetines">Socks</td><td>1 pair</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- 2. Women's Comfort Kit -->
+          <div class="kit-card">
+            <span class="tag tag-pink" style="align-self: flex-start;" data-en="Kit 2" data-es="Kit 2">Kit 2</span>
+            <h3 data-en="Women's Comfort Kit" data-es="Kit de Confort para Mujeres">Women's Comfort Kit</h3>
+            <p class="kit-best-for"><strong data-en="Best for:" data-es="Ideal para:">Best for:</strong> <span data-en="Women's shelters, DV recovery, postpartum support" data-es="Albergues para mujeres, recuperación de VD, apoyo posparto">Women's shelters, DV recovery, postpartum support</span></p>
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Qty" data-es="Cant.">Qty</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Pads or period products" data-es="Toallas sanitarias o productos menstruales">Pads or period products</td><td>1 pack</td></tr>
+                <tr><td data-en="Deodorant" data-es="Desodorante">Deodorant</td><td>1</td></tr>
+                <tr><td data-en="Body wash or soap" data-es="Gel de baño o jabón">Body wash or soap</td><td>1</td></tr>
+                <tr><td data-en="Shampoo / conditioner" data-es="Shampoo / acondicionador">Shampoo / conditioner</td><td>1</td></tr>
+                <tr><td data-en="Wipes" data-es="Toallitas">Wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Lotion" data-es="Loción">Lotion</td><td>1</td></tr>
+                <tr><td data-en="Hair ties" data-es="Ligas para cabello">Hair ties</td><td>1 pack</td></tr>
+                <tr><td data-en="Socks" data-es="Calcetines">Socks</td><td>1 pair</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="kit-optional"><strong>Optional add-ons:</strong> Lip balm, travel tissue, small journal, pen</p>
+          </div>
+
+          <!-- 3. Student Support Kit -->
+          <div class="kit-card">
+            <span class="tag tag-purple" style="align-self: flex-start;" data-en="Kit 3" data-es="Kit 3">Kit 3</span>
+            <h3 data-en="Student Support Kit" data-es="Kit de Apoyo Estudiantil">Student Support Kit</h3>
+            <p class="kit-best-for"><strong data-en="Best for:" data-es="Ideal para:">Best for:</strong> <span data-en="Back-to-school, Title I schools, Head Start programs" data-es="Regreso a clases, escuelas Título I, programas Head Start">Back-to-school, Title I schools, Head Start programs</span></p>
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Qty" data-es="Cant.">Qty</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Notebook" data-es="Cuaderno">Notebook</td><td>1</td></tr>
+                <tr><td data-en="Folder" data-es="Folder">Folder</td><td>1</td></tr>
+                <tr><td data-en="Pencils" data-es="Lápices">Pencils</td><td>2–4</td></tr>
+                <tr><td data-en="Pens" data-es="Bolígrafos">Pens</td><td>2</td></tr>
+                <tr><td data-en="Eraser" data-es="Borrador">Eraser</td><td>1</td></tr>
+                <tr><td data-en="Crayons or colored pencils" data-es="Crayones o lápices de colores">Crayons or colored pencils</td><td>1 pack</td></tr>
+                <tr><td data-en="Snack" data-es="Merienda">Snack</td><td>1–2</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="kit-optional"><strong>Optional add-ons:</strong> Backpack, glue sticks, ruler, pencil pouch</p>
+          </div>
+
+          <!-- 4. Child Comfort Kit -->
+          <div class="kit-card">
+            <span class="tag tag-pink" style="align-self: flex-start;" data-en="Kit 4" data-es="Kit 4">Kit 4</span>
+            <h3 data-en="Child Comfort Kit" data-es="Kit de Confort para Niños">Child Comfort Kit</h3>
+            <p class="kit-best-for"><strong data-en="Best for:" data-es="Ideal para:">Best for:</strong> <span data-en="Children in shelters, hospitals, or family crisis situations" data-es="Niños en albergues, hospitales o situaciones de crisis familiar">Children in shelters, hospitals, or family crisis situations</span></p>
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Qty" data-es="Cant.">Qty</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Small stuffed animal or comfort item" data-es="Peluche pequeño o artículo de confort">Small stuffed animal or comfort item</td><td>1</td></tr>
+                <tr><td data-en="Coloring book" data-es="Libro para colorear">Coloring book</td><td>1</td></tr>
+                <tr><td data-en="Crayons" data-es="Crayones">Crayons</td><td>1 pack</td></tr>
+                <tr><td data-en="Snack" data-es="Merienda">Snack</td><td>1–2</td></tr>
+                <tr><td data-en="Toothbrush" data-es="Cepillo de dientes">Toothbrush</td><td>1</td></tr>
+                <tr><td data-en="Toothpaste" data-es="Pasta de dientes">Toothpaste</td><td>1</td></tr>
+                <tr><td data-en="Child-safe wipes" data-es="Toallitas para niños">Child-safe wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="kit-optional"><strong>Note for hospital donations:</strong> Toys must be new and unopened. Confirm with the hospital's Child Life Specialist before donating stuffed animals or items with small parts.</p>
+          </div>
+
+          <!-- 5. Family Basics Kit -->
+          <div class="kit-card">
+            <span class="tag tag-purple" style="align-self: flex-start;" data-en="Kit 5" data-es="Kit 5">Kit 5</span>
+            <h3 data-en="Family Basics Kit" data-es="Kit Básico Familiar">Family Basics Kit</h3>
+            <p class="kit-best-for"><strong data-en="Best for:" data-es="Ideal para:">Best for:</strong> <span data-en="Families experiencing housing instability or household need" data-es="Familias con inestabilidad de vivienda o necesidades básicas del hogar">Families experiencing housing instability or household need</span></p>
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Qty" data-es="Cant.">Qty</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Toothbrushes" data-es="Cepillos de dientes">Toothbrushes</td><td>2–4</td></tr>
+                <tr><td data-en="Toothpaste" data-es="Pasta de dientes">Toothpaste</td><td>1–2</td></tr>
+                <tr><td data-en="Soap / body wash" data-es="Jabón / gel de baño">Soap / body wash</td><td>1–2</td></tr>
+                <tr><td data-en="Shampoo / conditioner" data-es="Shampoo / acondicionador">Shampoo / conditioner</td><td>1 each</td></tr>
+                <tr><td data-en="Period products" data-es="Productos menstruales">Period products</td><td>1 pack</td></tr>
+                <tr><td data-en="Shelf-stable snacks" data-es="Meriendas no perecederas">Shelf-stable snacks</td><td>3–5</td></tr>
+                <tr><td data-en="Notebook / pens" data-es="Cuaderno / bolígrafos">Notebook / pens</td><td>1 set</td></tr>
+                <tr><td data-en="Resource card" data-es="Tarjeta de recursos">Resource card</td><td>1</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HOW TO DONATE -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag tag-purple" data-en="How to Donate" data-es="Cómo Donar">How to Donate</span>
+          <h2 data-en="Three Easy Steps." data-es="Tres Pasos Sencillos.">Three Easy Steps.</h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 1rem; max-width: 680px;">
+          <div class="step-row">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h3 data-en="Choose your kit edition" data-es="Elige tu edición de kit">Choose your kit edition</h3>
+              <p data-en="Pick the kit that speaks to you — or just donate whatever individual items you have. Every contribution helps." data-es="Elige el kit que más te inspire, o dona los artículos individuales que tengas. Toda contribución ayuda.">Pick the kit that speaks to you — or just donate whatever individual items you have. Every contribution helps.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h3 data-en="Gather or purchase the items" data-es="Reúne o compra los artículos">Gather or purchase the items</h3>
+              <p data-en="Use the checklist above as your guide. All items should be new. If possible, place completed kits in a clear bag or small box with the kit edition name written on it." data-es="Usa la lista anterior como guía. Todos los artículos deben ser nuevos. Si es posible, coloca los kits completos en una bolsa transparente o caja pequeña con el nombre de la edición escrito.">Use the checklist above as your guide. All items should be new. If possible, place completed kits in a clear bag or small box with the kit edition name written on it.</p>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h3 data-en="Drop off or mail your donation" data-es="Entrega o envía tu donación">Drop off or mail your donation</h3>
+              <p data-en="Mail to PO Box 832, East Lansing, MI 48826 — or contact us to find out where to drop off in person. New drop-off locations are being confirmed and will be announced soon." data-es="Envía por correo a PO Box 832, East Lansing, MI 48826, o contáctanos para saber dónde entregar en persona. Se están confirmando nuevas ubicaciones de entrega y se anunciarán pronto.">Mail to PO Box 832, East Lansing, MI 48826 — or contact us to find out where to drop off in person. New drop-off locations are being confirmed and will be announced soon.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- DROP-OFF LOCATIONS -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container">
+        <div class="donate-banner">
+          <span class="tag tag-pink" data-en="Drop-Off Locations" data-es="Puntos de Entrega">Drop-Off Locations</span>
+          <h2 data-en="Become a Drop-Off Location." data-es="Conviértete en Punto de Entrega.">Become a Drop-Off Location.</h2>
+          <p data-en="We are actively partnering with churches, businesses, and community organizations across Lansing and Okemos to host collection bins. If your organization wants to be a drop-off point, we'd love to have you." data-es="Estamos estableciendo alianzas activamente con iglesias, negocios y organizaciones comunitarias en Lansing y Okemos para organizar contenedores de recolección. Si tu organización quiere ser un punto de entrega, con gusto lo coordinamos.">We are actively partnering with churches, businesses, and community organizations across Lansing and Okemos to host collection bins. If your organization wants to be a drop-off point, we'd love to have you.</p>
+          <div class="btn-row" style="justify-content: center;">
+            <a href="#host-a-bin" class="btn btn-white" data-en="Fill Out Our Partner Form" data-es="Completa Nuestro Formulario de Alianza">Fill Out Our Partner Form</a>
+            <a href="mailto:hello@thewomenandchildrenfoundation.org" class="btn btn-ghost" style="color: rgba(255,255,255,0.8); border-color: rgba(255,255,255,0.4);" data-en="Email Us Directly" data-es="Escríbenos Directamente">Email Us Directly</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOST A BIN FORM -->
+    <section id="host-a-bin" class="section">
+      <div class="container">
+        <div class="grid-2" style="align-items: start; gap: 4rem;">
+
+          <div>
+            <span class="tag tag-purple" data-en="Partner With Us" data-es="Alíate Con Nosotros">Partner With Us</span>
+            <h2 data-en="Host a Collection Bin." data-es="Organiza un Contenedor de Recolección.">Host a Collection Bin.</h2>
+            <p style="margin-top: 0.75rem;" data-en="We provide everything you need — bin, flyer, and pickup. All you need is a visible spot in your space and willingness to make a difference." data-es="Proporcionamos todo lo que necesitas: el contenedor, volante y recolección. Solo necesitas un espacio visible y la disposición de hacer una diferencia.">We provide everything you need — bin, flyer, and pickup. All you need is a visible spot in your space and willingness to make a difference.</p>
+            <div style="margin-top: 1.75rem; display: flex; flex-direction: column; gap: 0.85rem;">
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+                <span data-en="Great for churches, businesses, schools, and community centers" data-es="Ideal para iglesias, negocios, escuelas y centros comunitarios">Great for churches, businesses, schools, and community centers</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+                <span data-en="We arrange pickup — you don't have to transport anything" data-es="Coordinamos la recolección; no tienes que transportar nada">We arrange pickup — you don't have to transport anything</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+                <span data-en="We provide a printable flyer for your bin" data-es="Proporcionamos un volante imprimible para tu contenedor">We provide a printable flyer for your bin</span>
+              </div>
+              <div style="display: flex; gap: 0.75rem; align-items: flex-start; font-size: 0.9rem;">
+                <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+                <span data-en="Host for as little as 1–2 weeks or for the full drive season" data-es="Organízalo por tan solo 1–2 semanas o toda la temporada de la colecta">Host for as little as 1–2 weeks or for the full drive season</span>
+              </div>
+            </div>
+            <div style="margin-top: 2rem; padding: 1.25rem; background: var(--purple-pale); border-radius: var(--radius-lg);">
+              <div style="font-weight: 600; color: var(--purple); margin-bottom: 0.35rem;" data-en="Questions? Reach out directly." data-es="¿Preguntas? Contáctanos directamente.">Questions? Reach out directly.</div>
+              <a href="tel:5178361504" style="display: block; color: var(--muted); font-size: 0.9rem;">517-836-1504</a>
+              <a href="mailto:hello@thewomenandchildrenfoundation.org" style="display: block; color: var(--muted); font-size: 0.9rem;">hello@thewomenandchildrenfoundation.org</a>
+            </div>
+          </div>
+
+          <div>
+            <span class="tag tag-pink" data-en="Host Application" data-es="Solicitud de Anfitrión">Host Application</span>
+            <h2 data-en="Tell Us About Your Space." data-es="Cuéntanos Sobre Tu Espacio.">Tell Us About Your Space.</h2>
+            <form class="form-stack" style="margin-top: 1.25rem;" action="https://formspree.io/f/xojbdywn" method="POST">
+              <input type="hidden" name="_subject" value="Host a Bin Request — Comfort &amp; Care Drive" />
+              <input type="hidden" name="form_type" value="host-a-bin" />
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="host-first" data-en="First Name" data-es="Nombre">First Name</label>
+                  <input type="text" id="host-first" name="first_name" required placeholder="Jane" data-en-placeholder="Jane" data-es-placeholder="María" />
+                </div>
+                <div class="form-group">
+                  <label for="host-last" data-en="Last Name" data-es="Apellido">Last Name</label>
+                  <input type="text" id="host-last" name="last_name" required placeholder="Doe" data-en-placeholder="Doe" data-es-placeholder="García" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="host-org" data-en="Organization / Church / Business Name" data-es="Nombre de Organización / Iglesia / Negocio">Organization / Church / Business Name</label>
+                <input type="text" id="host-org" name="organization" required placeholder="Faith Community Church" data-en-placeholder="Faith Community Church" data-es-placeholder="Iglesia Comunidad de Fe" />
+              </div>
+              <div class="form-group">
+                <label for="host-type" data-en="Type of Location" data-es="Tipo de Lugar">Type of Location</label>
+                <select id="host-type" name="location_type" required>
+                  <option value="" data-en="Select..." data-es="Selecciona...">Select...</option>
+                  <option value="church" data-en="Church / Faith Organization" data-es="Iglesia / Organización de Fe">Church / Faith Organization</option>
+                  <option value="business" data-en="Business" data-es="Negocio">Business</option>
+                  <option value="school" data-en="School" data-es="Escuela">School</option>
+                  <option value="community-center" data-en="Community Center" data-es="Centro Comunitario">Community Center</option>
+                  <option value="other" data-en="Other" data-es="Otro">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="host-address" data-en="Location Address" data-es="Dirección del Lugar">Location Address</label>
+                <input type="text" id="host-address" name="address" required placeholder="123 Main St, Lansing, MI" data-en-placeholder="123 Main St, Lansing, MI" data-es-placeholder="123 Calle Principal, Lansing, MI" />
+              </div>
+              <div class="form-group">
+                <label for="host-email" data-en="Email Address" data-es="Correo Electrónico">Email Address</label>
+                <input type="email" id="host-email" name="email" required placeholder="you@example.com" data-en-placeholder="you@example.com" data-es-placeholder="tu@ejemplo.com" />
+              </div>
+              <div class="form-group">
+                <label for="host-phone" data-en="Phone Number" data-es="Número de Teléfono">Phone Number</label>
+                <input type="tel" id="host-phone" name="phone" placeholder="(517) 000-0000" />
+              </div>
+              <div class="form-group">
+                <label for="host-notes" data-en="Anything else we should know?" data-es="¿Algo más que debamos saber?">Anything else we should know?</label>
+                <textarea id="host-notes" name="notes" placeholder="How long you'd like to host, approximate foot traffic, questions, etc." data-en-placeholder="How long you'd like to host, approximate foot traffic, questions, etc." data-es-placeholder="Cuánto tiempo deseas organizar, tráfico aproximado, preguntas, etc."></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="align-self: flex-start;" data-en="Submit Host Application" data-es="Enviar Solicitud de Anfitrión">Submit Host Application</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <ul>
+            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
+            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
+            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <ul>
+            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
+            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
+            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
+            <li><a href="donate-supplies.html" data-en="Donate" data-es="Donar">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
