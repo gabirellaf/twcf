@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
 </head>
 <body>
 
@@ -60,7 +61,6 @@
             <div style="margin-top: 2rem; display: flex; flex-direction: column; gap: 1.25rem;">
 
               <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-                <div style="font-size: 1.75rem; flex-shrink: 0;">📞</div>
                 <div>
                   <div style="font-weight: 600; color: var(--text); font-size: 0.9rem;" data-en="Phone" data-es="Teléfono">Phone</div>
                   <a href="tel:5178361504" style="color: var(--muted); font-size: 0.9rem;">517-836-1504</a>
@@ -68,7 +68,6 @@
               </div>
 
               <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-                <div style="font-size: 1.75rem; flex-shrink: 0;">✉️</div>
                 <div>
                   <div style="font-weight: 600; color: var(--text); font-size: 0.9rem;" data-en="Email" data-es="Correo">Email</div>
                   <a href="mailto:hello@thewomenandchildrenfoundation.org" style="color: var(--muted); font-size: 0.9rem;">hello@thewomenandchildrenfoundation.org</a>
@@ -76,10 +75,9 @@
               </div>
 
               <div class="card" style="display: flex; gap: 1rem; align-items: center;">
-                <div style="font-size: 1.75rem; flex-shrink: 0;">📍</div>
                 <div>
                   <div style="font-weight: 600; color: var(--text); font-size: 0.9rem;" data-en="Address" data-es="Dirección">Address</div>
-                  <div style="color: var(--muted); font-size: 0.9rem;">3830 New Salem Avenue</div>
+                  <div style="color: var(--muted); font-size: 0.9rem;">PO Box 832, East Lansing, MI 48826-0832</div>
                 </div>
               </div>
 
@@ -98,7 +96,12 @@
             <span class="tag tag-pink" data-en="Send a Message" data-es="Envía un Mensaje">Send a Message</span>
             <h2 data-en="Help Form" data-es="Formulario de Ayuda">Help Form</h2>
             <!-- Replace action with Formspree endpoint: https://formspree.io/f/YOUR_ID -->
-            <form class="form-stack" style="margin-top: 1.25rem;" action="https://formspree.io/f/xojbdywn" method="POST">
+            <div id="contact-success" style="display:none; text-align:center; padding: 3rem 1rem;">
+              <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Thank you!" data-es="¡Gracias!">Thank you!</div>
+              <p data-en="Your message has been received. We'll be in touch soon." data-es="Tu mensaje fue recibido. Nos pondremos en contacto pronto.">Your message has been received. We'll be in touch soon.</p>
+              <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+            </div>
+            <form class="form-stack" style="margin-top: 1.25rem;" action="https://formspree.io/f/xojbdywn" method="POST" data-formspree data-success-target="contact-success">
               <div class="form-row">
                 <div class="form-group">
                   <label for="contact-first" data-en="First Name" data-es="Nombre">First Name</label>

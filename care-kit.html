@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care Kit Editions — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
+  <style>
+    .kit-table { width: 100%; border-collapse: collapse; margin-top: 1rem; font-size: 0.9rem; }
+    .kit-table th { background: var(--purple-pale); color: var(--purple); font-weight: 700; text-align: left; padding: 0.6rem 0.85rem; border-bottom: 2px solid var(--border); }
+    .kit-table td { padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+    .kit-table tr:last-child td { border-bottom: none; }
+    .kit-table tr:nth-child(even) td { background: var(--cream); }
+    .kit-note { font-size: 0.83rem; color: var(--muted); font-style: italic; margin-top: 0.75rem; padding: 0.65rem 0.9rem; background: var(--purple-pale); border-radius: var(--radius); border-left: 3px solid var(--purple-light); }
+    .kit-card { background: var(--white); border-radius: var(--radius-xl); border: 1px solid var(--border); box-shadow: var(--shadow-sm); overflow: hidden; margin-bottom: 2.5rem; }
+    .kit-card-header { padding: 1.75rem 2rem 1.25rem; }
+    .kit-card-body { padding: 0 2rem 1.75rem; }
+    .best-for { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 0.5rem; font-size: 0.83rem; font-weight: 600; color: var(--pink-dark); background: var(--pink-pale); padding: 0.3rem 0.75rem; border-radius: 999px; }
+    .optional-adds { margin-top: 0.85rem; font-size: 0.85rem; color: var(--muted); }
+    .optional-adds strong { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-transparent.png" alt="The Women and Children Foundation" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
+        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
+        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
+        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
+        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
+        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Make a Kit" data-es="Arma un Kit">Make a Kit</span>
+        <h1 data-en="Care Kit Editions" data-es="Ediciones de Kits de Ayuda">Care Kit Editions</h1>
+        <p data-en="Choose a kit edition based on who you want to support. Every item goes directly to a woman or child in need — through our partner organizations." data-es="Elige una edición de kit según a quién quieres apoyar. Cada artículo va directamente a una mujer o niño en necesidad, a través de nuestras organizaciones aliadas.">Choose a kit edition based on who you want to support. Every item goes directly to a woman or child in need — through our partner organizations.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 860px;">
+
+        <div class="section-header">
+          <span class="tag tag-purple" data-en="6 Editions" data-es="6 Ediciones">6 Editions</span>
+          <h2 data-en="Pick your edition." data-es="Elige tu edición.">Pick your edition.</h2>
+          <p data-en="Each edition is designed for a specific need. You can make one or several — any kit you assemble makes a real difference." data-es="Cada edición está diseñada para una necesidad específica. Puedes hacer uno o varios; cualquier kit que armes marcará una diferencia real.">Each edition is designed for a specific need. You can make one or several — any kit you assemble makes a real difference.</p>
+        </div>
+
+        <!-- 1. Essential Care Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-purple" data-en="Edition 1" data-es="Edición 1">Edition 1</span>
+            <h3 data-en="Essential Care Kit" data-es="Kit de Ayuda Esencial">Essential Care Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="Your basic hygiene kit — the foundation of every care drive." data-es="Tu kit de higiene básico, la base de cada colecta de ayuda.">Your basic hygiene kit — the foundation of every care drive.</p>
+            <span class="best-for" data-en="Best for: shelters, women's centers, family support organizations" data-es="Ideal para: albergues, centros de mujeres, organizaciones de apoyo familiar">Best for: shelters, women's centers, family support organizations</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Toothbrush" data-es="Cepillo de dientes">Toothbrush</td><td>1</td></tr>
+                <tr><td data-en="Toothpaste" data-es="Pasta dental">Toothpaste</td><td>1</td></tr>
+                <tr><td data-en="Soap or body wash" data-es="Jabón o gel de ducha">Soap or body wash</td><td>1</td></tr>
+                <tr><td data-en="Shampoo" data-es="Champú">Shampoo</td><td>1</td></tr>
+                <tr><td data-en="Conditioner or 2-in-1" data-es="Acondicionador o 2 en 1">Conditioner or 2-in-1</td><td>1</td></tr>
+                <tr><td data-en="Deodorant" data-es="Desodorante">Deodorant</td><td>1</td></tr>
+                <tr><td data-en="Cleansing wipes" data-es="Toallitas limpiadoras">Cleansing wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Comb or brush" data-es="Peine o cepillo">Comb or brush</td><td>1</td></tr>
+                <tr><td data-en="Socks" data-es="Calcetines">Socks</td><td>1 pair</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. Women's Comfort Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-pink" data-en="Edition 2" data-es="Edición 2">Edition 2</span>
+            <h3 data-en="Women's Comfort Kit" data-es="Kit de Confort para Mujeres">Women's Comfort Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="Focused on dignity and women's specific needs." data-es="Enfocado en la dignidad y las necesidades específicas de las mujeres.">Focused on dignity and women's specific needs.</p>
+            <span class="best-for" data-en="Best for: women's shelters, domestic violence recovery, postpartum support" data-es="Ideal para: albergues de mujeres, recuperación de violencia doméstica, apoyo posparto">Best for: women's shelters, domestic violence recovery, postpartum support</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Pads or period products" data-es="Toallas sanitarias o productos menstruales">Pads or period products</td><td>1 pack</td></tr>
+                <tr><td data-en="Deodorant" data-es="Desodorante">Deodorant</td><td>1</td></tr>
+                <tr><td data-en="Body wash or soap" data-es="Gel de ducha o jabón">Body wash or soap</td><td>1</td></tr>
+                <tr><td data-en="Shampoo / conditioner" data-es="Champú / acondicionador">Shampoo / conditioner</td><td>1</td></tr>
+                <tr><td data-en="Wipes" data-es="Toallitas">Wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Lotion" data-es="Loción">Lotion</td><td>1</td></tr>
+                <tr><td data-en="Hair ties" data-es="Coletas / ligas para el cabello">Hair ties</td><td>1 pack</td></tr>
+                <tr><td data-en="Socks" data-es="Calcetines">Socks</td><td>1 pair</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="optional-adds" data-en="Optional add-ons: lip balm, travel tissues, small journal, pen" data-es="Complementos opcionales: bálsamo labial, pañuelos de bolsillo, diario pequeño, bolígrafo"><strong data-en="Optional add-ons:" data-es="Complementos opcionales:">Optional add-ons:</strong> lip balm, travel tissues, small journal, pen</p>
+          </div>
+        </div>
+
+        <!-- 3. Student Support Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-purple" data-en="Edition 3" data-es="Edición 3">Edition 3</span>
+            <h3 data-en="Student Support Kit" data-es="Kit de Apoyo Estudiantil">Student Support Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="Everything a student needs to start the school year ready." data-es="Todo lo que un estudiante necesita para empezar el año escolar listo.">Everything a student needs to start the school year ready.</p>
+            <span class="best-for" data-en="Best for: back-to-school drives, school-based programs, children in shelters" data-es="Ideal para: colectas de regreso a clases, programas escolares, niños en albergues">Best for: back-to-school drives, school-based programs, children in shelters</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Notebook" data-es="Cuaderno">Notebook</td><td>1</td></tr>
+                <tr><td data-en="Folder" data-es="Carpeta">Folder</td><td>1</td></tr>
+                <tr><td data-en="Pencils" data-es="Lápices">Pencils</td><td>2–4</td></tr>
+                <tr><td data-en="Pens" data-es="Bolígrafos">Pens</td><td>2</td></tr>
+                <tr><td data-en="Eraser" data-es="Borrador">Eraser</td><td>1</td></tr>
+                <tr><td data-en="Crayons or colored pencils" data-es="Crayones o lápices de colores">Crayons or colored pencils</td><td>1 pack</td></tr>
+                <tr><td data-en="Snack" data-es="Merienda">Snack</td><td>1–2</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="optional-adds" data-en="Optional add-ons: backpack, glue sticks, ruler, pencil pouch" data-es="Complementos opcionales: mochila, barras de pegamento, regla, estuche"><strong data-en="Optional add-ons:" data-es="Complementos opcionales:">Optional add-ons:</strong> backpack, glue sticks, ruler, pencil pouch</p>
+          </div>
+        </div>
+
+        <!-- 4. Child Comfort Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-pink" data-en="Edition 4" data-es="Edición 4">Edition 4</span>
+            <h3 data-en="Child Comfort Kit" data-es="Kit de Confort Infantil">Child Comfort Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="For children who need emotional comfort, not just supplies." data-es="Para niños que necesitan confort emocional, no solo suministros.">For children who need emotional comfort, not just supplies.</p>
+            <span class="best-for" data-en="Best for: hospitals, children's shelters, family crisis centers" data-es="Ideal para: hospitales, albergues infantiles, centros de crisis familiar">Best for: hospitals, children's shelters, family crisis centers</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Small stuffed animal or comfort item" data-es="Peluche pequeño o artículo de confort">Small stuffed animal or comfort item</td><td>1</td></tr>
+                <tr><td data-en="Coloring book" data-es="Libro para colorear">Coloring book</td><td>1</td></tr>
+                <tr><td data-en="Crayons" data-es="Crayones">Crayons</td><td>1 pack</td></tr>
+                <tr><td data-en="Snack" data-es="Merienda">Snack</td><td>1–2</td></tr>
+                <tr><td data-en="Toothbrush (child-sized)" data-es="Cepillo de dientes (talla infantil)">Toothbrush (child-sized)</td><td>1</td></tr>
+                <tr><td data-en="Toothpaste (child-safe)" data-es="Pasta dental (apta para niños)">Toothpaste (child-safe)</td><td>1</td></tr>
+                <tr><td data-en="Child-safe wipes" data-es="Toallitas para niños">Child-safe wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="kit-note" data-en="For hospital donations: toys must be new and often unopened. Confirm hospital guidelines before collecting." data-es="Para donaciones a hospitales: los juguetes deben ser nuevos y generalmente sin abrir. Confirma las pautas del hospital antes de recolectar.">For hospital donations: toys must be new and often unopened. Confirm hospital guidelines before collecting.</p>
+          </div>
+        </div>
+
+        <!-- 5. Family Basics Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-purple" data-en="Edition 5" data-es="Edición 5">Edition 5</span>
+            <h3 data-en="Family Basics Kit" data-es="Kit Básico Familiar">Family Basics Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="A household starter kit for families in transition or crisis." data-es="Un kit básico de hogar para familias en transición o crisis.">A household starter kit for families in transition or crisis.</p>
+            <span class="best-for" data-en="Best for: families leaving shelters, housing instability situations, community drives" data-es="Ideal para: familias saliendo de albergues, situaciones de inestabilidad de vivienda, colectas comunitarias">Best for: families leaving shelters, housing instability situations, community drives</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Toothbrushes" data-es="Cepillos de dientes">Toothbrushes</td><td>2–4</td></tr>
+                <tr><td data-en="Toothpaste" data-es="Pasta dental">Toothpaste</td><td>1–2</td></tr>
+                <tr><td data-en="Soap / body wash" data-es="Jabón / gel de ducha">Soap / body wash</td><td>1–2</td></tr>
+                <tr><td data-en="Shampoo / conditioner" data-es="Champú / acondicionador">Shampoo / conditioner</td><td>1 each</td></tr>
+                <tr><td data-en="Period products" data-es="Productos menstruales">Period products</td><td>1 pack</td></tr>
+                <tr><td data-en="Shelf-stable snacks" data-es="Meriendas no perecederas">Shelf-stable snacks</td><td>3–5</td></tr>
+                <tr><td data-en="Notebook / pens" data-es="Cuaderno / bolígrafos">Notebook / pens</td><td>1 set</td></tr>
+                <tr><td data-en="Resource card" data-es="Tarjeta de recursos">Resource card</td><td>1</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 6. First Aid & Medical Kit -->
+        <div class="kit-card">
+          <div class="kit-card-header">
+            <span class="tag tag-pink" data-en="Edition 6" data-es="Edición 6">Edition 6</span>
+            <h3 data-en="First Aid &amp; Medical Kit" data-es="Kit de Primeros Auxilios y Salud">First Aid &amp; Medical Kit</h3>
+            <p style="margin-top: 0.4rem;" data-en="Basic medical supplies for women and families without access to regular healthcare." data-es="Suministros médicos básicos para mujeres y familias sin acceso a atención médica regular.">Basic medical supplies for women and families without access to regular healthcare.</p>
+            <span class="best-for" data-en="Best for: shelters, healthcare outreach, families in medical need" data-es="Ideal para: albergues, alcance de salud, familias con necesidades médicas">Best for: shelters, healthcare outreach, families in medical need</span>
+          </div>
+          <div class="kit-card-body">
+            <table class="kit-table">
+              <thead><tr><th data-en="Item" data-es="Artículo">Item</th><th data-en="Quantity" data-es="Cantidad">Quantity</th></tr></thead>
+              <tbody>
+                <tr><td data-en="Bandages (assorted)" data-es="Vendas (surtidas)">Bandages (assorted)</td><td>1 box</td></tr>
+                <tr><td data-en="Gauze pads" data-es="Gasas">Gauze pads</td><td>4–6</td></tr>
+                <tr><td data-en="Medical tape" data-es="Cinta médica">Medical tape</td><td>1 roll</td></tr>
+                <tr><td data-en="Antiseptic wipes" data-es="Toallitas antisépticas">Antiseptic wipes</td><td>1 pack</td></tr>
+                <tr><td data-en="Neosporin or antibiotic ointment" data-es="Neosporin o ungüento antibiótico">Neosporin or antibiotic ointment</td><td>1</td></tr>
+                <tr><td data-en="Pain reliever (ibuprofen or acetaminophen)" data-es="Analgésico (ibuprofeno o acetaminofén)">Pain reliever (ibuprofen or acetaminophen)</td><td>1 bottle</td></tr>
+                <tr><td data-en="Thermometer" data-es="Termómetro">Thermometer</td><td>1</td></tr>
+                <tr><td data-en="Feminine hygiene products" data-es="Productos de higiene femenina">Feminine hygiene products</td><td>1 pack</td></tr>
+                <tr><td data-en="Hand sanitizer" data-es="Desinfectante de manos">Hand sanitizer</td><td>1</td></tr>
+                <tr><td data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</td><td>1</td></tr>
+              </tbody>
+            </table>
+            <p class="kit-note" data-en="Please do not include prescription medications. All items should be sealed, unused, and within their expiration date." data-es="Por favor no incluyas medicamentos con receta. Todos los artículos deben estar sellados, sin usar y dentro de su fecha de vencimiento.">Please do not include prescription medications. All items should be sealed, unused, and within their expiration date.</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="divider" style="margin-bottom: 3rem;"></div>
+        <div style="text-align: center;">
+          <span class="tag tag-purple" data-en="Ready to Help?" data-es="¿Lista para Ayudar?">Ready to Help?</span>
+          <h2 style="margin-bottom: 0.75rem;" data-en="Make a kit and mail it to us." data-es="Arma un kit y envíanoslo.">Make a kit and mail it to us.</h2>
+          <p style="max-width: 50ch; margin: 0 auto 0.5rem;" data-en="Assemble any edition above and ship to our address. Fill out the supply donation form so we know your package is coming." data-es="Arma cualquier edición de arriba y envíala a nuestra dirección. Rellena el formulario de donación para que sepamos que tu paquete viene en camino.">Assemble any edition above and ship to our address. Fill out the supply donation form so we know your package is coming.</p>
+          <div class="card" style="display: inline-block; margin: 1.25rem auto; padding: 1.25rem 2.5rem; font-size: 1rem; line-height: 2;">
+            <strong>The Women and Children Foundation</strong><br />
+            PO Box 832<br />
+            East Lansing, MI 48826-0832
+          </div>
+          <div class="btn-row" style="justify-content: center; margin-top: 0.5rem;">
+            <a href="donate-supplies.html" class="btn btn-primary" data-en="Fill Out Donation Form" data-es="Llenar Formulario de Donación">Fill Out Donation Form</a>
+            <a href="volunteer.html" class="btn btn-secondary" data-en="Volunteer to Assemble Kits" data-es="Voluntariar para Armar Kits">Volunteer to Assemble Kits</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-transparent.png" alt="TWCF" />
+          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <ul>
+            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
+            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
+            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <ul>
+            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
+            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
+            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
+            <li><a href="donate-supplies.html" data-en="Donate Supplies" data-es="Donar Artículos">Donate Supplies</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -82,5 +82,37 @@ if (slides.length > 0) {
   });
 }
 
+/* ===== FORMSPREE AJAX SUBMIT ===== */
+document.querySelectorAll('form[data-formspree]').forEach(form => {
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const btn = form.querySelector('[type="submit"]');
+    const original = btn.textContent;
+    btn.textContent = 'Sending…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        const successId = form.dataset.successTarget;
+        if (successId) {
+          form.style.display = 'none';
+          const el = document.getElementById(successId);
+          if (el) el.style.display = 'block';
+        }
+      } else {
+        btn.textContent = 'Error — please try again';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — please try again';
+      btn.disabled = false;
+    }
+  });
+});
+
 /* ===== INIT ===== */
 applyLanguage(currentLang);

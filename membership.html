@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
   <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
@@ -164,7 +165,12 @@
           <p data-en="Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership." data-es="Rellena el formulario y revisaremos tu solicitud. Una vez aprobada, te enviaremos un enlace de pago para completar tu membresía de $20.">Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership.</p>
         </div>
 
-        <form class="form-stack" action="https://formspree.io/f/mwvzoaba" method="POST">
+        <div id="apply-success" style="display:none; text-align:center; padding: 3rem 1rem;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Application received!" data-es="¡Solicitud recibida!">Application received!</div>
+          <p data-en="Thank you for applying. We'll review your application and send you a payment link once approved." data-es="Gracias por aplicar. Revisaremos tu solicitud y te enviaremos un enlace de pago una vez aprobada.">Thank you for applying. We'll review your application and send you a payment link once approved.</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+        </div>
+        <form class="form-stack" action="https://formspree.io/f/mwvzoaba" method="POST" data-formspree data-success-target="apply-success">
           <div class="form-row">
             <div class="form-group">
               <label for="first-name" data-en="First Name" data-es="Nombre">First Name</label>

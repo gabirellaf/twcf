@@ -364,10 +364,10 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 /* ===== FOOTER ===== */
-.site-footer { background: var(--purple-dark); color: rgba(255,255,255,0.65); padding: 3.5rem 0 2rem; margin-top: auto; }
-.footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2rem; margin-bottom: 2.5rem; }
-.footer-logo-img { height: 44px; width: auto; margin-bottom: 0.85rem; filter: brightness(0) invert(1); opacity: 0.8; }
-.footer-brand > p { font-size: 0.88rem; max-width: 26ch; }
+.site-footer { background: var(--purple-dark); color: rgba(255,255,255,0.65); padding: 4rem 0 2rem; margin-top: auto; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2.5rem; margin-bottom: 3rem; align-items: start; }
+.footer-logo-img { height: 90px; width: auto; margin-bottom: 1rem; filter: brightness(0) invert(1); opacity: 0.9; }
+.footer-brand > p { font-size: 0.88rem; max-width: 28ch; line-height: 1.65; }
 .footer-col h4 { color: var(--white); font-family: 'Playfair Display', Georgia, serif; font-size: 1rem; margin-bottom: 1rem; }
 .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
 .footer-col a { color: rgba(255,255,255,0.6); font-size: 0.87rem; transition: color var(--ease); }

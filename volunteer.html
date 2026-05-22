@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/logo-transparent.png" type="image/png" />
 </head>
 <body>
 
@@ -61,7 +62,7 @@
         <div class="grid-2">
 
           <div class="opportunity-card">
-            <img src="images/community.jpg" alt="Volunteers working together" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius-lg) var(--radius-lg) 0 0;" />
+            <div class="placeholder-img" style="width:100%;height:240px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;font-size:0.8rem;" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</div>
             <div class="opp-body">
               <span class="tag tag-pink" data-en="Active" data-es="Activo">Active</span>
               <h3 data-en="Care Kit Assembly" data-es="Ensamblaje de Kits de Ayuda">Care Kit Assembly</h3>
@@ -75,7 +76,7 @@
           </div>
 
           <div class="opportunity-card">
-            <img src="images/hero-3.jpg" alt="Women volunteering together in the community" style="width:100%;height:240px;object-fit:cover;border-radius:var(--radius-lg) var(--radius-lg) 0 0;" />
+            <div class="placeholder-img" style="width:100%;height:240px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;font-size:0.8rem;" data-en="Photo coming soon" data-es="Foto próximamente">Photo coming soon</div>
             <div class="opp-body">
               <span class="tag tag-pink" data-en="Active" data-es="Activo">Active</span>
               <h3 data-en="Drive Pick-Ups" data-es="Recolección de Donativos">Drive Pick-Ups</h3>
@@ -103,7 +104,12 @@
           <p data-en="Fill out the form below and we'll reach out with details about your selected opportunity." data-es="Rellena el formulario y nos pondremos en contacto con los detalles de la oportunidad que elegiste.">Fill out the form below and we'll reach out with details about your selected opportunity.</p>
         </div>
 
-        <form class="form-stack" action="https://formspree.io/f/mgoqkryn" method="POST">
+        <div id="volunteer-success" style="display:none; text-align:center; padding: 3rem 1rem;">
+          <div style="font-size: 1.5rem; font-weight: 700; color: var(--purple); margin-bottom: 0.75rem;" data-en="Thank you!" data-es="¡Gracias!">Thank you!</div>
+          <p data-en="You're signed up! We'll reach out with details about your selected opportunity." data-es="¡Ya estás registrado! Nos pondremos en contacto con los detalles de la oportunidad que elegiste.">You're signed up! We'll reach out with details about your selected opportunity.</p>
+          <a href="index.html" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
+        </div>
+        <form class="form-stack" action="https://formspree.io/f/mgoqkryn" method="POST" data-formspree data-success-target="volunteer-success">
           <div class="form-row">
             <div class="form-group">
               <label for="vol-first" data-en="First Name" data-es="Nombre">First Name</label>
