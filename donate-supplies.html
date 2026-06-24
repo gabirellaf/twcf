@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="images/logo-cropped.png" type="image/png" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
 </head>
 <body>
 
@@ -22,7 +22,8 @@
         <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
         <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
         <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
+        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
         <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
         <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
         <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
@@ -72,15 +73,19 @@
           </div>
           <div class="card text-center">
             <h3 data-en="Toys &amp; Books" data-es="Juguetes y Libros">Toys &amp; Books</h3>
-            <p style="font-size: 0.88rem;" data-en="New or gently used toys, children's books, games, puzzles, stuffed animals" data-es="Juguetes nuevos o en buen estado, libros infantiles, juegos, rompecabezas, peluches">New or gently used toys, children's books, games, puzzles, stuffed animals</p>
+            <p style="font-size: 0.88rem;" data-en="New, sealed toys only — stuffed animals, children's books, games, puzzles, coloring books, activity books" data-es="Solo juguetes nuevos y sellados: peluches, libros infantiles, juegos, rompecabezas, libros para colorear, libros de actividades">New, sealed toys only — stuffed animals, children's books, games, puzzles, coloring books, activity books</p>
           </div>
           <div class="card text-center">
             <h3 data-en="School &amp; Educational Supplies" data-es="Útiles Escolares y Educativos">School &amp; Educational Supplies</h3>
-            <p style="font-size: 0.88rem;" data-en="Backpacks, notebooks, pencils, crayons, markers, folders, calculators, educational workbooks" data-es="Mochilas, cuadernos, lápices, crayones, marcadores, carpetas, calculadoras, libros de trabajo educativos">Backpacks, notebooks, pencils, crayons, markers, folders, calculators, educational workbooks</p>
+            <p style="font-size: 0.88rem;" data-en="Backpacks (new), notebooks, pencils, crayons, markers, folders, glue sticks, scissors, rulers" data-es="Mochilas (nuevas), cuadernos, lápices, crayones, marcadores, carpetas, barras de pegamento, tijeras, reglas">Backpacks (new), notebooks, pencils, crayons, markers, folders, glue sticks, scissors, rulers</p>
           </div>
           <div class="card text-center">
             <h3 data-en="Clothing" data-es="Ropa">Clothing</h3>
-            <p style="font-size: 0.88rem;" data-en="New or gently used clothing for women and children of all sizes — especially coats, socks, and underwear (new only)" data-es="Ropa nueva o en buen estado para mujeres y niños de todas las tallas, especialmente abrigos, calcetines y ropa interior (solo nueva)">New or gently used clothing for women and children of all sizes — especially coats, socks, and underwear (new only)</p>
+            <p style="font-size: 0.88rem;" data-en="New, packaged clothing only — socks, underwear, and sleepwear for women and children of all sizes" data-es="Solo ropa nueva y empaquetada: calcetines, ropa interior y pijamas para mujeres y niños de todas las tallas">New, packaged clothing only — socks, underwear, and sleepwear for women and children of all sizes</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Baby &amp; Infant" data-es="Bebés e Infantes">Baby &amp; Infant</h3>
+            <p style="font-size: 0.88rem;" data-en="Diapers (all sizes), baby wipes (unscented), formula, baby food pouches, onesies &amp; sleepers (new), receiving blankets, pacifiers, baby bottles — all new" data-es="Pañales (todas las tallas), toallitas (sin fragancia), fórmula, bolsas de comida para bebé, bodies y pijamas (nuevos), cobijas, chupones, biberones — todo nuevo">Diapers (all sizes), baby wipes (unscented), formula, baby food pouches, onesies &amp; sleepers (new), receiving blankets, pacifiers, baby bottles — all new</p>
           </div>
         </div>
       </div>
@@ -95,8 +100,8 @@
         <h2 data-en="Mailing Address" data-es="Dirección Postal">Mailing Address</h2>
         <div class="card" style="margin-top: 1.25rem; font-size: 1.05rem; line-height: 2;">
           <strong>The Women and Children Foundation</strong><br />
-          PO Box 832<br />
-          East Lansing, MI 48826-0832
+          
+          3830 New Salem Ave<br />Okemos, MI 48864
         </div>
         <p style="margin-top: 1rem; font-size: 0.88rem;" data-en="Please fill out the pledge form below before shipping so we can expect your package and thank you properly." data-es="Por favor, completa el formulario de promesa a continuación antes de enviar para que podamos esperar tu paquete y agradecerte como se merece.">Please fill out the pledge form below before shipping so we can expect your package and thank you properly.</p>
       </div>
@@ -175,6 +180,10 @@
                 <span data-en="Clothing" data-es="Ropa">Clothing</span>
               </label>
               <label style="display: flex; align-items: center; gap: 0.6rem; font-weight: 400; color: var(--muted); cursor: pointer;">
+                <input type="checkbox" name="items[]" value="baby-infant" style="accent-color: var(--purple); width: 16px; height: 16px;" />
+                <span data-en="Baby &amp; infant supplies (diapers, formula, onesies, etc.)" data-es="Artículos para bebé (pañales, fórmula, bodies, etc.)">Baby &amp; infant supplies (diapers, formula, onesies, etc.)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 0.6rem; font-weight: 400; color: var(--muted); cursor: pointer;">
                 <input type="checkbox" name="items[]" value="other" style="accent-color: var(--purple); width: 16px; height: 16px;" />
                 <span data-en="Other" data-es="Otro">Other</span>
               </label>
@@ -216,7 +225,8 @@
             <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
             <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
             <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
+        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -232,7 +242,7 @@
           <h4 data-en="Connect" data-es="Conectar">Connect</h4>
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
-            <li><a href="https://www.facebook.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>

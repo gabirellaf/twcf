@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drives — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+  <style>
+
+    /* ── DRIVE STATUS BANNER ── */
+    .drive-status-banner {
+      background: linear-gradient(135deg, #3D1A6B, #5C2D91);
+      color: #fff;
+      padding: 1.25rem 2rem;
+      text-align: center;
+    }
+    .drive-status-banner p {
+      font-size: 0.92rem;
+      color: rgba(255,255,255,0.8);
+      margin: 0;
+    }
+    .drive-status-banner strong { color: #fff; }
+    .status-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-right: 0.6rem;
+    }
+    .status-ongoing  { background: #2eb87a; color: #fff; }
+    .status-upcoming { background: rgba(255,255,255,0.18); color: #fff; border: 1px solid rgba(255,255,255,0.4); }
+    .status-past     { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); }
+
+    /* ── DRIVES CALENDAR ── */
+    .drives-calendar {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    .drive-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 18px rgba(92,45,145,0.1);
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(92,45,145,0.1);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .drive-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 28px rgba(92,45,145,0.18);
+    }
+    .drive-card-header {
+      padding: 1.25rem 1.5rem 1rem;
+      background: linear-gradient(135deg, #f0e8fc, #e8f1fc);
+      border-bottom: 3px solid #5C2D91;
+    }
+    .drive-card-header.past {
+      background: #f5f5f7;
+      border-color: #ccc;
+    }
+    .drive-card-month {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #5C2D91;
+      margin-bottom: 0.35rem;
+    }
+    .drive-card-month.past { color: #888; }
+    .drive-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #3D1A6B;
+      margin: 0 0 0.25rem;
+    }
+    .drive-card-header.past h3 { color: #555; }
+    .drive-card-dates {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #5C2D91;
+    }
+    .drive-card-dates.past { color: #888; }
+    .drive-card-body {
+      padding: 1.1rem 1.5rem 1.4rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .drive-card-body p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+    .drive-card-footer {
+      padding: 0 1.5rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .drive-card-footer .btn { font-size: 0.82rem; padding: 0.5rem 1.1rem; }
+
+    /* ── COUNTDOWN ── */
+    .countdown-bar {
+      background: #fff;
+      border: 2px solid #5C2D91;
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+    .countdown-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #5C2D91;
+      margin-bottom: 0.2rem;
+    }
+    .countdown-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3D1A6B;
+      line-height: 1;
+    }
+    .countdown-unit {
+      font-size: 0.72rem;
+      color: var(--muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .countdown-divider { font-size: 1.5rem; color: rgba(92,45,145,0.2); }
+
+    /* ── HOW TO PARTICIPATE ── */
+    .participate-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .participate-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 1.5rem;
+      border: 1px solid rgba(92,45,145,0.1);
+      box-shadow: 0 2px 12px rgba(92,45,145,0.07);
+    }
+    .participate-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #f0e8fc, #e8f1fc);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.35rem;
+      margin-bottom: 0.9rem;
+    }
+    .participate-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #3D1A6B;
+      margin-bottom: 0.4rem;
+    }
+    .participate-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0 0 0.9rem;
+    }
+    .participate-card a.link-subtle {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #5C2D91;
+      text-decoration: none;
+    }
+    .participate-card a.link-subtle:hover { text-decoration: underline; }
+
+    /* ── LOCATIONS ── */
+    .location-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1.75rem;
+    }
+    .location-item {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem;
+      border-left: 4px solid #5C2D91;
+      box-shadow: 0 2px 10px rgba(92,45,145,0.07);
+    }
+    .location-item h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #3D1A6B;
+      margin-bottom: 0.25rem;
+    }
+    .location-item p {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+    .location-hours {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #5C2D91;
+      margin-top: 0.35rem;
+    }
+    .location-tbd {
+      font-style: italic;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-top: 1rem;
+      padding: 1.25rem;
+      background: #f8f4ff;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    /* ── MAILING LIST (inline) ── */
+    .mailing-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .mailing-row input {
+      flex: 1;
+      min-width: 180px;
+      padding: 0.65rem 1rem;
+      border: 1.5px solid rgba(92,45,145,0.25);
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      outline: none;
+    }
+    .mailing-row input:focus { border-color: #5C2D91; }
+    .mailing-row .btn { white-space: nowrap; }
+
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html"          data-en="Home"        data-es="Inicio">Home</a></li>
+        <li><a href="mission.html"        data-en="Mission"     data-es="Misión">Mission</a></li>
+        <li><a href="membership.html"     data-en="Membership"  data-es="Membresía">Membership</a></li>
+        <li><a href="volunteer.html"      data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+        <li><a href="care-kit.html"       data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
+        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>
+        <li><a href="information.html"    data-en="Information" data-es="Información">Information</a></li>
+        <li><a href="get-help.html"       data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
+        <li><a href="resources.html"      data-en="Resources"   data-es="Recursos">Resources</a></li>
+        <li><a href="contact.html"        data-en="Contact"     data-es="Contacto">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- DRIVE STATUS BANNER -->
+  <div class="drive-status-banner">
+    <p>
+      <span class="status-badge status-ongoing">Active Now</span>
+      <strong>The Comfort &amp; Care Drive</strong> — June 21–July 5, 2026 &nbsp;·&nbsp; Virtual drive · Open to supporters worldwide · <a href="shop.html" style="color: rgba(255,255,255,0.9); font-weight: 700;">Shop the Drive →</a>
+    </p>
+  </div>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-purple" data-en="Donation Drives" data-es="Colectas de Donaciones">Donation Drives</span>
+        <h1 data-en="Give. It Gets There." data-es="Da. Llega a Quien Lo Necesita.">Give. It Gets There.</h1>
+        <p data-en="We run regular virtual drives to collect essential supplies for women, children, and families in need. Anyone anywhere in the world can donate — find out what's happening and how to ship your contribution." data-es="Organizamos colectas virtuales regulares para reunir artículos esenciales para mujeres, niños y familias en necesidad. Cualquier persona en el mundo puede donar: entérate de qué ocurre y cómo enviar tu contribución.">We run regular virtual drives to collect essential supplies for women, children, and families in need. Anyone anywhere in the world can donate — find out what's happening and how to ship your contribution.</p>
+      </div>
+    </section>
+
+    <!-- DRIVES CALENDAR -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Drive Calendar" data-es="Calendario de Colectas">Drive Calendar</span>
+          <h2 data-en="All of Our Drives" data-es="Todas Nuestras Colectas">All of Our Drives</h2>
+          <p data-en="Our first drive is active now. More are coming — sign up for updates so you're the first to know when each one launches." data-es="Nuestra primera colecta está activa ahora. Habrá más: suscríbete para ser la primera en saber cuándo se lanza cada una.">Our first drive is active now. More are coming — sign up for updates so you're the first to know when each one launches.</p>
+        </div>
+
+        <!-- ── ACTIVE NOW ── -->
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2eb87a; padding: 2rem 0 0.5rem; display: flex; align-items: center; gap: 0.6rem;">
+          <span style="width: 8px; height: 8px; border-radius: 50%; background: #2eb87a; display: inline-block; flex-shrink: 0;"></span>
+          Active Now — June 21–July 5, 2026
+        </div>
+
+        <div class="drives-calendar">
+
+          <!-- Comfort & Care Drive — ACTIVE -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">June 2026</div>
+              <h3>The Comfort &amp; Care Drive</h3>
+              <div class="drive-card-dates">June 21 – July 5, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-ongoing" style="margin-right:0;" data-en="Active · Virtual" data-es="Activo · Virtual">Active · Virtual</span></div>
+              <p data-en="Our first virtual drive — open to supporters worldwide. Collecting hygiene products, shelf-stable food, school supplies, baby &amp; infant items, first aid, and clothing for families in need. Buy items and ship directly to our PO Box from anywhere." data-es="Nuestra primera colecta virtual, abierta a donantes de todo el mundo. Recaudando productos de higiene, alimentos no perecederos, útiles escolares, artículos para bebé, primeros auxilios y ropa para familias necesitadas.">Our first virtual drive — open to supporters worldwide. Collecting hygiene products, shelf-stable food, school supplies, baby &amp; infant items, first aid, and clothing for families in need. Buy items and ship directly to our PO Box from anywhere.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="shop.html" class="btn btn-primary" data-en="Shop the Drive" data-es="Comprar para la Colecta">Shop the Drive</a>
+              <a href="comfort-care-drive.html" class="btn btn-secondary" data-en="Drive Details" data-es="Detalles">Drive Details</a>
+            </div>
+          </div>
+
+          <!-- The Comfort & Care Challenge — ACTIVE -->
+          <div class="drive-card">
+            <div class="drive-card-header" style="background: linear-gradient(135deg, #3D1A6B, #5C2D91); border-bottom-color: #2eb87a;">
+              <div class="drive-card-month" style="color: rgba(255,255,255,0.65);">June 2026</div>
+              <h3 style="color: white;">The Comfort &amp; Care Challenge</h3>
+              <div class="drive-card-dates" style="color: rgba(255,255,255,0.8);">June 21 – July 5, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-ongoing" style="margin-right:0;" data-en="Active · Competition" data-es="Activo · Competencia">Active · Competition</span></div>
+              <p data-en="The competitive format of the Comfort &amp; Care Drive. Form a team with friends, family, classmates, or coworkers — earn points for every item or kit donated. The team with the most points wins recognition on our website and social media." data-es="El formato competitivo de la Colecta de Confort y Cuidado. Forma un equipo con amigos, familia, compañeros o colegas; gana puntos por cada artículo o kit donado. El equipo con más puntos gana reconocimiento en nuestro sitio y redes sociales.">The competitive format of the Comfort &amp; Care Drive. Form a team with friends, family, classmates, or coworkers — earn points for every item or kit donated. The team with the most points wins recognition on our website and social media.</p>
+              <div style="font-size: 0.8rem; color: var(--purple); font-weight: 600;" data-en="Points: 1 pt/item · 10 pts/kit · 5 pts/referral · 2 pts/social share" data-es="Puntos: 1 pt/artículo · 10 pts/kit · 5 pts/referido · 2 pts/compartir">Points: 1 pt/item · 10 pts/kit · 5 pts/referral · 2 pts/social share</div>
+            </div>
+            <div class="drive-card-footer">
+              <a href="shop.html" class="btn btn-primary" data-en="Start Earning Points" data-es="Empezar a Ganar Puntos">Start Earning Points</a>
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Form a Team" data-es="Formar un Equipo">Form a Team</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── SUMMER 2026 ── -->
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5C2D91; padding: 2.5rem 0 0.5rem; border-top: 1.5px solid rgba(92,45,145,0.1); margin-top: 2rem;">
+          Coming Up — Summer 2026
+        </div>
+
+        <div class="drives-calendar">
+
+          <!-- Summer Toy / Fun Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">Mid-Summer 2026</div>
+              <h3>Summer Toy &amp; Fun Drive</h3>
+              <div class="drive-card-dates">July 6–19, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="Collecting toys, summer fun items, children's books, games, activity kits, and comfort items for kids. Virtual drive — details will be announced." data-es="Recaudando juguetes, artículos para el verano, libros infantiles, juegos, kits de actividades y artículos de confort para niños. Colecta virtual; se anunciarán los detalles.">Collecting toys, summer fun items, children's books, games, activity kits, and comfort items for kids. Virtual drive — details will be announced.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+          <!-- Back-to-School Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">Late July / Early August 2026</div>
+              <h3>Back-to-School Drive</h3>
+              <div class="drive-card-dates">July 20 – August 7, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="Collecting school supplies, backpacks, notebooks, pencils, folders, and educational materials for children and families preparing for the new school year." data-es="Recaudando útiles escolares, mochilas, cuadernos, lápices, carpetas y materiales educativos para niños y familias que se preparan para el nuevo año escolar.">Collecting school supplies, backpacks, notebooks, pencils, folders, and educational materials for children and families preparing for the new school year.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── FALL & WINTER 2026 ── -->
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5C2D91; padding: 2.5rem 0 0.5rem; border-top: 1.5px solid rgba(92,45,145,0.1); margin-top: 2rem;">
+          Fall &amp; Winter 2026
+        </div>
+
+        <div class="drives-calendar">
+
+          <!-- Snack Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">Fall 2026</div>
+              <h3>Snack Drive</h3>
+              <div class="drive-card-dates">September 14–27, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="Collecting snacks and easy food items for children and families at shelters and recipient organizations. Details coming." data-es="Recaudando meriendas y alimentos fáciles para niños y familias en albergues y organizaciones receptoras. Detalles próximamente.">Collecting snacks and easy food items for children and families at shelters and recipient organizations. Details coming.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+          <!-- Halloween Candy Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">October 2026</div>
+              <h3>Halloween Candy Drive</h3>
+              <div class="drive-card-dates">October 12–25, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="Collecting Halloween candy and treats for children in hospitals so they can celebrate the holiday too. Details coming." data-es="Recaudando dulces y golosinas de Halloween para niños hospitalizados, para que también puedan celebrar. Detalles próximamente.">Collecting Halloween candy and treats for children in hospitals so they can celebrate the holiday too. Details coming.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+          <!-- Christmas Toy Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">Winter / Holiday 2026</div>
+              <h3>Christmas Toy Drive</h3>
+              <div class="drive-card-dates">November 9–22, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="Collecting new toys and gifts for children in shelters and families in crisis — so every child wakes up to something on Christmas morning. Items go to our shelter partners including Haven House." data-es="Recaudando juguetes nuevos y regalos para niños en albergues y familias en crisis, para que cada niño despierte con algo la mañana de Navidad. Los artículos van a nuestros albergues aliados, incluido Haven House.">Collecting new toys and gifts for children in shelters and families in crisis — so every child wakes up to something on Christmas morning. Items go to our shelter partners including Haven House.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+          <!-- Hospital Toy Drive -->
+          <div class="drive-card">
+            <div class="drive-card-header">
+              <div class="drive-card-month">Winter 2026</div>
+              <h3>Hospital Toy Drive</h3>
+              <div class="drive-card-dates">November 30 – December 11, 2026</div>
+            </div>
+            <div class="drive-card-body">
+              <div><span class="status-badge status-upcoming" style="margin-right:0; background: rgba(92,45,145,0.12); color: #5C2D91; border: 1px solid rgba(92,45,145,0.25);">Planning</span></div>
+              <p data-en="New toys and books delivered directly to hospital Child Life departments — for children who are inpatient over the holidays and can't be home. Not for shelters; this drive is exclusively for pediatric hospital patients." data-es="Juguetes y libros nuevos entregados directamente a los departamentos de Vida Infantil del hospital, para niños hospitalizados durante las fiestas que no pueden estar en casa. No es para albergues; esta colecta es exclusivamente para pacientes pediátricos hospitalizados.">New toys and books delivered directly to hospital Child Life departments — for children who are inpatient over the holidays and can't be home. Not for shelters; this drive is exclusively for pediatric hospital patients.</p>
+            </div>
+            <div class="drive-card-footer">
+              <a href="volunteer.html" class="btn btn-secondary" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ── RECURRING PROGRAMS ── -->
+        <div style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5C2D91; padding: 2.5rem 0 0.5rem; border-top: 1.5px solid rgba(92,45,145,0.1); margin-top: 2rem;">
+          Recurring Programs
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+
+          <div style="background: #fff; border-radius: 12px; padding: 1.25rem; border: 1px solid rgba(92,45,145,0.12); box-shadow: 0 1px 8px rgba(92,45,145,0.06);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.5rem;">🧴</div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: #3D1A6B; margin-bottom: 0.3rem;" data-en="Hygiene Product Drives" data-es="Colectas de Productos de Higiene">Hygiene Product Drives</div>
+            <p style="font-size: 0.82rem; color: var(--muted); margin: 0;" data-en="Shampoo, conditioner, deodorant, toothpaste, soap, body wash, and period products — ongoing throughout the year." data-es="Champú, acondicionador, desodorante, pasta dental, jabón, gel de baño y productos menstruales — de forma continua durante el año.">Shampoo, conditioner, deodorant, toothpaste, soap, body wash, and period products — ongoing throughout the year.</p>
+          </div>
+
+          <div style="background: #fff; border-radius: 12px; padding: 1.25rem; border: 1px solid rgba(92,45,145,0.12); box-shadow: 0 1px 8px rgba(92,45,145,0.06);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.5rem;">🥫</div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: #3D1A6B; margin-bottom: 0.3rem;" data-en="Food Support Drives" data-es="Colectas de Apoyo Alimentario">Food Support Drives</div>
+            <p style="font-size: 0.82rem; color: var(--muted); margin: 0;" data-en="Shelf-stable food, pantry items, snacks, canned goods, and family food support — folded into larger drives and run independently as needed." data-es="Alimentos no perecederos, artículos de despensa, meriendas, conservas y apoyo alimentario familiar — integrados en colectas más grandes o de forma independiente según sea necesario.">Shelf-stable food, pantry items, snacks, canned goods, and family food support — folded into larger drives and run independently as needed.</p>
+          </div>
+
+          <div style="background: #fff; border-radius: 12px; padding: 1.25rem; border: 1px solid rgba(92,45,145,0.12); box-shadow: 0 1px 8px rgba(92,45,145,0.06);">
+            <div style="font-size: 1.4rem; margin-bottom: 0.5rem;">📚</div>
+            <div style="font-weight: 700; font-size: 0.95rem; color: #3D1A6B; margin-bottom: 0.3rem;" data-en="Educational Supply Drives" data-es="Colectas de Material Educativo">Educational Supply Drives</div>
+            <p style="font-size: 0.82rem; color: var(--muted); margin: 0;" data-en="Books, notebooks, pencils, school supplies, and learning materials — most active around back-to-school season, but accepted year-round." data-es="Libros, cuadernos, lápices, útiles escolares y materiales de aprendizaje — más activos en la temporada de regreso a clases, pero se aceptan todo el año.">Books, notebooks, pencils, school supplies, and learning materials — most active around back-to-school season, but accepted year-round.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HOW TO PARTICIPATE -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="How to Participate" data-es="Cómo Participar">How to Participate</span>
+          <h2 data-en="Four Ways to Help" data-es="Cuatro Maneras de Ayudar">Four Ways to Help</h2>
+          <p data-en="No single way is better than another — whatever works for you works for us." data-es="No hay una manera mejor que otra: lo que te funcione a ti nos funciona a nosotros.">No single way is better than another — whatever works for you works for us.</p>
+        </div>
+
+        <div class="participate-grid">
+
+          <div class="participate-card">
+            <div class="participate-icon">&#128230;</div>
+            <h3 data-en="Ship Donations Directly" data-es="Envía Donaciones Directamente">Ship Donations Directly</h3>
+            <p data-en="Purchase new, sealed items from your local store or online and ship them straight to our PO Box. You can donate from anywhere in the world — no drop-off required." data-es="Compra artículos nuevos y sellados en tu tienda local o en línea y envíalos directamente a nuestra casilla postal. Puedes donar desde cualquier parte del mundo; no necesitas entregarlo en persona.">Purchase new, sealed items from your local store or online and ship them straight to our PO Box. You can donate from anywhere in the world — no drop-off required.</p>
+            <a href="donate-supplies.html" class="link-subtle" data-en="Donate now ↗" data-es="Donar ahora ↗">Donate now ↗</a>
+          </div>
+
+          <div class="participate-card">
+            <div class="participate-icon">&#128230;</div>
+            <h3 data-en="Mail Your Donation" data-es="Enviar por Correo">Mail Your Donation</h3>
+            <p data-en="Can't make it in person? Ship donations directly to our PO Box. Fill out the pledge form first so we know your package is coming." data-es="¿No puedes venir en persona? Envía donaciones directamente a nuestra casilla postal. Completa el formulario de promesa primero para que sepamos que tu paquete viene.">Can't make it in person? Ship donations directly to our PO Box. Fill out the pledge form first so we know your package is coming.</p>
+            <a href="donate-supplies.html" class="link-subtle" data-en="Mail a donation ↗" data-es="Enviar una donación ↗">Mail a donation ↗</a>
+          </div>
+
+          <div class="participate-card">
+            <div class="participate-icon">&#127775;</div>
+            <h3 data-en="Host a Collection Bin" data-es="Albergar un Contenedor">Host a Collection Bin</h3>
+            <p data-en="Are you a business, school, or organization? Apply to host one of our collection bins at your location. We'll provide everything you need." data-es="¿Eres una empresa, escuela u organización? Solicita albergar uno de nuestros contenedores de recolección en tu ubicación. Te proporcionaremos todo lo que necesites.">Are you a business, school, or organization? Apply to host one of our collection bins at your location. We'll provide everything you need.</p>
+            <a href="comfort-care-drive.html#host-drive" class="link-subtle" data-en="Apply to host ↗" data-es="Solicitar ser anfitrión ↗">Apply to host ↗</a>
+          </div>
+
+          <div class="participate-card">
+            <div class="participate-icon">&#129309;</div>
+            <h3 data-en="Volunteer" data-es="Ser Voluntario">Volunteer</h3>
+            <p data-en="Help us sort donations, assemble care kits, and deliver items to partner organizations. Sign up to volunteer and we'll be in touch with shift details." data-es="Ayúdanos a clasificar donaciones, armar kits y entregar artículos a las organizaciones. Regístrate como voluntario y nos pondremos en contacto contigo.">Help us sort donations, assemble care kits, and deliver items to partner organizations. Sign up to volunteer and we'll be in touch with shift details.</p>
+            <a href="volunteer.html" class="link-subtle" data-en="Sign up to volunteer ↗" data-es="Registrarse como voluntario ↗">Sign up to volunteer ↗</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HOW TO SHIP -->
+    <section id="locations" class="section-sm">
+      <div class="container">
+        <div class="section-header">
+          <span class="tag tag-pink" data-en="Mailing Address" data-es="Dirección Postal">Mailing Address</span>
+          <h2 data-en="Ship Your Donation to Us" data-es="Envíanos Tu Donación">Ship Your Donation to Us</h2>
+          <p data-en="This is a virtual drive — you can donate from anywhere in the world. Simply purchase new items and ship them to our mailing address." data-es="Esta es una colecta virtual; puedes donar desde cualquier parte del mundo. Simplemente compra artículos nuevos y envíalos a nuestra dirección postal.">This is a virtual drive — you can donate from anywhere in the world. Simply purchase new items and ship them to our mailing address.</p>
+        </div>
+
+        <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; margin-top: 1.5rem; align-items: stretch;">
+          <div class="location-item" style="flex: 1; min-width: 240px; border-left-color: #5C2D91;">
+            <h4 data-en="Mailing Address" data-es="Dirección Postal">Mailing Address</h4>
+            <p>The Women and Children Foundation<br />3830 New Salem Ave<br />Okemos, MI 48864</p>
+            <div class="location-hours" data-en="Open to packages from anywhere worldwide" data-es="Aceptamos paquetes de todo el mundo">Open to packages from anywhere worldwide</div>
+          </div>
+          <div class="location-item" style="flex: 1; min-width: 240px; border-left-color: #e55c9a;">
+            <h4 data-en="Before You Ship" data-es="Antes de Enviar">Before You Ship</h4>
+            <p data-en="Fill out our quick pledge form on the Donate Supplies page so we know your package is on the way. It only takes a minute." data-es="Completa nuestro formulario de promesa en la página Donar Artículos para que sepamos que tu paquete viene en camino. Solo toma un minuto.">Fill out our quick pledge form on the Donate Supplies page so we know your package is on the way. It only takes a minute.</p>
+            <div class="location-hours" style="margin-top: 0.5rem;"><a href="donate-supplies.html" style="color: #5C2D91; font-weight: 700;" data-en="Pledge form →" data-es="Formulario de promesa →">Pledge form →</a></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT TO BRING -->
+    <section class="section-sm">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="What to Bring" data-es="Qué Traer">What to Bring</span>
+          <h2 data-en="Everything Helps" data-es="Todo Ayuda">Everything Helps</h2>
+          <p data-en="We accept new, factory-sealed items only. No glass, no prescriptions, no homemade items." data-es="Solo aceptamos artículos nuevos y sellados de fábrica. Sin vidrio, sin medicamentos, sin artículos caseros.">We accept new, factory-sealed items only. No glass, no prescriptions, no homemade items.</p>
+        </div>
+        <div class="grid-3" style="margin-top: 1.75rem;">
+          <div class="card text-center">
+            <h3 data-en="Hygiene &amp; Personal Care" data-es="Higiene y Cuidado Personal">Hygiene &amp; Personal Care</h3>
+            <p style="font-size: 0.85rem;" data-en="Shampoo, conditioner, soap, deodorant, toothpaste, toothbrush, feminine hygiene products, lotion, wipes" data-es="Champú, acondicionador, jabón, desodorante, pasta dental, cepillos de dientes, productos de higiene femenina, loción, toallitas">Shampoo, conditioner, soap, deodorant, toothpaste, toothbrush, feminine hygiene products, lotion, wipes</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Baby &amp; Infant" data-es="Bebé e Infante">Baby &amp; Infant</h3>
+            <p style="font-size: 0.85rem;" data-en="Diapers (all sizes), baby wipes, formula, baby food pouches, new onesies &amp; sleepers, receiving blankets, pacifiers, baby bottles" data-es="Pañales (todos los tallas), toallitas, fórmula, bolsas de comida para bebé, bodies y pijamas nuevos, cobijas, chupones, biberones">Diapers (all sizes), baby wipes, formula, baby food pouches, new onesies &amp; sleepers, receiving blankets, pacifiers, baby bottles</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Shelf-Stable Food" data-es="Alimentos No Perecederos">Shelf-Stable Food</h3>
+            <p style="font-size: 0.85rem;" data-en="Granola bars, nut butter packets, crackers, trail mix, fruit pouches, tuna pouches, oatmeal packets, soup cups" data-es="Barras de granola, paquetes de mantequilla de nuez, galletas, mezcla de frutos secos, bolsas de fruta, bolsas de atún, paquetes de avena, tazas de sopa">Granola bars, nut butter packets, crackers, trail mix, fruit pouches, tuna pouches, oatmeal packets, soup cups</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="School Supplies" data-es="Útiles Escolares">School Supplies</h3>
+            <p style="font-size: 0.85rem;" data-en="Notebooks, pencils, crayons, markers, folders, glue sticks, scissors, rulers, backpacks (new only)" data-es="Cuadernos, lápices, crayones, marcadores, carpetas, barras de pegamento, tijeras, reglas, mochilas (solo nuevas)">Notebooks, pencils, crayons, markers, folders, glue sticks, scissors, rulers, backpacks (new only)</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Clothing" data-es="Ropa">Clothing</h3>
+            <p style="font-size: 0.85rem;" data-en="New, packaged socks, underwear, sleepwear — for women and children of all sizes. No used clothing." data-es="Calcetines, ropa interior y pijamas nuevos y empaquetados para mujeres y niños de todas las tallas. Sin ropa usada.">New, packaged socks, underwear, sleepwear — for women and children of all sizes. No used clothing.</p>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="First Aid" data-es="Primeros Auxilios">First Aid</h3>
+            <p style="font-size: 0.85rem;" data-en="Sealed bandages, gauze, antiseptic wipes, antibiotic ointment, pain relievers, digital thermometer" data-es="Vendajes sellados, gasas, toallitas antisépticas, ungüento antibiótico, analgésicos, termómetro digital">Sealed bandages, gauze, antiseptic wipes, antibiotic ointment, pain relievers, digital thermometer</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.5rem;">
+          <a href="care-kit.html" class="btn btn-secondary" data-en="Full Donation Guidelines" data-es="Pautas Completas de Donación">Full Donation Guidelines</a>
+          <a href="donate-supplies.html" class="btn btn-primary" style="margin-left: 0.75rem;" data-en="Mail a Donation" data-es="Enviar una Donación">Mail a Donation</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- STAY UPDATED -->
+    <section class="section-sm" style="background: var(--purple-pale);">
+      <div class="container" style="max-width: 600px; text-align: center;">
+        <span class="tag tag-purple" data-en="Stay in the Loop" data-es="Mantente Informado">Stay in the Loop</span>
+        <h2 data-en="Get Drive Updates by Email" data-es="Recibe Actualizaciones de Colectas por Correo">Get Drive Updates by Email</h2>
+        <p data-en="We'll let you know when drop-off locations go live, when a new drive kicks off, and how your donations made a difference." data-es="Te avisaremos cuando se publiquen los puntos de entrega, cuando comience una nueva colecta y cómo tus donaciones marcaron la diferencia.">We'll let you know when drop-off locations go live, when a new drive kicks off, and how your donations made a difference.</p>
+
+        <div id="drives-signup-success" class="form-success" style="display:none; margin-top:1rem;">
+          <div class="success-check"></div>
+          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+          <h3 data-en="You're signed up!" data-es="¡Estás suscrito!">You're signed up!</h3>
+          <p data-en="We'll be in touch when locations are posted and drives go live." data-es="Te avisaremos cuando se publiquen las ubicaciones y comiencen las colectas.">We'll be in touch when locations are posted and drives go live.</p>
+        </div>
+
+        <form action="https://formspree.io/f/mlgvpjnl" method="POST" data-formspree data-success-target="drives-signup-success" style="margin-top: 1.25rem;">
+          <input type="hidden" name="_subject" value="Drive Updates Sign-Up" />
+          <input type="hidden" name="form_type" value="drive-updates" />
+          <div class="mailing-row">
+            <input type="text" name="first_name" placeholder="First name" data-en-placeholder="First name" data-es-placeholder="Nombre" required />
+            <input type="email" name="email" placeholder="Email address" data-en-placeholder="Email address" data-es-placeholder="Correo electrónico" required />
+            <button type="submit" class="btn btn-primary" data-en="Sign Me Up" data-es="Suscribirme">Sign Me Up</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <ul>
+            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
+            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
+            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
+            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <ul>
+            <li><a href="get-help.html"        data-en="Get Help"       data-es="Obtener Ayuda">Get Help</a></li>
+            <li><a href="resources.html"       data-en="Resources"      data-es="Recursos">Resources</a></li>
+            <li><a href="contact.html"         data-en="Contact"        data-es="Contacto">Contact</a></li>
+            <li><a href="donate-supplies.html" data-en="Donate"         data-es="Donar">Donate</a></li>
+            <li><a href="drives.html"          data-en="Drives"         data-es="Colectas">Drives</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

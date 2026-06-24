@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accepted Donations — The Women and Children Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #e8e0f0;
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+      min-height: 100vh;
+    }
+
+    .page {
+      width: 816px;
+      background: #fff;
+      box-shadow: 0 12px 48px rgba(92,45,145,0.2);
+    }
+
+    /* HEADER */
+    .page-header {
+      background: linear-gradient(135deg, #3D1A6B 0%, #5C2D91 60%, #4A7EC4 100%);
+      padding: 22px 36px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-left { display: flex; align-items: center; gap: 14px; }
+    .header-left img { height: 44px; filter: brightness(0) invert(1); }
+    .header-org {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.5;
+    }
+    .header-org strong { display: block; color: #fff; font-size: 12px; letter-spacing: 0.05em; }
+    .header-right { text-align: right; }
+    .header-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .header-subtitle {
+      font-size: 9.5px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 3px;
+    }
+
+    /* RULE STRIP */
+    .rule-strip {
+      background: #f2ebfd;
+      border-bottom: 2px solid #5C2D91;
+      padding: 10px 36px;
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .rule-item {
+      font-size: 9.5px;
+      font-weight: 600;
+      color: #3D1A6B;
+      letter-spacing: 0.04em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .rule-item::before {
+      content: '✓';
+      color: #5C2D91;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    /* BODY */
+    .page-body {
+      padding: 20px 36px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 28px;
+    }
+
+    /* CATEGORY */
+    .category { margin-bottom: 16px; break-inside: avoid; }
+    .cat-header {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 6px;
+      padding-bottom: 5px;
+      border-bottom: 1.5px solid #5C2D91;
+    }
+    .cat-label {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #5C2D91;
+    }
+    .cat-list { list-style: none; display: flex; flex-direction: column; gap: 2px; }
+    .cat-list li {
+      font-size: 9.5px;
+      color: #2a2540;
+      line-height: 1.4;
+      padding: 2.5px 0 2.5px 13px;
+      position: relative;
+      border-bottom: 1px dotted #e4daf5;
+    }
+    .cat-list li::before {
+      content: '·';
+      position: absolute;
+      left: 4px;
+      color: #5C2D91;
+      font-weight: 700;
+    }
+    .cat-list li span {
+      color: #7a6898;
+      font-style: italic;
+      font-size: 8.5px;
+    }
+
+    /* DO NOT BOX */
+    .do-not {
+      grid-column: 1 / span 2;
+      background: #fff5f5;
+      border: 1.5px solid #f0b4b4;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-top: 4px;
+    }
+    .do-not-header {
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #b91c1c;
+      margin-bottom: 7px;
+    }
+    .do-not-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px 20px;
+    }
+    .do-not-grid li {
+      list-style: none;
+      font-size: 9px;
+      color: #7a2424;
+      padding-left: 11px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .do-not-grid li::before {
+      content: '✗';
+      position: absolute;
+      left: 0;
+      color: #b91c1c;
+      font-size: 8px;
+    }
+
+    /* FOOTER */
+    .page-footer {
+      background: #3D1A6B;
+      padding: 10px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .page-footer p { font-size: 9px; color: rgba(255,255,255,0.65); }
+    .page-footer strong { color: #fff; }
+
+    @media print {
+      @page { margin: 0; size: letter portrait; }
+      body { background: none; padding: 0; }
+      .page { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <div class="page-header">
+    <div class="header-left">
+      <img src="images/logo-cropped.png" alt="TWCF" />
+      <div class="header-org">
+        <strong>The Women and Children Foundation</strong>
+        thewomenandchildrenfoundation.org
+      </div>
+    </div>
+    <div class="header-right">
+      <div class="header-title">Accepted Donations</div>
+      <div class="header-subtitle">Comfort &amp; Care Drive · June 21 – July 5, 2026</div>
+    </div>
+  </div>
+
+  <div class="rule-strip">
+    <span class="rule-item">All items must be new &amp; unused</span>
+    <span class="rule-item">Factory sealed — never repacked</span>
+    <span class="rule-item">Expiration dates 60+ days out</span>
+    <span class="rule-item">No glass containers</span>
+    <span class="rule-item">No prescription medications</span>
+    <span class="rule-item">No homemade items of any kind</span>
+  </div>
+
+  <div class="page-body">
+
+    <!-- COL 1 -->
+
+    <div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Hygiene &amp; Personal Care</span></div>
+        <ul class="cat-list">
+          <li>Toothbrush <span>(adult or child-sized, any brand)</span></li>
+          <li>Toothpaste <span>(4–6 oz tube)</span></li>
+          <li>Bar soap <span>(individually wrapped)</span></li>
+          <li>Body wash <span>(8–18 oz; unscented preferred)</span></li>
+          <li>Shampoo <span>(8–32 oz, any hair type)</span></li>
+          <li>Conditioner or 2-in-1 <span>(8–32 oz)</span></li>
+          <li>Deodorant <span>(stick, roll-on, or spray; unscented preferred)</span></li>
+          <li>Cleansing / baby wipes <span>(unscented; fragrance-free for infant kits)</span></li>
+          <li>Lotion <span>(8–16 oz; unscented preferred)</span></li>
+          <li>Lip balm <span>(any brand; sealed)</span></li>
+          <li>Face wash / cleanser <span>(any brand, sealed)</span></li>
+          <li>Dry shampoo <span>(travel or full-size, sealed)</span></li>
+          <li>Razor &amp; shaving cream <span>(disposable, packaged)</span></li>
+          <li>Nail clippers <span>(packaged)</span></li>
+          <li>Cotton balls or rounds <span>(sealed bag)</span></li>
+          <li>Q-tips <span>(sealed box)</span></li>
+          <li>Tissues <span>(travel packs or full box)</span></li>
+          <li>Hair ties / elastics <span>(multi-pack)</span></li>
+          <li>Comb or brush <span>(any style)</span></li>
+          <li>Hair clips or bobby pins <span>(packaged)</span></li>
+          <li>Hand sanitizer <span>(2 oz+; minimum 60% alcohol)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Feminine &amp; Period Products</span></div>
+        <ul class="cat-list">
+          <li>Pads <span>(regular, heavy, or overnight; individually wrapped)</span></li>
+          <li>Tampons <span>(regular or super; applicator style preferred)</span></li>
+          <li>Panty liners <span>(any brand, sealed pack)</span></li>
+          <li>Menstrual cups <span>(new, sealed in original packaging)</span></li>
+          <li>Period underwear <span>(new, in original packaging only)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Food — Shelf-Stable Only</span></div>
+        <ul class="cat-list">
+          <li>Granola bars / protein bars <span>(individually wrapped)</span></li>
+          <li>Crackers <span>(sealed package, any variety)</span></li>
+          <li>Nut butter packets <span>(single-serve squeeze packs)</span></li>
+          <li>Trail mix / mixed nuts <span>(sealed; no open bulk bags)</span></li>
+          <li>Dried fruit / raisins <span>(individually wrapped boxes preferred)</span></li>
+          <li>Fruit pouches <span>(shelf-stable; check expiration)</span></li>
+          <li>Applesauce cups <span>(plastic only, sealed; no glass)</span></li>
+          <li>Peanut butter crackers <span>(pre-packaged only)</span></li>
+          <li>Rice cakes <span>(sealed package)</span></li>
+          <li>Beef jerky / meat sticks <span>(sealed)</span></li>
+          <li>Oatmeal packets <span>(instant, individual)</span></li>
+          <li>Tuna / salmon pouches <span>(shelf-stable, sealed)</span></li>
+          <li>Soup cups <span>(shelf-stable, pull-tab lid; no glass)</span></li>
+          <li>Shelf-stable juice boxes <span>(sealed)</span></li>
+          <li>Bottled water <span>(sealed, factory bottled)</span></li>
+          <li>Hot cocoa or tea packets <span>(individually wrapped)</span></li>
+          <li>Instant coffee packets <span>(individually sealed)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Clothing — New in Original Packaging Only</span></div>
+        <ul class="cat-list">
+          <li>Socks — adult women's <span>(any size, crew or ankle)</span></li>
+          <li>Socks — children's <span>(any size)</span></li>
+          <li>Underwear — women's <span>(new, in original packaging)</span></li>
+          <li>Underwear — children's <span>(new, in original packaging)</span></li>
+          <li>Baby onesies <span>(new; sizes newborn–24M; any brand)</span></li>
+          <li>Baby sleepers / footie pajamas <span>(new; any size)</span></li>
+          <li>Baby socks <span>(new, packaged; any size)</span></li>
+          <li>Receiving blankets <span>(new, in original packaging)</span></li>
+          <li>Burp cloths <span>(new, packaged sets)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Baby &amp; Infant</span></div>
+        <ul class="cat-list">
+          <li>Diapers <span>(any brand; sizes NB, 1, 2, 3, 4, 5 — all needed)</span></li>
+          <li>Baby wipes <span>(unscented / fragrance-free required)</span></li>
+          <li>Diaper rash cream / ointment <span>(Desitin, A+D, or equivalent; sealed)</span></li>
+          <li>Baby formula <span>(sealed, factory packaged; check expiration — 60+ days)</span></li>
+          <li>Baby food pouches <span>(shelf-stable; check expiration)</span></li>
+          <li>Baby lotion <span>(unscented; fragrance-free preferred; sealed)</span></li>
+          <li>Baby shampoo / wash <span>(tear-free; unscented preferred; sealed)</span></li>
+          <li>Nursing pads <span>(disposable, individually wrapped or sealed pack)</span></li>
+          <li>Pacifiers <span>(new, sealed in original packaging; latex-free preferred)</span></li>
+          <li>Baby bottles <span>(new, sealed in original packaging)</span></li>
+          <li>Baby nail file or clippers <span>(new, packaged)</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- COL 2 -->
+
+    <div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">School &amp; Educational Supplies</span></div>
+        <ul class="cat-list">
+          <li>Notebooks <span>(spiral or composition; any size)</span></li>
+          <li>Folders <span>(plastic or cardstock; any color)</span></li>
+          <li>Pencils <span>(#2; sharpened or unsharpened)</span></li>
+          <li>Pens <span>(ballpoint; blue or black preferred)</span></li>
+          <li>Crayons <span>(8, 16, or 24-count; Crayola or equivalent)</span></li>
+          <li>Colored pencils <span>(12-count or more)</span></li>
+          <li>Markers <span>(washable preferred for children under 10)</span></li>
+          <li>Erasers <span>(pink block or cap)</span></li>
+          <li>Rulers <span>(12-inch; plastic or wood)</span></li>
+          <li>Scissors <span>(blunt-tip for children; standard for adults)</span></li>
+          <li>Glue sticks <span>(Elmer's or equivalent; any size)</span></li>
+          <li>Highlighters <span>(any color, sealed)</span></li>
+          <li>Index cards <span>(any size, packaged)</span></li>
+          <li>Sticky notes <span>(any size, sealed)</span></li>
+          <li>Pencil pouches / cases <span>(zipper closure, any style)</span></li>
+          <li>Backpacks <span>(new only; any size or style)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Children's Items</span></div>
+        <ul class="cat-list">
+          <li>Stuffed animals <span>(new only; no button eyes for hospital kits)</span></li>
+          <li>Coloring books <span>(age-appropriate; any theme)</span></li>
+          <li>Children's books <span>(new preferred; gently used OK for non-hospital)</span></li>
+          <li>Small toys <span>(new &amp; sealed in original packaging only)</span></li>
+          <li>Activity books / puzzle books <span>(new and complete)</span></li>
+          <li>Sticker sheets <span>(new, sealed)</span></li>
+          <li>Play-Doh <span>(sealed; new)</span></li>
+          <li>Simple card games <span>(new, sealed)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">First Aid &amp; Medical</span></div>
+        <ul class="cat-list">
+          <li>Adhesive bandages <span>(assorted sizes; sealed box; major brand)</span></li>
+          <li>Gauze pads <span>(sterile, individually wrapped; 2×2 or 4×4 in.)</span></li>
+          <li>Medical tape <span>(standard roll; paper or cloth)</span></li>
+          <li>Antiseptic wipes <span>(individually wrapped packets)</span></li>
+          <li>Antibiotic ointment <span>(Neosporin or equivalent; sealed tube)</span></li>
+          <li>Ibuprofen <span>(factory-sealed; 50ct+; check expiration)</span></li>
+          <li>Acetaminophen <span>(factory-sealed; 50ct+; check expiration)</span></li>
+          <li>Digital thermometer <span>(new in box; batteries included or noted)</span></li>
+          <li>Cold / hot packs <span>(sealed; new)</span></li>
+          <li>Disposable gloves <span>(box, new, sealed)</span></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <div class="cat-header"><span class="cat-label">Other Appreciated Items</span></div>
+        <ul class="cat-list">
+          <li>Encouragement cards or handwritten notes</li>
+          <li>Small blank journals <span>(new)</span></li>
+          <li>Reusable tote bags <span>(new)</span></li>
+          <li>Drawstring bags <span>(new)</span></li>
+          <li>Small flashlights <span>(new; batteries included)</span></li>
+          <li>Laundry detergent pods <span>(travel pack, sealed)</span></li>
+          <li>Stain remover pen <span>(Tide-to-Go or equivalent; new)</span></li>
+          <li>Multi-purpose cleaning wipes <span>(sealed canister or pack)</span></li>
+          <li>Safety pins <span>(carded, new)</span></li>
+          <li>Travel umbrella <span>(new, packaged)</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- DO NOT INCLUDE -->
+    <div class="do-not">
+      <div class="do-not-header">Do Not Include</div>
+      <ul class="do-not-grid">
+        <li>Used or open items of any kind</li>
+        <li>Prescription or controlled medications</li>
+        <li>Supplements, vitamins, or herbal remedies</li>
+        <li>Expired food, medicine, or personal care</li>
+        <li>Homemade food or DIY personal care products</li>
+        <li>Items without visible expiration dates</li>
+        <li>Glass containers of any kind</li>
+        <li>Perishable food or items needing refrigeration</li>
+        <li>Strongly scented products (shelter kits)</li>
+        <li>Used clothing, bedding, or towels</li>
+        <li>Partially used bottles or open packaging</li>
+        <li>Loose, unlabeled, or bulk-packaged items</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <p>Questions? <strong>hello@thewomenandchildrenfoundation.org</strong> · <strong>(517) 836-1504</strong></p>
+    <p><strong>thewomenandchildrenfoundation.org</strong></p>
+  </div>
+
+</div>
+</body>
+</html>
