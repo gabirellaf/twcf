@@ -297,10 +297,13 @@ const DONATE_PRICES = {
   'donate-1250': { en: 'Fund a pallet of care kits shipped internationally', es: 'Financia un tarima de kits de cuidado enviada internacionalmente', amount: 1250 },
 };
 
-function startEmbeddedCheckout({ type, slug, customAmount, containerEl, errorEl, loadingEl }) {
+// `campaign` is optional: pass a campaign id (e.g. 'dzaleka_shipping_2026')
+// to designate the gift. The server only accepts allowlisted campaign ids.
+// Campaign pages pass `customAmount` with no slug.
+function startEmbeddedCheckout({ type, slug, customAmount, campaign, containerEl, errorEl, loadingEl }) {
   let amount;
 
-  if (slug === 'donate-custom') {
+  if (slug === 'donate-custom' || slug === undefined) {
     amount = Number(customAmount);
   } else {
     amount = Number(DONATE_PRICES[slug]?.amount);
@@ -308,17 +311,18 @@ function startEmbeddedCheckout({ type, slug, customAmount, containerEl, errorEl,
 
   if (!Number.isFinite(amount) || amount < 1) {
     if (errorEl) errorEl.textContent = 'Please choose a valid donation amount.';
-    return;
+    return Promise.resolve(false);
   }
 
-  fetch('https://thewomenandchildrenfoundation.org/api/create-donation-intent', {
+  const requestBody = { amount: Math.round(amount * 100) };
+  if (campaign) requestBody.campaign = campaign;
+
+  return fetch('https://thewomenandchildrenfoundation.org/api/create-donation-intent', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-    amount: Math.round(amount * 100)
-    })
+    body: JSON.stringify(requestBody)
   })
     .then(r => r.json())
     .then(data => {
@@ -330,11 +334,14 @@ function startEmbeddedCheckout({ type, slug, customAmount, containerEl, errorEl,
         'twcfDonationPayment',
         JSON.stringify({
           clientSecret: data.clientSecret,
-          amount: data.amount
+          amount: data.amount,
+          campaign: campaign && data.campaignName ? campaign : null,
+          campaignName: campaign ? data.campaignName || null : null
         })
       );
 
       window.location.href = '/checkout.html';
+      return true;
     })
     .catch(error => {
       console.error(error);
@@ -345,6 +352,7 @@ function startEmbeddedCheckout({ type, slug, customAmount, containerEl, errorEl,
         errorEl.textContent =
           error.message || 'Something went wrong starting checkout. Please try again.';
       }
+      return false;
     });
 }
 

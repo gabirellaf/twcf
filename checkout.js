@@ -50,6 +50,26 @@ function initialize() {
 
   donationAmountLabel.textContent = formatMoney(payment.amount);
 
+  // Designated campaign gifts: show the fund before the donor confirms, and
+  // send "Back" to the campaign page rather than the general Donate page.
+  const campaignPages = {
+    dzaleka_shipping_2026: "/dzaleka-shipping-fund.html#donate"
+  };
+
+  if (payment.campaign && payment.campaignName) {
+    document.querySelector("#donation-campaign").textContent = payment.campaignName;
+    document.querySelector("#donation-designation").hidden = false;
+    document.querySelector("#impact-note").textContent =
+      `Your gift is designated to the ${payment.campaignName}, which covers transport and import logistics for donated care kits. This is a one-time gift.`;
+
+    const backHref = campaignPages[payment.campaign];
+    if (backHref) {
+      document.querySelectorAll(".back-link, .brand").forEach(link => {
+        link.setAttribute("href", backHref);
+      });
+    }
+  }
+
   const appearance = {
     theme: "flat",
     variables: {

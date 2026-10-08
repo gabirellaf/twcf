@@ -9,6 +9,8 @@
  *                          donate.html -> checkout.html -> complete.html
  *                          sessionStorage key: twcfDonationPayment
  *                          Stripe metadata: { type: 'donation' }
+ *                          Optional campaign designation (allowlisted below):
+ *                          metadata: { campaign_id, campaign_name }
  *
  *   Kit sponsorships     -> /api/create-kit-intent, /api/kit-payment-status
  *                          sponsor.html -> kit-checkout.html -> kit-complete.html
@@ -31,6 +33,22 @@ const KIT_PRICES = {
   'home-start':                  { amount: 10000, name: 'Sponsor a Home Start Kit' },
   'dzaleka-childrens-education': { amount: 1500,  name: "Sponsor a Children's Education & Comfort Kit for Dzaleka" },
   'dzaleka-baby-maternal':       { amount: 3000,  name: 'Sponsor a Baby & Maternal Care Kit for Dzaleka' },
+};
+
+/**
+ * Donation campaigns a gift may be designated to. The client sends only a
+ * campaign id; anything not listed here (or not active) is rejected, so a
+ * gift can never be tagged with an arbitrary campaign. Donations sent
+ * without a campaign stay general, undesignated donations.
+ *
+ * status: 'active' | 'paused' | 'funded' | 'complete' — only 'active'
+ * accepts new designated gifts.
+ */
+const DONATION_CAMPAIGNS = {
+  dzaleka_shipping_2026: {
+    name: 'Dzaleka Relief Shipping Fund',
+    status: 'active',
+  },
 };
 
 function json(data, status = 200) {
@@ -93,13 +111,37 @@ async function handleCreateDonationIntent(request, env) {
     );
   }
 
+  const campaignId = body?.campaign;
+  let campaign = null;
+
+  if (campaignId !== undefined && campaignId !== null) {
+    campaign =
+      typeof campaignId === 'string' &&
+      Object.hasOwn(DONATION_CAMPAIGNS, campaignId)
+        ? DONATION_CAMPAIGNS[campaignId]
+        : null;
+
+    if (!campaign) {
+      return json({ error: 'Unknown donation campaign.' }, 400);
+    }
+
+    if (campaign.status !== 'active') {
+      return json(
+        { error: `${campaign.name} is not accepting donations right now.` },
+        400
+      );
+    }
+  }
+
   const params = new URLSearchParams();
 
   params.set('amount', String(amount));
   params.set('currency', 'usd');
   params.set(
     'description',
-    'Donation to The Women and Children Foundation'
+    campaign
+      ? `Donation to The Women and Children Foundation — ${campaign.name}`
+      : 'Donation to The Women and Children Foundation'
   );
   params.set(
     'automatic_payment_methods[enabled]',
@@ -109,6 +151,11 @@ async function handleCreateDonationIntent(request, env) {
     'metadata[type]',
     'donation'
   );
+
+  if (campaign) {
+    params.set('metadata[campaign_id]', campaignId);
+    params.set('metadata[campaign_name]', campaign.name);
+  }
 
   try {
     const paymentIntent = await stripeFetch(
@@ -121,6 +168,7 @@ async function handleCreateDonationIntent(request, env) {
     return json({
       clientSecret: paymentIntent.client_secret,
       amount: paymentIntent.amount,
+      campaignName: campaign ? campaign.name : null,
     });
   } catch (e) {
     return json({ error: e.message }, 500);
@@ -219,10 +267,18 @@ async function handleDonationStatus(request, env) {
       return json({ error: 'Not a donation payment' }, 400);
     }
 
+    const campaignId = paymentIntent.metadata?.campaign_id;
+    const campaign =
+      campaignId && Object.hasOwn(DONATION_CAMPAIGNS, campaignId)
+        ? DONATION_CAMPAIGNS[campaignId]
+        : null;
+
     return json({
       status: paymentIntent.status,
       amount: paymentIntent.amount,
-      currency: paymentIntent.currency
+      currency: paymentIntent.currency,
+      campaignId: campaign ? campaignId : null,
+      campaignName: campaign ? campaign.name : null,
     });
 
   } catch (e) {

@@ -84,6 +84,34 @@
       line-height: 1.65;
     }
     .tax-deductible-note strong { color: var(--purple); }
+    .campaign-choice {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      margin-bottom: 1.25rem;
+      padding: 1rem 1.1rem;
+      border: 1.5px solid var(--purple);
+      border-radius: var(--radius-lg);
+      background: var(--purple-pale);
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+    .campaign-choice:hover { color: var(--muted); box-shadow: var(--shadow); }
+    .campaign-choice strong { color: var(--purple); font-size: 1.02rem; }
+    .campaign-choice-label {
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--pink-dark);
+    }
+    .general-fund-label {
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text);
+    }
   </style>
 </head>
 <body>
@@ -109,6 +137,7 @@
             <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
             <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
             <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="dzaleka-shipping-fund.html" data-en="Dzaleka Shipping Fund" data-es="Fondo de Envío para Dzaleka">Dzaleka Shipping Fund</a></li>
           </ul>
         </li>
 
@@ -167,6 +196,13 @@
       <div class="container" style="max-width: 560px;">
 
         <div id="donate-picker">
+          <a href="dzaleka-shipping-fund.html#donate" class="campaign-choice">
+            <span class="campaign-choice-label" data-en="Current campaign" data-es="Campaña actual">Current campaign</span>
+            <strong data-en="Dzaleka Relief Shipping Fund" data-es="Fondo de Envío de Ayuda para Dzaleka">Dzaleka Relief Shipping Fund</strong>
+            <span data-en="Want your gift to go toward shipping 1,000 care kits to Dzaleka Refugee Camp, Malawi? Give to this fund →" data-es="¿Quieres que tu donación se destine al envío de 1,000 kits de cuidado al Campo de Refugiados Dzaleka, Malaui? Dona a este fondo →">Want your gift to go toward shipping 1,000 care kits to Dzaleka Refugee Camp, Malawi? Give to this fund →</span>
+          </a>
+          <p class="general-fund-label" data-en="Or make a general donation below, used where it's needed most:" data-es="O haz una donación general abajo, usada donde más se necesite:">Or make a general donation below, used where it's needed most:</p>
+
           <div class="tax-deductible-note"
                data-en="<strong>Tax-deductible:</strong> Donations made through this page are charitable contributions and are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for donations made on this page."
                data-es="<strong>Deducible de impuestos:</strong> Las donaciones realizadas a través de esta página son contribuciones benéficas y son deducibles de impuestos en la medida permitida por la ley. No se proporcionan bienes ni servicios a cambio de las donaciones realizadas en esta página.">
@@ -228,6 +264,7 @@
           <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
             <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="dzaleka-shipping-fund.html" data-en="Dzaleka Shipping Fund" data-es="Fondo de Envío para Dzaleka">Dzaleka Shipping Fund</a></li>
             <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
             <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
             <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>

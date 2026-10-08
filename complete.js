@@ -19,7 +19,11 @@ async function verifyDonation() {
 
     if (!response.ok) throw new Error(data.error || "Unable to verify donation.");
 
-    if (data.status === "succeeded") {
+    if (data.status === "succeeded" && data.campaignName) {
+      title.textContent = "Thank you for your donation.";
+      copy.textContent =
+        `Your payment was successfully processed. Your gift is designated to the ${data.campaignName}. We’re grateful for your help getting care kits where they’re needed.`;
+    } else if (data.status === "succeeded") {
       title.textContent = "Thank you for your donation.";
       copy.textContent =
         "Your payment was successfully processed. We’re grateful for your support of The Women and Children Foundation.";
@@ -29,6 +33,11 @@ async function verifyDonation() {
     } else {
       title.textContent = "Your donation is not complete yet.";
       copy.textContent = "The payment was not marked successful.";
+    }
+
+    if (data.campaignId === "dzaleka_shipping_2026") {
+      link.setAttribute("href", "/dzaleka-shipping-fund.html");
+      link.textContent = "Return to the Dzaleka Relief Shipping Fund →";
     }
 
     link.style.display = "inline";

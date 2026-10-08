@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dzaleka Relief Shipping Fund | The Women and Children Foundation</title>
+  <meta name="description" content="Help The Women and Children Foundation fund transport of 1,000 care kits assembled in Michigan for women and children in Dzaleka Refugee Camp, Malawi." />
+  <link rel="canonical" href="https://thewomenandchildrenfoundation.org/dzaleka-shipping-fund" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="The Women and Children Foundation" />
+  <meta property="og:title" content="Help Us Deliver 1,000 Care Kits to Dzaleka" />
+  <meta property="og:description" content="Help The Women and Children Foundation fund transport of 1,000 care kits assembled in Michigan for women and children in Dzaleka Refugee Camp, Malawi." />
+  <meta property="og:url" content="https://thewomenandchildrenfoundation.org/dzaleka-shipping-fund" />
+  <meta property="og:image" content="https://thewomenandchildrenfoundation.org/images/carewin-team-visit.jpg" />
+  <meta property="og:image:alt" content="TWCF and Carewin Africa team members at the Carewin project site" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+  <style>
+    .fund-page { overflow-wrap: anywhere; }
+    .fund-page :is(a, button, summary):focus-visible,
+    .fund-page .amount-option input:focus-visible + .amount-card {
+      outline: 3px solid var(--pink);
+      outline-offset: 2px;
+    }
+    .fund-page [id] { scroll-margin-top: 96px; }
+
+    /* Hero */
+    .fund-hero-ctas { margin-top: 1.75rem; }
+    .fund-hero-note { margin-top: 1rem; font-size: 0.88rem !important; color: rgba(255,255,255,0.78) !important; }
+
+    .fund-page .fund-fine-print { font-size: 0.84rem; line-height: 1.6; color: var(--muted); }
+    .fund-intro { max-width: 62ch; margin: 0 auto; }
+
+    /* Goal + donation */
+    .fund-goal-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 1.5rem; align-items: start; }
+    .fund-goal-grid .card:hover { transform: none; }
+    .fund-goal-card { background: linear-gradient(160deg, var(--purple-pale), var(--white) 70%); }
+    .fund-goal-card .fund-goal-amount { font-family: 'Playfair Display', Georgia, serif; font-weight: 700; font-size: clamp(2.6rem, 7vw, 3.6rem); line-height: 1; color: var(--purple); }
+    .fund-goal-label { font-weight: 600; color: var(--text); margin: 0.35rem 0 1.25rem; font-size: 1rem !important; }
+    .fund-launch h3 { margin-bottom: 0.5rem; }
+    .fund-goal-context { color: var(--text); font-size: 0.95rem !important; margin-bottom: 0.75rem; }
+
+    .fund-progress { margin-bottom: 1rem; }
+    .fund-progress-track { height: 14px; border-radius: 999px; background: var(--white); border: 1px solid var(--border); overflow: hidden; }
+    .fund-progress-fill { height: 100%; width: 0; background: linear-gradient(90deg, var(--purple), var(--pink)); border-radius: 999px; }
+    .fund-progress-text { margin-top: 0.5rem; font-weight: 600; color: var(--text); }
+
+    .fund-designation { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.9rem 1.1rem; margin-bottom: 1.25rem; border-radius: var(--radius); background: var(--purple-pale); border-left: 4px solid var(--purple); }
+    .fund-designation span { font-size: 0.8rem; color: var(--muted); }
+    .fund-designation strong { color: var(--purple); font-size: 1.02rem; }
+
+    #fund-amount-form fieldset { border: 0; min-width: 0; }
+    #fund-amount-form legend { font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.65rem; }
+    .fund-amount-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.65rem; }
+    .amount-option { display: block; cursor: pointer; position: relative; }
+    .amount-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .amount-card { display: flex; align-items: center; justify-content: center; min-height: 56px; padding: 0.75rem 0.5rem; border: 1.5px solid var(--border); border-radius: var(--radius); background: var(--white); transition: border-color 0.15s, background 0.15s; }
+    .amount-option:hover .amount-card { border-color: var(--purple-light); }
+    .amount-option input:checked + .amount-card { border-color: var(--purple); background: var(--purple-pale); box-shadow: inset 0 0 0 1px var(--purple); }
+    .amount-card .amt { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.2rem; color: var(--purple); }
+
+    .fund-custom-panel { margin-top: 0.85rem; }
+    .fund-custom-panel[hidden] { display: none; }
+    .fund-custom-panel > label { display: block; margin-bottom: 0.45rem; font-size: 0.84rem; font-weight: 600; color: var(--text); }
+    .custom-amount-input-wrap { display: flex; align-items: center; gap: 0.55rem; background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius); padding: 0.65rem 0.8rem; margin-bottom: 0.35rem; }
+    .custom-amount-input-wrap:focus-within { border-color: var(--purple); box-shadow: 0 0 0 3px rgba(92,45,145,0.15); }
+    .custom-amount-input-wrap span { color: var(--purple); font-weight: 700; font-size: 1.05rem; }
+    .custom-amount-input-wrap input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; font: inherit; font-size: 1.05rem; color: var(--text); }
+
+    #fund-picker > .fund-fine-print { margin-top: 1rem; }
+    .fund-continue { width: 100%; margin-top: 1rem; white-space: normal; }
+    .fund-continue:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .fund-status { margin-top: 0.75rem; text-align: center; font-size: 0.9rem; }
+    .fund-status:empty, .fund-error:empty { display: none; }
+    .fund-error { margin-top: 0.75rem; text-align: center; font-size: 0.9rem; color: #9d243d; font-weight: 500; }
+
+    .tax-deductible-note { margin-top: 1.25rem; padding: 1rem 1.1rem; border: 1px solid var(--border); border-radius: var(--radius); background: var(--cream); }
+    .tax-deductible-note p { font-size: 0.84rem; line-height: 1.6; }
+    .tax-deductible-note p + p { margin-top: 0.5rem; }
+    .fund-page .fund-general-link { margin-top: 1rem; font-size: 0.88rem; text-align: center; }
+    .fund-general-link a { font-weight: 600; }
+
+    /* Route */
+    .fund-route { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; counter-reset: none; }
+    .fund-route li { position: relative; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 1.25rem 1rem; text-align: center; box-shadow: var(--shadow-sm); }
+    .fund-route li:not(:last-child)::after { content: '→'; position: absolute; right: -0.85rem; top: 50%; transform: translateY(-50%); color: var(--purple-light); font-weight: 700; z-index: 1; }
+    .fund-route-num { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 50%; background: var(--purple); color: var(--white); font-weight: 700; margin-bottom: 0.6rem; }
+    .fund-route p { color: var(--text); font-size: 0.9rem; font-weight: 500; line-height: 1.45; }
+    .fund-kits { margin-top: 2.5rem; }
+    .fund-kits .card h3 { margin-bottom: 0.4rem; }
+    .fund-photo { max-width: 760px; margin: 2.5rem auto 0; }
+    .fund-photo img { width: 100%; height: 300px; object-fit: cover; border-radius: var(--radius-lg); }
+    .fund-photo figcaption { margin-top: 0.6rem; text-align: center; font-size: 0.8rem; font-style: italic; color: var(--muted); }
+
+    /* Why */
+    .fund-costs:hover { transform: none; }
+    .fund-costs ul { list-style: none; display: grid; gap: 0.65rem; margin-top: 0.75rem; }
+    .fund-costs li { display: flex; gap: 0.65rem; color: var(--text); font-size: 0.95rem; }
+    .fund-costs li::before { content: '✓'; color: var(--pink); font-weight: 700; flex-shrink: 0; }
+    .fund-transparency { margin-top: 1.25rem; padding: 1.1rem 1.25rem; background: var(--pink-pale); border-left: 4px solid var(--pink); border-radius: var(--radius); }
+    .fund-transparency strong { color: var(--text); font-size: 0.9rem; }
+    .fund-transparency p { font-size: 0.92rem; margin-top: 0.3rem; }
+
+    /* Sponsors */
+    .fund-levels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.25rem; }
+    .fund-levels .fund-level-amount { font-family: 'Playfair Display', Georgia, serif; font-size: 1.9rem; font-weight: 700; color: var(--purple); line-height: 1.1; margin-bottom: 0.4rem; }
+    .fund-levels h3 { font-size: 1.05rem; color: var(--text); font-family: 'Inter', Arial, sans-serif; font-weight: 600; margin: 0; }
+    .fund-levels-note { max-width: 68ch; margin: 1.25rem auto 0; }
+
+    /* FAQ */
+    .fund-faq { display: grid; gap: 0.75rem; }
+    .fund-faq details { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+    .fund-faq summary { cursor: pointer; list-style: none; padding: 1rem 3rem 1rem 1.25rem; position: relative; font-weight: 600; color: var(--text); border-radius: var(--radius); }
+    .fund-faq summary::-webkit-details-marker { display: none; }
+    .fund-faq summary::after { content: '+'; position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--purple); font-size: 1.3rem; font-weight: 600; }
+    .fund-faq details[open] summary::after { content: '−'; }
+    .fund-faq details p { padding: 0 1.25rem 1.1rem; font-size: 0.94rem; }
+
+    /* Timeline */
+    .fund-timeline { list-style: none; display: grid; gap: 0.5rem; max-width: 460px; margin: 1.5rem auto 0; text-align: left; }
+    .fund-timeline li { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 0.7rem 1rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); }
+    .fund-timeline-label { color: var(--text); font-weight: 500; font-size: 0.92rem; }
+    .fund-timeline-state { flex-shrink: 0; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--cream); color: var(--muted); }
+    .fund-timeline li.is-active .fund-timeline-state { background: var(--purple-pale); color: var(--purple); }
+    .fund-timeline li.is-complete .fund-timeline-state { background: var(--pink-pale); color: var(--pink-dark); }
+
+    @media (max-width: 960px) {
+      .fund-goal-grid { grid-template-columns: 1fr; }
+      .fund-route { grid-template-columns: 1fr; max-width: 460px; margin: 0 auto; gap: 1.5rem; }
+      .fund-route li { display: flex; align-items: center; gap: 0.9rem; text-align: left; }
+      .fund-route-num { margin-bottom: 0; flex-shrink: 0; }
+      .fund-route li:not(:last-child)::after { content: '↓'; right: auto; left: 50%; top: auto; bottom: -1.35rem; transform: translateX(-50%); }
+      .fund-levels { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 768px) {
+      .fund-kits { grid-template-columns: 1fr; }
+      .fund-photo img { height: 220px; }
+    }
+    @media (max-width: 520px) {
+      .fund-amount-grid { grid-template-columns: repeat(2, 1fr); }
+      .fund-levels { grid-template-columns: 1fr; }
+      .fund-page .card { padding: 1.35rem; }
+      .donate-banner { padding: 2rem 1.25rem; }
+      .fund-page .btn-row .btn { width: 100%; white-space: normal; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="dzaleka-shipping-fund.html" data-en="Dzaleka Shipping Fund" data-es="Fondo de Envío para Dzaleka">Dzaleka Shipping Fund</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="fund-page">
+
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-hero" data-en="Dzaleka Relief Project" data-es="Proyecto de Ayuda para Dzaleka">Dzaleka Relief Project</span>
+        <h1 data-en="Help Us Deliver 1,000 Care Kits to Dzaleka" data-es="Ayúdanos a Entregar 1,000 Kits de Cuidado a Dzaleka">Help Us Deliver 1,000 Care Kits to Dzaleka</h1>
+        <p data-en="Volunteers in Michigan are preparing hygiene, maternal-care, and school-supply kits for women and children in Dzaleka Refugee Camp, Malawi. We have a local assembly effort and a receiving partner. Now we need the funding to move these donated supplies safely to the families they are intended to serve." data-es="Voluntarios en Míchigan están preparando kits de higiene, cuidado materno y útiles escolares para mujeres y niños en el Campo de Refugiados Dzaleka, Malaui. Tenemos un esfuerzo local de ensamblaje y un aliado receptor. Ahora necesitamos los fondos para trasladar estos artículos donados de manera segura a las familias a las que están destinados.">Volunteers in Michigan are preparing hygiene, maternal-care, and school-supply kits for women and children in Dzaleka Refugee Camp, Malawi. We have a local assembly effort and a receiving partner. Now we need the funding to move these donated supplies safely to the families they are intended to serve.</p>
+        <div class="btn-row fund-hero-ctas">
+          <a href="#donate" class="btn btn-primary" data-en="Help Fund Delivery" data-es="Ayuda a Financiar la Entrega">Help Fund Delivery</a>
+          <a href="#sponsor" class="btn btn-white" data-en="Become a Shipping Sponsor" data-es="Patrocina el Envío">Become a Shipping Sponsor</a>
+        </div>
+        <p class="fund-hero-note" data-en="A $20,000 preliminary goal based on current freight estimates. Final logistics and import charges are being confirmed." data-es="Una meta preliminar de $20,000 basada en estimaciones actuales de flete. Los costos finales de logística e importación se están confirmando.">A $20,000 preliminary goal based on current freight estimates. Final logistics and import charges are being confirmed.</p>
+      </div>
+    </section>
+
+    <!-- FUNDING GOAL + DONATION MODULE -->
+    <section class="section" id="donate">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="Dzaleka Relief Shipping Fund" data-es="Fondo de Envío de Ayuda para Dzaleka">Dzaleka Relief Shipping Fund</span>
+          <h2 data-en="The funding goal" data-es="La meta de recaudación">The funding goal</h2>
+        </div>
+
+        <div class="fund-goal-grid">
+          <div class="card fund-goal-card">
+            <p class="fund-goal-amount"><span>$20,000</span></p>
+            <p class="fund-goal-label" data-en="preliminary shipping goal" data-es="meta preliminar de envío">preliminary shipping goal</p>
+
+            <!-- Shown only when CAMPAIGN.public_progress_enabled is true and a
+                 total is configured (see CAMPAIGN in the script below). -->
+            <div id="fund-progress" class="fund-progress" hidden>
+              <div class="fund-progress-track" id="fund-progress-bar" role="progressbar" aria-valuemin="0" aria-labelledby="fund-progress-text">
+                <div class="fund-progress-fill" id="fund-progress-fill"></div>
+              </div>
+              <p class="fund-progress-text" id="fund-progress-text"></p>
+            </div>
+
+            <div id="fund-launch" class="fund-launch">
+              <h3 data-en="Help launch our shipping fund" data-es="Ayuda a lanzar nuestro fondo de envío">Help launch our shipping fund</h3>
+            </div>
+
+            <p class="fund-goal-context" data-en="About $20 per planned kit toward our initial transportation goal." data-es="Aproximadamente $20 por kit planeado para nuestra meta inicial de transporte.">About $20 per planned kit toward our initial transportation goal.</p>
+            <p class="fund-fine-print" data-en="This is a working fundraising target, not a final freight bill, and it may be adjusted as costs are confirmed. Suggested amounts are examples of gifts toward a pooled fund — not payment to ship a particular kit." data-es="Esta es una meta de recaudación de trabajo, no una factura final de flete, y puede ajustarse a medida que se confirmen los costos. Los montos sugeridos son ejemplos de donaciones a un fondo común, no un pago para enviar un kit en particular.">This is a working fundraising target, not a final freight bill, and it may be adjusted as costs are confirmed. Suggested amounts are examples of gifts toward a pooled fund — not payment to ship a particular kit.</p>
+          </div>
+
+          <div class="card fund-donate-card">
+            <div id="fund-picker">
+              <div class="fund-designation">
+                <span data-en="Your gift is designated to" data-es="Tu donación se destina al">Your gift is designated to</span>
+                <strong data-en="Dzaleka Relief Shipping Fund" data-es="Fondo de Envío de Ayuda para Dzaleka">Dzaleka Relief Shipping Fund</strong>
+              </div>
+
+              <form id="fund-amount-form" novalidate>
+                <fieldset>
+                  <legend data-en="Choose a one-time gift amount" data-es="Elige el monto de una donación única">Choose a one-time gift amount</legend>
+                  <div class="fund-amount-grid">
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="20" /><span class="amount-card"><span class="amt">$20</span></span></label>
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="50" /><span class="amount-card"><span class="amt">$50</span></span></label>
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="100" /><span class="amount-card"><span class="amt">$100</span></span></label>
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="250" /><span class="amount-card"><span class="amt">$250</span></span></label>
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="1000" /><span class="amount-card"><span class="amt">$1,000</span></span></label>
+                    <label class="amount-option"><input type="radio" name="fund-amount" value="custom" id="fund-custom-radio" /><span class="amount-card"><span class="amt" data-en="Custom" data-es="Otro monto">Custom</span></span></label>
+                  </div>
+                </fieldset>
+
+                <div id="fund-custom-panel" class="fund-custom-panel" hidden>
+                  <label for="fund-custom-input" data-en="Donation amount (USD)" data-es="Monto de la donación (USD)">Donation amount (USD)</label>
+                  <div class="custom-amount-input-wrap">
+                    <span aria-hidden="true">$</span>
+                    <input type="number" id="fund-custom-input" min="1" max="100000" step="0.01" inputmode="decimal" placeholder="25.00" aria-describedby="fund-custom-hint" />
+                  </div>
+                  <p id="fund-custom-hint" class="fund-fine-print" data-en="Enter an amount between $1 and $100,000." data-es="Ingresa un monto entre $1 y $100,000.">Enter an amount between $1 and $100,000.</p>
+                </div>
+              </form>
+
+              <p class="fund-fine-print" data-en="This is a one-time gift. We are not offering recurring gifts for this fund." data-es="Esta es una donación única. No ofrecemos donaciones recurrentes para este fondo.">This is a one-time gift. We are not offering recurring gifts for this fund.</p>
+
+              <button id="fund-continue-btn" class="btn btn-primary fund-continue" type="button" disabled data-en="Continue to Secure Payment" data-es="Continuar al Pago Seguro">Continue to Secure Payment</button>
+
+              <p id="fund-status" class="fund-status" role="status" aria-live="polite"></p>
+              <p id="fund-error" class="fund-error" role="alert"></p>
+            </div>
+
+            <div class="tax-deductible-note">
+              <p data-en="The Women and Children Foundation is a U.S. 501(c)(3) public charity. Contributions are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for this gift. Michigan Charitable Solicitation Registration #71710." data-es="The Women and Children Foundation es una organización benéfica pública 501(c)(3) de EE. UU. Las contribuciones son deducibles de impuestos en la medida permitida por la ley. No se proporcionan bienes ni servicios a cambio de esta donación. Registro de Solicitación Benéfica de Míchigan #71710.">The Women and Children Foundation is a U.S. 501(c)(3) public charity. Contributions are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for this gift. Michigan Charitable Solicitation Registration #71710.</p>
+              <p data-en="Payments are processed securely by Stripe. TWCF never receives or stores your card number. Questions? Email &lt;a href=&quot;mailto:hello@thewomenandchildrenfoundation.org?subject=Dzaleka%20Shipping%20Fund&quot;&gt;hello@thewomenandchildrenfoundation.org&lt;/a&gt;." data-es="Los pagos se procesan de forma segura a través de Stripe. TWCF nunca recibe ni almacena el número de tu tarjeta. ¿Preguntas? Escribe a &lt;a href=&quot;mailto:hello@thewomenandchildrenfoundation.org?subject=Dzaleka%20Shipping%20Fund&quot;&gt;hello@thewomenandchildrenfoundation.org&lt;/a&gt;.">Payments are processed securely by Stripe. TWCF never receives or stores your card number. Questions? Email <a href="mailto:hello@thewomenandchildrenfoundation.org?subject=Dzaleka%20Shipping%20Fund">hello@thewomenandchildrenfoundation.org</a>.</p>
+            </div>
+
+            <p class="fund-general-link" data-en="Prefer to support all of TWCF's work? &lt;a href=&quot;donate.html&quot;&gt;Make a general donation →&lt;/a&gt;" data-es="¿Prefieres apoyar todo el trabajo de TWCF? &lt;a href=&quot;donate.html&quot;&gt;Haz una donación general →&lt;/a&gt;">Prefer to support all of TWCF's work? <a href="donate.html">Make a general donation →</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHERE SUPPLIES COME FROM AND GO -->
+    <section class="section" style="background: var(--purple-pale);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Michigan to Malawi" data-es="De Míchigan a Malaui">Michigan to Malawi</span>
+          <h2 data-en="Where the supplies come from — and where they go" data-es="De dónde vienen los artículos y adónde van">Where the supplies come from — and where they go</h2>
+        </div>
+
+        <ol class="fund-route">
+          <li><span class="fund-route-num" aria-hidden="true">1</span><p data-en="Donations &amp; supplies collected in Michigan" data-es="Donaciones y artículos recolectados en Míchigan">Donations &amp; supplies collected in Michigan</p></li>
+          <li><span class="fund-route-num" aria-hidden="true">2</span><p data-en="Volunteers assemble and prepare 1,000 kits" data-es="Voluntarios ensamblan y preparan 1,000 kits">Volunteers assemble and prepare 1,000 kits</p></li>
+          <li><span class="fund-route-num" aria-hidden="true">3</span><p data-en="Freight and customs coordinated and prepaid by TWCF" data-es="Flete y aduanas coordinados y prepagados por TWCF">Freight and customs coordinated and prepaid by TWCF</p></li>
+          <li><span class="fund-route-num" aria-hidden="true">4</span><p data-en="Carewin receives the shipment in Malawi" data-es="Carewin recibe el envío en Malaui">Carewin receives the shipment in Malawi</p></li>
+          <li><span class="fund-route-num" aria-hidden="true">5</span><p data-en="Carewin distributes the kits in Dzaleka" data-es="Carewin distribuye los kits en Dzaleka">Carewin distributes the kits in Dzaleka</p></li>
+        </ol>
+
+        <div class="grid-3 fund-kits">
+          <div class="card">
+            <span class="tag tag-purple" data-en="Planned: approx. 300" data-es="Planeados: aprox. 300">Planned: approx. 300</span>
+            <h3 data-en="Women's Dignity &amp; Hygiene Kits" data-es="Kits de Dignidad e Higiene para Mujeres">Women's Dignity &amp; Hygiene Kits</h3>
+            <p data-en="Hygiene and dignity essentials." data-es="Artículos esenciales de higiene y dignidad.">Hygiene and dignity essentials.</p>
+          </div>
+          <div class="card">
+            <span class="tag tag-purple" data-en="Planned: approx. 200" data-es="Planeados: aprox. 200">Planned: approx. 200</span>
+            <h3 data-en="Baby &amp; Maternal Care Kits" data-es="Kits de Cuidado para Bebé y Madre">Baby &amp; Maternal Care Kits</h3>
+            <p data-en="Infant and postpartum essentials." data-es="Artículos esenciales para bebés y posparto.">Infant and postpartum essentials.</p>
+          </div>
+          <div class="card">
+            <span class="tag tag-purple" data-en="Planned: approx. 500" data-es="Planeados: aprox. 500">Planned: approx. 500</span>
+            <h3 data-en="Children's Education &amp; Comfort Kits" data-es="Kits de Educación y Confort para Niños">Children's Education &amp; Comfort Kits</h3>
+            <p data-en="Backpacks, school materials, and comfort items." data-es="Mochilas, útiles escolares y artículos de confort.">Backpacks, school materials, and comfort items.</p>
+          </div>
+        </div>
+        <p class="fund-fine-print text-center" style="margin-top: 1rem;" data-en="Quantities are planned and approximate. These kits have not yet shipped." data-es="Las cantidades son planeadas y aproximadas. Estos kits aún no se han enviado.">Quantities are planned and approximate. These kits have not yet shipped.</p>
+
+        <figure class="fund-photo">
+          <img src="images/carewin-team-visit.jpg" alt="TWCF and Carewin Africa team members meeting at the Carewin Africa Women and Children Project site" loading="lazy" />
+          <figcaption data-en="TWCF and Carewin Africa team members at the Carewin project site. Photo courtesy of Carewin Africa Women and Children Foundation." data-es="Miembros de los equipos de TWCF y Carewin Africa en el sitio del proyecto de Carewin. Foto cortesía de Carewin Africa Women and Children Foundation.">TWCF and Carewin Africa team members at the Carewin project site. Photo courtesy of Carewin Africa Women and Children Foundation.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- WHY A SHIPPING FUND -->
+    <section class="section">
+      <div class="container" style="max-width: 820px;">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="Why a Shipping Fund?" data-es="¿Por Qué un Fondo de Envío?">Why a Shipping Fund?</span>
+          <h2 data-en="Donated supplies still have to make the journey." data-es="Los artículos donados aún tienen que hacer el viaje.">Donated supplies still have to make the journey.</h2>
+          <p data-en="Product donations solve only one part of a humanitarian shipment. Supplies must still be packed, transported, cleared through customs, and delivered to the receiving community. TWCF is fundraising for this transport chain so our partner in Malawi is not asked to pay any freight or arrival charges." data-es="Las donaciones de productos resuelven solo una parte de un envío humanitario. Los artículos aún deben empacarse, transportarse, pasar por la aduana y entregarse a la comunidad receptora. TWCF está recaudando fondos para esta cadena de transporte para que a nuestro aliado en Malaui no se le pida pagar ningún costo de flete o de llegada.">Product donations solve only one part of a humanitarian shipment. Supplies must still be packed, transported, cleared through customs, and delivered to the receiving community. TWCF is fundraising for this transport chain so our partner in Malawi is not asked to pay any freight or arrival charges.</p>
+        </div>
+
+        <div class="card fund-costs">
+          <h3 data-en="What the fund covers" data-es="Lo que cubre el fondo">What the fund covers</h3>
+          <ul>
+            <li data-en="Michigan collection and transport to the departure point" data-es="Recolección en Míchigan y transporte al punto de salida">Michigan collection and transport to the departure point</li>
+            <li data-en="International freight and documentation" data-es="Flete internacional y documentación">International freight and documentation</li>
+            <li data-en="Malawi customs/terminal handling and applicable duties or taxes" data-es="Aduanas/manejo en terminal en Malaui y aranceles o impuestos aplicables">Malawi customs/terminal handling and applicable duties or taxes</li>
+            <li data-en="Final delivery to Dzaleka" data-es="Entrega final en Dzaleka">Final delivery to Dzaleka</li>
+          </ul>
+        </div>
+
+        <div class="fund-transparency">
+          <strong data-en="Transparency note" data-es="Nota de transparencia">Transparency note</strong>
+          <p data-en="Recent preliminary door-to-door freight estimates were approximately $18,000–$19,500 before certain variable charges. The final amount may change depending on shipment dimensions, customs treatment, and final routing. We will update this page as those details are confirmed." data-es="Las estimaciones preliminares recientes de flete puerta a puerta fueron de aproximadamente $18,000–$19,500 antes de ciertos cargos variables. El monto final puede cambiar según las dimensiones del envío, el tratamiento aduanero y la ruta final. Actualizaremos esta página a medida que se confirmen esos detalles.">Recent preliminary door-to-door freight estimates were approximately $18,000–$19,500 before certain variable charges. The final amount may change depending on shipment dimensions, customs treatment, and final routing. We will update this page as those details are confirmed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUSINESS SPONSORSHIP -->
+    <section class="section" id="sponsor" style="background: var(--blush);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Shipping Sponsors" data-es="Patrocinadores del Envío">Shipping Sponsors</span>
+          <h2 data-en="Help Underwrite the Journey" data-es="Ayuda a Financiar el Trayecto">Help Underwrite the Journey</h2>
+          <p class="fund-intro" data-en="We're inviting businesses, community organizations, and individual supporters to help underwrite the cost of delivering these supplies. A contribution can cover a meaningful portion of freight, clearance, or final delivery—even when your business doesn't manufacture products we can put inside a kit." data-es="Invitamos a empresas, organizaciones comunitarias y simpatizantes individuales a ayudar a financiar el costo de entregar estos artículos. Una contribución puede cubrir una parte significativa del flete, el despacho aduanero o la entrega final, incluso si tu empresa no fabrica productos que podamos incluir en un kit.">We're inviting businesses, community organizations, and individual supporters to help underwrite the cost of delivering these supplies. A contribution can cover a meaningful portion of freight, clearance, or final delivery—even when your business doesn't manufacture products we can put inside a kit.</p>
+        </div>
+
+        <div class="fund-levels">
+          <div class="card text-center">
+            <p class="fund-level-amount">$5,000</p>
+            <h3 data-en="Lead shipping sponsor" data-es="Patrocinador principal del envío">Lead shipping sponsor</h3>
+          </div>
+          <div class="card text-center">
+            <p class="fund-level-amount">$1,000</p>
+            <h3 data-en="Shipping partner" data-es="Aliado del envío">Shipping partner</h3>
+          </div>
+          <div class="card text-center">
+            <p class="fund-level-amount">$250</p>
+            <h3 data-en="Community sponsor" data-es="Patrocinador comunitario">Community sponsor</h3>
+          </div>
+          <div class="card text-center">
+            <p class="fund-level-amount" data-en="Any amount" data-es="Cualquier monto">Any amount</p>
+            <h3 data-en="Give what you can" data-es="Da lo que puedas">Give what you can</h3>
+          </div>
+        </div>
+
+        <p class="fund-fine-print text-center fund-levels-note" data-en="These are suggested, non-exclusive giving levels — not promises of exclusive placement, advertising, or specific recognition. Sponsor recognition is optional, offered only with permission, and finalized with TWCF before any names or logos are displayed." data-es="Estos son niveles de donación sugeridos y no exclusivos; no son promesas de ubicación exclusiva, publicidad ni reconocimiento específico. El reconocimiento de patrocinadores es opcional, se ofrece solo con permiso y se finaliza con TWCF antes de mostrar cualquier nombre o logotipo.">These are suggested, non-exclusive giving levels — not promises of exclusive placement, advertising, or specific recognition. Sponsor recognition is optional, offered only with permission, and finalized with TWCF before any names or logos are displayed.</p>
+
+        <div class="btn-row" style="justify-content: center; margin-top: 1.75rem;">
+          <a href="mailto:hello@thewomenandchildrenfoundation.org?subject=Dzaleka%20Shipping%20Fund%20Sponsorship" class="btn btn-primary" data-en="Discuss a Sponsorship" data-es="Hablemos de un Patrocinio">Discuss a Sponsorship</a>
+          <a href="#donate" class="btn btn-secondary" data-en="Make a Contribution" data-es="Hacer una Contribución">Make a Contribution</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container" style="max-width: 820px;">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="FAQ" data-es="Preguntas Frecuentes">FAQ</span>
+          <h2 data-en="Questions about the shipping fund" data-es="Preguntas sobre el fondo de envío">Questions about the shipping fund</h2>
+        </div>
+
+        <div class="fund-faq">
+          <details>
+            <summary data-en="Why do donated supplies need financial support?" data-es="¿Por qué los artículos donados necesitan apoyo financiero?">Why do donated supplies need financial support?</summary>
+            <p data-en="Even donated items must be transported, documented, cleared, and delivered. These are expenses that product donations alone cannot cover." data-es="Incluso los artículos donados deben transportarse, documentarse, pasar por la aduana y entregarse. Estos son gastos que las donaciones de productos por sí solas no pueden cubrir.">Even donated items must be transported, documented, cleared, and delivered. These are expenses that product donations alone cannot cover.</p>
+          </details>
+          <details>
+            <summary data-en="Who prepares the kits?" data-es="¿Quién prepara los kits?">Who prepares the kits?</summary>
+            <p data-en="TWCF volunteers prepare the kits in Michigan before shipment." data-es="Los voluntarios de TWCF preparan los kits en Míchigan antes del envío.">TWCF volunteers prepare the kits in Michigan before shipment.</p>
+          </details>
+          <details>
+            <summary data-en="Who will receive and distribute them?" data-es="¿Quién los recibirá y distribuirá?">Who will receive and distribute them?</summary>
+            <p data-en="Carewin Africa Women and Children Foundation, our project partner serving families in Dzaleka Refugee Camp, Malawi, is the planned receiving and distribution partner." data-es="Carewin Africa Women and Children Foundation, nuestro aliado en el proyecto que atiende a familias en el Campo de Refugiados Dzaleka, Malaui, es el aliado previsto para recibir y distribuir los kits.">Carewin Africa Women and Children Foundation, our project partner serving families in Dzaleka Refugee Camp, Malawi, is the planned receiving and distribution partner.</p>
+          </details>
+          <details>
+            <summary data-en="Can Carewin pay customs or delivery charges?" data-es="¿Puede Carewin pagar los cargos de aduana o de entrega?">Can Carewin pay customs or delivery charges?</summary>
+            <p data-en="No. Our shipment will proceed only under arrangements in which these costs are provided for without passing charges to the receiving partner." data-es="No. Nuestro envío se realizará solo bajo acuerdos en los que estos costos estén cubiertos sin trasladar cargos al aliado receptor.">No. Our shipment will proceed only under arrangements in which these costs are provided for without passing charges to the receiving partner.</p>
+          </details>
+          <details>
+            <summary data-en="Is $20,000 the final transportation cost?" data-es="¿Son $20,000 el costo final de transporte?">Is $20,000 the final transportation cost?</summary>
+            <p data-en="No. It is a preliminary fundraising goal based on current estimates. Final charges and any applicable taxes are still being confirmed, and the target may be adjusted transparently." data-es="No. Es una meta preliminar de recaudación basada en estimaciones actuales. Los cargos finales y los impuestos aplicables aún se están confirmando, y la meta puede ajustarse de manera transparente.">No. It is a preliminary fundraising goal based on current estimates. Final charges and any applicable taxes are still being confirmed, and the target may be adjusted transparently.</p>
+          </details>
+          <details>
+            <summary data-en="When will the kits arrive?" data-es="¿Cuándo llegarán los kits?">When will the kits arrive?</summary>
+            <p data-en="We are preparing the shipment for the coming months. Timing depends on completing kit assembly, securing adequate funding, confirming customs arrangements, and booking appropriate freight. We will publish updates when the timeline is confirmed." data-es="Estamos preparando el envío para los próximos meses. Los tiempos dependen de completar el ensamblaje de los kits, asegurar fondos suficientes, confirmar los trámites aduaneros y reservar el flete adecuado. Publicaremos actualizaciones cuando se confirme el calendario.">We are preparing the shipment for the coming months. Timing depends on completing kit assembly, securing adequate funding, confirming customs arrangements, and booking appropriate freight. We will publish updates when the timeline is confirmed.</p>
+          </details>
+          <details>
+            <summary data-en="What if the amount raised is not sufficient or the shipment changes?" data-es="¿Qué pasa si lo recaudado no es suficiente o el envío cambia?">What if the amount raised is not sufficient or the shipment changes?</summary>
+            <p data-en="Funds designated for this campaign will remain allocated to the stated Dzaleka relief logistics purpose while we pursue feasible shipment arrangements. If plans materially change, TWCF will provide an update and handle restricted gifts in accordance with donor restrictions and applicable requirements." data-es="Los fondos destinados a esta campaña permanecerán asignados al propósito declarado de logística de ayuda para Dzaleka mientras buscamos acuerdos de envío viables. Si los planes cambian de manera significativa, TWCF publicará una actualización y manejará las donaciones restringidas de acuerdo con las restricciones de los donantes y los requisitos aplicables.">Funds designated for this campaign will remain allocated to the stated Dzaleka relief logistics purpose while we pursue feasible shipment arrangements. If plans materially change, TWCF will provide an update and handle restricted gifts in accordance with donor restrictions and applicable requirements.</p>
+          </details>
+          <details>
+            <summary data-en="Can I donate items instead?" data-es="¿Puedo donar artículos en su lugar?">Can I donate items instead?</summary>
+            <p data-en="Yes. To discuss an in-kind contribution, email &lt;a href=&quot;mailto:hello@thewomenandchildrenfoundation.org&quot;&gt;hello@thewomenandchildrenfoundation.org&lt;/a&gt; with the items and approximate quantity available. This specific fundraiser focuses on transportation costs." data-es="Sí. Para hablar de una contribución en especie, escribe a &lt;a href=&quot;mailto:hello@thewomenandchildrenfoundation.org&quot;&gt;hello@thewomenandchildrenfoundation.org&lt;/a&gt; con los artículos y la cantidad aproximada disponible. Esta campaña en particular se enfoca en los costos de transporte.">Yes. To discuss an in-kind contribution, email <a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a> with the items and approximate quantity available. This specific fundraiser focuses on transportation costs.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLOSING CTA + PROJECT STATUS -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container" style="max-width: 820px;">
+        <div class="donate-banner">
+          <h2 data-en="Help Get the Care Kits Where They're Needed" data-es="Ayuda a Llevar los Kits de Cuidado Adonde se Necesitan">Help Get the Care Kits Where They're Needed</h2>
+
+          <!-- Project status: only change an item to "Complete" once TWCF has
+               verified evidence (e.g. booking confirmation, delivery report). -->
+          <ul class="fund-timeline" aria-label="Project status">
+            <li class="is-active"><span class="fund-timeline-label" data-en="Collection underway" data-es="Recolección en curso">Collection underway</span><span class="fund-timeline-state" data-en="In progress" data-es="En curso">In progress</span></li>
+            <li><span class="fund-timeline-label" data-en="Packing in progress" data-es="Empaque en curso">Packing in progress</span><span class="fund-timeline-state" data-en="Upcoming" data-es="Próximamente">Upcoming</span></li>
+            <li class="is-active"><span class="fund-timeline-label" data-en="Freight quote being finalized" data-es="Cotización de flete por finalizar">Freight quote being finalized</span><span class="fund-timeline-state" data-en="In progress" data-es="En curso">In progress</span></li>
+            <li><span class="fund-timeline-label" data-en="Shipment booked" data-es="Envío reservado">Shipment booked</span><span class="fund-timeline-state" data-en="Not yet" data-es="Aún no">Not yet</span></li>
+            <li><span class="fund-timeline-label" data-en="Delivered" data-es="Entregado">Delivered</span><span class="fund-timeline-state" data-en="Not yet" data-es="Aún no">Not yet</span></li>
+          </ul>
+
+          <div class="btn-row" style="justify-content: center; margin-top: 1.75rem;">
+            <a href="#donate" class="btn btn-primary" data-en="Help Fund Delivery" data-es="Ayuda a Financiar la Entrega">Help Fund Delivery</a>
+            <button type="button" id="fund-share-btn" class="btn btn-secondary" data-en="Copy Link to Share" data-es="Copiar Enlace para Compartir">Copy Link to Share</button>
+          </div>
+          <p id="fund-share-status" class="fund-fine-print" role="status" aria-live="polite" style="margin-top: 0.75rem;"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
+          <ul>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="dzaleka-shipping-fund.html" data-en="Dzaleka Shipping Fund" data-es="Fondo de Envío para Dzaleka">Dzaleka Shipping Fund</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
+          <ul>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      // ===== Campaign configuration =====
+      // goal_usd is a preliminary target. raised_usd must be a reconciled
+      // figure (succeeded Stripe payments tagged campaign_id =
+      // dzaleka_shipping_2026, less refunds/disputes, plus verified offline
+      // gifts — never pledges). Leave public_progress_enabled false until
+      // that figure exists; the page then hides numeric progress entirely.
+      // Campaign status for checkout is enforced server-side in worker.js.
+      const CAMPAIGN = {
+        id: 'dzaleka_shipping_2026',
+        name: 'Dzaleka Relief Shipping Fund',
+        goal_usd: 20000,
+        public_progress_enabled: true,
+        raised_usd: 25, // as of Oct 8, 2026: $25 gift card
+        progress_basis: '', // optional label, e.g. 'gross gifts' or 'net of processing fees'
+      };
+
+      const usd = n => '$' + Math.round(n).toLocaleString('en-US');
+
+      if (CAMPAIGN.public_progress_enabled && Number.isFinite(CAMPAIGN.raised_usd) && CAMPAIGN.raised_usd >= 0) {
+        const pct = Math.min(100, (CAMPAIGN.raised_usd / CAMPAIGN.goal_usd) * 100);
+        // Keep a small sliver visible once anything is raised.
+        const fillPct = CAMPAIGN.raised_usd > 0 ? Math.max(pct, 1.5) : 0;
+        const bar = document.getElementById('fund-progress-bar');
+        const label = `${usd(CAMPAIGN.raised_usd)} raised toward ${usd(CAMPAIGN.goal_usd)}`;
+        bar.setAttribute('aria-valuemax', String(CAMPAIGN.goal_usd));
+        bar.setAttribute('aria-valuenow', String(Math.round(CAMPAIGN.raised_usd)));
+        bar.setAttribute('aria-valuetext', label);
+        document.getElementById('fund-progress-fill').style.width = fillPct + '%';
+        document.getElementById('fund-progress-text').textContent =
+          CAMPAIGN.progress_basis ? `${label} (${CAMPAIGN.progress_basis})` : label;
+        document.getElementById('fund-progress').hidden = false;
+      }
+
+      // ===== Donation module =====
+      const form = document.getElementById('fund-amount-form');
+      const customRadio = document.getElementById('fund-custom-radio');
+      const customPanel = document.getElementById('fund-custom-panel');
+      const customInput = document.getElementById('fund-custom-input');
+      const continueBtn = document.getElementById('fund-continue-btn');
+      const statusEl = document.getElementById('fund-status');
+      const errorEl = document.getElementById('fund-error');
+      let submitting = false;
+
+      function selectedAmount() {
+        const checked = form.querySelector('input[name="fund-amount"]:checked');
+        if (!checked) return null;
+        const n = checked.value === 'custom' ? Number(customInput.value) : Number(checked.value);
+        return Number.isFinite(n) && n >= 1 && n <= 100000 ? n : null;
+      }
+
+      function updateState() {
+        customPanel.hidden = !customRadio.checked;
+        continueBtn.disabled = submitting || selectedAmount() === null;
+      }
+
+      form.addEventListener('change', () => {
+        errorEl.textContent = '';
+        updateState();
+        if (customRadio.checked) window.setTimeout(() => customInput.focus(), 0);
+      });
+
+      customInput.addEventListener('input', () => {
+        customRadio.checked = true;
+        updateState();
+      });
+
+      form.addEventListener('submit', e => e.preventDefault());
+
+      function resetSubmitting() {
+        submitting = false;
+        statusEl.textContent = '';
+        statusEl.style.display = '';
+        updateState();
+      }
+
+      continueBtn.addEventListener('click', () => {
+        const amount = selectedAmount();
+        if (submitting || amount === null) return;
+
+        submitting = true;
+        continueBtn.disabled = true;
+        errorEl.textContent = '';
+        statusEl.style.display = '';
+        statusEl.textContent = currentLang === 'es' ? 'Preparando el pago seguro…' : 'Preparing secure checkout…';
+
+        startEmbeddedCheckout({
+          type: 'donate',
+          customAmount: amount,
+          campaign: CAMPAIGN.id,
+          errorEl,
+          loadingEl: statusEl,
+        }).then(ok => {
+          if (!ok) {
+            submitting = false;
+            updateState();
+          }
+        });
+      });
+
+      // Returning with the browser's Back button can restore this page from
+      // cache mid-submit; reset so the donor can choose again.
+      window.addEventListener('pageshow', e => {
+        if (e.persisted) resetSubmitting();
+      });
+
+      updateState();
+
+      // ===== Share link =====
+      const shareBtn = document.getElementById('fund-share-btn');
+      const shareStatus = document.getElementById('fund-share-status');
+      const shareUrl = document.querySelector('link[rel="canonical"]').href;
+
+      shareBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText(shareUrl);
+          shareStatus.textContent = currentLang === 'es' ? '¡Enlace copiado!' : 'Link copied!';
+        } catch {
+          shareStatus.textContent = shareUrl;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
