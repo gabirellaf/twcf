@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Events &amp; Drives — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Get Involved" data-es="Participa">Get Involved</span>
+        <h1 data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</h1>
+        <p data-en="Everything happening right now, and everything coming up — in one place. Jump in on a current campaign, plan around an upcoming drive, or bring TWCF to your school, church, or business." data-es="Todo lo que está pasando ahora, y todo lo que viene, en un solo lugar. Únete a una campaña actual, planea en torno a una próxima colecta, o trae TWCF a tu escuela, iglesia o empresa.">Everything happening right now, and everything coming up — in one place. Jump in on a current campaign, plan around an upcoming drive, or bring TWCF to your school, church, or business.</p>
+        <div class="btn-row" style="margin-top: 1.5rem;">
+          <a href="#current-campaigns" class="btn btn-secondary" data-en="Current Campaigns ↓" data-es="Campañas Actuales ↓">Current Campaigns ↓</a>
+          <a href="#upcoming-events" class="btn btn-secondary" data-en="Upcoming Events ↓" data-es="Próximos Eventos ↓">Upcoming Events ↓</a>
+          <a href="#host-a-drive" class="btn btn-primary" data-en="Host a Drive ↓" data-es="Organiza una Colecta ↓">Host a Drive ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT CAMPAIGNS -->
+    <section id="current-campaigns" class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="Current Campaigns" data-es="Campañas Actuales">Current Campaigns</span>
+          <h2 data-en="What we're actively working on." data-es="En qué estamos trabajando activamente.">What we're actively working on.</h2>
+        </div>
+        <div class="grid-3" style="margin-top: 2.5rem; gap: 2rem;">
+          <div class="card">
+            <img src="images/carewin-dzaleka.webp" alt="Children at the Carewin Africa Women and Children Foundation site near Dzaleka Refugee Camp" style="width:100%; height:190px; object-fit:cover; border-radius: var(--radius-lg); margin-bottom: 1rem;" />
+            <span class="tag tag-pink" data-en="Active — Shipping November" data-es="Activa — Envío en Noviembre">Active — Shipping November</span>
+            <h3 style="margin-top: 0.5rem;" data-en="1,000 Care Kits for Dzaleka" data-es="1,000 Kits de Cuidado para Dzaleka">1,000 Care Kits for Dzaleka</h3>
+            <p style="font-size: 0.9rem;" data-en="In partnership with Carewin Africa Women and Children Foundation, we're assembling Women's Dignity, Baby &amp; Maternal Care, and Children's Education &amp; Comfort kits for families in and around Dzaleka Refugee Camp, Malawi." data-es="En alianza con Carewin Africa Women and Children Foundation, estamos ensamblando kits de Dignidad para Mujeres, Cuidado para Bebé y Madre, y Educación y Confort para Niños para familias en y alrededor del Campo de Refugiados Dzaleka, Malaui.">In partnership with Carewin Africa Women and Children Foundation, we're assembling Women's Dignity, Baby &amp; Maternal Care, and Children's Education &amp; Comfort kits for families in and around Dzaleka Refugee Camp, Malawi.</p>
+            <div class="btn-row" style="margin-top: 1.25rem;">
+              <a href="where-kits-go.html" class="btn btn-primary" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
+              <a href="give-supplies.html" class="btn btn-secondary" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+            </div>
+          </div>
+          <div class="card">
+            <img src="images/community.jpg" alt="Hands joined together in support" style="width:100%; height:190px; object-fit:cover; border-radius: var(--radius-lg); margin-bottom: 1rem;" />
+            <span class="tag tag-purple" data-en="Ongoing" data-es="Continua">Ongoing</span>
+            <h3 style="margin-top: 0.5rem;" data-en="Supply Drive for City Rescue Mission" data-es="Colecta de Suministros para City Rescue Mission">Supply Drive for City Rescue Mission</h3>
+            <p style="font-size: 0.9rem;" data-en="We're continuously collecting food, hygiene items, new clothing, and household essentials for City Rescue Mission, serving families and individuals experiencing homelessness in Lansing." data-es="Recolectamos continuamente alimentos, artículos de higiene, ropa nueva y esenciales del hogar para City Rescue Mission, que atiende a familias y personas en situación de calle en Lansing.">We're continuously collecting food, hygiene items, new clothing, and household essentials for City Rescue Mission, serving families and individuals experiencing homelessness in Lansing.</p>
+            <div class="btn-row" style="margin-top: 1.25rem;">
+              <a href="where-kits-go.html" class="btn btn-primary" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
+              <a href="give-supplies.html" class="btn btn-secondary" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+            </div>
+          </div>
+          <div class="card">
+            <span class="tag tag-pink" data-en="New" data-es="Nuevo">New</span>
+            <h3 style="margin-top: 0.5rem;" data-en="Close to Home: A Fresh Start" data-es="Cerca de Casa: Un Nuevo Comienzo">Close to Home: A Fresh Start</h3>
+            <p style="font-size: 0.9rem;" data-en="Collecting cookware, dishes, towels, small appliances, and household essentials for local families moving from a shelter or crisis situation into their first stable home." data-es="Recolectando utensilios de cocina, vajilla, toallas, pequeños electrodomésticos y esenciales del hogar para familias locales que pasan de un albergue o situación de crisis a su primer hogar estable.">Collecting cookware, dishes, towels, small appliances, and household essentials for local families moving from a shelter or crisis situation into their first stable home.</p>
+            <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted); font-style: italic;" data-en="Part of TWCF's new direct family assistance program — supplying a Home Start Kit directly to a family we're connected with, on their terms." data-es="Parte del nuevo programa de asistencia familiar directa de TWCF: entregamos un Kit de Nuevo Comienzo directamente a una familia con la que estamos en contacto, en sus términos.">Part of TWCF's new direct family assistance program — supplying a Home Start Kit directly to a family we're connected with, on their terms.</p>
+            <div class="btn-row" style="margin-top: 1.25rem;">
+              <a href="get-help.html" class="btn btn-primary" data-en="Refer or Request Help →" data-es="Referir o Pedir Ayuda →">Refer or Request Help →</a>
+              <a href="our-care-kits.html#home-start" class="btn btn-secondary" data-en="See the Kit" data-es="Ver el Kit">See the Kit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- UPCOMING EVENTS -->
+    <section id="upcoming-events" class="section" style="background: var(--purple-pale);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Upcoming Events" data-es="Próximos Eventos">Upcoming Events</span>
+          <h2 data-en="Mark your calendar." data-es="Marca tu calendario.">Mark your calendar.</h2>
+        </div>
+        <div class="grid-2" style="margin-top: 2.5rem; gap: 2rem;">
+          <div class="card">
+            <span class="tag tag-purple" data-en="Nov 20 – Dec 15, 2026" data-es="20 de nov. – 15 de dic., 2026">Nov 20 – Dec 15, 2026</span>
+            <h3 style="margin-top: 0.5rem;" data-en="🎁 Hospital Toy Drive" data-es="🎁 Colecta de Juguetes para Hospital">🎁 Hospital Toy Drive</h3>
+            <p style="font-size: 0.9rem;" data-en="Collecting new stuffed animals, coloring books, and small comfort items for our Hospital Comfort Kits — timed so kits can be packed and delivered before Christmas." data-es="Recolectando peluches nuevos, libros para colorear y pequeños artículos de confort para nuestros Kits de Confort Hospitalario, programado para que los kits se puedan armar y entregar antes de Navidad.">Collecting new stuffed animals, coloring books, and small comfort items for our Hospital Comfort Kits — timed so kits can be packed and delivered before Christmas.</p>
+            <div class="btn-row" style="margin-top: 1.25rem;">
+              <a href="our-care-kits.html#hospital-comfort" class="btn btn-primary" data-en="See What's Needed" data-es="Ver Qué Se Necesita">See What's Needed</a>
+              <a href="volunteer.html#volunteer-form" class="btn btn-secondary" data-en="Volunteer" data-es="Voluntariado">Volunteer</a>
+            </div>
+          </div>
+          <div class="card" style="border: 1.5px dashed var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 0.75rem; padding: 2rem 1.5rem;">
+            <span class="tag tag-pink" data-en="Planning in Progress" data-es="En Planeación">Planning in Progress</span>
+            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;" data-en="More events are being planned, including a possible fall community drive. Check back soon, or get in touch if you'd like to help plan one." data-es="Se están planeando más eventos, incluyendo una posible colecta comunitaria de otoño. Vuelve pronto, o contáctanos si quieres ayudar a planear uno.">More events are being planned, including a possible fall community drive. Check back soon, or get in touch if you'd like to help plan one.</p>
+            <a href="contact.html" class="btn btn-secondary" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- HOST A DRIVE -->
+    <section id="host-a-drive" class="section">
+      <div class="container text-center" style="max-width: 700px;">
+        <span class="tag tag-purple" data-en="Bring TWCF to Your Community" data-es="Trae TWCF a Tu Comunidad">Bring TWCF to Your Community</span>
+        <h2 style="margin-top: 0.75rem;" data-en="Host a collection drive." data-es="Organiza una colecta.">Host a collection drive.</h2>
+        <p data-en="Schools, churches, businesses, clubs, and community organizations can host a collection drive supporting one of our current campaigns. You collect at your location — we provide the donation list and materials, and handle assembly and delivery." data-es="Escuelas, iglesias, empresas, clubes y organizaciones comunitarias pueden organizar una colecta que apoye una de nuestras campañas actuales. Tú recolectas en tu espacio; nosotros proporcionamos la lista de donaciones y los materiales, y nos encargamos del ensamblaje y la entrega.">Schools, churches, businesses, clubs, and community organizations can host a collection drive supporting one of our current campaigns. You collect at your location — we provide the donation list and materials, and handle assembly and delivery.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin-top: 2rem; text-align: left;">
+          <div class="card text-center" style="padding: 1rem;">
+            <strong style="font-size: 0.85rem;" data-en="1. Choose a campaign" data-es="1. Elige una campaña">1. Choose a campaign</strong>
+          </div>
+          <div class="card text-center" style="padding: 1rem;">
+            <strong style="font-size: 0.85rem;" data-en="2. Apply to partner" data-es="2. Solicita la alianza">2. Apply to partner</strong>
+          </div>
+          <div class="card text-center" style="padding: 1rem;">
+            <strong style="font-size: 0.85rem;" data-en="3. Collect donations" data-es="3. Recolecta donaciones">3. Collect donations</strong>
+          </div>
+          <div class="card text-center" style="padding: 1rem;">
+            <strong style="font-size: 0.85rem;" data-en="4. We coordinate pickup" data-es="4. Coordinamos la recolección">4. We coordinate pickup</strong>
+          </div>
+        </div>
+        <a href="host-a-drive.html" class="btn btn-primary" style="margin-top: 2rem; display: inline-flex;" data-en="Start Hosting a Drive →" data-es="Empieza a Organizar una Colecta →">Start Hosting a Drive →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
+          <ul>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
+          <ul>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

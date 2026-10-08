@@ -17,23 +17,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -87,8 +131,15 @@
             <!-- NEED IMMEDIATE HELP -->
             <div style="margin-top: 2rem; background: var(--pink-pale); border-radius: var(--radius-lg); padding: 1.5rem; border: 1px solid rgba(233,30,140,0.15);">
               <h3 style="color: var(--pink-dark); margin-bottom: 0.5rem;" data-en="Need immediate help?" data-es="¿Necesitas ayuda inmediata?">Need immediate help?</h3>
-              <p style="font-size: 0.9rem; margin-bottom: 1rem;" data-en="If you're in crisis, please don't wait for a response — go to our Get Help page for immediate resources." data-es="Si estás en crisis, no esperes una respuesta; ve a nuestra página de Obtener Ayuda para recursos inmediatos.">If you're in crisis, please don't wait for a response — go to our Get Help page for immediate resources.</p>
-              <a href="get-help.html" class="btn btn-primary" data-en="Go to Get Help" data-es="Ir a Obtener Ayuda">Go to Get Help</a>
+              <p style="font-size: 0.9rem; margin-bottom: 1rem;" data-en="TWCF is not a crisis line and this form isn't monitored 24/7. For immediate help, contact one of the local shelters, hotlines, or services on our Resources page directly." data-es="TWCF no es una línea de crisis y este formulario no se supervisa las 24 horas. Para ayuda inmediata, contacta directamente a uno de los albergues, líneas de ayuda o servicios en nuestra página de Recursos.">TWCF is not a crisis line and this form isn't monitored 24/7. For immediate help, contact one of the local shelters, hotlines, or services on our Resources page directly.</p>
+              <a href="resources.html" class="btn btn-primary" data-en="Go to Resources" data-es="Ir a Recursos">Go to Resources</a>
+            </div>
+
+            <!-- DIRECT ASSISTANCE -->
+            <div style="margin-top: 1.25rem; background: var(--purple-pale); border-radius: var(--radius-lg); padding: 1.5rem;">
+              <h3 style="color: var(--purple); margin-bottom: 0.5rem;" data-en="Facing hardship, but not a crisis?" data-es="¿Enfrentas dificultades, pero no es una crisis?">Facing hardship, but not a crisis?</h3>
+              <p style="font-size: 0.9rem; margin-bottom: 1rem;" data-en="TWCF's Close to Home program offers direct assistance to women, children, and families in Greater Lansing and surrounding communities — for yourself, or to refer a family with their permission." data-es="El programa Cerca de Casa de TWCF ofrece asistencia directa a mujeres, niños y familias en el Gran Lansing y comunidades cercanas, para ti o para referir a una familia con su permiso.">TWCF's Close to Home program offers direct assistance to women, children, and families in Greater Lansing and surrounding communities — for yourself, or to refer a family with their permission.</p>
+              <a href="get-help.html" class="btn btn-secondary" data-en="Get Help" data-es="Pide Ayuda">Get Help</a>
             </div>
           </div>
 
@@ -104,7 +155,7 @@
               <p data-en="Your message has been received. We'll be in touch soon." data-es="Tu mensaje fue recibido. Nos pondremos en contacto pronto.">Your message has been received. We'll be in touch soon.</p>
               <div class="btn-row">
                 <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
-                <a href="mission.html" class="btn btn-secondary" data-en="Our Mission" data-es="Nuestra Misión">Our Mission</a>
+                <a href="about.html" class="btn btn-secondary" data-en="Our Mission" data-es="Nuestra Misión">Our Mission</a>
               </div>
             </div>
             <form class="form-stack" style="margin-top: 1.25rem;" action="https://formspree.io/f/xojbdywn" method="POST" data-formspree data-success-target="contact-success">
@@ -157,25 +208,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -183,12 +235,13 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>

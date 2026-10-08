@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Complete Your Donation | TWCF</title>
+  <link rel="stylesheet" href="/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="/checkout.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/donate.html" aria-label="Return to donation page">
+    <img class="brand-logo" src="/images/logo-cropped.png" alt="The Women and Children Foundation">
+    </a>
+    <a class="back-link" href="/donate.html">← Back</a>
+  </header>
+
+  <main class="payment-shell">
+    <section class="payment-card">
+      <div class="eyebrow">Secure Donation</div>
+      <h1>Complete your donation.</h1>
+      <p class="intro">
+        Your gift supports The Women and Children Foundation's work serving women, children, and families in our communities and around the world.
+      </p>
+
+      <div class="donation-summary">
+        <span>Donation</span>
+        <strong id="donation-amount">$0.00</strong>
+      </div>
+      
+      <p class="impact-note">
+      Your gift helps TWCF provide care, resources, and humanitarian support where they are needed most.
+      </p>
+
+      <form id="payment-form">
+        <div id="payment-element"></div>
+        <div id="payment-message" role="alert" aria-live="polite"></div>
+
+        <button id="submit" type="submit" disabled>
+          <span id="button-text">Loading secure payment…</span>
+          <span id="spinner" class="spinner" hidden aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <p class="secure-note">
+        Payment information is securely processed. TWCF does not receive or store your card number.
+      </p>
+    </section>
+  </main>
+</body>
+</html>

@@ -18,25 +18,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"      data-en="Drives"     data-es="Colectas">Drives</a></li>
-        <li><a href="shop.html"        data-en="Shop Drive" data-es="Tienda" style="color: var(--purple); font-weight: 600;">Shop Drive</a></li>
-        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -44,91 +86,146 @@
     </div>
   </nav>
 
-  <!-- DRIVE ALERT BAR -->
-  <div style="background: #2eb87a; color: white; text-align: center; padding: 0.65rem 1rem; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.01em;">
-    <span style="opacity: 0.85; margin-right: 0.5rem;">🟢</span>
-    <strong data-en="Our first drive is LIVE through July 5" data-es="Nuestra primera colecta está ACTIVA hasta el 5 de julio">Our first drive is LIVE through July 5</strong>
-    &nbsp;—&nbsp;
-    <a href="shop.html" style="color: white; text-decoration: underline; font-weight: 700;" data-en="Shop the Drive →" data-es="Comprar para la Colecta →">Shop the Drive →</a>
-    &nbsp;·&nbsp;
-    <a href="donate-supplies.html" style="color: rgba(255,255,255,0.85); text-decoration: underline; font-weight: 500;" data-en="I Have Items to Mail" data-es="Tengo Artículos para Enviar">I Have Items to Mail</a>
-  </div>
-
   <main>
 
-    <!-- HERO SLIDESHOW -->
-    <section class="hero">
-      <div class="slideshow">
-        <div class="slide active" style="background-image: url('images/hero-1.jpg')"></div>
-        <div class="slide" style="background-image: url('images/hero-2.jpg')"></div>
-        <div class="slide" style="background-image: url('images/hero-3.jpg')"></div>
-      </div>
+    <!-- HERO -->
+    <section class="hero" style="background-image: url('images/hero-1.jpg'); background-size: cover; background-position: center; min-height: 88vh; display: flex; align-items: center; position: relative;">
       <div class="slide-overlay"></div>
-      <div class="container hero-content">
-        <span class="tag tag-hero" data-en="CARE · DIGNITY · SUPPORT" data-es="CUIDADO · DIGNIDAD · APOYO">CARE · DIGNITY · SUPPORT</span>
-        <h1 data-en="Helping Women and Children When They Have No One Else." data-es="Ayudando a Mujeres y Niños Cuando No Tienen a Nadie Más.">Helping Women and Children When They Have No One Else.</h1>
-        <p data-en="We provide care kits, community support, and pathways toward safety and stability for women and children in need." data-es="Ofrecemos kits de ayuda, apoyo comunitario y caminos hacia la seguridad y estabilidad para mujeres y niños en necesidad.">We provide care kits, community support, and pathways toward safety and stability for women and children in need.</p>
-        <div class="btn-row" style="justify-content: center;">
-          <a href="get-help.html" class="btn btn-primary" data-en="Get Help Now" data-es="Obtener Ayuda">Get Help Now</a>
-          <a href="shop.html" class="btn btn-white" data-en="Support Our Drive" data-es="Apoya Nuestra Colecta">Support Our Drive</a>
-        </div>
-        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-top: 1rem;">
-          <span style="background: rgba(46,184,122,0.25); border: 1px solid rgba(46,184,122,0.45); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.76rem; font-weight: 600; color: rgba(255,255,255,0.95);">🟢 Drive Live · Ends July 5</span>
-          <span style="background: rgba(255,255,255,0.15); backdrop-filter: blur(4px); padding: 0.35rem 0.9rem; border-radius: 999px; font-size: 0.76rem; color: rgba(255,255,255,0.88);">🌍 Open worldwide</span>
-        </div>
-        <div class="slide-dots">
-          <button class="dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="dot" data-slide="1" aria-label="Slide 2"></button>
-          <button class="dot" data-slide="2" aria-label="Slide 3"></button>
+      <div class="container hero-content" style="position: relative; z-index: 2;">
+        <span class="tag tag-hero" data-en="CARE · DIGNITY · PURPOSE" data-es="CUIDADO · DIGNIDAD · PROPÓSITO">CARE · DIGNITY · PURPOSE</span>
+        <h1 data-en="We create essential care kits for women and children facing hardship." data-es="Creamos kits de cuidado esenciales para mujeres y niños en situación de dificultad.">We create essential care kits for women and children facing hardship.</h1>
+        <p style="font-size: 1.15rem; font-style: italic; color: rgba(255,255,255,0.88); margin: 0.5rem 0 1.75rem;" data-en="Care, packed with purpose." data-es="Cuidado, empacado con propósito.">Care, packed with purpose.</p>
+        <p data-en="We collect essential supplies, assemble thoughtfully designed care kits, and work with community organizations to place them into the hands of women and children who need them — in our communities and around the world." data-es="Reunimos artículos esenciales, ensamblamos kits de cuidado diseñados con cuidado y trabajamos con organizaciones comunitarias para entregarlos a las mujeres y niños que los necesitan, en nuestras comunidades y en todo el mundo.">We collect essential supplies, assemble thoughtfully designed care kits, and work with community organizations to place them into the hands of women and children who need them — in our communities and around the world.</p>
+        <div class="btn-row" style="justify-content: center; margin-top: 2rem;">
+          <a href="our-care-kits.html" class="btn btn-primary" data-en="Explore the Kits" data-es="Explorar los Kits">Explore the Kits</a>
+          <a href="give-supplies.html" class="btn btn-white"   data-en="Give Supplies"   data-es="Donar Artículos">Give Supplies</a>
         </div>
       </div>
     </section>
 
-    <!-- STATS -->
-    <div class="stat-section">
+    <div style="text-align:center; padding: 1rem 0 0; font-size: 0.9rem; color: var(--muted);" data-en='New here? <a href="#what-we-need" style="color: var(--purple); font-weight: 600;">See what we need right now →</a>' data-es='¿Primera vez aquí? <a href="#what-we-need" style="color: var(--purple); font-weight: 600;">Ve qué necesitamos ahora →</a>'>New here? <a href="#what-we-need" style="color: var(--purple); font-weight: 600;">See what we need right now →</a></div>
+
+    <!-- DZALEKA CARE KIT INITIATIVE -->
+    <section class="section-sm stat-section">
+      <div class="container text-center">
+        <span class="tag tag-purple" data-en="Dzaleka Care Kit Initiative" data-es="Iniciativa de Kits para Dzaleka">Dzaleka Care Kit Initiative</span>
+        <h2 style="margin-top: 0.5rem;" data-en="1,000 care kits for Dzaleka Refugee Camp, Malawi — this November." data-es="1,000 kits de cuidado para el Campo de Refugiados Dzaleka, Malaui — este noviembre.">1,000 care kits for Dzaleka Refugee Camp, Malawi — this November.</h2>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--muted);" data-en="In partnership with Carewin Africa Women and Children Foundation." data-es="En alianza con Carewin Africa Women and Children Foundation.">In partnership with Carewin Africa Women and Children Foundation.</p>
+        <img src="images/carewin-kids.png" alt="Children at the Carewin Africa site near Dzaleka Refugee Camp, Malawi" style="display:block; width:100%; max-width:720px; height:260px; object-fit:cover; object-position:center; border-radius:var(--radius-lg); margin:1.5rem auto 0;"/>
+      </div>
+      <div class="stat-strip" style="grid-template-columns: repeat(2, 1fr); margin-top: 2rem;">
+        <div class="stat-item">
+          <span class="num">0 <span style="font-size: 1.1rem; color: var(--muted); font-weight: 600;">/ 1,000</span></span>
+          <span class="lbl" data-en="Kits assembled — fully built, quality-checked, and recorded in inventory" data-es="Kits ensamblados — completamente construidos, revisados y registrados en inventario">Kits assembled — fully built, quality-checked, and recorded in inventory</span>
+        </div>
+        <div class="stat-item">
+          <span class="num">0</span>
+          <span class="lbl" data-en="Kits delivered — assigned to and received by an approved recipient organization" data-es="Kits entregados — asignados y recibidos por una organización receptora aprobada">Kits delivered — assigned to and received by an approved recipient organization</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMING UP -->
+    <section class="section-sm">
       <div class="container">
-        <div class="stat-strip">
-          <div class="stat-item">
-            <span class="num">$0</span>
-            <span class="lbl" data-en="Cost to receive help or a care kit" data-es="Costo para recibir ayuda o un kit">Cost to receive help or a care kit</span>
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Coming Up" data-es="Próximamente">Coming Up</span>
+          <h2 style="margin-top: 0.5rem;" data-en="Current campaigns and upcoming events." data-es="Campañas actuales y próximos eventos.">Current campaigns and upcoming events.</h2>
+        </div>
+        <div class="grid-2" style="margin-top: 2rem; gap: 1.5rem;">
+          <div class="card">
+            <span class="tag tag-purple" data-en="Active — Shipping November" data-es="Activa — Envío en Noviembre">Active — Shipping November</span>
+            <h3 style="margin-top: 0.5rem;" data-en=" 1,000 Care Kits for Dzaleka" data-es=" 1,000 Kits de Cuidado para Dzaleka"> 1,000 Care Kits for Dzaleka</h3>
+            <p style="font-size: 0.88rem;" data-en="With Carewin Africa Women and Children Foundation, for families at Dzaleka Refugee Camp, Malawi." data-es="Con Carewin Africa Women and Children Foundation, para familias en el Campo de Refugiados Dzaleka, Malaui.">With Carewin Africa Women and Children Foundation, for families at Dzaleka Refugee Camp, Malawi.</p>
+            <a href="events-drives.html#current-campaigns" class="btn btn-secondary" style="margin-top: 1rem; display: inline-flex;" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
           </div>
-          <div class="stat-item">
-            <span class="num">100%</span>
-            <span class="lbl" data-en="Of membership fees fund programs directly" data-es="De las cuotas financian programas directamente">Of membership fees fund programs directly</span>
+          <div class="card">
+            <span class="tag tag-purple" data-en="Nov 20 – Dec 15, 2026" data-es="20 de nov. – 15 de dic., 2026">Nov 20 – Dec 15, 2026</span>
+            <h3 style="margin-top: 0.5rem;" data-en=" Hospital Toy Drive" data-es=" Colecta de Juguetes para Hospital"> Hospital Toy Drive</h3>
+            <p style="font-size: 0.88rem;" data-en="Collecting stuffed animals and comfort items for our Hospital Comfort Kits, in time to pack and deliver before Christmas." data-es="Recolectando peluches y artículos de confort para nuestros Kits de Confort Hospitalario, a tiempo para armar y entregar antes de Navidad.">Collecting stuffed animals and comfort items for our Hospital Comfort Kits, in time to pack and deliver before Christmas.</p>
+            <a href="events-drives.html#upcoming-events" class="btn btn-secondary" style="margin-top: 1rem; display: inline-flex;" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
           </div>
-          <div class="stat-item">
-            <span class="num">Always</span>
-            <span class="lbl" data-en="Here for women and children in need" data-es="Aquí para mujeres y niños en necesidad">Here for women and children in need</span>
+        </div>
+        <div class="text-center" style="margin-top: 1.75rem;">
+          <a href="events-drives.html" class="btn btn-primary" data-en="See All Events &amp; Drives →" data-es="Ver Todos los Eventos y Colectas →">See All Events &amp; Drives →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" style="background: var(--purple-pale);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+          <h2 data-en="A system built around real need." data-es="Un sistema construido alrededor de la necesidad real.">A system built around real need.</h2>
+          <p data-en="This is what distinguishes TWCF from a general donation drive — every step is deliberate." data-es="Esto es lo que distingue a TWCF de una colecta genérica: cada paso es deliberado.">This is what distinguishes TWCF from a general donation drive — every step is deliberate.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+          <div class="card text-center">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">1</div>
+            <h3 data-en="We Listen" data-es="Escuchamos">We Listen</h3>
+            <p style="font-size: 0.92rem;" data-en="Recipient organizations tell us what the people they serve actually need — before we assemble a single kit." data-es="Las organizaciones receptoras nos dicen qué necesitan realmente las personas a quienes sirven, antes de que armemos un solo kit.">Recipient organizations tell us what the people they serve actually need — before we assemble a single kit.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--pink); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">2</div>
+            <h3 data-en="We Collect" data-es="Reunimos">We Collect</h3>
+            <p style="font-size: 0.92rem;" data-en="Individuals, businesses, schools, and community groups contribute approved supplies — in person, by mail, or through organized collection drives." data-es="Personas, empresas, escuelas y grupos comunitarios contribuyen con artículos aprobados, en persona, por correo o a través de colectas organizadas.">Individuals, businesses, schools, and community groups contribute approved supplies — in person, by mail, or through organized collection drives.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">3</div>
+            <h3 data-en="We Assemble" data-es="Ensamblamos">We Assemble</h3>
+            <p style="font-size: 0.92rem;" data-en="Volunteers organize supplies into complete, purpose-built care kits — every item counted and inspected before it goes in." data-es="Los voluntarios organizan los artículos en kits de cuidado completos y diseñados con propósito; cada artículo es contado e inspeccionado antes de incluirse.">Volunteers organize supplies into complete, purpose-built care kits — every item counted and inspected before it goes in.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--pink); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">4</div>
+            <h3 data-en="We Deliver" data-es="Entregamos">We Deliver</h3>
+            <p style="font-size: 0.92rem;" data-en="Kits are distributed through trusted community organizations — shelters, family support services, and partner groups — locally and internationally." data-es="Los kits se distribuyen a través de organizaciones comunitarias de confianza: albergues, servicios de apoyo familiar y grupos aliados, local e internacionalmente.">Kits are distributed through trusted community organizations — shelters, family support services, and partner groups — locally and internationally.</p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- WHAT WE DO -->
-    <section class="section" style="padding-top: 1rem;">
+    <!-- THE CARE KITS -->
+    <section class="section">
       <div class="container">
-        <div class="section-header">
-          <span class="tag tag-purple" data-en="What We Do" data-es="Lo Que Hacemos">What We Do</span>
-          <h2 data-en="Relief, Connection, and Hope." data-es="Alivio, Conexión y Esperanza.">Relief, Connection, and Hope.</h2>
-          <p data-en="Real, visible impact — built to reach every woman and child who needs us, no matter where you are." data-es="Impacto real y visible, construido para llegar a toda mujer y niño que nos necesite, sin importar dónde estés.">Real, visible impact — built to reach every woman and child who needs us, no matter where you are.</p>
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</span>
+          <h2 data-en="Four kits. Each built for a specific need." data-es="Cuatro kits. Cada uno diseñado para una necesidad específica.">Four kits. Each built for a specific need.</h2>
+          <p data-en="Every kit is designed around what recipient organizations tell us they need most. Donate a complete kit — or contribute the items inside." data-es="Cada kit está diseñado en torno a lo que las organizaciones receptoras nos dicen que más necesitan. Dona un kit completo, o contribuye con los artículos que contiene.">Every kit is designed around what recipient organizations tell us they need most. Donate a complete kit — or contribute the items inside.</p>
         </div>
-        <div class="grid-3">
-          <div class="card">
-            <span class="tag tag-pink" data-en="Care Kits" data-es="Kits de Ayuda">Care Kits</span>
-            <img src="images/care-kits.jpg" alt="Child receiving a backpack full of supplies" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg);margin:0.75rem 0 1rem;" />
-            <p data-en="Hygiene products, food, school supplies, and essentials — assembled and distributed through trusted partner organizations." data-es="Productos de higiene, alimentos, útiles escolares y artículos esenciales, ensamblados y distribuidos a través de organizaciones aliadas de confianza.">Hygiene products, food, school supplies, and essentials — assembled and distributed through trusted partner organizations.</p>
-            <a href="care-kit.html" class="btn btn-ghost" style="margin-top: 1rem;" data-en="See Kit Editions" data-es="Ver Ediciones de Kits">See Kit Editions</a>
+        <div class="grid-2" style="margin-top: 2.5rem; gap: 1.5rem;">
+
+          <div class="card" style="border-left: 4px solid var(--purple);">
+            <span class="tag tag-purple" style="align-self: flex-start;" data-en="Kit 1" data-es="Kit 1">Kit 1</span>
+            <h3 data-en="Women's Dignity Kit" data-es="Kit de Dignidad para Mujeres">Women's Dignity Kit</h3>
+            <p style="font-size: 0.9rem;" data-en="Menstrual care products, personal hygiene essentials, underwear, towels, and everyday items that support dignity and comfort." data-es="Productos de cuidado menstrual, artículos esenciales de higiene personal, ropa interior, toallas y artículos cotidianos que apoyan la dignidad y el confort.">Menstrual care products, personal hygiene essentials, underwear, towels, and everyday items that support dignity and comfort.</p>
+            <a href="our-care-kits.html#womens-dignity" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="See Full Kit →" data-es="Ver Kit Completo →">See Full Kit →</a>
           </div>
-          <div class="card">
-            <span class="tag tag-pink" data-en="Community Partnerships" data-es="Alianzas Comunitarias">Community Partnerships</span>
-            <img src="images/community.jpg" alt="Community members joining hands in support" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg);margin:0.75rem 0 1rem;" />
-            <p data-en="We work with shelters, domestic violence organizations, and healthcare providers to reach people safely and responsibly." data-es="Trabajamos con albergues, organizaciones contra la violencia doméstica y proveedores de salud para llegar a las personas de forma segura y responsable.">We work with shelters, domestic violence organizations, and healthcare providers to reach people safely and responsibly.</p>
+
+          <div class="card" style="border-left: 4px solid var(--pink);">
+            <span class="tag tag-pink" style="align-self: flex-start;" data-en="Kit 2" data-es="Kit 2">Kit 2</span>
+            <h3 data-en="Baby &amp; Maternal Care Kit" data-es="Kit de Cuidado para Bebé y Madre">Baby &amp; Maternal Care Kit</h3>
+            <p style="font-size: 0.9rem;" data-en="Baby-care items and practical hygiene supplies for mothers and infants — diapers, wipes, feeding supplies, and postpartum essentials." data-es="Artículos para el cuidado del bebé y suministros de higiene para madres y lactantes: pañales, toallitas, artículos de alimentación y esenciales posparto.">Baby-care items and practical hygiene supplies for mothers and infants — diapers, wipes, feeding supplies, and postpartum essentials.</p>
+            <a href="our-care-kits.html#baby-maternal" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="See Full Kit →" data-es="Ver Kit Completo →">See Full Kit →</a>
           </div>
-          <div class="card">
-            <span class="tag tag-pink" data-en="Education & Outreach" data-es="Educación y Alcance">Education & Outreach</span>
-            <img src="images/kids-outreach.jpg" alt="Children doing outdoor arts and crafts" style="width:100%;height:200px;object-fit:cover;border-radius:var(--radius-lg);margin:0.75rem 0 1rem;" />
-            <p data-en="Building awareness around domestic violence, sexual assault, and women's health — and connecting people with trusted, accredited resources." data-es="Creando conciencia sobre la violencia doméstica, la agresión sexual y la salud de la mujer, conectando a las personas con recursos acreditados y de confianza.">Building awareness around domestic violence, sexual assault, and women's health — and connecting people with trusted, accredited resources.</p>
+
+          <div class="card" style="border-left: 4px solid var(--purple);">
+            <span class="tag tag-purple" style="align-self: flex-start;" data-en="Kit 3" data-es="Kit 3">Kit 3</span>
+            <h3 data-en="Children's Education &amp; Comfort Kit" data-es="Kit de Educación y Confort para Niños">Children's Education &amp; Comfort Kit</h3>
+            <p style="font-size: 0.9rem;" data-en="School supplies, basic hygiene items, books, and age-appropriate comfort products — so children can learn, feel clean, and feel cared for." data-es="Útiles escolares, artículos básicos de higiene, libros y productos de confort apropiados para la edad, para que los niños puedan aprender, sentirse limpios y cuidados.">School supplies, basic hygiene items, books, and age-appropriate comfort products — so children can learn, feel clean, and feel cared for.</p>
+            <a href="our-care-kits.html#childrens-education" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="See Full Kit →" data-es="Ver Kit Completo →">See Full Kit →</a>
           </div>
+
+          <div class="card" style="border-left: 4px solid var(--pink);">
+            <span class="tag tag-pink" style="align-self: flex-start;" data-en="Kit 4" data-es="Kit 4">Kit 4</span>
+            <h3 data-en="Family Essentials Kit" data-es="Kit de Esenciales Familiares">Family Essentials Kit</h3>
+            <p style="font-size: 0.9rem;" data-en="General hygiene and household necessities for families experiencing displacement, homelessness, or crisis — built to help a family get through the first difficult days." data-es="Artículos esenciales de higiene y del hogar para familias que atraviesan desplazamiento, situación de calle o crisis, diseñados para ayudar a una familia a superar los primeros días difíciles.">General hygiene and household necessities for families experiencing displacement, homelessness, or crisis — built to help a family get through the first difficult days.</p>
+            <a href="our-care-kits.html#family-essentials" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="See Full Kit →" data-es="Ver Kit Completo →">See Full Kit →</a>
+          </div>
+
+        </div>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="our-care-kits.html" class="btn btn-secondary" data-en="View All Kits &amp; Contents" data-es="Ver Todos los Kits y Contenidos">View All Kits &amp; Contents</a>
         </div>
       </div>
     </section>
@@ -136,262 +233,223 @@
     <!-- PHOTO QUOTE BANNER -->
     <div class="photo-quote" style="background-image: url('images/women-together.jpg');">
       <div class="photo-quote-inner">
-        <blockquote data-en="No woman should have to choose between safety and survival." data-es="Ninguna mujer debería tener que elegir entre su seguridad y su supervivencia.">No woman should have to choose between safety and survival.</blockquote>
+        <blockquote data-en="Every donated item is inspected, inventoried, and prepared for distribution through an approved recipient organization." data-es="Cada artículo donado es inspeccionado, inventariado y preparado para su distribución a través de una organización receptora aprobada.">Every donated item is inspected, inventoried, and prepared for distribution through an approved recipient organization.</blockquote>
         <cite data-en="The Women and Children Foundation" data-es="La Fundación para Mujeres y Niños">The Women and Children Foundation</cite>
       </div>
     </div>
 
-    <!-- HOW IT WORKS -->
-    <section class="section" style="padding-top: 0; background: var(--purple-pale);">
-      <div class="container" style="padding-top: 4rem; padding-bottom: 1rem;">
+    <!-- CURRENT INITIATIVES -->
+    <section class="section">
+      <div class="container">
         <div class="section-header text-center">
-          <span class="tag tag-purple" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
-          <h2 data-en="From you to someone in need." data-es="De ti a alguien en necesidad.">From you to someone in need.</h2>
-          <p data-en="Every action — big or small — moves directly through our foundation to reach women and children." data-es="Cada acción, grande o pequeña, llega directamente a través de nuestra fundación a mujeres y niños.">Every action — big or small — moves directly through our foundation to reach women and children.</p>
+          <span class="tag tag-purple" data-en="Current Initiatives" data-es="Iniciativas Actuales">Current Initiatives</span>
+          <h2 data-en="Where our kits are going." data-es="Adónde van nuestros kits.">Where our kits are going.</h2>
+          <p data-en="We work in two lanes — close to home and around the world." data-es="Trabajamos en dos frentes: cerca de casa y alrededor del mundo.">We work in two lanes — close to home and around the world.</p>
         </div>
-        <div class="grid-3" style="margin-top: 2rem; padding-bottom: 3rem;">
-          <div style="text-align: center; padding: 1.5rem;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">1</div>
-            <h3 data-en="Donate or Join" data-es="Dona o Únete">Donate or Join</h3>
-            <p style="font-size: 0.92rem;" data-en="Donate supplies, become a member, or sign up to volunteer — every contribution fuels the work." data-es="Dona artículos, hazte miembro o regístrate como voluntario; cada contribución impulsa el trabajo.">Donate supplies, become a member, or sign up to volunteer — every contribution fuels the work.</p>
+        <div class="grid-2" style="margin-top: 2.5rem; gap: 2rem;">
+
+          <div class="card" style="background: var(--purple-pale); border: 1.5px solid var(--border);">
+            <span class="tag tag-purple" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            <h3 data-en="City Rescue Mission — Lansing, MI" data-es="City Rescue Mission — Lansing, MI">City Rescue Mission — Lansing, MI</h3>
+            <p data-en="We are actively collecting supplies for City Rescue Mission, which serves families and individuals experiencing homelessness and housing instability in Lansing. Kits and supplies are delivered through their program." data-es="Estamos recolectando artículos activamente para City Rescue Mission, que atiende a familias y personas que enfrentan situación de calle e inestabilidad habitacional en Lansing. Los kits y artículos se entregan a través de sus programas.">We are actively collecting supplies for City Rescue Mission, which serves families and individuals experiencing homelessness and housing instability in Lansing. Kits and supplies are delivered through their program.</p>
+            <a href="where-kits-go.html" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="See What They Need →" data-es="Ver Qué Necesitan →">See What They Need →</a>
           </div>
-          <div style="text-align: center; padding: 1.5rem;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--pink); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">2</div>
-            <h3 data-en="We Assemble" data-es="Ensamblamos">We Assemble</h3>
-            <p style="font-size: 0.92rem;" data-en="Volunteers and staff pack care kits with hygiene products, food, and school supplies — ready to go to people who need them." data-es="Voluntarios y personal empacan kits de ayuda con productos de higiene, alimentos y útiles escolares, listos para quienes los necesitan.">Volunteers and staff pack care kits with hygiene products, food, and school supplies — ready to go to people who need them.</p>
+
+          <div class="card" style="background: var(--blush); border: 1.5px solid var(--border);">
+            <span class="tag tag-pink" data-en="Around the World" data-es="Alrededor del Mundo">Around the World</span>
+            <h3 data-en="Carewin Africa Women and Children Foundation" data-es="Carewin Africa Women and Children Foundation">Carewin Africa Women and Children Foundation</h3>
+            <p data-en="Carewin Africa serves vulnerable women, children, and families in and around Dzaleka Refugee Camp in Malawi. Their needs include food assistance, hygiene and menstrual-care supplies, baby and maternal-care items, clothing, school supplies, and support for vulnerable children. We are actively coordinating with them now to prepare and ship care kits." data-es="Carewin Africa atiende a mujeres, niños y familias vulnerables en y alrededor del Campo de Refugiados Dzaleka en Malaui. Sus necesidades incluyen asistencia alimentaria, artículos de higiene y cuidado menstrual, artículos para bebé y madre, ropa, útiles escolares y apoyo para niños vulnerables. Estamos coordinando activamente con ellos para preparar y enviar kits de cuidado.">Carewin Africa serves vulnerable women, children, and families in and around Dzaleka Refugee Camp in Malawi. Their needs include food assistance, hygiene and menstrual-care supplies, baby and maternal-care items, clothing, school supplies, and support for vulnerable children. We are actively coordinating with them now to prepare and ship care kits.</p>
+            <a href="where-kits-go.html" class="btn btn-ghost" style="margin-top: 1rem; align-self: flex-start;" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
           </div>
-          <div style="text-align: center; padding: 1.5rem;">
-            <div style="width: 56px; height: 56px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">3</div>
-            <h3 data-en="It Reaches Them" data-es="Les Llega">It Reaches Them</h3>
-            <p style="font-size: 0.92rem;" data-en="Care kits are distributed through partner organizations — shelters, hospitals, schools, and community centers — to women and children in need." data-es="Los kits se distribuyen a través de organizaciones aliadas — albergues, hospitales, escuelas y centros comunitarios — para mujeres y niños en necesidad.">Care kits are distributed through partner organizations — shelters, hospitals, schools, and community centers — to women and children in need.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- WAYS TO PARTICIPATE -->
+    <section class="section" style="background: var(--purple-pale);">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="tag tag-purple" data-en="Get Involved" data-es="Participa">Get Involved</span>
+          <h2 data-en="Four ways to help." data-es="Cuatro formas de ayudar.">Four ways to help.</h2>
+          <p data-en="Every contribution — no matter the size — goes directly toward building and delivering care kits." data-es="Cada contribución, sin importar el tamaño, va directamente hacia la construcción y entrega de kits de cuidado.">Every contribution — no matter the size — goes directly toward building and delivering care kits.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+          <div class="card text-center">
+            <h3 data-en="Build a Complete Kit" data-es="Construye un Kit Completo">Build a Complete Kit</h3>
+            <p style="font-size: 0.9rem;" data-en="Gather all the items for one of our four kit editions and ship them together. The most impactful way to give." data-es="Reúne todos los artículos de una de nuestras cuatro ediciones de kit y envíalos juntos. La forma más impactante de dar.">Gather all the items for one of our four kit editions and ship them together. The most impactful way to give.</p>
+            <a href="our-care-kits.html" class="btn btn-primary" style="margin-top: 1rem;" data-en="See Kit Lists" data-es="Ver Listas de Kits">See Kit Lists</a>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Donate Individual Supplies" data-es="Dona Artículos Individuales">Donate Individual Supplies</h3>
+            <p style="font-size: 0.9rem;" data-en="Contribute whatever items you can — even a single toothbrush or pack of socks makes a real difference." data-es="Contribuye con los artículos que puedas; incluso un solo cepillo de dientes o un par de calcetines marca una diferencia real.">Contribute whatever items you can — even a single toothbrush or pack of socks makes a real difference.</p>
+            <a href="give-supplies.html" class="btn btn-primary" style="margin-top: 1rem;" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Host a Collection Drive" data-es="Organiza una Colecta">Host a Collection Drive</h3>
+            <p style="font-size: 0.9rem;" data-en="Run a collection at your church, school, business, or organization. We provide everything you need — you provide the location." data-es="Organiza una colecta en tu iglesia, escuela, empresa u organización. Nosotros proveemos todo lo necesario; tú pones el lugar.">Run a collection at your church, school, business, or organization. We provide everything you need — you provide the location.</p>
+            <a href="host-a-drive.html" class="btn btn-primary" style="margin-top: 1rem;" data-en="Partner With Us" data-es="Alíate Con Nosotros">Partner With Us</a>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Volunteer at an Assembly" data-es="Voluntario en un Ensamblaje">Volunteer at an Assembly</h3>
+            <p style="font-size: 0.9rem;" data-en="Join us when we assemble kits. Help sort, pack, and prepare care kits for delivery. No experience needed." data-es="Únete cuando ensamblemos los kits. Ayuda a clasificar, empacar y preparar los kits de cuidado para su entrega. No se necesita experiencia.">Join us when we assemble kits. Help sort, pack, and prepare care kits for delivery. No experience needed.</p>
+            <a href="volunteer.html" class="btn btn-primary" style="margin-top: 1rem;" data-en="Sign Up" data-es="Regístrate">Sign Up</a>
+          </div>
+          <div class="card text-center">
+            <h3 data-en="Partner as a Company" data-es="Aliarse como Empresa">Partner as a Company</h3>
+            <p style="font-size: 0.9rem;" data-en="Donate products, sponsor a campaign, sponsor shipping, or organize an employee volunteer day." data-es="Dona productos, patrocina una campaña, patrocina el envío, u organiza un día de voluntariado para empleados.">Donate products, sponsor a campaign, sponsor shipping, or organize an employee volunteer day.</p>
+            <a href="for-companies.html" class="btn btn-primary" style="margin-top: 1rem;" data-en="For Companies" data-es="Para Empresas">For Companies</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- DRIVES CALENDAR -->
-    <section class="section" style="padding-top: 0;">
+    <!-- YOUTH COMMUNITY OUTREACH -->
+    <section class="section">
       <div class="container">
-        <div class="section-header text-center" style="margin-bottom: 1.5rem;">
-          <span class="tag tag-purple" data-en="Donation Drives" data-es="Colectas de Donaciones">Donation Drives</span>
-          <h2 data-en="What's Happening" data-es="Qué Está Pasando">What's Happening</h2>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 1.25rem;">
-
-          <!-- Comfort & Care Drive — ACTIVE -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(46,184,122,0.35); box-shadow: 0 2px 16px rgba(46,184,122,0.15); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.25rem 1.5rem 1rem; background: linear-gradient(135deg, #f0e8fc, #e8f1fc); border-bottom: 3px solid #2eb87a;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #2eb87a; margin-bottom: 0.3rem;">🟢 Active — June 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">The Comfort &amp; Care Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #5C2D91;">June 21 – July 5, 2026 · Virtual</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0;" data-en="Hygiene products, baby supplies, food, school supplies, clothing — ship from anywhere in the world." data-es="Productos de higiene, artículos para bebé, alimentos, útiles escolares, ropa — envía desde cualquier parte del mundo.">Hygiene products, baby supplies, food, school supplies, clothing — ship from anywhere in the world.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
-              <a href="shop.html" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Shop the Drive" data-es="Comprar para la Colecta">Shop the Drive</a>
-              <a href="comfort-care-drive.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Details" data-es="Detalles">Details</a>
-            </div>
+        <div class="grid-2" style="align-items: center; gap: 3rem;">
+          <img src="images/young-women.jpg" alt="Two teens standing together" style="width:100%; height:360px; object-fit:cover; border-radius: var(--radius-lg);" />
+          <div>
+            <span class="tag tag-pink" data-en="New Initiative — Founding Volunteers Needed" data-es="Nueva Iniciativa — Buscamos Voluntarios Fundadores">New Initiative — Founding Volunteers Needed</span>
+            <h2 style="margin-top: 0.75rem;" data-en="Youth Community Outreach" data-es="Alcance Comunitario Juvenil">Youth Community Outreach</h2>
+            <p style="margin-top: 0.75rem;" data-en="We're launching a new program to bring TWCF's mission directly into local schools, youth groups, and community spaces. It's just getting started, and what we need most right now is people willing to help build it." data-es="Estamos lanzando un nuevo programa para llevar la misión de TWCF directamente a escuelas locales, grupos juveniles y espacios comunitarios. Apenas comienza, y ahora mismo lo que más necesitamos es gente dispuesta a ayudar a construirlo.">We're launching a new program to bring TWCF's mission directly into local schools, youth groups, and community spaces. It's just getting started, and what we need most right now is people willing to help build it.</p>
+            <a href="volunteer.html#youth-outreach" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Learn More →" data-es="Saber Más →">Learn More →</a>
           </div>
-
-          <!-- The Challenge — ACTIVE -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(46,184,122,0.35); box-shadow: 0 2px 16px rgba(46,184,122,0.12); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.25rem 1.5rem 1rem; background: linear-gradient(135deg, #3D1A6B, #5C2D91); border-bottom: 3px solid #2eb87a;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7debb0; margin-bottom: 0.3rem;">🟢 Active — June 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: white; margin: 0 0 0.2rem;">The Comfort &amp; Care Challenge</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: rgba(255,255,255,0.7);">June 21 – July 5, 2026 · Competition</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0;" data-en="Form a team and earn points for every item donated. Most points wins recognition on our site and social media." data-es="Forma un equipo y gana puntos por cada artículo donado. El equipo con más puntos gana reconocimiento en nuestro sitio y redes sociales.">Form a team and earn points for every item donated. Most points wins recognition on our site and social media.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem; display: flex; gap: 0.6rem; flex-wrap: wrap;">
-              <a href="shop.html#challenge" class="btn btn-primary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Join the Challenge" data-es="Unirse al Desafío">Join the Challenge</a>
-              <a href="shop.html#team" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Form a Team" data-es="Formar un Equipo">Form a Team</a>
-            </div>
-          </div>
-
-          <!-- Summer Toy & Fun Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">Mid-Summer 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Summer Toy &amp; Fun Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">July 6–19, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="Toys, books, games, and summer fun items for children during the summer." data-es="Juguetes, libros, juegos y artículos para el verano para niños.">Toys, books, games, and summer fun items for children during the summer.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-          <!-- Back-to-School Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">Late July / Early Aug 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Back-to-School Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">July 20 – August 7, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="Backpacks, notebooks, pencils, folders, and school supplies for children heading back to school." data-es="Mochilas, cuadernos, lápices, carpetas y útiles escolares para niños que regresan a clases.">Backpacks, notebooks, pencils, folders, and school supplies for children heading back to school.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-          <!-- Snack Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">Fall 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Snack Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">September 14–27, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="Snacks and easy food items for children and families at shelters and partner organizations." data-es="Meriendas y alimentos fáciles para niños y familias en albergues y organizaciones aliadas.">Snacks and easy food items for children and families at shelters and partner organizations.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-          <!-- Halloween Candy Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">October 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Halloween Candy Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">October 12–25, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="Candy and treats for children in hospitals so they can celebrate Halloween too." data-es="Dulces y golosinas para niños hospitalizados para que también puedan celebrar Halloween.">Candy and treats for children in hospitals so they can celebrate Halloween too.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-          <!-- Christmas Toy Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">Winter / Holiday 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Christmas Toy Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">November 9–22, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="Toys and gifts for children in shelters and families in crisis — so every child wakes up to something on Christmas morning." data-es="Juguetes y regalos para niños en albergues y familias en crisis, para que cada niño despierte con algo la mañana de Navidad.">Toys and gifts for children in shelters and families in crisis — so every child wakes up to something on Christmas morning.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-          <!-- Hospital Toy Drive -->
-          <div style="border-radius: 14px; overflow: hidden; border: 1px solid rgba(92,45,145,0.1); box-shadow: 0 2px 10px rgba(92,45,145,0.07); background: #fff; display: flex; flex-direction: column;">
-            <div style="padding: 1.1rem 1.5rem 0.9rem; background: #f5f0fc; border-bottom: 3px solid #c5aee8;">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #7a5aaa; margin-bottom: 0.3rem;">Winter 2026</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.2rem;">Hospital Toy Drive</h3>
-              <div style="font-size: 0.8rem; font-weight: 600; color: #7a5aaa;">November 30 – December 11, 2026</div>
-            </div>
-            <div style="padding: 0.85rem 1.5rem; flex: 1;">
-              <span style="display: inline-block; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; background: rgba(92,45,145,0.07); color: #7a5aaa; border: 1px solid rgba(92,45,145,0.15);" data-en="Planning" data-es="Planificación">Planning</span>
-              <p style="font-size: 0.84rem; color: var(--muted); line-height: 1.55; margin: 0.5rem 0 0;" data-en="New toys and books delivered directly to Child Life departments for children who are hospitalized over the holidays and can't be home." data-es="Juguetes y libros nuevos entregados directamente a los departamentos de Vida Infantil para niños hospitalizados durante las fiestas que no pueden estar en casa.">New toys and books delivered directly to Child Life departments for children who are hospitalized over the holidays and can't be home.</p>
-            </div>
-            <div style="padding: 0 1.5rem 1.1rem;">
-              <a href="volunteer.html" class="btn btn-secondary" style="font-size: 0.8rem; padding: 0.45rem 0.9rem;" data-en="Get Notified" data-es="Recibir Aviso">Get Notified</a>
-            </div>
-          </div>
-
-        </div>
-        <div style="text-align: center; margin-top: 1.5rem;">
-          <a href="drives.html" class="btn btn-secondary" data-en="See All Drives" data-es="Ver Todas las Colectas">See All Drives</a>
         </div>
       </div>
     </section>
 
-    <!-- GET HELP CTA -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container">
+    <!-- WHAT WE NEED NOW -->
+    <section id="what-we-need" class="section">
+      <div class="container" style="max-width: 760px;">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Current Need" data-es="Necesidad Actual">Current Need</span>
+          <h2 data-en="What we need now." data-es="Qué necesitamos ahora.">What we need now.</h2>
+          <p data-en="These items go directly into care kits for women, children, and families. All items must be new and unopened." data-es="Estos artículos van directamente a los kits de cuidado para mujeres, niños y familias. Todos los artículos deben ser nuevos y sin abrir.">These items go directly into care kits for women, children, and families. All items must be new and unopened.</p>
+        </div>
+        <div style="background: white; border-radius: var(--radius-lg); border: 1.5px solid var(--border); padding: 2rem; margin-top: 2rem;">
+          <div style="display: grid; grid-template-columns: 1fr auto; gap: 0.75rem 1.5rem; align-items: center;">
+
+            <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 0.5rem;" data-en="Non-Perishable Food" data-es="Alimentos No Perecederos">Non-Perishable Food</span>
+            <span></span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Canned vegetables" data-es="Verduras enlatadas">Canned vegetables</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Food" data-es="Alimento">Food</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Breakfast cereal" data-es="Cereal de desayuno">Breakfast cereal</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Food" data-es="Alimento">Food</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Canned fruit" data-es="Frutas enlatadas">Canned fruit</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Food" data-es="Alimento">Food</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Parboiled rice" data-es="Arroz parbolizado">Parboiled rice</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Food" data-es="Alimento">Food</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Instant mashed potatoes" data-es="Puré de papas instantáneo">Instant mashed potatoes</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Food" data-es="Alimento">Food</span>
+
+            <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 1rem;" data-en="Personal Hygiene" data-es="Higiene Personal">Personal Hygiene</span>
+            <span></span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Shampoo" data-es="Champú">Shampoo</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Hygiene" data-es="Higiene">Hygiene</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Body wash" data-es="Gel de baño">Body wash</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Hygiene" data-es="Higiene">Hygiene</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="3-in-1 (shampoo / conditioner / body wash)" data-es="3 en 1 (champú / acondicionador / gel de baño)">3-in-1 (shampoo / conditioner / body wash)</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Hygiene" data-es="Higiene">Hygiene</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Men's deodorant" data-es="Desodorante para hombre">Men's deodorant</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Hygiene" data-es="Higiene">Hygiene</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Toothpaste" data-es="Pasta dental">Toothpaste</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Hygiene" data-es="Higiene">Hygiene</span>
+
+            <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 1rem;" data-en="Clothing — New &amp; Packaged Only" data-es="Ropa — Solo Nueva y Empaquetada">Clothing — New &amp; Packaged Only</span>
+            <span></span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Men's underwear (new, packaged)" data-es="Ropa interior de hombre (nueva, empaquetada)">Men's underwear (new, packaged)</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Clothing" data-es="Ropa">Clothing</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Women's underwear (new, packaged)" data-es="Ropa interior de mujer (nueva, empaquetada)">Women's underwear (new, packaged)</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Clothing" data-es="Ropa">Clothing</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Pajama pants or shorts (new)" data-es="Pantalón o short de pijama (nuevo)">Pajama pants or shorts (new)</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--purple); background: var(--purple-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Clothing" data-es="Ropa">Clothing</span>
+
+            <span style="font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 1rem;" data-en="Household" data-es="Artículos del Hogar">Household</span>
+            <span></span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Kleenex / facial tissues" data-es="Kleenex / pañuelos faciales">Kleenex / facial tissues</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Household" data-es="Hogar">Household</span>
+            <span style="font-size: 0.95rem; color: var(--text);" data-en="Laundry pods" data-es="Cápsulas de detergente para ropa">Laundry pods</span>
+            <span style="font-size: 0.72rem; font-weight: 600; color: var(--pink); background: var(--pink-pale); padding: 0.2rem 0.6rem; border-radius: 999px; white-space: nowrap;" data-en="Household" data-es="Hogar">Household</span>
+          </div>
+          <p style="font-size: 0.82rem; color: var(--muted); margin-top: 1.25rem; border-top: 1px solid var(--border); padding-top: 1rem;" data-en="Items must be new and unopened. We do not currently need blankets, towels, toilet paper, paper towels, or formula." data-es="Los artículos deben ser nuevos y sin abrir. Actualmente no necesitamos cobijas, toallas, papel higiénico, papel de cocina ni fórmula.">Items must be new and unopened. We do not currently need blankets, towels, toilet paper, paper towels, or formula.</p>
+          <div style="border-top: 1px solid var(--border); margin-top: 1rem; padding-top: 1.25rem; text-align: center;">
+            <a href="give-supplies.html" class="btn btn-primary" data-en="Ship Items to Us" data-es="Envíanos Artículos">Ship Items to Us</a>
+            <a href="our-care-kits.html" class="btn btn-ghost" style="margin-left: 0.75rem;" data-en="Full Accepted Items List" data-es="Lista Completa de Artículos Aceptados">Full Accepted Items List</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCOUNTABILITY -->
+    <section class="section" style="background: var(--blush); padding-top: 0; padding-bottom: 4rem;">
+      <div class="container" style="max-width: 760px;">
         <div class="donate-banner">
-          <span class="tag tag-pink" data-en="Need Support?" data-es="¿Necesitas Apoyo?">Need Support?</span>
-          <h2 data-en="You don't have to face this alone." data-es="No tienes que enfrentar esto sola.">You don't have to face this alone.</h2>
-          <p data-en="Whether you're facing domestic violence, housing instability, food insecurity, or a medical crisis — we're here to connect you with help." data-es="Ya sea que enfrentes violencia doméstica, inestabilidad de vivienda, inseguridad alimentaria o una crisis médica, estamos aquí para conectarte con ayuda.">Whether you're facing domestic violence, housing instability, food insecurity, or a medical crisis — we're here to connect you with help.</p>
-          <div class="btn-row" style="justify-content: center;">
-            <a href="get-help.html" class="btn btn-primary" data-en="Find Support Resources" data-es="Encontrar Recursos de Apoyo">Find Support Resources</a>
-            <a href="contact.html" class="btn btn-secondary" data-en="Reach Out to Us" data-es="Contáctanos">Reach Out to Us</a>
+          <span class="tag tag-purple" data-en="Our Standards" data-es="Nuestros Estándares">Our Standards</span>
+          <h2 data-en="How we handle every donation." data-es="Cómo manejamos cada donación.">How we handle every donation.</h2>
+          <div style="display: grid; gap: 0.85rem; text-align: left; margin-top: 1.25rem;">
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+              <p style="margin: 0; font-size: 0.93rem;" data-en="Every recipient organization is contacted before kits are designed — we build around real, stated needs." data-es="Cada organización receptora es contactada antes de diseñar los kits; construimos alrededor de necesidades reales y declaradas.">Every recipient organization is contacted before kits are designed — we build around real, stated needs.</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+              <p style="margin: 0; font-size: 0.93rem;" data-en="Every donated item is counted and inspected. We do not include medications, opened products, expired products, or unapproved items." data-es="Cada artículo donado es contado e inspeccionado. No incluimos medicamentos, productos abiertos, productos vencidos ni artículos no aprobados.">Every donated item is counted and inspected. We do not include medications, opened products, expired products, or unapproved items.</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+              <p style="margin: 0; font-size: 0.93rem;" data-en="Distribution requirements are confirmed with recipient organizations before kits are shipped or delivered." data-es="Los requisitos de distribución son confirmados con las organizaciones receptoras antes de enviar o entregar los kits.">Distribution requirements are confirmed with recipient organizations before kits are shipped or delivered.</p>
+            </div>
+            <div style="display: flex; gap: 0.75rem; align-items: flex-start;">
+              <span style="color: var(--purple); font-weight: 700; flex-shrink: 0;">✓</span>
+              <p style="margin: 0; font-size: 0.93rem;" data-en="We are registered with the State of Michigan to solicit charitable donations (Registration #71710) and recognized by the IRS as a 501(c)(3) tax-exempt organization. Monetary gifts are tax-deductible to the extent allowed by law." data-es="Estamos registrados ante el Estado de Míchigan para solicitar donaciones benéficas (Registro #71710) y reconocidos por el IRS como una organización exenta de impuestos 501(c)(3). Las donaciones monetarias son deducibles de impuestos en la medida permitida por la ley.">We are registered with the State of Michigan to solicit charitable donations (Registration #71710) and recognized by the IRS as a 501(c)(3) tax-exempt organization. Monetary gifts are tax-deductible to the extent allowed by law.</p>
+            </div>
+          </div>
+          <div style="margin-top: 1.5rem;">
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- DONATE SECTION -->
-    <section class="section" style="padding-top: 0; padding-bottom: 5rem; background: var(--blush);">
-      <div class="container text-center">
-        <span class="tag tag-purple" data-en="Donate — From Anywhere in the World" data-es="Dona — Desde Cualquier Lugar del Mundo">Donate — From Anywhere in the World</span>
-        <h2 data-en="Ship supplies directly to us." data-es="Envíanos artículos directamente.">Ship supplies directly to us.</h2>
-        <p style="max-width: 52ch; margin: 0.75rem auto 0.5rem;" data-en="No matter where you are, you can donate to our Comfort &amp; Care Drive. Purchase items from your local store or Amazon and ship them straight to our mailing address — we'll handle the rest." data-es="Sin importar dónde estés, puedes donar a nuestra Colecta de Confort y Cuidado. Compra artículos en tu tienda local o Amazon y envíalos directamente a nuestra dirección postal; nosotros nos encargamos del resto.">No matter where you are, you can donate to our Comfort &amp; Care Drive. Purchase items from your local store or Amazon and ship them straight to our mailing address — we'll handle the rest.</p>
-
-        <!-- 3-step mini process -->
-        <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin: 1.75rem auto 1.25rem; max-width: 680px; text-align: left;">
-          <div style="flex: 1; min-width: 160px;">
-            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">1</div>
-            <p style="font-size: 0.85rem; text-align: center; color: var(--text); margin: 0;" data-en="Pick items from our drive list" data-es="Elige artículos de nuestra lista">Pick items from our drive list</p>
-          </div>
-          <div style="flex: 1; min-width: 160px;">
-            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--pink); color: white; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">2</div>
-            <p style="font-size: 0.85rem; text-align: center; color: var(--text); margin: 0;" data-en="Fill out our quick donation form" data-es="Completa nuestro formulario rápido">Fill out our quick donation form</p>
-          </div>
-          <div style="flex: 1; min-width: 160px;">
-            <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--purple); color: white; font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5rem;">3</div>
-            <p style="font-size: 0.85rem; text-align: center; color: var(--text); margin: 0;" data-en="Ship to our PO Box — done!" data-es="Envía a nuestra casilla postal — ¡listo!">Ship to our PO Box — done!</p>
-          </div>
-        </div>
-
-        <div style="background: white; border-radius: var(--radius-lg); padding: 1rem 1.5rem; display: inline-block; margin-bottom: 1.75rem; font-size: 0.95rem; border: 1.5px solid var(--border);">
-          <strong data-en="Ship to:" data-es="Enviar a:">Ship to:</strong> The Women and Children Foundation &nbsp;·&nbsp; 3830 New Salem Ave, Okemos, MI 48864
-        </div>
-
-        <div class="btn-row" style="justify-content: center;">
-          <a href="donate-supplies.html" class="btn btn-primary" data-en="Donate Supplies Now" data-es="Donar Artículos Ahora">Donate Supplies Now</a>
-          <a href="comfort-care-drive.html" class="btn btn-secondary" data-en="See What We Need" data-es="Ver Qué Necesitamos">See What We Need</a>
-        </div>
-        <p style="margin: 1rem auto 0; font-size: 0.82rem; color: var(--muted); max-width: 42ch;" data-en="Monetary donations will be available once our 501(c)(3) status is approved." data-es="Las donaciones monetarias estarán disponibles una vez aprobado nuestro estatus 501(c)(3).">Monetary donations will be available once our 501(c)(3) status is approved.</p>
       </div>
     </section>
 
     <!-- SPREAD THE WORD -->
-    <section class="section" style="padding-top: 0; padding-bottom: 4rem; background: var(--purple-pale);">
+    <section class="section" style="padding-bottom: 4rem; background: var(--purple-pale);">
       <div class="container" style="max-width: 680px; text-align: center;">
         <span class="tag tag-purple" data-en="Help Us Reach More People" data-es="Ayúdanos a Llegar a Más Personas">Help Us Reach More People</span>
-        <h2 style="margin-top: 0.75rem;" data-en="Tell someone about the drive." data-es="Cuéntale a alguien sobre la colecta.">Tell someone about the drive.</h2>
-        <p style="color: var(--muted); margin: 0.5rem auto 1.5rem; max-width: 46ch;" data-en="We're a new organization — word of mouth is everything right now. A single post or text could bring in our next donation." data-es="Somos una organización nueva: el boca a boca lo es todo ahora mismo. Una sola publicación o mensaje podría traer nuestra próxima donación.">We're a new organization — word of mouth is everything right now. A single post or text could bring in our next donation.</p>
+        <h2 style="margin-top: 0.75rem;" data-en="Tell someone about TWCF." data-es="Cuéntale a alguien sobre TWCF.">Tell someone about TWCF.</h2>
+        <p style="color: var(--muted); margin: 0.5rem auto 1.5rem; max-width: 46ch;" data-en="We're a new organization — word of mouth is everything right now. A single post or text could bring in our next donation or volunteer." data-es="Somos una organización nueva: el boca a boca lo es todo ahora mismo. Una sola publicación o mensaje podría traer nuestra próxima donación o voluntario.">We're a new organization — word of mouth is everything right now. A single post or text could bring in our next donation or volunteer.</p>
 
-        <!-- Copy link pill -->
         <div style="display: flex; align-items: center; gap: 0.75rem; background: white; border-radius: 999px; border: 1.5px solid var(--border); padding: 0.55rem 0.6rem 0.55rem 1.25rem; margin-bottom: 1rem;">
-          <span style="font-size: 0.875rem; color: var(--text); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">thewomenandchildrenfoundation.org/shop.html</span>
-          <button onclick="navigator.clipboard.writeText('https://thewomenandchildrenfoundation.org/shop.html').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Link'},2000)})" style="flex-shrink:0;font-size:0.8rem;font-weight:700;padding:0.42rem 1.1rem;border-radius:999px;border:none;background:var(--purple);color:white;cursor:pointer;" data-en="Copy Link" data-es="Copiar Enlace">Copy Link</button>
+          <span style="font-size: 0.875rem; color: var(--text); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">thewomenandchildrenfoundation.org</span>
+          <button onclick="navigator.clipboard.writeText('https://thewomenandchildrenfoundation.org').then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Link'},2000)})" style="flex-shrink:0;font-size:0.8rem;font-weight:700;padding:0.42rem 1.1rem;border-radius:999px;border:none;background:var(--purple);color:white;cursor:pointer;" data-en="Copy Link" data-es="Copiar Enlace">Copy Link</button>
         </div>
 
-        <!-- Copy-paste post text -->
         <div style="background: white; border-radius: var(--radius-lg); border: 1.5px solid var(--border); padding: 1.25rem 1.5rem; text-align: left; margin-bottom: 1.25rem;">
           <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.6rem;" data-en="Copy &amp; paste for Instagram or Facebook:" data-es="Copia y pega para Instagram o Facebook:">Copy &amp; paste for Instagram or Facebook:</div>
-          <p id="share-text" style="font-size: 0.88rem; color: var(--text); line-height: 1.65; margin: 0; white-space: pre-wrap;">The Women and Children Foundation is running their first virtual care drive right now (through July 5)! 💜
+          <p id="share-text" style="font-size: 0.88rem; color: var(--text); line-height: 1.65; margin: 0; white-space: pre-wrap;" data-en="The Women and Children Foundation creates care kits for women, children, mothers, babies, and families facing hardship — locally in Michigan and internationally. 💜
 
-You can buy hygiene products, baby items, snacks, or school supplies and ship them directly — from anywhere in the world. Every single item goes to a woman or child in need.
+Every item donated goes into a thoughtfully assembled kit. No overhead, no waste.
 
-Shop the drive here: thewomenandchildrenfoundation.org/shop.html
+Learn more and give here: thewomenandchildrenfoundation.org
 
-#ComfortAndCareDrive #TWCF #DonateNow</p>
+#TWCF #CareKits #DonateNow" data-es="La Fundación para Mujeres y Niños crea kits de cuidado para mujeres, niños, madres, bebés y familias en situación de dificultad, localmente en Míchigan e internacionalmente. 💜
+
+Cada artículo donado va a un kit ensamblado con cuidado. Sin gastos generales, sin desperdicios.
+
+Conoce más y contribuye aquí: thewomenandchildrenfoundation.org
+
+#TWCF #KitsDeCuidado #DonaAhora">The Women and Children Foundation creates care kits for women, children, mothers, babies, and families facing hardship — locally in Michigan and internationally. 💜
+
+Every item donated goes into a thoughtfully assembled kit. No overhead, no waste.
+
+Learn more and give here: thewomenandchildrenfoundation.org
+
+#TWCF #CareKits #DonateNow</p>
           <button onclick="navigator.clipboard.writeText(document.getElementById('share-text').innerText).then(()=>{this.textContent='Copied!';setTimeout(()=>{this.textContent='Copy Text'},2000)})" style="margin-top: 1rem; font-size: 0.8rem; font-weight: 600; padding: 0.45rem 1.1rem; border-radius: 999px; border: 1.5px solid var(--purple); color: var(--purple); background: transparent; cursor: pointer;" data-en="Copy Text" data-es="Copiar Texto">Copy Text</button>
         </div>
 
         <div class="btn-row" style="justify-content: center; flex-wrap: wrap;">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthewomenandchildrenfoundation.org%2Fshop.html" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 0.85rem;" data-en="Share on Facebook" data-es="Compartir en Facebook">Share on Facebook</a>
-          <a href="https://wa.me/?text=The%20Women%20and%20Children%20Foundation%20is%20running%20a%20virtual%20care%20drive%20%E2%80%94%20you%20can%20donate%20hygiene%20products%2C%20baby%20items%2C%20snacks%2C%20and%20more%20from%20anywhere%20in%20the%20world%21%20%F0%9F%92%9C%20Shop%20here%3A%20https%3A%2F%2Fthewomenandchildrenfoundation.org%2Fshop.html" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 0.85rem;" data-en="Share on WhatsApp" data-es="Compartir en WhatsApp">Share on WhatsApp</a>
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fthewomenandchildrenfoundation.org" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 0.85rem;" data-en="Share on Facebook" data-es="Compartir en Facebook">Share on Facebook</a>
+          <a href="https://wa.me/?text=The%20Women%20and%20Children%20Foundation%20creates%20care%20kits%20for%20women%20and%20children%20facing%20hardship.%20Learn%20more%3A%20https%3A%2F%2Fthewomenandchildrenfoundation.org" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size: 0.85rem;" data-en="Share on WhatsApp" data-es="Compartir en WhatsApp">Share on WhatsApp</a>
           <a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener" class="btn btn-ghost" style="font-size: 0.85rem;" data-en="Follow on Instagram" data-es="Seguir en Instagram">Follow on Instagram</a>
         </div>
       </div>
@@ -401,21 +459,40 @@ Shop the drive here: thewomenandchildrenfoundation.org/shop.html
     <section class="section" style="padding-top: 0; background: var(--purple-pale);">
       <div class="container" style="max-width: 600px; text-align: center;">
         <span class="tag tag-purple" data-en="Stay in the Loop" data-es="Mantente Informada">Stay in the Loop</span>
-        <h2 style="margin-top: 0.75rem;" data-en="Get updates on our drives, events, and ways to help." data-es="Recibe actualizaciones sobre nuestras colectas, eventos y formas de ayudar.">Get updates on our drives, events, and ways to help.</h2>
+        <h2 style="margin-top: 0.75rem;" data-en="Get updates on our kits, drives, and ways to help." data-es="Recibe actualizaciones sobre nuestros kits, colectas y formas de ayudar.">Get updates on our kits, drives, and ways to help.</h2>
         <p style="color: var(--muted); margin: 0.5rem auto 1.75rem; max-width: 42ch;" data-en="No spam, ever — just the things that matter." data-es="Sin spam, nunca. Solo lo que importa.">No spam, ever — just the things that matter.</p>
-
         <div id="mailing-list-success" style="display:none; background: rgba(92,45,145,0.08); border-radius: var(--radius-lg); padding: 1.5rem; color: var(--purple);">
           <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✓</div>
           <strong data-en="You're on the list!" data-es="¡Estás en la lista!">You're on the list!</strong>
           <p style="margin: 0.35rem 0 0; font-size: 0.9rem; color: var(--muted);" data-en="We'll be in touch when there's something worth sharing." data-es="Te avisaremos cuando haya algo que valga la pena compartir.">We'll be in touch when there's something worth sharing.</p>
         </div>
-
         <form action="https://formspree.io/f/mlgvpjnl" method="POST" data-formspree data-success-target="mailing-list-success" style="margin: 0 auto;">
           <input type="hidden" name="_subject" value="New Mailing List Sign-Up" />
           <input type="hidden" name="form_type" value="mailing-list" />
           <div style="display: flex; gap: 0.75rem; max-width: 460px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
             <input type="text" name="first_name" placeholder="First name" data-en-placeholder="First name" data-es-placeholder="Nombre" style="flex: 1; min-width: 130px; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-lg); font-size: 0.95rem; font-family: inherit; background: var(--white);" />
             <input type="email" name="email" required placeholder="your@email.com" style="flex: 2; min-width: 180px; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-lg); font-size: 0.95rem; font-family: inherit; background: var(--white);" />
+            <input type="text" name="zip_code" placeholder="ZIP code" data-en-placeholder="ZIP code" data-es-placeholder="Código Postal" style="flex: 1; min-width: 110px; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: var(--radius-lg); font-size: 0.95rem; font-family: inherit; background: var(--white);" />
+          </div>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 1rem; font-size: 0.85rem; color: var(--muted);">
+            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+              <input type="checkbox" name="interest_volunteer" value="Volunteer" />
+              <span data-en="Volunteer opportunities" data-es="Oportunidades de voluntariado">Volunteer opportunities</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+              <input type="checkbox" name="interest_host" value="Host a drive" />
+              <span data-en="Hosting a drive" data-es="Organizar una colecta">Hosting a drive</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+              <input type="checkbox" name="interest_business" value="Business partnership" />
+              <span data-en="Business partnership" data-es="Alianza comercial">Business partnership</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.4rem; cursor: pointer;">
+              <input type="checkbox" name="interest_updates" value="General updates" checked />
+              <span data-en="General updates" data-es="Actualizaciones generales">General updates</span>
+            </label>
+          </div>
+          <div style="margin-top: 1.25rem;">
             <button type="submit" class="btn btn-primary" data-en="Subscribe" data-es="Suscribirse">Subscribe</button>
           </div>
         </form>
@@ -430,38 +507,40 @@ Shop the drive here: thewomenandchildrenfoundation.org/shop.html
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4 data-en="Connect" data-es="Conectar">Connect</h4>
           <ul>
-            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener" data-en="Instagram" data-es="Instagram">Instagram</a></li>
-            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener" data-en="Facebook"  data-es="Facebook">Facebook</a></li>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>

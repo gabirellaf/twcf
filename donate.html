@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+  <style>
+    .amount-option { display: block; cursor: pointer; }
+    .amount-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .amount-card { border: 1.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; transition: border-color 0.15s, background 0.15s; }
+    .amount-option input:checked + .amount-card { border-color: var(--purple); background: var(--purple-pale); }
+    .amount-card .amt { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.25rem; color: var(--purple); flex-shrink: 0; }
+    .amount-card .desc { font-size: 0.88rem; color: var(--muted); }
+
+    .custom-amount-panel {
+      display: none;
+      margin-top: -2px;
+      padding: 1rem 1.1rem 1.1rem;
+      background: var(--purple-pale);
+      border: 2px solid var(--purple);
+      border-top: 0;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    }
+
+    .custom-amount-panel.open {
+      display: block;
+    }
+
+    /* When Custom is expanded, merge the top card and amount panel */
+    #donate-custom-option:has(input:checked) .amount-card {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-color: transparent;
+      margin-bottom: 0;
+    }
+    .custom-amount-panel label {
+      display: block;
+      margin-bottom: 0.45rem;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .custom-amount-input-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius);
+      padding: 0.65rem 0.8rem;
+    }
+    .custom-amount-input-wrap:focus-within {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(92,45,145,0.09);
+    }
+    .custom-amount-input-wrap span {
+      color: var(--purple);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .custom-amount-input-wrap input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font: inherit;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+    .tax-deductible-note {
+      margin-bottom: 1.5rem;
+      padding: 1rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .tax-deductible-note strong { color: var(--purple); }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Donate" data-es="Donar">Donate</span>
+        <h1 data-en="Fund Care Kits Directly" data-es="Financia Kits de Cuidado Directamente">Fund Care Kits Directly</h1>
+        <p data-en="Every gift funds real supplies for a specific purpose — choose an amount below, or enter your own. We are an IRS-recognized 501(c)(3); gifts are tax-deductible to the extent permitted by law." data-es="Cada donación financia suministros reales para un propósito específico; elige un monto abajo, o ingresa el tuyo. Somos una organización 501(c)(3) reconocida por el IRS; las donaciones son deducibles de impuestos en la medida permitida por la ley.">Every gift funds real supplies for a specific purpose — choose an amount below, or enter your own. We are an IRS-recognized 501(c)(3); gifts are tax-deductible to the extent permitted by law.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 560px;">
+
+        <div id="donate-picker">
+          <div class="tax-deductible-note"
+               data-en="<strong>Tax-deductible:</strong> Donations made through this page are charitable contributions and are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for donations made on this page."
+               data-es="<strong>Deducible de impuestos:</strong> Las donaciones realizadas a través de esta página son contribuciones benéficas y son deducibles de impuestos en la medida permitida por la ley. No se proporcionan bienes ni servicios a cambio de las donaciones realizadas en esta página.">
+            <strong>Tax-deductible:</strong> Donations made through this page are charitable contributions and are tax-deductible to the extent permitted by law. No goods or services are provided in exchange for donations made on this page.
+          </div>
+
+          <form id="donate-amount-form" style="display: flex; flex-direction: column; gap: 0.75rem;">
+            <div id="donate-amount-options"></div>
+
+            <div>
+              <label class="amount-option" id="donate-custom-option">
+                <input type="radio" name="donate-amount" value="donate-custom" id="donate-custom-radio" />
+                <div class="amount-card">
+                  <span class="amt" data-en="Custom" data-es="Otro monto">Custom</span>
+                </div>
+              </label>
+
+              <div id="donate-custom-panel" class="custom-amount-panel" aria-hidden="true">
+                <label for="donate-custom-input" data-en="Donation amount" data-es="Monto de la donación">Donation amount</label>
+                <div class="custom-amount-input-wrap">
+                  <span>$</span>
+                  <input
+                    type="number"
+                    id="donate-custom-input"
+                    min="1"
+                    max="100000"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="25.00"
+                    aria-label="Custom donation amount"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <button id="donate-continue-btn" class="btn btn-primary" style="margin-top: 1.5rem; width: 100%; justify-content: center;" disabled data-en="Continue to Payment" data-es="Continuar al Pago">Continue to Payment</button>
+        </div>
+
+        <div id="donate-checkout" style="display:none;">
+          <p id="donate-loading" style="text-align: center; color: var(--muted); font-size: 0.9rem;" data-en="Loading secure checkout…" data-es="Cargando pago seguro…">Loading secure checkout…</p>
+          <p id="donate-error" style="text-align: center; color: var(--pink-dark); font-size: 0.9rem;"></p>
+          <div id="checkout-container"></div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
+          <ul>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
+          <ul>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="for-companies.html"  data-en="For Companies"  data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      const optionsEl = document.getElementById('donate-amount-options');
+      Object.keys(DONATE_PRICES).forEach((slug, i) => {
+        const p = DONATE_PRICES[slug];
+        const label = document.createElement('label');
+        label.className = 'amount-option';
+        label.innerHTML = `
+          <input type="radio" name="donate-amount" value="${slug}" ${i === 0 ? '' : ''} />
+          <div class="amount-card">
+            <span class="amt">$${p.amount}</span>
+            <span class="desc" data-en="${p.en}" data-es="${p.es}">${p.en}</span>
+          </div>`;
+        optionsEl.appendChild(label);
+      });
+      applyLanguage(currentLang);
+
+      const form = document.getElementById('donate-amount-form');
+      const customInput = document.getElementById('donate-custom-input');
+      const customRadio = document.getElementById('donate-custom-radio');
+      const customPanel = document.getElementById('donate-custom-panel');
+      const continueBtn = document.getElementById('donate-continue-btn');
+
+      function setCustomPanel(open) {
+        customPanel.classList.toggle('open', open);
+        customPanel.setAttribute('aria-hidden', String(!open));
+      }
+
+      function updateContinueState() {
+        const checked = form.querySelector('input[name="donate-amount"]:checked');
+        const customSelected = checked && checked.value === 'donate-custom';
+
+        setCustomPanel(Boolean(customSelected));
+
+        if (!checked) {
+          continueBtn.disabled = true;
+          return;
+        }
+
+        if (customSelected) {
+          const n = Number(customInput.value);
+          continueBtn.disabled = !(Number.isFinite(n) && n >= 1 && n <= 100000);
+        } else {
+          continueBtn.disabled = false;
+        }
+      }
+
+      form.addEventListener('change', () => {
+        const customWasSelected = customRadio.checked;
+        updateContinueState();
+
+        if (customWasSelected) {
+          window.setTimeout(() => customInput.focus(), 0);
+        }
+      });
+
+      customInput.addEventListener('input', () => {
+        customRadio.checked = true;
+        setCustomPanel(true);
+        updateContinueState();
+      });
+
+      continueBtn.addEventListener('click', () => {
+        const checked = form.querySelector('input[name="donate-amount"]:checked');
+        if (!checked) return;
+        const slug = checked.value;
+        const customAmount = slug === 'donate-custom' ? Number(customInput.value) : undefined;
+
+        document.getElementById('donate-picker').style.display = 'none';
+        document.getElementById('donate-checkout').style.display = 'block';
+
+        startEmbeddedCheckout({
+          type: 'donate',
+          slug,
+          customAmount,
+          containerEl: document.getElementById('checkout-container'),
+          errorEl: document.getElementById('donate-error'),
+          loadingEl: document.getElementById('donate-loading'),
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

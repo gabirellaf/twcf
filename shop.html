@@ -3,211 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shop the Drive — The Women and Children Foundation</title>
+  <title>Shop — The Women and Children Foundation</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon-icon.png" type="image/png" />
-  <!--
-    SHOP PAGE SETUP INSTRUCTIONS
-    ─────────────────────────────
-    Replace every  href="#todo"  with a real product URL (Amazon, Target, Walmart, etc.)
-    before publishing. You can also link each kit's "Buy Full Kit" button to an Amazon
-    Wishlist for that kit — that's the easiest experience for donors.
+<style>
+/* Page-only styles: no changes to the shared stylesheet. */
+.shop-page{--purple:#5C2D91;--purple-dark:#3D1A6B;--pink:#4A7EC4;--cream:#F8FAFC;--muted:#6B6880;--border:rgba(92,45,145,.13)}
+.shop-intro{padding:3.5rem 0 2rem;text-align:center}.shop-intro h1{margin:.5rem 0 .8rem}.shop-intro p{max-width:52ch;margin:auto}
+.shop-layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:2rem;align-items:start;padding-bottom:4rem}
+.shop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.7rem 1.2rem}
+.shop-product{min-width:0}.shop-art{background:#F2EBFD;border-radius:16px;aspect-ratio:1.1;display:grid;place-items:center;position:relative;margin-bottom:1rem}
+.shop-art svg{width:70%;height:70%;fill:none;stroke:var(--purple);stroke-width:3;stroke-linejoin:round;stroke-linecap:round}
+.shop-product:nth-child(even) .shop-art{background:#EBF3FC}.shop-product h2{font-size:1.2rem;margin:0}.shop-product p{font-size:.82rem;margin:.4rem 0 .7rem;line-height:1.5}
+.shop-price{font-weight:600;color:var(--purple);margin:.4rem 0}.shop-product .btn{width:100%;font-size:.82rem;padding:.55rem .7rem}
+.shop-size{display:flex;align-items:center;gap:.6rem;font-size:.8rem;margin-bottom:.7rem}.shop-size select{min-width:0;flex:1;padding:.35rem;border:1px solid var(--border);border-radius:6px;background:white;font:inherit}
+.shop-badge{position:absolute;top:12px;left:12px;font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;background:white;color:var(--purple);padding:4px 9px;border-radius:20px}
+.shop-cart{background:white;border:1px solid var(--border);border-radius:20px;padding:1.4rem;position:sticky;top:110px}.shop-cart h2{font-size:1.4rem}.shop-cart ul{list-style:none;margin:1rem 0}.shop-cart li{border-bottom:1px solid var(--border);padding:.8rem 0;font-size:.83rem}.shop-cart-head{display:flex;justify-content:space-between;gap:.5rem}.shop-qty{display:flex;align-items:center;gap:.5rem;margin-top:.6rem}.shop-qty button{border:1px solid var(--border);border-radius:6px;background:var(--cream);color:var(--purple);cursor:pointer;min-width:30px;min-height:30px;font:inherit}.shop-qty .shop-remove{margin-left:auto;border:0;background:none;font-size:.75rem;text-decoration:underline}
+.shop-total{display:flex;justify-content:space-between;margin:1rem 0;font-weight:600}.shop-cart .btn{width:100%}.shop-note{font-size:.76rem!important;line-height:1.6!important;margin:.7rem 0 0}
+.shop-page button:focus-visible,.shop-page a:focus-visible,.shop-page select:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.shop-page button:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.shop-dialog{border:1px solid var(--border);border-radius:20px;padding:2rem;width:min(480px,calc(100% - 2rem));margin:auto;color:#1C1830}.shop-dialog::backdrop{background:rgba(28,24,48,.45)}.shop-dialog h2{margin-bottom:1rem}.shop-dialog p{margin:.8rem 0}.shop-dialog .btn{margin-top:1rem}
+.shop-page .nav-inner{flex-wrap:wrap;padding:.5rem 0}.shop-page .nav-links{flex-wrap:wrap;flex:1;justify-content:center}.shop-page .nav-right{margin-left:auto}.shop-page .nav-links a{font-size:.78rem;padding:.4rem}
+@media(max-width:1050px){.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.shop-layout{grid-template-columns:minmax(0,1fr) 280px}}
+@media(max-width:768px){.shop-layout{grid-template-columns:1fr}.shop-cart{position:static}.shop-page .nav-links{flex-wrap:nowrap}.shop-page .nav-right>.btn{display:none}.shop-page .nav-links{top:100%;z-index:1001}.shop-intro{padding-top:2rem}}
+@media(max-width:380px){.shop-grid{grid-template-columns:1fr}}
 
-    HOW TO SET UP AN AMAZON WISHLIST (recommended):
-    1. Sign in to Amazon and go to "Lists" → "Create a List"
-    2. Name it (e.g. "TWCF Kit 1 — Essential Care")
-    3. Add all the items for that kit
-    4. Set the shipping address to the TWCF PO Box
-    5. Set the list to Public and copy the share link
-    6. Paste that link as the href for the "Buy Full Kit on Amazon" button
-    Donors can then buy directly from your list and Amazon ships it to you automatically.
-  -->
-  <style>
-    .shop-kit-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .shop-kit-card {
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      background: var(--white);
-      display: flex;
-      flex-direction: column;
-    }
-    .shop-kit-header {
-      padding: 1.1rem 1.5rem 0.9rem;
-      background: linear-gradient(135deg, #f0e8fc, #e8f1fc);
-      border-bottom: 3px solid #5C2D91;
-    }
-    .shop-kit-header.pink {
-      background: linear-gradient(135deg, #fce8f2, #fce8e8);
-      border-bottom-color: #e55c9a;
-    }
-    .shop-kit-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #3D1A6B;
-      margin: 0.25rem 0 0.15rem;
-    }
-    .shop-kit-meta {
-      font-size: 0.78rem;
-      color: #7a5aaa;
-    }
-    .shop-kit-points {
-      display: inline-block;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 2px 10px;
-      border-radius: 999px;
-      background: rgba(92,45,145,0.12);
-      color: #5C2D91;
-      border: 1px solid rgba(92,45,145,0.2);
-      float: right;
-      margin-top: 2px;
-    }
-    .shop-item-list { list-style: none; margin: 0; padding: 0; flex: 1; }
-    .shop-item-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.5rem 1.5rem;
-      border-bottom: 1px solid var(--border);
-      gap: 0.75rem;
-    }
-    .shop-item-row:last-child { border-bottom: none; }
-    .shop-item-name { font-size: 0.88rem; color: var(--text); flex: 1; }
-    .shop-item-qty { font-size: 0.78rem; color: var(--muted); flex-shrink: 0; min-width: 28px; text-align: center; }
-    .btn-buy {
-      display: inline-block;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1.5px solid #5C2D91;
-      color: #5C2D91;
-      text-decoration: none;
-      white-space: nowrap;
-      flex-shrink: 0;
-      transition: background 0.15s, color 0.15s;
-    }
-    .btn-buy:hover { background: #5C2D91; color: white; }
-    .btn-buy.pink { border-color: #e55c9a; color: #e55c9a; }
-    .btn-buy.pink:hover { background: #e55c9a; color: white; }
-    .shop-kit-footer {
-      padding: 0.9rem 1.5rem 1.1rem;
-      border-top: 2px solid var(--border);
-      background: #fafafa;
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .how-step {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      flex: 1;
-      min-width: 180px;
-    }
-    .how-step-num {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1rem;
-      color: white;
-      flex-shrink: 0;
-    }
-    .challenge-callout {
-      background: linear-gradient(135deg, #3D1A6B, #5C2D91);
-      border-radius: var(--radius-lg);
-      padding: 2rem 2.5rem;
-      color: white;
-      margin-top: 3rem;
-    }
-    .challenge-callout h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      color: white;
-      margin-bottom: 0.5rem;
-    }
-    .challenge-callout p { color: rgba(255,255,255,0.85); font-size: 0.92rem; margin: 0 0 1.25rem; }
-    .points-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-      gap: 0.75rem;
-      margin-top: 1.25rem;
-    }
-    .points-tile {
-      background: rgba(255,255,255,0.12);
-      border-radius: 10px;
-      padding: 0.75rem 0.5rem;
-      text-align: center;
-    }
-    .points-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: white;
-      display: block;
-      line-height: 1;
-    }
-    .points-desc { font-size: 0.72rem; color: rgba(255,255,255,0.7); margin-top: 0.25rem; display: block; }
-    .address-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 1.1rem 1.5rem;
-      display: inline-block;
-      border: 1.5px solid var(--border);
-      font-size: 0.95rem;
-      line-height: 1.7;
-    }
-    @media (max-width: 640px) {
-      .shop-kit-grid { grid-template-columns: 1fr; }
-      .challenge-callout { padding: 1.5rem 1.25rem; }
-    }
-  </style>
-</head>
-<body>
+.nav-dropdown{position:relative;list-style:none}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:.28rem;padding:.45rem .65rem;border:0;border-radius:var(--radius);background:transparent;color:var(--text);font:inherit;font-size:.87rem;font-weight:500;cursor:pointer;white-space:nowrap;transition:all var(--ease)}
+.nav-dropdown-toggle:hover,.nav-dropdown:focus-within>.nav-dropdown-toggle,.nav-dropdown.open>.nav-dropdown-toggle{background:var(--purple-pale);color:var(--purple)}
+.nav-dropdown-menu{display:none;position:absolute;top:calc(100% + .45rem);left:0;min-width:180px;padding:.45rem;margin:0;list-style:none;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);z-index:1200}
+.nav-dropdown:hover .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu,.nav-dropdown.open .nav-dropdown-menu{display:block}
+.nav-dropdown-menu a{display:block;padding:.6rem .75rem!important;border-radius:9px;font-size:.86rem!important}
+@media(max-width:768px){.nav-dropdown{width:100%}.nav-dropdown-toggle{width:100%;justify-content:space-between;padding:.65rem .85rem;font-size:.95rem}.nav-dropdown-menu{position:static;min-width:0;margin:.2rem 0 .25rem .75rem;padding:.25rem 0 .25rem .6rem;border:0;border-left:2px solid var(--purple-pale);border-radius:0;box-shadow:none;background:transparent}.nav-dropdown:hover .nav-dropdown-menu{display:none}.nav-dropdown.open .nav-dropdown-menu,.nav-dropdown:focus-within .nav-dropdown-menu{display:block}}
 
-  <nav class="site-nav">
+</style></head>
+<body class="shop-page"><nav class="site-nav">
     <div class="container nav-inner">
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"      data-en="Drives"      data-es="Colectas">Drives</a></li>
-        <li><a href="shop.html"        data-en="Shop Drive"  data-es="Tienda" style="color: var(--purple); font-weight: 600;">Shop Drive</a></li>
-        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="donate-supplies.html" class="btn btn-primary btn-get-help-nav" data-en="Donate Now" data-es="Donar Ahora">Donate Now</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -215,427 +109,35 @@
     </div>
   </nav>
 
-  <main>
-
-    <!-- HERO -->
-    <section class="page-hero">
-      <div class="container">
-        <span class="tag tag-pink" data-en="The Comfort &amp; Care Drive · June 21–July 5, 2026" data-es="La Colecta de Confort y Cuidado · 21 de junio–5 de julio 2026">The Comfort &amp; Care Drive · June 21–July 5, 2026</span>
-        <h1 data-en="Shop the Drive" data-es="Compra para la Colecta">Shop the Drive</h1>
-        <p data-en="Browse our care kit items and buy what you can. Purchase from your local store or Amazon and ship directly to our PO Box — from anywhere in the world. Every item goes straight to a woman or child in need." data-es="Explora los artículos de nuestros kits y compra lo que puedas. Compra en tu tienda local o Amazon y envíalo directamente a nuestra casilla postal, desde cualquier parte del mundo. Cada artículo va directo a una mujer o niño en necesidad.">Browse our care kit items and buy what you can. Purchase from your local store or Amazon and ship directly to our PO Box — from anywhere in the world. Every item goes straight to a woman or child in need.</p>
-        <div class="btn-row" style="margin-top: 1.5rem;">
-          <a href="#kits" class="btn btn-primary" data-en="Browse Kits ↓" data-es="Ver Kits ↓">Browse Kits ↓</a>
-          <a href="donate-supplies.html" class="btn btn-secondary" data-en="I Already Have Items" data-es="Ya Tengo Artículos">I Already Have Items</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="section-sm" style="background: var(--purple-pale);">
-      <div class="container">
-        <div class="section-header text-center" style="margin-bottom: 1.75rem;">
-          <span class="tag tag-purple" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
-          <h2 data-en="Three steps. That's it." data-es="Tres pasos. Nada más.">Three steps. That's it.</h2>
-        </div>
-
-        <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2rem;">
-          <div class="how-step">
-            <div class="how-step-num" style="background: var(--purple);">1</div>
-            <div>
-              <strong style="font-size: 0.95rem;" data-en="Pick your items" data-es="Elige tus artículos">Pick your items</strong>
-              <p style="font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0 0;" data-en="Browse the kits below. Buy individual items or a full kit from your local store or Amazon." data-es="Explora los kits a continuación. Compra artículos individuales o un kit completo en tu tienda o Amazon.">Browse the kits below. Buy individual items or a full kit from your local store or Amazon.</p>
-            </div>
-          </div>
-          <div class="how-step">
-            <div class="how-step-num" style="background: var(--pink);">2</div>
-            <div>
-              <strong style="font-size: 0.95rem;" data-en="Fill out a quick form" data-es="Completa un formulario rápido">Fill out a quick form</strong>
-              <p style="font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0 0;" data-en="Let us know what's on the way via our pledge form. Takes under a minute." data-es="Avísanos qué viene en camino con nuestro formulario de promesa. Tarda menos de un minuto.">Let us know what's on the way via our pledge form. Takes under a minute.</p>
-            </div>
-          </div>
-          <div class="how-step">
-            <div class="how-step-num" style="background: var(--purple);">3</div>
-            <div>
-              <strong style="font-size: 0.95rem;" data-en="Ship to our address" data-es="Envía a nuestra dirección">Ship to our address</strong>
-              <p style="font-size: 0.85rem; color: var(--muted); margin: 0.2rem 0 0;" data-en="Send your items to our PO Box. On Amazon, just enter it as your shipping address at checkout." data-es="Envía tus artículos a nuestra casilla postal. En Amazon, ingrésala como dirección de envío al finalizar la compra.">Send your items to our PO Box. On Amazon, just enter it as your shipping address at checkout.</p>
-            </div>
-          </div>
-        </div>
-
-        <div style="text-align: center;">
-          <div class="address-card">
-            <strong data-en="Ship to:" data-es="Enviar a:">Ship to:</strong> The Women and Children Foundation &nbsp;·&nbsp; 3830 New Salem Ave, Okemos, MI 48864
-          </div>
-          <p style="font-size: 0.82rem; color: var(--muted); margin: 0.75rem 0 0;" data-en="On Amazon: enter this address as the shipping address at checkout and your donation ships directly to us." data-es="En Amazon: ingresa esta dirección como dirección de envío al pagar y tu donación llega directamente a nosotros.">On Amazon: enter this address as the shipping address at checkout and your donation ships directly to us.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- KIT EDITIONS -->
-    <section id="kits" class="section">
-      <div class="container">
-        <div class="section-header">
-          <span class="tag tag-pink" data-en="Kit Editions" data-es="Ediciones de Kits">Kit Editions</span>
-          <h2 data-en="Choose Your Kit." data-es="Elige Tu Kit.">Choose Your Kit.</h2>
-          <p data-en="Each kit is designed for a specific need. Donate a complete kit or just a few individual items — every contribution counts." data-es="Cada kit está diseñado para una necesidad específica. Dona un kit completo o solo algunos artículos; cada contribución cuenta.">Each kit is designed for a specific need. Donate a complete kit or just a few individual items — every contribution counts.</p>
-        </div>
-
-        <!-- TODO: Replace href="#todo" with real product URLs (Amazon, Target, etc.) before publishing.
-             Tip: Link each "Buy Full Kit" button to an Amazon Wishlist for that kit edition. -->
-        <div class="shop-kit-grid">
-
-          <!-- KIT 1 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header">
-              <span class="tag tag-purple" style="font-size: 0.65rem;">Kit 1</span>
-              <span class="shop-kit-points" data-en="10 pts" data-es="10 pts">10 pts</span>
-              <div class="shop-kit-title" data-en="Essential Care Kit" data-es="Kit de Cuidado Esencial">Essential Care Kit</div>
-              <div class="shop-kit-meta" data-en="Best for shelters, women's centers, family support orgs" data-es="Ideal para albergues, centros para mujeres, organizaciones de apoyo familiar">Best for shelters, women's centers, family support orgs</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Toothbrush" data-es="Cepillo de dientes">Toothbrush</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Toothbrushes-Standard-Individually-Wrapped-Natraco/dp/B07NCNRCMV/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Toothpaste" data-es="Pasta de dientes">Toothpaste</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Colgate-Cavity-Protection-Toothpaste-Fluoride/dp/B01BNE0HBS/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Body wash" data-es="Gel de baño">Body wash</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Dove-Hypoallergenic-Sensitive-Effectively-Nourishing/dp/B08LFGWC3R/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Bar soap" data-es="Jabón en barra">Bar soap</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Ivory-Designed-Plant-Based-Cleanser-Phthalates/dp/B0G4BC3NQ2/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Shampoo" data-es="Shampoo">Shampoo</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pantene-Moisture-Renewal-Shampoo-Conditioner/dp/B00US1JFYS/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Conditioner or 2-in-1" data-es="Acondicionador o 2 en 1">Conditioner or 2-in-1</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pantene-Moisture-Renewal-Shampoo-Conditioner/dp/B00US1JFYS/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Deodorant" data-es="Desodorante">Deodorant</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Secret-Antiperspirant-Deodorant-Protection-Unscented/dp/B01KWXC890/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Cleansing wipes" data-es="Toallitas limpiadoras">Cleansing wipes</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Nice-Clean-Toilet-Tissue-Bundle/dp/B07ND52767/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Hairbrush" data-es="Cepillo para cabello">Hairbrush</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Conair-Detangling-hairbrush-3PK-hairbrushes/dp/B0DSR1KSXK/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Wide-tooth comb" data-es="Peine de dientes anchos">Wide-tooth comb</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Wide-Tooth-Detangling-Comb-Curly/dp/B0DP2F3DRC/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Crew socks" data-es="Calcetines">Crew socks</span><span class="shop-item-qty">×1 pr</span><a href="https://www.amazon.com/Hanes-Womens-Crew-Socks-6-Pack/dp/B00HOFIPPQ/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Hallmark-Bright-Assortment-Envelopes-Orange/dp/B0C79MT84J/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-          <!-- KIT 2 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header pink">
-              <span class="tag tag-pink" style="font-size: 0.65rem;">Kit 2</span>
-              <span class="shop-kit-points" style="background: rgba(229,92,154,0.12); color: #e55c9a; border-color: rgba(229,92,154,0.3);" data-en="10 pts" data-es="10 pts">10 pts</span>
-              <div class="shop-kit-title" data-en="Women's Comfort Kit" data-es="Kit de Confort para Mujeres">Women's Comfort Kit</div>
-              <div class="shop-kit-meta" style="color: #b54a80;" data-en="Best for women's shelters, DV recovery, postpartum support" data-es="Ideal para albergues para mujeres, recuperación de VD, apoyo posparto">Best for women's shelters, DV recovery, postpartum support</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Pads" data-es="Toallas sanitarias">Pads</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Always-Radiant-Feminine-Overnight-Scented/dp/B07NLSLP9K/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Panty liners" data-es="Protegeslips">Panty liners</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Always-Protection-Daily-Liners-Unscented/dp/B008HQ8M6I/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Deodorant" data-es="Desodorante">Deodorant</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Secret-Antiperspirant-Deodorant-Protection-Unscented/dp/B01KWXC890/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Body wash" data-es="Gel de baño">Body wash</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Dove-Hypoallergenic-Sensitive-Effectively-Nourishing/dp/B08LFGWC3R/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Shampoo" data-es="Shampoo">Shampoo</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pantene-Moisture-Renewal-Shampoo-Conditioner/dp/B00US1JFYS/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Conditioner" data-es="Acondicionador">Conditioner</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pantene-Moisture-Renewal-Shampoo-Conditioner/dp/B00US1JFYS/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Wipes" data-es="Toallitas">Wipes</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Nice-Clean-Toilet-Tissue-Bundle/dp/B07ND52767/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Lotion" data-es="Loción">Lotion</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Vaseline-Intensive-Lotion-Advanced-Unscented/dp/B01HTJTV40/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Hair ties" data-es="Ligas para cabello">Hair ties</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Goody-WoMens-Ouchless-Braided-Elastics/dp/B00IGJ1XOO/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Crew socks" data-es="Calcetines">Crew socks</span><span class="shop-item-qty">×1 pr</span><a href="https://www.amazon.com/Hanes-Womens-Crew-Socks-6-Pack/dp/B00HOFIPPQ/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Hallmark-Bright-Assortment-Envelopes-Orange/dp/B0C79MT84J/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-          <!-- KIT 3 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header">
-              <span class="tag tag-purple" style="font-size: 0.65rem;">Kit 3</span>
-              <span class="shop-kit-points" data-en="10 pts" data-es="10 pts">10 pts</span>
-              <div class="shop-kit-title" data-en="Student Support Kit" data-es="Kit de Apoyo Estudiantil">Student Support Kit</div>
-              <div class="shop-kit-meta" data-en="Best for back-to-school, Title I schools, Head Start programs" data-es="Ideal para regreso a clases, escuelas Título I, programas Head Start">Best for back-to-school, Title I schools, Head Start programs</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Spiral notebook" data-es="Cuaderno espiral">Spiral notebook</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Mead-Notebooks-Subject-Assorted-73063/dp/B00P9U2EIM/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Composition notebook" data-es="Cuaderno de composición">Composition notebook</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Rosmonde-Composition-Notebook-School-Work/dp/B08KF6R7RY/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="2-pocket folder" data-es="Folder de 2 bolsillos">2-pocket folder</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Amazon-Basics-Documents-Supplies-Assorted/dp/B07K92YXFP/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Pencils" data-es="Lápices">Pencils</span><span class="shop-item-qty">×4</span><a href="https://www.amazon.com/Ticonderoga-Pre-Sharpened-Pencil-Pack-Set/dp/B00TKID4BK/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Mechanical pencils" data-es="Portaminas">Mechanical pencils</span><span class="shop-item-qty">×2</span><a href="https://www.amazon.com/BIC-Mechanical-Pencil-40-Count-MPCE40-BLK/dp/B08MQRQTKJ/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Ballpoint pens" data-es="Bolígrafos">Ballpoint pens</span><span class="shop-item-qty">×2</span><a href="https://www.amazon.com/BIC-Round-Ballpoint-Medium-60-Count/dp/B001Q4HUNO/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Erasers" data-es="Borradores">Erasers</span><span class="shop-item-qty">×2</span><a href="https://www.amazon.com/Paper-Mate-Pearl-Erasers-Large/dp/B00094H4LU/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Crayons" data-es="Crayones">Crayons</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Crayola-Crayons-24-Colors-Pack/dp/B081RVHCVM/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Colored pencils" data-es="Lápices de colores">Colored pencils</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Crayola-68-4012-Colored-Pencils-12-Count/dp/B0033M0LZG/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Washable markers" data-es="Marcadores lavables">Washable markers</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Crayola-587858-Crayon-24/dp/B013RQPB5C/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Glue sticks" data-es="Barras de pegamento">Glue sticks</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Elmers-Disappearing-Child-Friendly-Acid-Free-Washable/dp/B000VXO4L2/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Liquid glue" data-es="Pegamento líquido">Liquid glue</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Elmers-Liquid-School-Glue-Washable/dp/B072J37ZZD/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Pencil pouch" data-es="Estuche de lápices">Pencil pouch</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Officygnet-Pencil-Pouch-Pouches-Supplies/dp/B0BYCBKK72/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Student scissors" data-es="Tijeras escolares">Student scissors</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Scissors-Student-Comfort-Children-Cutting/dp/B0CX15R4LV/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Snack" data-es="Merienda">Snack</span><span class="shop-item-qty">×1–2</span><a href="https://www.amazon.com/Peanut-Free-Snacks-Nut-Free-Variety/dp/B0DB2NCN8S/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Hallmark-Bright-Assortment-Envelopes-Orange/dp/B0C79MT84J/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              <a href="https://www.amazon.ca/Wholesale-Piece-School-Supply-Pack/dp/B07QNTTMJM" class="btn btn-primary" style="font-size: 0.82rem; padding: 0.5rem 1rem;" target="_blank" rel="noopener" data-en="Buy Full Kit on Amazon" data-es="Comprar Kit en Amazon">Buy Full Kit on Amazon</a>
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-          <!-- KIT 4 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header pink">
-              <span class="tag tag-pink" style="font-size: 0.65rem;">Kit 4</span>
-              <span class="shop-kit-points" style="background: rgba(229,92,154,0.12); color: #e55c9a; border-color: rgba(229,92,154,0.3);" data-en="10 pts" data-es="10 pts">10 pts</span>
-              <div class="shop-kit-title" data-en="Child Comfort Kit" data-es="Kit de Confort para Niños">Child Comfort Kit</div>
-              <div class="shop-kit-meta" style="color: #b54a80;" data-en="Best for children in shelters, hospitals, or family crisis situations" data-es="Ideal para niños en albergues, hospitales o crisis familiar">Best for children in shelters, hospitals, or family crisis situations</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Small stuffed animal" data-es="Peluche pequeño">Small stuffed animal</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Assortment-Stuffed-Animals-Keychain-Decoration/dp/B0B3LYPFBD/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Fidget toy (hospital-safe)" data-es="Juguete sensorial (apto hospital)">Fidget toy (hospital-safe)</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pcs-Fidget-Pack-Autistics-Classroom/dp/B0973R7JMP/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Coloring book" data-es="Libro para colorear">Coloring book</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Pack-Small-Coloring-Books-Kids/dp/B0C837BFNJ/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Mini activity book" data-es="Librito de actividades">Mini activity book</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Kalysky-Activity-Challenges-Scramble-Classroom/dp/B0CKRWW9VC/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Crayons" data-es="Crayones">Crayons</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Crayola-Crayons-24-Colors-Pack/dp/B081RVHCVM/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Snack" data-es="Merienda">Snack</span><span class="shop-item-qty">×1–2</span><a href="https://www.amazon.com/Peanut-Free-Snacks-Nut-Free-Variety/dp/B0DB2NCN8S/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Kids toothbrush" data-es="Cepillo de dientes infantil">Kids toothbrush</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Oral-B-Pro-Health-Junior-CrossAction-Toothbrush/dp/B0BBJR8PVJ/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Kids toothpaste" data-es="Pasta de dientes infantil">Kids toothpaste</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Colgate-Toothpaste-Fluoride-Protection-Accepted/dp/B0FH7KWSYQ/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Kids hair ties" data-es="Ligas para cabello infantil">Kids hair ties</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/No-metal-Elastics-Ponytail-Holders-Multicolor/dp/B07RY6FHRL/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Child-safe wipes" data-es="Toallitas para niños">Child-safe wipes</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Pampers-Wipes-Sensitive-Perfume-Multi/dp/B0BJ13K7FR/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Hallmark-Bright-Assortment-Envelopes-Orange/dp/B0C79MT84J/" class="btn-buy pink" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-          <!-- KIT 5 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header">
-              <span class="tag tag-purple" style="font-size: 0.65rem;">Kit 5</span>
-              <span class="shop-kit-points" data-en="15 pts" data-es="15 pts">15 pts</span>
-              <div class="shop-kit-title" data-en="Family Basics Kit" data-es="Kit Básico Familiar">Family Basics Kit</div>
-              <div class="shop-kit-meta" data-en="Best for families experiencing housing instability or household need" data-es="Ideal para familias con inestabilidad de vivienda o necesidades básicas">Best for families experiencing housing instability or household need</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Toothbrushes" data-es="Cepillos de dientes">Toothbrushes</span><span class="shop-item-qty">×2–4</span><a href="https://www.amazon.com/Toothbrushes-Standard-Individually-Wrapped-Natraco/dp/B07NCNRCMV/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Toothpaste" data-es="Pasta de dientes">Toothpaste</span><span class="shop-item-qty">×1–2</span><a href="https://www.amazon.com/Colgate-Cavity-Protection-Toothpaste-Fluoride/dp/B01BNE0HBS/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Body wash" data-es="Gel de baño">Body wash</span><span class="shop-item-qty">×1–2</span><a href="https://www.amazon.com/Dove-Hypoallergenic-Sensitive-Effectively-Nourishing/dp/B08LFGWC3R/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Bar soap" data-es="Jabón en barra">Bar soap</span><span class="shop-item-qty">×1–2</span><a href="https://www.amazon.com/Ivory-Designed-Plant-Based-Cleanser-Phthalates/dp/B0G4BC3NQ2/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Shampoo &amp; conditioner" data-es="Shampoo y acondicionador">Shampoo &amp; conditioner</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/Pantene-Moisture-Renewal-Shampoo-Conditioner/dp/B00US1JFYS/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Period products" data-es="Productos menstruales">Period products</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Always-Absorbency-Unscented-Leak-Free-Protection/dp/B00G8DDBOU/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Shelf-stable snacks" data-es="Meriendas no perecederas">Shelf-stable snacks</span><span class="shop-item-qty">×3–5</span><a href="https://www.amazon.com/Peanut-Free-Snacks-Nut-Free-Variety/dp/B0DB2NCN8S/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Notebook &amp; supply set" data-es="Cuaderno y útiles">Notebook &amp; supply set</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Piece-School-Supply-Grades-K-12/dp/B07MVMD87P/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Encouragement card" data-es="Tarjeta de aliento">Encouragement card</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Hallmark-Bright-Assortment-Envelopes-Orange/dp/B0C79MT84J/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-          <!-- KIT 6 -->
-          <div class="shop-kit-card">
-            <div class="shop-kit-header">
-              <span class="tag tag-purple" style="font-size: 0.65rem;">Kit 6</span>
-              <span class="shop-kit-points" data-en="15 pts" data-es="15 pts">15 pts</span>
-              <div class="shop-kit-title" data-en="Household Essentials Kit" data-es="Kit Esencial del Hogar">Household Essentials Kit</div>
-              <div class="shop-kit-meta" data-en="Best for families transitioning out of shelters and into their own home" data-es="Ideal para familias que salen de albergues y comienzan en su propio hogar">Best for families transitioning out of shelters and into their own home</div>
-            </div>
-            <ul class="shop-item-list">
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Pot &amp; pan set" data-es="Juego de ollas y sartenes">Pot &amp; pan set</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/AmazonBasics-8-Piece-Non-Stick-Kitchen-Cookware/dp/B074817DK1/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Kitchen utensil set" data-es="Set de utensilios de cocina">Kitchen utensil set</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/Amazon-Basics-Silicone-Utensils-Resistant/dp/B0F28W5M4S/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Cutting board" data-es="Tabla para cortar">Cutting board</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Plastic-Dishwasher-Chopping-Non-slip-Kikcoin/dp/B0CGVD1XD6/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Can opener" data-es="Abrelatas">Can opener</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/AmazonBasics-Safe-Opener-Black-Handle/dp/B07VWWHXBD/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Plates &amp; bowls" data-es="Platos y tazones">Plates &amp; bowls</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/Amazon-Basics-Dinnerware-Microwave-Dishwasher/dp/B019EEUQ2O/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Glasses" data-es="Vasos">Glasses</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/US-Acrylic-Restaurant-Stackable-Dishwasher/dp/B010E0N7ZU/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Silverware set" data-es="Set de cubiertos">Silverware set</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/Amazon-Basics-Silverware-Stainless-Dishwasher/dp/B0736W5C1W/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Basic spices (salt, pepper, garlic)" data-es="Especias básicas (sal, pimienta, ajo)">Basic spices (salt, pepper, garlic)</span><span class="shop-item-qty">×1 set</span><a href="https://www.amazon.com/salt-pepper-garlic-seasoning/s?k=salt%2F+pepper+and+garlic+seasoning" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Cooking oil" data-es="Aceite de cocina">Cooking oil</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Amazon-Brand-Happy-Vegetable-Ounces/dp/B07PC8CC3B/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Kitchen towels" data-es="Toallas de cocina">Kitchen towels</span><span class="shop-item-qty">×2</span><a href="https://www.amazon.com/Zeppoli-Classic-Kitchen-30-Pack-Natural/dp/B07FF7Z3BQ/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Dish soap" data-es="Jabón para platos">Dish soap</span><span class="shop-item-qty">×1</span><a href="https://www.amazon.com/Dawn-Dishwashing-4x19-4oz-Non-Scratch-Packaging/dp/B07HKR2QP9/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-              <li class="shop-item-row"><span class="shop-item-name" data-en="Sponges" data-es="Esponjas">Sponges</span><span class="shop-item-qty">×1 pk</span><a href="https://www.amazon.com/Scotch-Brite-Non-Scratch-Sponge-Without-Scratching/dp/B0043P0GRA/" class="btn-buy" target="_blank" rel="noopener">Buy →</a></li>
-            </ul>
-            <div class="shop-kit-footer">
-              
-              <a href="donate-supplies.html" class="btn btn-ghost" style="font-size: 0.82rem; padding: 0.5rem 1rem;" data-en="I Have These Items" data-es="Tengo Estos Artículos">I Have These Items</a>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- COMFORT & CARE CHALLENGE -->
-        <div id="challenge" class="challenge-callout">
-          <span class="tag" style="background: rgba(255,255,255,0.2); color: white; font-size: 0.65rem; letter-spacing: 0.14em;" data-en="The Comfort &amp; Care Challenge" data-es="El Desafío de Confort y Cuidado">The Comfort &amp; Care Challenge</span>
-          <h2 data-en="Make it a competition." data-es="Conviértelo en una competencia.">Make it a competition.</h2>
-          <p data-en="Rally your friends, family, class, or coworkers. Form a team and earn points for every item or kit you donate during the drive. The team with the most points gets recognition on our website and social media — and the knowledge that they made a real difference." data-es="Reúne a tus amigos, familia, clase o compañeros de trabajo. Formen un equipo y ganen puntos por cada artículo o kit donado durante la colecta. El equipo con más puntos recibe reconocimiento en nuestro sitio web y redes sociales.">Rally your friends, family, class, or coworkers. Form a team and earn points for every item or kit you donate during the drive. The team with the most points gets recognition on our website and social media — and the knowledge that they made a real difference.</p>
-          <div class="points-grid">
-            <div class="points-tile"><span class="points-num">1</span><span class="points-desc">pt per item donated</span></div>
-            <div class="points-tile"><span class="points-num">10</span><span class="points-desc">pts for a complete kit</span></div>
-            <div class="points-tile"><span class="points-num">15</span><span class="points-desc">pts for Kit 5 (Family)</span></div>
-            <div class="points-tile"><span class="points-num">5</span><span class="points-desc">pts for a referral who donates</span></div>
-            <div class="points-tile"><span class="points-num">2</span><span class="points-desc">pts for sharing on social</span></div>
-          </div>
-          <div style="margin-top: 1.5rem;">
-            <a href="#team" class="btn btn-white" data-en="Start a Team →" data-es="Iniciar un Equipo →">Start a Team →</a>
-          </div>
-        </div>
-
-        <!-- TEAM REGISTRATION -->
-        <div id="team" style="margin-top: 2.5rem; border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--white);">
-          <div style="padding: 1.5rem 2rem 1.25rem; background: linear-gradient(135deg, #f0e8fc, #e8f4ff); border-bottom: 2px solid var(--border);">
-            <span class="tag tag-purple" data-en="Register Your Team" data-es="Registra Tu Equipo">Register Your Team</span>
-            <h2 style="margin: 0.5rem 0 0.3rem;" data-en="Join the Comfort &amp; Care Challenge" data-es="Únete al Desafío de Confort y Cuidado">Join the Comfort &amp; Care Challenge</h2>
-            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;" data-en="Register below and we'll send your team a tracking link so you can watch your points grow. Compete against other teams or just aim for your personal best — every point is an item that reaches someone in need." data-es="Regístrate a continuación y te enviaremos un enlace de seguimiento para que veas crecer tus puntos. Compite contra otros equipos o simplemente supera tu propio récord; cada punto es un artículo que llega a alguien que lo necesita.">Register below and we'll send your team a tracking link so you can watch your points grow. Compete against other teams or just aim for your personal best — every point is an item that reaches someone in need.</p>
-          </div>
-
-          <div id="team-success" class="form-success" style="display:none; padding: 2.5rem; text-align: center;">
-            <div class="success-check"></div>
-            <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
-            <h3 data-en="Team registered!" data-es="¡Equipo registrado!">Team registered!</h3>
-            <p data-en="We'll be in touch with your team's tracking link shortly. Go collect those points!" data-es="Pronto nos pondremos en contacto con el enlace de seguimiento de tu equipo. ¡A ganar puntos!">We'll be in touch with your team's tracking link shortly. Go collect those points!</p>
-            <div class="btn-row" style="justify-content: center;">
-              <a href="shop.html" class="btn btn-primary" data-en="Start Shopping →" data-es="Empezar a Comprar →">Start Shopping →</a>
-              <a href="donate-supplies.html" class="btn btn-secondary" data-en="I Have Items" data-es="Tengo Artículos">I Have Items</a>
-            </div>
-          </div>
-
-          <form class="form-stack" style="padding: 1.75rem 2rem;" action="https://formspree.io/f/mwvzoaba" method="POST" data-formspree data-success-target="team-success">
-            <input type="hidden" name="_subject" value="Challenge Team Registration" />
-            <div class="form-row">
-              <div class="form-group">
-                <label for="team-captain" data-en="Your Name (Team Captain)" data-es="Tu Nombre (Capitán del Equipo)">Your Name (Team Captain)</label>
-                <input type="text" id="team-captain" name="captain_name" required placeholder="Jane Doe" />
-              </div>
-              <div class="form-group">
-                <label for="team-name" data-en="Team Name" data-es="Nombre del Equipo">Team Name</label>
-                <input type="text" id="team-name" name="team_name" required placeholder="e.g. The Comfort Crew" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="team-email" data-en="Your Email" data-es="Tu Correo">Your Email</label>
-                <input type="email" id="team-email" name="email" required placeholder="jane@example.com" />
-              </div>
-              <div class="form-group">
-                <label for="team-size" data-en="Approx. Team Size" data-es="Tamaño Aproximado del Equipo">Approx. Team Size</label>
-                <select id="team-size" name="team_size">
-                  <option value="just-me" data-en="Just me" data-es="Solo yo">Just me</option>
-                  <option value="2-5" data-en="2–5 people" data-es="2–5 personas">2–5 people</option>
-                  <option value="6-15" data-en="6–15 people" data-es="6–15 personas">6–15 people</option>
-                  <option value="16+" data-en="16+ people" data-es="16+ personas">16+ people</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="team-org" data-en="School, workplace, or organization (optional)" data-es="Escuela, trabajo u organización (opcional)">School, workplace, or organization (optional)</label>
-              <input type="text" id="team-org" name="organization" placeholder="e.g. MSU, City Church, Smith &amp; Co." />
-            </div>
-            <div class="form-group">
-              <label for="team-note" data-en="Anything else we should know? (optional)" data-es="¿Algo más que debamos saber? (opcional)">Anything else we should know? (optional)</label>
-              <textarea id="team-note" name="note" placeholder="How did you hear about us, special team goals, etc." style="min-height: 80px;"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary" style="align-self: flex-start;" data-en="Register My Team" data-es="Registrar Mi Equipo">Register My Team</button>
-          </form>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- WHERE YOUR DONATIONS GO -->
-    <section id="partners" class="section" style="padding-top: 0;">
-      <div class="container">
-        <div class="section-header">
-          <span class="tag tag-purple" data-en="Where Your Donations Go" data-es="A Dónde Van Tus Donaciones">Where Your Donations Go</span>
-          <h2 data-en="Our Partner Organizations" data-es="Nuestras Organizaciones Aliadas">Our Partner Organizations</h2>
-          <p data-en="Items collected during this drive are distributed directly to confirmed partner organizations serving women, children, and families in need." data-es="Los artículos recolectados durante esta colecta se distribuyen directamente a organizaciones aliadas confirmadas que sirven a mujeres, niños y familias en necesidad.">Items collected during this drive are distributed directly to confirmed partner organizations serving women, children, and families in need.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
-
-          <!-- City Rescue Mission -->
-          <div style="border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--white);">
-            <div style="padding: 1.2rem 1.5rem 1rem; background: linear-gradient(135deg, #f0e8fc, #e8f4ff); border-bottom: 3px solid var(--purple);">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--purple); margin-bottom: 0.2rem;">Partner Organization · Lansing, MI</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.15rem;">City Rescue Mission of Lansing</h3>
-              <div style="font-size: 0.82rem; color: #7a5aaa;">Emergency shelter &amp; comprehensive support services</div>
-            </div>
-            <div style="padding: 1rem 1.5rem;">
-              <p style="font-size: 0.83rem; font-weight: 600; color: var(--text); margin: 0 0 0.5rem;" data-en="Most needed right now:" data-es="Más necesario ahora mismo:">Most needed right now:</p>
-              <ul style="font-size: 0.83rem; color: var(--muted); line-height: 1.9; margin: 0 0 0.75rem; padding-left: 1.1rem;">
-                <li data-en="Non-perishable food: canned vegetables, breakfast cereal, canned fruit, parboiled rice, instant mashed potatoes" data-es="Alimentos no perecederos: verduras enlatadas, cereal de desayuno, fruta enlatada, arroz parboiled, puré de papas instantáneo">Non-perishable food: canned vegetables, breakfast cereal, canned fruit, parboiled rice, instant mashed potatoes</li>
-                <li data-en="Hygiene: shampoo, body wash, 3-in-1, men's deodorant" data-es="Higiene: shampoo, gel de baño, 3 en 1, desodorante para hombres">Hygiene: shampoo, body wash, 3-in-1, men's deodorant</li>
-                <li data-en="New underwear (men &amp; women), pajama pants or shorts" data-es="Ropa interior nueva (hombres y mujeres), pantalones o shorts de pijama">New underwear (men &amp; women), pajama pants or shorts</li>
-                <li data-en="Kleenex, laundry pods" data-es="Kleenex, cápsulas de detergente">Kleenex, laundry pods</li>
-              </ul>
-              <div style="padding: 0.6rem 0.85rem; background: #fffbf0; border: 1px solid rgba(255,160,0,0.25); border-radius: 8px; font-size: 0.78rem; color: #7a5000;">
-                <strong data-en="Please avoid sending:" data-es="Por favor evita enviar:">Please avoid sending:</strong>
-                <span data-en=" Blankets, towels, sheets, toilet paper, paper towel, formula, or cleaning supplies — they have commercial agreements for these." data-es=" Cobijas, toallas, sábanas, papel higiénico, papel de cocina, fórmula o artículos de limpieza; tienen acuerdos comerciales para estos."> Blankets, towels, sheets, toilet paper, paper towel, formula, or cleaning supplies — they have commercial agreements for these.</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Haven House -->
-          <div style="border: 1.5px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--white);">
-            <div style="padding: 1.2rem 1.5rem 1rem; background: linear-gradient(135deg, #fce8f2, #fce8e8); border-bottom: 3px solid var(--pink);">
-              <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.2rem;">Partner Organization · East Lansing, MI</div>
-              <h3 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #3D1A6B; margin: 0 0 0.15rem;">Haven House</h3>
-              <div style="font-size: 0.82rem; color: #b54a80;">Family shelter &amp; support for women and children</div>
-            </div>
-            <div style="padding: 1rem 1.5rem;">
-              <p style="font-size: 0.83rem; font-weight: 600; color: var(--text); margin: 0 0 0.5rem;" data-en="Most needed right now:" data-es="Más necesario ahora mismo:">Most needed right now:</p>
-              <ul style="font-size: 0.83rem; color: var(--muted); line-height: 1.9; margin: 0 0 0.75rem; padding-left: 1.1rem;">
-                <li data-en="Hygiene: toothpaste, deodorant (men's &amp; women's), body wash, body lotion, face wash, period products" data-es="Higiene: pasta dental, desodorante (hombres y mujeres), gel de baño, loción corporal, limpiador facial, productos menstruales">Hygiene: toothpaste, deodorant (men's &amp; women's), body wash, body lotion, face wash, period products</li>
-                <li data-en="Kids: body wash &amp; shampoo" data-es="Niños: gel de baño y shampoo">Kids: body wash &amp; shampoo</li>
-                <li data-en="Diapers (sizes 3–7) and pull-ups (all sizes)" data-es="Pañales (tallas 3–7) y pants entrenadores (todas las tallas)">Diapers (sizes 3–7) and pull-ups (all sizes)</li>
-                <li data-en="Baby care: wash, lotion, diaper rash cream, swaddles, nail care kits" data-es="Cuidado del bebé: jabón, loción, crema para rozaduras, mantas para envolver, kits de manicura">Baby care: wash, lotion, diaper rash cream, swaddles, nail care kits</li>
-                <li data-en="Household: bath &amp; kitchen towels, cutting boards, silverware, baking sets (gently used OK)" data-es="Hogar: toallas de baño y cocina, tablas de picar, cubiertos, juegos de hornear (usados con cuidado está bien)">Household: bath &amp; kitchen towels, cutting boards, silverware, baking sets (gently used OK)</li>
-              </ul>
-              <div style="padding: 0.6rem 0.85rem; background: #fffbf0; border: 1px solid rgba(255,160,0,0.25); border-radius: 8px; font-size: 0.78rem; color: #7a5000;">
-                <strong data-en="Please avoid sending:" data-es="Por favor evita enviar:">Please avoid sending:</strong>
-                <span data-en=" Clothing — guests receive thrift store vouchers instead." data-es=" Ropa; los huéspedes reciben vales para tienda de segunda mano."> Clothing — guests receive thrift store vouchers instead.</span>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <p style="font-size: 0.83rem; color: var(--muted); text-align: center; margin-top: 1.5rem;" data-en="More partner organizations coming soon. Want to partner with us?" data-es="Próximamente más organizaciones aliadas. ¿Quieres asociarte con nosotros?">More partner organizations coming soon. <a href="contact.html">Want to partner with us?</a></p>
-
-      </div>
-    </section>
-
-    <!-- ALREADY HAVE ITEMS -->
-    <section class="section" style="padding-top: 0; background: var(--blush);">
-      <div class="container">
-        <div class="donate-banner">
-          <span class="tag tag-pink" data-en="Skip the Store" data-es="Sáltate la Tienda">Skip the Store</span>
-          <h2 data-en="Already have items at home?" data-es="¿Ya tienes artículos en casa?">Already have items at home?</h2>
-          <p data-en="Have hygiene products, snacks, baby supplies, or school items sitting at home? Mail them directly to our PO Box — no purchase needed. Just fill out a quick pledge form first so we know what's coming." data-es="¿Tienes productos de higiene, meriendas, artículos para bebé o útiles escolares en casa? Envíalos directamente a nuestra casilla postal; no necesitas comprar nada. Solo completa un rápido formulario de promesa primero.">Have hygiene products, snacks, baby supplies, or school items sitting at home? Mail them directly to our PO Box — no purchase needed. Just fill out a quick pledge form first so we know what's coming.</p>
-          <div class="btn-row" style="justify-content: center;">
-            <a href="donate-supplies.html" class="btn btn-white" data-en="Fill Out Pledge Form" data-es="Completar Formulario de Promesa">Fill Out Pledge Form</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
+  
+<main><header class="shop-intro container"><span class="tag tag-purple" data-en="The TWCF Shop" data-es="La tienda TWCF">The TWCF Shop</span><h1 data-en="Everyday things. Meaningful impact." data-es="Cosas cotidianas. Un impacto significativo.">Everyday things. Meaningful impact.</h1><p data-en="Carry our mission with you. Proceeds support The Women and Children Foundation." data-es="Lleva nuestra misión contigo. Los ingresos apoyan a The Women and Children Foundation.">Carry our mission with you. Proceeds support The Women and Children Foundation.</p><p class="shop-note" data-en="Collection preview · Sample products and prices · Not yet available to purchase" data-es="Vista previa · Productos y precios de muestra · Aún no disponibles para comprar">Collection preview · Sample products and prices · Not yet available to purchase</p></header>
+<div class="container shop-layout"><section class="shop-grid" aria-label="Merchandise"><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><rect x="43" y="17" width="34" height="12" rx="3"/><rect x="36" y="29" width="48" height="77" rx="13" fill="#fff"/><path d="M48 63Q60 48 72 63Q60 80 48 63Z"/></svg></div><h2 data-en="Water Bottle" data-es="Botella de agua">Water Bottle</h2><p data-en="An everyday companion, with purpose." data-es="Una compañera cotidiana con propósito.">An everyday companion, with purpose.</p><div class="shop-price">$24.00</div><button type="button" class="btn btn-secondary" data-add="bottle" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M25 28H87L99 89H37Z" fill="#fff"/><path d="M37 89L25 77V28M41 38H77M43 47H79M46 57H82M38 96H101M42 96V102M54 96V102M66 96V102M78 96V102M90 96V102"/></svg></div><h2 data-en="Comfort Blanket" data-es="Manta de confort">Comfort Blanket</h2><p data-en="A little warmth for everyday moments." data-es="Calidez para los momentos cotidianos.">A little warmth for everyday moments.</p><div class="shop-price">$38.00</div><button type="button" class="btn btn-secondary" data-add="blanket" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M44 31Q42 10 60 10Q78 10 76 31L91 40L111 79L94 86L82 65V108H38V65L26 86L9 79L29 40Z" fill="#fff"/><path d="M44 31Q60 51 76 31M52 41V57M68 41V57M47 84H73L78 97H42Z"/></svg></div><h2 data-en="TWCF Hoodie" data-es="Sudadera con capucha">TWCF Hoodie</h2><p data-en="Soft comfort. A shared cause." data-es="Comodidad y una causa compartida.">Soft comfort. A shared cause.</p><div class="shop-price">$48.00</div><label class="shop-size"><span data-en="Size" data-es="Talla">Size</span><select id="size-hoodie" aria-label="TWCF Hoodie size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></label><button type="button" class="btn btn-secondary" data-add="hoodie" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M44 25Q60 39 76 25L92 35L112 80L94 87L82 61V105H38V61L26 87L8 80L28 35Z" fill="#fff"/><path d="M43 99H77M49 60Q60 48 71 60Q60 75 49 60Z"/></svg></div><h2 data-en="TWCF Sweatshirt" data-es="Sudadera TWCF">TWCF Sweatshirt</h2><p data-en="A simple staple for showing support." data-es="Una prenda sencilla para mostrar apoyo.">A simple staple for showing support.</p><div class="shop-price">$40.00</div><label class="shop-size"><span data-en="Size" data-es="Talla">Size</span><select id="size-sweatshirt" aria-label="TWCF Sweatshirt size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></label><button type="button" class="btn btn-secondary" data-add="sweatshirt" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M43 25Q60 38 77 25L104 43L91 63L79 55V105H41V55L29 63L16 43Z" fill="#fff"/><path d="M49 61Q60 49 71 61Q60 77 49 61Z"/></svg></div><h2 data-en="Everyday Tee" data-es="Camiseta">Everyday Tee</h2><p data-en="Wear a little care wherever you go." data-es="Lleva el cuidado dondequiera que vayas.">Wear a little care wherever you go.</p><div class="shop-price">$25.00</div><label class="shop-size"><span data-en="Size" data-es="Talla">Size</span><select id="size-tee" aria-label="Everyday Tee size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></label><button type="button" class="btn btn-secondary" data-add="tee" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article><article class="shop-product"><div class="shop-art"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M35 20H85L92 107H66L60 53L54 107H28Z" fill="#fff"/><path d="M35 31H85M56 31L52 44M64 31L68 44"/></svg></div><h2 data-en="TWCF Lounge Pants" data-es="Pantalones TWCF">TWCF Lounge Pants</h2><p data-en="Easy comfort, at home or on the go." data-es="Comodidad en casa o al salir.">Easy comfort, at home or on the go.</p><div class="shop-price">$42.00</div><label class="shop-size"><span data-en="Size" data-es="Talla">Size</span><select id="size-pants" aria-label="TWCF Lounge Pants size"><option>XS</option><option>S</option><option selected>M</option><option>L</option><option>XL</option><option>2XL</option><option>3XL</option></select></label><button type="button" class="btn btn-secondary" data-add="pants" data-en="Add to bag" data-es="Añadir a la bolsa">Add to bag</button></article></section>
+<aside class="shop-cart" aria-labelledby="bag-heading"><h2 id="bag-heading" data-en="Your bag" data-es="Tu bolsa">Your bag</h2><ul id="bag-items"></ul><div class="shop-total"><span data-en="Subtotal" data-es="Subtotal">Subtotal</span><span id="bag-total">$0.00</span></div><p class="shop-note" data-en="Shipping and any applicable tax will be calculated at checkout." data-es="El envío y los impuestos aplicables se calcularán al pagar.">Shipping and any applicable tax will be calculated at checkout.</p><button type="button" id="checkout-preview" class="btn btn-primary" disabled data-en="Preview checkout" data-es="Ver vista previa del pago">Preview checkout</button><p class="shop-note" data-en="This is a sample shop. No payments are collected." data-es="Esta es una tienda de muestra. No se realizan cobros.">This is a sample shop. No payments are collected.</p><p id="shop-status" class="shop-note" role="status" aria-live="polite"></p></aside></div></main>
+<dialog class="shop-dialog" id="checkout-dialog" aria-labelledby="checkout-heading"><h2 id="checkout-heading" data-en="Checkout preview" data-es="Vista previa del pago">Checkout preview</h2><div id="checkout-summary"></div><p data-en="Our shop is getting ready. Online purchases will open once the collection and secure payment setup are complete." data-es="Estamos preparando nuestra tienda. Las compras se abrirán cuando la colección y el sistema de pago seguro estén listos.">Our shop is getting ready. Online purchases will open once the collection and secure payment setup are complete.</p><button type="button" class="btn btn-secondary" id="close-checkout" data-en="Continue browsing" data-es="Seguir explorando">Continue browsing</button></dialog><footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-            <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-            <li><a href="drives.html"      data-en="Drives"      data-es="Colectas">Drives</a></li>
-            <li><a href="shop.html"        data-en="Shop Drive"  data-es="Tienda">Shop Drive</a></li>
-            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"         data-en="Get Help"        data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html"        data-en="Resources"       data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"          data-en="Contact"         data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"  data-en="Donate Supplies" data-es="Donar Artículos">Donate Supplies</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="for-companies.html"  data-en="For Companies"  data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -643,17 +145,63 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> </p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
-</body>
-</html>
+  <script src="script.js"></script><script>
+(()=>{
+const products=[{"id":"bottle","name":"Water Bottle","es":"Botella de agua","price":2400,"desc":"An everyday companion, with purpose.","des":"Una compañera cotidiana con propósito."},{"id":"blanket","name":"Comfort Blanket","es":"Manta de confort","price":3800,"desc":"A little warmth for everyday moments.","des":"Calidez para los momentos cotidianos."},{"id":"hoodie","name":"TWCF Hoodie","es":"Sudadera con capucha","price":4800,"desc":"Soft comfort. A shared cause.","des":"Comodidad y una causa compartida.","sizes":true},{"id":"sweatshirt","name":"TWCF Sweatshirt","es":"Sudadera TWCF","price":4000,"desc":"A simple staple for showing support.","des":"Una prenda sencilla para mostrar apoyo.","sizes":true},{"id":"tee","name":"Everyday Tee","es":"Camiseta","price":2500,"desc":"Wear a little care wherever you go.","des":"Lleva el cuidado dondequiera que vayas.","sizes":true},{"id":"pants","name":"TWCF Lounge Pants","es":"Pantalones TWCF","price":4200,"desc":"Easy comfort, at home or on the go.","des":"Comodidad en casa o al salir.","sizes":true}];
+const bag=new Map(), items=document.getElementById('bag-items'), total=document.getElementById('bag-total'), checkout=document.getElementById('checkout-preview'), dialog=document.getElementById('checkout-dialog');
+const es=()=>document.documentElement.lang==='es', money=n=>new Intl.NumberFormat(es()?'es-US':'en-US',{style:'currency',currency:'USD'}).format(n/100);
+function render(){
+items.replaceChildren();let sum=0;
+if(!bag.size){const li=document.createElement('li');li.textContent=es()?'Tu bolsa está vacía.':'Your bag is empty.';items.append(li)}
+for(const [key,row] of bag){
+sum+=row.price*row.qty;
+const li=document.createElement('li'), head=document.createElement('div');head.className='shop-cart-head';
+const name=document.createElement('span');name.textContent=(es()?row.es:row.name)+(row.size?' · '+row.size:'');
+const price=document.createElement('span');price.textContent=money(row.price*row.qty);head.append(name,price);
+const controls=document.createElement('div');controls.className='shop-qty';
+for(const [label,delta] of [['−',-1],['+',1]]){const button=document.createElement('button');button.type='button';button.textContent=label;button.setAttribute('aria-label',(delta<0?(es()?'Reducir cantidad de ':'Decrease quantity of '):(es()?'Aumentar cantidad de ':'Increase quantity of '))+name.textContent);button.onclick=()=>{row.qty+=delta;if(row.qty===0)bag.delete(key);render()};if(delta===1&&row.qty>=99)button.disabled=true;controls.append(button);if(delta===-1){const count=document.createElement('span');count.textContent=row.qty;controls.append(count)}}
+const remove=document.createElement('button');remove.type='button';remove.className='shop-remove';remove.textContent=es()?'Quitar':'Remove';remove.setAttribute('aria-label',remove.textContent+' '+name.textContent);remove.onclick=()=>{bag.delete(key);render()};controls.append(remove);li.append(head,controls);items.append(li)
+}total.textContent=money(sum);checkout.disabled=!bag.size;
+}
+document.querySelectorAll('[data-add]').forEach(button=>button.onclick=()=>{const p=products.find(p=>p.id===button.dataset.add),size=p.sizes?document.getElementById('size-'+p.id).value:'',key=p.id+':'+size;const row=bag.get(key);if(row&&row.qty>=99)return;if(row)row.qty++;else bag.set(key,{...p,size,qty:1});render();document.getElementById('shop-status').textContent=(es()?p.es:p.name)+(es()?' añadido a tu bolsa.':' added to your bag.')});
+checkout.onclick=()=>{const summary=document.getElementById('checkout-summary');summary.replaceChildren();for(const row of bag.values()){const p=document.createElement('p');p.textContent=row.qty+' × '+(es()?row.es:row.name)+(row.size?' · '+row.size:'')+' — '+money(row.price*row.qty);summary.append(p)}const p=document.createElement('p');p.textContent=(es()?'Subtotal: ':'Subtotal: ')+total.textContent;summary.append(p);dialog.showModal()};
+document.getElementById('close-checkout').onclick=()=>dialog.close();
+new MutationObserver(render).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});render();
+})();
+</script>  <script>
+    document.querySelectorAll('.nav-dropdown-toggle').forEach((button) => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation();
+        const dropdown = button.closest('.nav-dropdown');
+        const willOpen = !dropdown.classList.contains('open');
+        document.querySelectorAll('.nav-dropdown.open').forEach((item) => {
+          item.classList.remove('open');
+          const toggle = item.querySelector('.nav-dropdown-toggle');
+          if (toggle) toggle.setAttribute('aria-expanded', 'false');
+        });
+        dropdown.classList.toggle('open', willOpen);
+        button.setAttribute('aria-expanded', String(willOpen));
+      });
+    });
+    document.addEventListener('click', () => {
+      document.querySelectorAll('.nav-dropdown.open').forEach((item) => {
+        item.classList.remove('open');
+        const toggle = item.querySelector('.nav-dropdown-toggle');
+        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+
+</body></html>

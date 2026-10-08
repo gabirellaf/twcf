@@ -18,23 +18,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -48,7 +92,7 @@
       <div class="container">
         <span class="tag tag-pink" data-en="Community Resources" data-es="Recursos Comunitarios">Community Resources</span>
         <h1 data-en="Resources" data-es="Recursos">Resources</h1>
-        <p data-en="Shelters, helplines, doctors, lawyers, and ways to donate — serving the greater Lansing area. All listed organizations are publicly established, accredited, or highly rated in the communities they serve." data-es="Albergues, líneas de ayuda, médicos, abogados y formas de donar que sirven al área metropolitana de Lansing. Todas las organizaciones listadas son reconocidas públicamente, acreditadas o bien valoradas en las comunidades a las que sirven.">Shelters, helplines, doctors, lawyers, and ways to donate — serving the greater Lansing area. All listed organizations are publicly established, accredited, or highly rated in the communities they serve.</p>
+        <p data-en="Shelters, helplines, doctors, lawyers, and ways to donate — serving the greater Lansing area. Always call ahead to confirm current details before visiting." data-es="Albergues, líneas de ayuda, médicos, abogados y formas de donar que sirven al área metropolitana de Lansing. Llama siempre con anticipación para confirmar los detalles actuales antes de visitar.">Shelters, helplines, doctors, lawyers, and ways to donate — serving the greater Lansing area. Always call ahead to confirm current details before visiting.</p>
       </div>
     </section>
 
@@ -73,17 +117,17 @@
           <div class="resource-list" style="max-height: 440px; overflow-y: auto; padding-right: 0.5rem; scrollbar-width: thin; scrollbar-color: var(--purple-pale) transparent;">
             <div class="resource-item">
               <div>
-                <div class="name">WISE — Women Involved in Surviving and Empowering</div>
-                <div class="detail" data-en="Domestic violence shelter and advocacy · Lansing, MI" data-es="Albergue y defensa ante violencia doméstica · Lansing, MI">Domestic violence shelter and advocacy · Lansing, MI &nbsp;<a href="https://maps.google.com/maps?q=WISE+Women+Involved+Surviving+Empowering+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
+                <div class="name">EVE — End Violent Encounters</div>
+                <div class="detail" data-en="Domestic violence shelter, 24-hour crisis line, and advocacy · Lansing, MI" data-es="Albergue ante violencia doméstica, línea de crisis 24 horas y defensa · Lansing, MI">Domestic violence shelter, 24-hour crisis line, and advocacy · Lansing, MI — <a href="tel:15173725572" style="color:var(--pink); text-decoration:none;">(517) 372-5572</a></div>
               </div>
-              <a href="https://www.wisewomen.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
+              <a href="https://www.eveinc.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
                 <div class="name" data-en="Greater Lansing Food Bank" data-es="Banco de Alimentos del Gran Lansing">Greater Lansing Food Bank</div>
-                <div class="detail" data-en="Emergency food assistance · Ingham, Clinton &amp; Eaton counties" data-es="Asistencia alimentaria de emergencia · Condados de Ingham, Clinton y Eaton">Emergency food assistance · Ingham, Clinton &amp; Eaton counties &nbsp;<a href="https://maps.google.com/maps?q=Gleaners+Food+Bank+2141+S+Cedar+Lansing+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
+                <div class="detail" data-en="Emergency food assistance · Ingham, Clinton &amp; Eaton counties" data-es="Asistencia alimentaria de emergencia · Condados de Ingham, Clinton y Eaton">Emergency food assistance · Ingham, Clinton &amp; Eaton counties &nbsp;<a href="https://maps.google.com/maps?q=Greater+Lansing+Food+Bank+5600+Food+Ct+Bath+MI" target="_blank" rel="noopener" style="font-size:0.82rem; color:var(--pink); text-decoration:none;" title="Get directions">📍 Directions</a></div>
               </div>
-              <a href="https://www.gleaners.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
+              <a href="https://greaterlansingfoodbank.org" target="_blank" rel="noopener" class="btn btn-ghost" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Visit" data-es="Visitar">Visit</a>
             </div>
             <div class="resource-item">
               <div>
@@ -227,10 +271,10 @@
           <div class="resource-list">
             <div class="resource-item">
               <div><div class="name" data-en="Donate Supplies — Mail or Drop-Off" data-es="Donar Artículos — Por Correo o en Persona">Donate Supplies — Mail or Drop-Off</div><div class="detail" data-en="Hygiene products, food, school supplies, toys, and more. Submit a pledge or mail to our PO Box." data-es="Productos de higiene, alimentos, útiles escolares, juguetes y más. Envía una promesa de donación o envía por correo a nuestro apartado postal.">Hygiene products, food, school supplies, toys, and more. Submit a pledge or mail to our PO Box.</div></div>
-              <a href="donate-supplies.html" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Donate Supplies" data-es="Donar Artículos">Donate Supplies</a>
+              <a href="give-supplies.html" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Donate Supplies" data-es="Donar Artículos">Donate Supplies</a>
             </div>
             <div class="resource-item">
-              <div><div class="name" data-en="Monetary Donations — Contact Us" data-es="Donaciones Monetarias — Contáctanos">Monetary Donations — Contact Us</div><div class="detail" data-en="Online monetary donations will be available once our 501(c)(3) status is approved. Reach out to us directly in the meantime." data-es="Las donaciones monetarias en línea estarán disponibles una vez que se apruebe nuestro estatus 501(c)(3). Contáctanos directamente mientras tanto.">Online monetary donations will be available once our 501(c)(3) status is approved. Reach out to us directly in the meantime.</div></div>
+              <div><div class="name" data-en="Monetary Donations" data-es="Donaciones Monetarias">Monetary Donations</div><div class="detail" data-en="We accept monetary donations (Michigan Charitable Solicitation Registration #71710). Tax-deductible — we are a recognized 501(c)(3) tax-exempt organization." data-es="Aceptamos donaciones monetarias (Registro de Solicitación Benéfica de Míchigan #71710). Deducible de impuestos — somos una organización exenta de impuestos 501(c)(3) reconocida.">We accept monetary donations (Michigan Charitable Solicitation Registration #71710). Tax-deductible — we are a recognized 501(c)(3) tax-exempt organization.</div></div>
               <a href="contact.html" class="btn btn-secondary" style="padding: 0.45rem 1rem; font-size: 0.85rem;" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
             </div>
           </div>
@@ -246,25 +290,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -272,12 +317,13 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>
@@ -305,19 +351,19 @@
 
       var locations = [
         {
-          name: 'WISE — Women Involved in Surviving &amp; Empowering',
-          detail: 'Domestic violence shelter &amp; advocacy · Lansing, MI',
-          note: 'Shelter address is confidential for safety — call for location.',
+          name: 'EVE — End Violent Encounters',
+          detail: 'Domestic violence shelter, 24-hour crisis line &amp; advocacy · Lansing, MI',
+          note: 'Shelter address is confidential for safety — call (517) 372-5572.',
           lat: 42.7370, lng: -84.5590,
-          url: 'https://www.wisewomen.org',
-          dir: 'https://maps.google.com/maps?q=WISE+Women+Involved+Surviving+Empowering+Lansing+MI'
+          url: 'https://www.eveinc.org',
+          dir: 'tel:15173725572'
         },
         {
-          name: 'Greater Lansing Food Bank (Gleaners)',
+          name: 'Greater Lansing Food Bank',
           detail: 'Emergency food assistance · Ingham, Clinton &amp; Eaton counties',
-          lat: 42.7170, lng: -84.5570,
-          url: 'https://www.gleaners.org',
-          dir: 'https://maps.google.com/maps?q=Gleaners+Food+Bank+2141+S+Cedar+Lansing+MI'
+          lat: 42.8125, lng: -84.4322,
+          url: 'https://greaterlansingfoodbank.org',
+          dir: 'https://maps.google.com/maps?q=Greater+Lansing+Food+Bank+5600+Food+Ct+Bath+MI'
         },
         {
           name: 'Advent House Ministries',

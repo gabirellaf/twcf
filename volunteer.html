@@ -17,23 +17,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -50,6 +94,8 @@
         <p data-en="Volunteering is completely free. Give your time and help us make a real difference for women and children in our community." data-es="El voluntariado es completamente gratuito. Da tu tiempo y ayúdanos a marcar una diferencia real para las mujeres y niños de nuestra comunidad.">Volunteering is completely free. Give your time and help us make a real difference for women and children in our community.</p>
       </div>
     </section>
+
+    <div style="text-align:center; padding: 1rem 0 0; font-size: 0.9rem; color: var(--muted);" data-en='Right now: <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">1,000 care kits for Dzaleka Refugee Camp, Malawi, with Carewin Africa →</a>' data-es='Ahora mismo: <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">1,000 kits de cuidado para el Campo de Refugiados Dzaleka, Malaui, con Carewin Africa →</a>'>Right now: <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">1,000 care kits for Dzaleka Refugee Camp, Malawi, with Carewin Africa →</a></div>
 
     <!-- OPPORTUNITIES -->
     <section class="section">
@@ -96,6 +142,50 @@
 
     <div class="divider"></div>
 
+    <!-- YOUTH & STUDENT VOLUNTEERS -->
+    <section class="section" style="background: var(--purple-pale); padding-top: 2.5rem; padding-bottom: 2.5rem;">
+      <div class="container text-center" style="max-width: 720px;">
+        <span class="tag tag-purple" data-en="Youth &amp; Student Volunteers" data-es="Voluntarios Jóvenes y Estudiantes">Youth &amp; Student Volunteers</span>
+        <h2 style="margin-top: 0.75rem;" data-en="Connecting Young People to Global Service" data-es="Conectando a los Jóvenes con el Servicio Global">Connecting Young People to Global Service</h2>
+        <p style="margin-top: 0.75rem;" data-en="The Women and Children Foundation's care-kit initiatives are designed not only to deliver needed supplies, but also to introduce young people in the United States to meaningful humanitarian service. Student and youth volunteers help collect, sort, organize, and assemble care kits before they are prepared for delivery to our international partners. By participating directly, volunteers can see how individual contributions become tangible assistance for women and children facing hardship around the world." data-es="Las iniciativas de kits de cuidado de The Women and Children Foundation están diseñadas no solo para entregar los suministros necesarios, sino también para introducir a los jóvenes en Estados Unidos al servicio humanitario significativo. Los voluntarios estudiantiles y jóvenes ayudan a recolectar, clasificar, organizar y ensamblar los kits de cuidado antes de que se preparen para su entrega a nuestros aliados internacionales. Al participar directamente, los voluntarios pueden ver cómo las contribuciones individuales se convierten en asistencia tangible para mujeres y niños que enfrentan dificultades alrededor del mundo.">The Women and Children Foundation's care-kit initiatives are designed not only to deliver needed supplies, but also to introduce young people in the United States to meaningful humanitarian service. Student and youth volunteers help collect, sort, organize, and assemble care kits before they are prepared for delivery to our international partners. By participating directly, volunteers can see how individual contributions become tangible assistance for women and children facing hardship around the world.</p>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- YOUTH COMMUNITY OUTREACH -->
+    <section id="youth-outreach" class="section">
+      <div class="container" style="max-width: 820px;">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="New Initiative — Founding Volunteers Needed" data-es="Nueva Iniciativa — Buscamos Voluntarios Fundadores">New Initiative — Founding Volunteers Needed</span>
+          <h2 style="margin-top: 0.75rem;" data-en="Youth Community Outreach" data-es="Alcance Comunitario Juvenil">Youth Community Outreach</h2>
+          <p style="margin-top: 0.75rem;" data-en="We're launching a new program to bring TWCF's mission directly into local schools, youth groups, and community spaces — not just inviting young people to help us, but going to where they are. This is just getting started, and right now what we need most is people willing to help build it." data-es="Estamos lanzando un nuevo programa para llevar la misión de TWCF directamente a escuelas locales, grupos juveniles y espacios comunitarios; no solo invitando a los jóvenes a ayudarnos, sino llegando a donde ellos están. Esto apenas comienza, y ahora mismo lo que más necesitamos es gente dispuesta a ayudar a construirlo.">We're launching a new program to bring TWCF's mission directly into local schools, youth groups, and community spaces — not just inviting young people to help us, but going to where they are. This is just getting started, and right now what we need most is people willing to help build it.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+          <div class="card text-center">
+            <span class="tag tag-purple" style="margin-bottom: 0.75rem;" data-en="Vision" data-es="Visión">Vision</span>
+            <h3 data-en="Presentations &amp; Events" data-es="Presentaciones y Eventos">Presentations &amp; Events</h3>
+            <p style="font-size: 0.88rem;" data-en="Bringing TWCF into schools, youth groups, and community spaces to talk about the mission and get young people involved firsthand." data-es="Llevar a TWCF a escuelas, grupos juveniles y espacios comunitarios para hablar sobre la misión e involucrar a los jóvenes de primera mano.">Bringing TWCF into schools, youth groups, and community spaces to talk about the mission and get young people involved firsthand.</p>
+          </div>
+          <div class="card text-center">
+            <span class="tag tag-purple" style="margin-bottom: 0.75rem;" data-en="Vision" data-es="Visión">Vision</span>
+            <h3 data-en="A Structured Youth Program" data-es="Un Programa Juvenil Estructurado">A Structured Youth Program</h3>
+            <p style="font-size: 0.88rem;" data-en="A real pipeline for young volunteers — school partnerships, clubs, and recurring opportunities, not just a one-time event." data-es="Una ruta real para voluntarios jóvenes: alianzas escolares, clubes y oportunidades recurrentes, no solo un evento único.">A real pipeline for young volunteers — school partnerships, clubs, and recurring opportunities, not just a one-time event.</p>
+          </div>
+          <div class="card text-center">
+            <span class="tag tag-purple" style="margin-bottom: 0.75rem;" data-en="Vision" data-es="Visión">Vision</span>
+            <h3 data-en="Mentorship &amp; Leadership" data-es="Mentoría y Liderazgo">Mentorship &amp; Leadership</h3>
+            <p style="font-size: 0.88rem;" data-en="Young people taking on real leadership — running their own mini-drives, leading peers, and growing into bigger roles over time." data-es="Jóvenes asumiendo roles reales de liderazgo: organizando sus propias mini-colectas, liderando a sus compañeros y creciendo hacia roles más grandes con el tiempo.">Young people taking on real leadership — running their own mini-drives, leading peers, and growing into bigger roles over time.</p>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="#volunteer-form" class="btn btn-primary" data-en="Help Us Start This Program →" data-es="Ayúdanos a Iniciar Este Programa →">Help Us Start This Program →</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
     <!-- SIGN UP FORM -->
     <section id="volunteer-form" class="section">
       <div class="container" style="max-width: 680px;">
@@ -112,7 +202,7 @@
           <p data-en="Thank you for volunteering. We'll reach out with details about your selected opportunity." data-es="Gracias por ofrecerte como voluntario. Nos pondremos en contacto con los detalles de tu oportunidad.">Thank you for volunteering. We'll reach out with details about your selected opportunity.</p>
           <div class="btn-row">
             <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
-            <a href="mission.html#events" class="btn btn-secondary" data-en="See Events" data-es="Ver Eventos">See Events</a>
+            <a href="where-kits-go.html" class="btn btn-secondary" data-en="See Current Initiatives" data-es="Ver Iniciativas Actuales">See Current Initiatives</a>
           </div>
         </div>
         <form class="form-stack" action="https://formspree.io/f/mgoqkryn" method="POST" data-formspree data-success-target="volunteer-success">
@@ -140,9 +230,9 @@
               <option value="" data-en="Select an opportunity..." data-es="Selecciona una oportunidad...">Select an opportunity...</option>
               <option value="kit-assembly" data-en="Care Kit Assembly" data-es="Ensamblaje de Kits de Ayuda">Care Kit Assembly</option>
               <option value="drive-pickups" data-en="Drive Pick-Ups" data-es="Recolección de Donativos">Drive Pick-Ups</option>
-              <option value="comfort-care" data-en="The Comfort &amp; Care Drive (Spring 2026)" data-es="La Colecta de Confort y Cuidado (Primavera 2026)">The Comfort &amp; Care Drive (Spring 2026)</option>
-              <option value="back-to-school" data-en="Back-to-School Drive (Fall 2026)" data-es="Colecta de Regreso a Clases (Otoño 2026)">Back-to-School Drive (Fall 2026)</option>
-              <option value="toy-drive" data-en="Hospital Toy Drive (Winter 2026)" data-es="Colecta de Juguetes para Hospital (Invierno 2026)">Hospital Toy Drive (Winter 2026)</option>
+              <option value="care-kit-goal" data-en="1,000 Care Kits for Dzaleka — November 2026 Campaign" data-es="1,000 Kits para Dzaleka — Campaña de Noviembre de 2026">1,000 Care Kits for Dzaleka — November 2026 Campaign</option>
+              <option value="toy-drive" data-en="Hospital Toy Drive (Nov 20 – Dec 15, 2026)" data-es="Colecta de Juguetes para Hospital (20 de nov. – 15 de dic., 2026)">Hospital Toy Drive (Nov 20 – Dec 15, 2026)</option>
+              <option value="youth-outreach" data-en="Youth Community Outreach (Help Us Start It)" data-es="Alcance Comunitario Juvenil (Ayúdanos a Iniciarlo)">Youth Community Outreach (Help Us Start It)</option>
               <option value="any" data-en="Multiple / Any" data-es="Varias / Cualquiera">Multiple / Any</option>
             </select>
           </div>
@@ -166,25 +256,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -192,12 +283,13 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>

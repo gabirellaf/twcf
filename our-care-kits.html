@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Care Kits — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+  <style>
+    .kit-section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+    .kit-section:last-of-type { border-bottom: none; }
+    .item-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.5rem; margin-top: 1rem; }
+    .item-list li { display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.9rem; color: var(--muted); }
+    .item-list li::before { content: "✓"; color: var(--purple); font-weight: 700; flex-shrink: 0; margin-top: 0.05rem; }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Purpose-Built Kits" data-es="Kits con Propósito">Purpose-Built Kits</span>
+        <h1 data-en="Our Care Kits" data-es="Nuestros Kits de Cuidado">Our Care Kits</h1>
+        <p data-en="Each kit is designed around a specific need, based on direct input from recipient organizations. Donate a complete kit or contribute individual items — every item counts." data-es="Cada kit está diseñado en torno a una necesidad específica, basado en la aportación directa de las organizaciones receptoras. Dona un kit completo o contribuye con artículos individuales; cada artículo cuenta.">Each kit is designed around a specific need, based on direct input from recipient organizations. Donate a complete kit or contribute individual items — every item counts.</p>
+        <div class="btn-row" style="margin-top: 1.75rem;">
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+          <a href="#womens-dignity" class="btn btn-secondary" data-en="Browse Kits ↓" data-es="Ver Kits ↓">Browse Kits ↓</a>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align:center; padding: 0 0 1rem; font-size: 0.9rem; color: var(--muted);" data-en='Right now: the Women&rsquo;s Dignity, Baby &amp; Maternal Care, and Children&rsquo;s Education &amp; Comfort kits below are being sent to Dzaleka Refugee Camp, Malawi, through our <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">partnership with Carewin Africa →</a>' data-es='Ahora mismo: los kits de Dignidad para Mujeres, Cuidado para Bebé y Madre, y Educación y Confort para Niños que aparecen abajo se están enviando al Campo de Refugiados Dzaleka, Malaui, a través de nuestra <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">alianza con Carewin Africa →</a>'>Right now: the Women&rsquo;s Dignity, Baby &amp; Maternal Care, and Children&rsquo;s Education &amp; Comfort kits below are being sent to Dzaleka Refugee Camp, Malawi, through our <a href="where-kits-go.html" style="color: var(--purple); font-weight: 600;">partnership with Carewin Africa →</a></div>
+
+    <div class="container" style="padding: 0.25rem 0 0;">
+      <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center;">
+        <a href="#womens-dignity" style="font-size:0.82rem; font-weight:600; color:var(--purple); background:var(--purple-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Women's Dignity" data-es="Dignidad para Mujeres">Women's Dignity</a>
+        <a href="#baby-maternal" style="font-size:0.82rem; font-weight:600; color:var(--purple); background:var(--purple-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Baby &amp; Maternal Care" data-es="Cuidado para Bebé y Madre">Baby &amp; Maternal Care</a>
+        <a href="#childrens-education" style="font-size:0.82rem; font-weight:600; color:var(--purple); background:var(--purple-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Children's Education &amp; Comfort" data-es="Educación y Confort para Niños">Children's Education &amp; Comfort</a>
+        <a href="#family-essentials" style="font-size:0.82rem; font-weight:600; color:var(--purple); background:var(--purple-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Family Essentials" data-es="Esenciales Familiares">Family Essentials</a>
+        <a href="#teen-girls" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Teen Girls' Essentials" data-es="Esenciales para Adolescentes">Teen Girls' Essentials</a>
+        <a href="#hospital-comfort" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Hospital Comfort" data-es="Confort Hospitalario">Hospital Comfort</a>
+        <a href="#winter-warmth" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Winter Warmth" data-es="Calor de Invierno">Winter Warmth</a>
+        <a href="#period-poverty" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Period Poverty" data-es="Pobreza Menstrual">Period Poverty</a>
+        <a href="#home-start" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Home Start" data-es="Nuevo Comienzo">Home Start</a>
+        <a href="#snack-kit" style="font-size:0.82rem; font-weight:600; color:var(--pink-dark); background:var(--pink-pale); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Snack Kit" data-es="Kit de Meriendas">Snack Kit</a>
+        <a href="#sponsor-a-kit" style="font-size:0.82rem; font-weight:600; color:var(--white); background:var(--purple); padding:0.4rem 0.9rem; border-radius:999px; text-decoration:none;" data-en="Sponsor a Kit $" data-es="Patrocina un Kit $">Sponsor a Kit $</a>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Kit 1 -->
+        <div id="womens-dignity" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-purple" data-en="Kit 1" data-es="Kit 1">Kit 1</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Women's Dignity Kit" data-es="Kit de Dignidad para Mujeres">Women's Dignity Kit</h2>
+              <p data-en="Designed for adult women facing hardship, displacement, or crisis. This kit supports personal dignity, hygiene, and comfort during a difficult period." data-es="Diseñado para mujeres adultas que enfrentan dificultades, desplazamiento o crisis. Este kit apoya la dignidad personal, la higiene y el confort durante un período difícil.">Designed for adult women facing hardship, displacement, or crisis. This kit supports personal dignity, hygiene, and comfort during a difficult period.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: shelters, domestic violence organizations, transitional housing programs, refugee support services." data-es="Ideal para: albergues, organizaciones contra la violencia doméstica, programas de vivienda transitoria, servicios de apoyo a refugiados.">Best for: shelters, domestic violence organizations, transitional housing programs, refugee support services.</p>
+              <a href="give-supplies.html?kit=womens-dignity#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=womens-dignity" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $35" data-es="Patrocinar por $35">Sponsor for $35</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Body wash or 3-in-1 (shampoo/conditioner/body wash)" data-es="Gel de baño o 3 en 1 (champú/acondicionador/gel de baño)">Body wash or 3-in-1 (shampoo/conditioner/body wash)</li>
+                <li data-en="Shampoo" data-es="Champú">Shampoo</li>
+                <li data-en="Women's deodorant" data-es="Desodorante para mujer">Women's deodorant</li>
+                <li data-en="Face wash" data-es="Limpiador facial">Face wash</li>
+                <li data-en="Body lotion" data-es="Loción corporal">Body lotion</li>
+                <li data-en="Period products — menstrual pads (1 pack)" data-es="Productos menstruales — toallas sanitarias (1 paquete)">Period products — menstrual pads (1 pack)</li>
+                <li data-en="Underwear — new, packaged" data-es="Ropa interior — nueva y empaquetada">Underwear — new, packaged</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 2 -->
+        <div id="baby-maternal" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-pink" data-en="Kit 2" data-es="Kit 2">Kit 2</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Baby &amp; Maternal Care Kit" data-es="Kit de Cuidado para Bebé y Madre">Baby &amp; Maternal Care Kit</h2>
+              <p data-en="For mothers and infants — especially those in situations of instability or postpartum need. Covers practical hygiene and care for both mother and baby." data-es="Para madres y lactantes, especialmente aquellas en situaciones de inestabilidad o necesidad posparto. Cubre higiene y cuidado práctico para madre e hijo.">For mothers and infants — especially those in situations of instability or postpartum need. Covers practical hygiene and care for both mother and baby.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: family shelters, maternal health programs, postpartum support organizations, refugee family services." data-es="Ideal para: albergues familiares, programas de salud materna, organizaciones de apoyo posparto, servicios para familias refugiadas.">Best for: family shelters, maternal health programs, postpartum support organizations, refugee family services.</p>
+              <a href="give-supplies.html?kit=baby-maternal#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=baby-maternal" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $50" data-es="Patrocinar por $50">Sponsor for $50</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Baby wash, shampoo, and lotion set" data-es="Set de jabón, champú y loción para bebé">Baby wash, shampoo, and lotion set</li>
+                <li data-en="Diaper rash cream" data-es="Crema para rozaduras de pañal">Diaper rash cream</li>
+                <li data-en="Diapers — sizes 3, 4, 5, 6, or 7 (1 pack)" data-es="Pañales — tallas 3, 4, 5, 6 o 7 (1 paquete)">Diapers — sizes 3, 4, 5, 6, or 7 (1 pack)</li>
+                <li data-en="Pull-ups — any size (1 pack)" data-es="Pull-ups — cualquier talla (1 paquete)">Pull-ups — any size (1 pack)</li>
+                <li data-en="Swaddle blanket (new)" data-es="Manta de swaddle (nueva)">Swaddle blanket (new)</li>
+                <li data-en="Baby nail care kit" data-es="Kit de manicura para bebé">Baby nail care kit</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 3 -->
+        <div id="childrens-education" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-purple" data-en="Kit 3" data-es="Kit 3">Kit 3</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Children's Education &amp; Comfort Kit" data-es="Kit de Educación y Confort para Niños">Children's Education &amp; Comfort Kit</h2>
+              <p data-en="For school-age children — designed to support education, hygiene, and emotional comfort. Helps children feel prepared and cared for even in unstable situations." data-es="Para niños en edad escolar; diseñado para apoyar la educación, la higiene y el confort emocional. Ayuda a los niños a sentirse preparados y cuidados incluso en situaciones inestables.">For school-age children — designed to support education, hygiene, and emotional comfort. Helps children feel prepared and cared for even in unstable situations.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: schools, family shelters, child welfare organizations, refugee camp programs serving children." data-es="Ideal para: escuelas, albergues familiares, organizaciones de bienestar infantil, programas de campo de refugiados para niños.">Best for: schools, family shelters, child welfare organizations, refugee camp programs serving children.</p>
+              <a href="give-supplies.html?kit=childrens-education#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=childrens-education" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $35" data-es="Patrocinar por $35">Sponsor for $35</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Backpack (new)" data-es="Mochila (nueva)">Backpack (new)</li>
+                <li data-en="Notebooks and pencils" data-es="Cuadernos y lápices">Notebooks and pencils</li>
+                <li data-en="Kid's body wash and shampoo" data-es="Gel de baño y champú para niños">Kid's body wash and shampoo</li>
+                <li data-en="Toothbrush and toothpaste (child-size)" data-es="Cepillo de dientes y pasta dental (tamaño infantil)">Toothbrush and toothpaste (child-size)</li>
+                <li data-en="Age-appropriate book (new)" data-es="Libro apropiado para la edad (nuevo)">Age-appropriate book (new)</li>
+                <li data-en="Small comfort item (stuffed animal, puzzle, or coloring book)" data-es="Artículo de confort pequeño (peluche, rompecabezas o libro para colorear)">Small comfort item (stuffed animal, puzzle, or coloring book)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 4 -->
+        <div id="family-essentials" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-pink" data-en="Kit 4" data-es="Kit 4">Kit 4</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Family Essentials Kit" data-es="Kit de Esenciales Familiares">Family Essentials Kit</h2>
+              <p data-en="For families experiencing displacement, homelessness, or crisis. Covers the most essential hygiene and household needs — designed to help a family get through their first difficult days." data-es="Para familias que atraviesan desplazamiento, situación de calle o crisis. Cubre las necesidades esenciales de higiene y del hogar, diseñado para ayudar a una familia a superar sus primeros días difíciles.">For families experiencing displacement, homelessness, or crisis. Covers the most essential hygiene and household needs — designed to help a family get through their first difficult days.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: family shelters, transitional housing, disaster relief support, refugee resettlement organizations." data-es="Ideal para: albergues familiares, vivienda transitoria, apoyo en desastres naturales, organizaciones de reasentamiento de refugiados.">Best for: family shelters, transitional housing, disaster relief support, refugee resettlement organizations.</p>
+              <a href="give-supplies.html?kit=family-essentials#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=family-essentials" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $30" data-es="Patrocinar por $30">Sponsor for $30</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Canned vegetables, canned fruit, or breakfast cereal" data-es="Verduras enlatadas, frutas enlatadas o cereal de desayuno">Canned vegetables, canned fruit, or breakfast cereal</li>
+                <li data-en="Parboiled rice or instant mashed potatoes" data-es="Arroz parbolizado o puré de papas instantáneo">Parboiled rice or instant mashed potatoes</li>
+                <li data-en="Laundry pods" data-es="Cápsulas de detergente para ropa">Laundry pods</li>
+                <li data-en="Kleenex / facial tissues" data-es="Kleenex / pañuelos faciales">Kleenex / facial tissues</li>
+                <li data-en="Men's deodorant" data-es="Desodorante para hombre">Men's deodorant</li>
+                <li data-en="Body wash" data-es="Gel de baño">Body wash</li>
+                <li data-en="Men's or women's underwear — new, packaged (1 pair)" data-es="Ropa interior de hombre o mujer — nueva y empaquetada (1 par)">Men's or women's underwear — new, packaged (1 pair)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 5 -->
+        <div id="teen-girls" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-pink" data-en="Kit 5" data-es="Kit 5">Kit 5</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Teen Girls' Essentials Kit" data-es="Kit de Esenciales para Adolescentes">Teen Girls' Essentials Kit</h2>
+              <p data-en="Designed for teen girls facing hardship, displacement, or family crisis — filling the gap between our Baby &amp; Maternal Care and Women's Dignity kits with age-appropriate hygiene and comfort items." data-es="Diseñado para adolescentes que enfrentan dificultades, desplazamiento o crisis familiar, cubriendo el espacio entre nuestros kits de Cuidado para Bebé y Madre y de Dignidad para Mujeres, con artículos de higiene y confort apropiados para su edad.">Designed for teen girls facing hardship, displacement, or family crisis — filling the gap between our Baby &amp; Maternal Care and Women's Dignity kits with age-appropriate hygiene and comfort items.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: family shelters with teen residents, school counselors, foster-care transition programs." data-es="Ideal para: albergues familiares con residentes adolescentes, consejeros escolares, programas de transición de cuidado de crianza temporal.">Best for: family shelters with teen residents, school counselors, foster-care transition programs.</p>
+              <a href="give-supplies.html?kit=teen-girls#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=teen-girls" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $45" data-es="Patrocinar por $45">Sponsor for $45</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Teen-formula deodorant" data-es="Desodorante fórmula juvenil">Teen-formula deodorant</li>
+                <li data-en="Body wash and face wash for acne-prone skin" data-es="Gel de baño y limpiador facial para piel con tendencia acnéica">Body wash and face wash for acne-prone skin</li>
+                <li data-en="Menstrual pads and tampons (multi-pack)" data-es="Toallas sanitarias y tampones (paquete múltiple)">Menstrual pads and tampons (multi-pack)</li>
+                <li data-en="New bra — packaged, various sizes" data-es="Sostén nuevo — empaquetado, varias tallas">New bra — packaged, various sizes</li>
+                <li data-en="Hairbrush and hair ties" data-es="Cepillo para el cabello y ligas">Hairbrush and hair ties</li>
+                <li data-en="Underwear — new, packaged" data-es="Ropa interior — nueva y empaquetada">Underwear — new, packaged</li>
+                <li data-en="Journal and pen" data-es="Diario y bolígrafo">Journal and pen</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 6 -->
+        <div id="hospital-comfort" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-purple" data-en="Kit 6" data-es="Kit 6">Kit 6</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Hospital Comfort Kit for Kids" data-es="Kit de Confort Hospitalario para Niños">Hospital Comfort Kit for Kids</h2>
+              <p data-en="For children spending time in a hospital or pediatric care setting. Designed to bring a little comfort and distraction during a stressful stay." data-es="Para niños que pasan tiempo en un hospital o entorno de atención pediátrica. Diseñado para brindar consuelo y una pequeña distracción durante una estancia estresante.">For children spending time in a hospital or pediatric care setting. Designed to bring a little comfort and distraction during a stressful stay.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: pediatric hospital wards, children's hospital child-life programs, and our Hospital Toy Drive." data-es="Ideal para: salas pediátricas de hospitales, programas de apoyo infantil de hospitales, y nuestra Colecta de Juguetes para Hospital.">Best for: pediatric hospital wards, children's hospital child-life programs, and our Hospital Toy Drive.</p>
+              <a href="give-supplies.html?kit=hospital-comfort#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=hospital-comfort" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $20" data-es="Patrocinar por $20">Sponsor for $20</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="New stuffed animal or small plush toy" data-es="Peluche nuevo o muñeco pequeño">New stuffed animal or small plush toy</li>
+                <li data-en="Coloring book and crayons or markers" data-es="Libro para colorear y crayones o marcadores">Coloring book and crayons or markers</li>
+                <li data-en="Small puzzle or activity book" data-es="Rompecabezas pequeño o libro de actividades">Small puzzle or activity book</li>
+                <li data-en="Get-well card" data-es="Tarjeta de mejórate pronto">Get-well card</li>
+                <li data-en="Age-appropriate book (new)" data-es="Libro apropiado para la edad (nuevo)">Age-appropriate book (new)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 7 -->
+        <div id="winter-warmth" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-pink" data-en="Kit 7" data-es="Kit 7">Kit 7</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Winter Warmth Kit" data-es="Kit de Calor de Invierno">Winter Warmth Kit</h2>
+              <p data-en="Practical cold-weather items for anyone facing a Michigan winter without reliable shelter or a warm coat." data-es="Artículos prácticos para el frío, para cualquier persona que enfrente un invierno de Míchigan sin refugio confiable o un abrigo cálido.">Practical cold-weather items for anyone facing a Michigan winter without reliable shelter or a warm coat.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: shelters, warming centers, and families facing housing instability during winter months." data-es="Ideal para: albergues, centros de calentamiento y familias que enfrentan inestabilidad de vivienda durante los meses de invierno.">Best for: shelters, warming centers, and families facing housing instability during winter months.</p>
+              <a href="give-supplies.html?kit=winter-warmth#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=winter-warmth" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $30" data-es="Patrocinar por $30">Sponsor for $30</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="New winter hat" data-es="Gorro de invierno nuevo">New winter hat</li>
+                <li data-en="Gloves or mittens (new pair)" data-es="Guantes o mitones (par nuevo)">Gloves or mittens (new pair)</li>
+                <li data-en="Thick wool or thermal socks (new, multiple pairs)" data-es="Calcetines gruesos de lana o térmicos (nuevos, varios pares)">Thick wool or thermal socks (new, multiple pairs)</li>
+                <li data-en="Hand warmers" data-es="Calentadores de manos">Hand warmers</li>
+                <li data-en="New thermal base-layer top or bottom" data-es="Capa base térmica nueva (superior o inferior)">New thermal base-layer top or bottom</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 8 -->
+        <div id="period-poverty" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-purple" data-en="Kit 8" data-es="Kit 8">Kit 8</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Period Poverty Kit" data-es="Kit de Pobreza Menstrual">Period Poverty Kit</h2>
+              <p data-en="A smaller, focused kit that addresses period poverty directly — an easy, low-cost way to give when a full Women's Dignity Kit isn't the right fit." data-es="Un kit más pequeño y enfocado que aborda directamente la pobreza menstrual: una forma fácil y económica de donar cuando un Kit de Dignidad para Mujeres completo no es la opción adecuada.">A smaller, focused kit that addresses period poverty directly — an easy, low-cost way to give when a full Women's Dignity Kit isn't the right fit.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: schools, food pantries, and community organizations distributing period products directly." data-es="Ideal para: escuelas, bancos de alimentos y organizaciones comunitarias que distribuyen productos menstruales directamente.">Best for: schools, food pantries, and community organizations distributing period products directly.</p>
+              <a href="give-supplies.html?kit=period-poverty#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=period-poverty" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $30" data-es="Patrocinar por $30">Sponsor for $30</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Menstrual pads (2 packs)" data-es="Toallas sanitarias (2 paquetes)">Menstrual pads (2 packs)</li>
+                <li data-en="Tampons (1 pack)" data-es="Tampones (1 paquete)">Tampons (1 pack)</li>
+                <li data-en="Panty liners" data-es="Protectores diarios">Panty liners</li>
+                <li data-en="Individual wet wipes" data-es="Toallitas húmedas individuales">Individual wet wipes</li>
+                <li data-en="Underwear — new, packaged (1 pair)" data-es="Ropa interior — nueva y empaquetada (1 par)">Underwear — new, packaged (1 pair)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 9 -->
+        <div id="home-start" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-pink" data-en="Kit 9" data-es="Kit 9">Kit 9</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Home Start Kit" data-es="Kit de Nuevo Comienzo">Home Start Kit</h2>
+              <p data-en="For a family moving from a shelter or crisis situation into their first stable home — often starting with next to nothing in the kitchen. Part of our Close to Home direct family assistance program." data-es="Para una familia que pasa de un albergue o situación de crisis a su primer hogar estable, a menudo comenzando casi sin nada en la cocina. Parte de nuestro programa de asistencia familiar directa Cerca de Casa.">For a family moving from a shelter or crisis situation into their first stable home — often starting with next to nothing in the kitchen. Part of our Close to Home direct family assistance program.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: families transitioning out of a shelter, transitional housing programs, and households rebuilding after housing instability." data-es="Ideal para: familias que salen de un albergue, programas de vivienda transitoria y hogares que se reconstruyen después de una inestabilidad de vivienda.">Best for: families transitioning out of a shelter, transitional housing programs, and households rebuilding after housing instability.</p>
+              <a href="give-supplies.html?kit=home-start#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+              <a href="sponsor.html?kit=home-start" class="btn btn-secondary" style="margin-top: 1.5rem; margin-left: 0.75rem; display: inline-flex;" data-en="Sponsor for $100" data-es="Patrocinar por $100">Sponsor for $100</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Pots and a frying pan" data-es="Ollas y un sartén">Pots and a frying pan</li>
+                <li data-en="Baking sheet" data-es="Charola para hornear">Baking sheet</li>
+                <li data-en="Cooking utensils and a can opener" data-es="Utensilios de cocina y un abrelatas">Cooking utensils and a can opener</li>
+                <li data-en="Cutting board and knives" data-es="Tabla para cortar y cuchillos">Cutting board and knives</li>
+                <li data-en="Plates, bowls, cups, and silverware" data-es="Platos, tazones, vasos y cubiertos">Plates, bowls, cups, and silverware</li>
+                <li data-en="Dish towels" data-es="Toallas de cocina">Dish towels</li>
+                <li data-en="Food-storage containers" data-es="Recipientes para almacenar alimentos">Food-storage containers</li>
+                <li data-en="Dish soap and sponges" data-es="Jabón para platos y esponjas">Dish soap and sponges</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kit 10 -->
+        <div id="snack-kit" class="kit-section">
+          <div class="grid-2" style="align-items: start; gap: 3rem;">
+            <div>
+              <span class="tag tag-purple" data-en="Kit 10" data-es="Kit 10">Kit 10</span>
+              <h2 style="margin-top: 0.5rem;" data-en="Snack Kit" data-es="Kit de Meriendas">Snack Kit</h2>
+              <p data-en="Individually packaged, shelf-stable snacks for kids and families facing food insecurity — part of our online food pantry, for backpacks, after-school programs, and quick, no-questions-asked requests." data-es="Meriendas individuales y no perecederas para niños y familias que enfrentan inseguridad alimentaria; parte de nuestra despensa de alimentos en línea, para mochilas, programas extraescolares y solicitudes rápidas, sin preguntas.">Individually packaged, shelf-stable snacks for kids and families facing food insecurity — part of our online food pantry, for backpacks, after-school programs, and quick, no-questions-asked requests.</p>
+              <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--muted);" data-en="Best for: schools, after-school programs, and families requesting a quick supply through Get Help." data-es="Ideal para: escuelas, programas extraescolares y familias que solicitan un suministro rápido a través de Pide Ayuda.">Best for: schools, after-school programs, and families requesting a quick supply through Get Help.</p>
+              <a href="give-supplies.html?kit=snack-kit#pledge-form" class="btn btn-primary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Donate Items for This Kit" data-es="Donar Artículos para Este Kit">Donate Items for This Kit</a>
+            </div>
+            <div>
+              <h3 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.25rem;" data-en="Kit Contents" data-es="Contenido del Kit">Kit Contents</h3>
+              <ul class="item-list">
+                <li data-en="Granola or cereal bars (multi-pack)" data-es="Barras de granola o cereal (paquete múltiple)">Granola or cereal bars (multi-pack)</li>
+                <li data-en="Individual bags of crackers or pretzels" data-es="Bolsas individuales de galletas saladas o pretzels">Individual bags of crackers or pretzels</li>
+                <li data-en="Fruit snacks or applesauce pouches" data-es="Bocadillos de fruta o bolsitas de puré de manzana">Fruit snacks or applesauce pouches</li>
+                <li data-en="Individually wrapped snacks (check for allergies)" data-es="Meriendas empaquetadas individualmente (verificar alergias)">Individually wrapped snacks (check for allergies)</li>
+                <li data-en="Juice boxes or shelf-stable drink pouches" data-es="Cajitas de jugo o bolsitas de bebida no perecedera">Juice boxes or shelf-stable drink pouches</li>
+                <li data-en="Peanut-butter or cheese cracker packs" data-es="Paquetes de galletas con crema de cacahuate o queso">Peanut-butter or cheese cracker packs</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SPONSOR A KIT -->
+    <section id="sponsor-a-kit" class="section" style="background: var(--purple-pale);">
+      <div class="container" style="max-width: 780px;">
+        <div class="section-header text-center">
+          <span class="tag tag-pink" data-en="Sponsor a Kit" data-es="Patrocina un Kit">Sponsor a Kit</span>
+          <h2 data-en="Fund a complete kit, no shopping required." data-es="Financia un kit completo, sin necesidad de comprar.">Fund a complete kit, no shopping required.</h2>
+          <p data-en="Prefer to give money instead of items? A kit sponsorship covers everything in one of our kits, at our estimated cost to assemble it. Click a kit below to pay securely online." data-es="¿Prefieres donar dinero en lugar de artículos? Un patrocinio cubre todo lo necesario para uno de nuestros kits, a nuestro costo estimado de ensamblaje. Haz clic en un kit abajo para pagar en línea de forma segura.">Prefer to give money instead of items? A kit sponsorship covers everything in one of our kits, at our estimated cost to assemble it. Click a kit below to pay securely online.</p>
+        </div>
+        <div class="card" style="margin-top: 2rem; padding: 0.5rem 1rem;">
+          <table class="needs-table" style="width: 100%; border-collapse: collapse; font-size: 0.92rem;">
+            <thead>
+              <tr>
+                <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--purple); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;" data-en="Kit" data-es="Kit">Kit</th>
+                <th style="text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); color: var(--purple); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;" data-en="Sponsor Amount" data-es="Monto de Patrocinio">Sponsor Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=womens-dignity" style="color: var(--text); text-decoration: underline;" data-en="Women's Dignity Kit" data-es="Kit de Dignidad para Mujeres">Women's Dignity Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$35</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=baby-maternal" style="color: var(--text); text-decoration: underline;" data-en="Baby &amp; Maternal Care Kit" data-es="Kit de Cuidado para Bebé y Madre">Baby &amp; Maternal Care Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$50</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=childrens-education" style="color: var(--text); text-decoration: underline;" data-en="Children's Education &amp; Comfort Kit" data-es="Kit de Educación y Confort para Niños">Children's Education &amp; Comfort Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$35</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=family-essentials" style="color: var(--text); text-decoration: underline;" data-en="Family Essentials Kit" data-es="Kit de Esenciales Familiares">Family Essentials Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$30</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=teen-girls" style="color: var(--text); text-decoration: underline;" data-en="Teen Girls' Essentials Kit" data-es="Kit de Esenciales para Adolescentes">Teen Girls' Essentials Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$45</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=hospital-comfort" style="color: var(--text); text-decoration: underline;" data-en="Hospital Comfort Kit for Kids" data-es="Kit de Confort Hospitalario para Niños">Hospital Comfort Kit for Kids</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$20</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=winter-warmth" style="color: var(--text); text-decoration: underline;" data-en="Winter Warmth Kit" data-es="Kit de Calor de Invierno">Winter Warmth Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$30</td></tr>
+              <tr><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border);"><a href="sponsor.html?kit=period-poverty" style="color: var(--text); text-decoration: underline;" data-en="Period Poverty Kit" data-es="Kit de Pobreza Menstrual">Period Poverty Kit</a></td><td style="padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); font-weight: 600;">$30</td></tr>
+              <tr><td style="padding: 0.75rem 1rem;"><a href="sponsor.html?kit=home-start" style="color: var(--text); text-decoration: underline;" data-en="Home Start Kit" data-es="Kit de Nuevo Comienzo">Home Start Kit</a></td><td style="padding: 0.75rem 1rem; font-weight: 600;">$100</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align: center; margin-top: 1.25rem; font-size: 0.85rem; color: var(--muted);" data-en="Want to sponsor a Snack Kit? Contact us — we're still finalizing that estimate." data-es="¿Quieres patrocinar un Kit de Meriendas? Contáctanos; aún estamos finalizando ese estimado.">Want to sponsor a Snack Kit? <a href="contact.html" style="color: var(--purple); font-weight: 600;">Contact us</a> — we're still finalizing that estimate.</p>
+      </div>
+    </section>
+
+    <!-- HOW TO DONATE -->
+    <section class="section" style="background: var(--purple-pale);">
+      <div class="container text-center" style="max-width: 680px;">
+        <span class="tag tag-purple" data-en="Ready to Give?" data-es="¿Listo para Dar?">Ready to Give?</span>
+        <h2 style="margin-top: 0.75rem;" data-en="Ship items directly to us." data-es="Envíanos artículos directamente.">Ship items directly to us.</h2>
+        <p data-en="No matter where you are, you can contribute supplies. Purchase items and ship them straight to our address — then fill out our pledge form so we know what to expect." data-es="Sin importar dónde estés, puedes contribuir con artículos. Compra los artículos y envíalos directamente a nuestra dirección, luego completa nuestro formulario para que sepamos qué esperar.">No matter where you are, you can contribute supplies. Purchase items and ship them straight to our address — then fill out our pledge form so we know what to expect.</p>
+        <div class="card" style="margin: 1.5rem auto; display: inline-block; text-align: center; padding: 1.25rem 2rem;">
+          <strong data-en="Ship to:" data-es="Enviar a:">Ship to:</strong><br />
+          The Women and Children Foundation<br />
+          3830 New Salem Ave, Okemos, MI 48864
+        </div>
+        <div class="btn-row" style="justify-content: center;">
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Fill Out the Pledge Form" data-es="Completar el Formulario de Promesa">Fill Out the Pledge Form</a>
+          <a href="contact.html" class="btn btn-secondary" data-en="Have a Question?" data-es="¿Tienes una Pregunta?">Have a Question?</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
+          <ul>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
+          <ul>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

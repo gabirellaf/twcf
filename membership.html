@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon-icon.png" type="image/png" />
-  <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 
@@ -18,23 +17,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
-        <a href="get-help.html" class="btn btn-primary btn-get-help-nav" data-en="Get Help" data-es="Obtener Ayuda">Get Help</a>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -48,179 +91,17 @@
       <div class="container">
         <span class="tag tag-pink" data-en="Join Us" data-es="Únete">Join Us</span>
         <h1 data-en="Membership" data-es="Membresía">Membership</h1>
-        <p data-en="Your membership directly funds care kits and programs for women and children in need. Every member is part of making this work happen." data-es="Tu membresía financia directamente kits de ayuda y programas para mujeres y niños en necesidad. Cada miembro forma parte de hacer que esto suceda.">Your membership directly funds care kits and programs for women and children in need. Every member is part of making this work happen.</p>
+        <p data-en="Membership isn't open yet. Right now, the most direct way to help is building or donating a care kit." data-es="La membresía aún no está disponible. Por ahora, la forma más directa de ayudar es construyendo o donando un kit de cuidado.">Membership isn't open yet. Right now, the most direct way to help is building or donating a care kit.</p>
       </div>
     </section>
 
-    <!-- TIERS -->
     <section class="section">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="tag tag-purple" data-en="Choose Your Membership" data-es="Elige Tu Membresía">Choose Your Membership</span>
-          <h2 data-en="Every member makes a difference." data-es="Cada miembro marca la diferencia.">Every member makes a difference.</h2>
-          <p data-en="100% of membership fees go directly toward programs and care kits." data-es="El 100% de las cuotas van directamente a programas y kits de ayuda.">100% of membership fees go directly toward programs and care kits.</p>
+      <div class="container text-center" style="max-width: 640px;">
+        <p data-en="We're setting up membership tiers, but we're not taking sign-ups or payments for it yet — that will open once our board and accounting processes are finalized. Good news: our IRS 501(c)(3) status is now confirmed. If you'd like to be notified when membership launches, get in touch." data-es="Estamos preparando los niveles de membresía, pero aún no aceptamos inscripciones ni pagos — eso abrirá una vez que finalicemos nuestra junta y contabilidad. Buenas noticias: nuestro estatus 501(c)(3) ante el IRS ya está confirmado. Si quieres que te avisemos cuando la membresía esté disponible, contáctanos.">We're setting up membership tiers, but we're not taking sign-ups or payments for it yet — that will open once our board and accounting processes are finalized. Good news: our IRS 501(c)(3) status is now confirmed. If you'd like to be notified when membership launches, get in touch.</p>
+        <div class="btn-row" style="justify-content: center; margin-top: 1.5rem;">
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+          <a href="contact.html" class="btn btn-secondary" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
         </div>
-
-        <div class="grid-2" style="max-width: 860px; margin: 0 auto;">
-
-          <!-- General Membership -->
-          <div class="tier-card">
-            <span class="tag tag-purple" data-en="General Membership" data-es="Membresía General">General Membership</span>
-            <div class="tier-price">$35 <span data-en="/ year" data-es="/ año">/ year</span></div>
-            <p style="font-size: 0.93rem;" data-en="For community members, supporters, and advocates who want to be part of the foundation's growth." data-es="Para miembros de la comunidad, patrocinadores y defensores que quieren ser parte del crecimiento de la fundación.">For community members, supporters, and advocates who want to be part of the foundation's growth.</p>
-            <ul class="tier-perks">
-              <li data-en="TWCF hoodie or t-shirt" data-es="Sudadera o camiseta TWCF">TWCF hoodie or t-shirt</li>
-              <li data-en="Access to exclusive member events" data-es="Acceso a eventos exclusivos para miembros">Access to exclusive member events</li>
-              <li data-en="20% discount at the TWCF Thrift Store" data-es="20% de descuento en la Tienda de Segunda Mano TWCF">20% discount at the TWCF Thrift Store</li>
-              <li data-en="Double points in all donation drive challenges" data-es="El doble de puntos en todos los desafíos de colecta">Double points in all donation drive challenges</li>
-              <li data-en="Name listed on our Member Recognition page" data-es="Nombre en nuestra página de Reconocimiento de Miembros">Name listed on our Member Recognition page</li>
-              <li data-en="Annual personalized impact update" data-es="Actualización personalizada anual del impacto">Annual personalized impact update — see exactly what your membership funded</li>
-              <li data-en="Early access to new drives and event announcements" data-es="Acceso anticipado a nuevas colectas y anuncios de eventos">Early access to new drives and event announcements</li>
-              <li data-en="Member merchandise discounts" data-es="Descuentos en mercancía para miembros">Member merchandise discounts</li>
-              <li data-en="Foundation updates and newsletters" data-es="Actualizaciones y boletines de la fundación">Foundation updates and newsletters</li>
-            </ul>
-            <a href="#pay" class="btn btn-secondary" style="width: 100%; justify-content: center;" data-en="Join — $35 / year" data-es="Unirse — $35 / año" data-tier="general">Join — $35 / year</a>
-          </div>
-
-          <!-- Student Membership -->
-          <div class="tier-card featured">
-            <div class="tier-badge" data-en="High School Students" data-es="Estudiantes de Preparatoria">High School Students</div>
-            <span class="tag tag-pink" data-en="Student Membership" data-es="Membresía Estudiantil">Student Membership</span>
-            <div class="tier-price">$20 <span data-en="/ year" data-es="/ año">/ year</span></div>
-            <p style="font-size: 0.93rem;" data-en="For high school students who want to make a difference and be recognized for their service and commitment." data-es="Para estudiantes de preparatoria que quieren marcar la diferencia y ser reconocidos por su servicio y compromiso.">For high school students who want to make a difference and be recognized for their service and commitment.</p>
-            <ul class="tier-perks">
-              <li data-en="Graduation cords" data-es="Cordones de graduación">Graduation cords</li>
-              <li data-en="Official certificate of membership &amp; service" data-es="Certificado oficial de membresía y servicio">Official certificate of membership &amp; service</li>
-              <li data-en="TWCF brooch / pin" data-es="Broche / pin TWCF">TWCF brooch / pin</li>
-              <li data-en="Signed community service hours documentation letter (for college &amp; scholarship applications)" data-es="Carta firmada de documentación de horas de servicio comunitario (para solicitudes universitarias y becas)">Signed community service hours documentation letter (for college &amp; scholarship applications)</li>
-              <li data-en="Eligible for a college application recommendation letter from TWCF leadership" data-es="Elegible para carta de recomendación para solicitudes universitarias de la dirección de TWCF">Eligible for a college application recommendation letter from TWCF leadership</li>
-              <li data-en="Triple points in all donation drive challenges" data-es="El triple de puntos en todos los desafíos de colecta">Triple points in all donation drive challenges</li>
-              <li data-en="Recognition on our Student Members honor page" data-es="Reconocimiento en nuestra página de honor de Miembros Estudiantiles">Recognition on our Student Members honor page</li>
-              <li data-en="TWCF hoodie or t-shirt" data-es="Sudadera o camiseta TWCF">TWCF hoodie or t-shirt</li>
-              <li data-en="Access to member events" data-es="Acceso a eventos para miembros">Access to member events</li>
-              <li data-en="Priority access to future programs and events" data-es="Acceso prioritario a futuros programas y eventos">Priority access to future programs and events</li>
-            </ul>
-            <a href="#apply" class="btn btn-primary" style="width: 100%; justify-content: center;" data-en="Apply — $20 / year" data-es="Solicitar — $20 / año">Apply — $20 / year</a>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PAYMENT SECTION -->
-    <section id="pay" class="section">
-      <div class="container" style="max-width: 520px;">
-        <div class="section-header">
-          <span class="tag tag-purple" data-en="Secure Payment" data-es="Pago Seguro">Secure Payment</span>
-          <h2 data-en="Complete Your Membership" data-es="Completa Tu Membresía">Complete Your Membership</h2>
-          <p data-en="Your payment is processed securely. We never store your card details." data-es="Tu pago se procesa de forma segura. Nunca almacenamos los datos de tu tarjeta.">Your payment is processed securely. We never store your card details.</p>
-        </div>
-
-        <!-- Step 1: Select type + info -->
-        <div id="pay-step-1" class="form-stack" style="margin-top: 1.5rem;">
-          <div class="form-group">
-            <label for="pay-type" data-en="Membership Type" data-es="Tipo de Membresía">Membership Type</label>
-            <select id="pay-type" required>
-              <option value="" data-en="Select..." data-es="Selecciona...">Select...</option>
-              <option value="general" data-en="General Membership — $35 / year" data-es="Membresía General — $35 / año">General Membership — $35 / year</option>
-              <option value="student" data-en="Student Membership — $20 / year" data-es="Membresía Estudiantil — $20 / año">Student Membership — $20 / year</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="pay-name" data-en="Full Name" data-es="Nombre Completo">Full Name</label>
-            <input type="text" id="pay-name" name="pay_name" placeholder="Jane Doe" data-en-placeholder="Jane Doe" data-es-placeholder="María García" required />
-          </div>
-          <div class="form-group">
-            <label for="pay-email" data-en="Email Address" data-es="Correo Electrónico">Email Address</label>
-            <input type="email" id="pay-email" name="pay_email" placeholder="jane@example.com" data-en-placeholder="jane@example.com" data-es-placeholder="maria@ejemplo.com" required />
-          </div>
-          <div id="pay-step1-error" style="color: #df1b41; font-size: 0.88rem; display: none;"></div>
-          <button id="pay-continue" type="button" class="btn btn-primary" style="align-self: flex-start;" data-en="Continue to Payment" data-es="Continuar al Pago">Continue to Payment</button>
-        </div>
-
-        <!-- Step 2: Stripe Payment Element -->
-        <div id="pay-step-2" style="display: none; margin-top: 1.5rem;">
-          <div class="card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; padding: 1rem 1.25rem;">
-            <span id="pay-label" style="font-weight: 600; color: var(--text);">General Membership</span>
-            <span id="pay-amount" style="font-size: 1.2rem; font-weight: 700; color: var(--purple);">$35.00</span>
-          </div>
-          <div id="payment-element" style="margin-bottom: 1rem;"></div>
-          <div id="pay-error" style="color: #df1b41; font-size: 0.88rem; margin-bottom: 0.75rem; display: none;"></div>
-          <button id="pay-submit" type="button" class="btn btn-primary" style="width: 100%; justify-content: center;" data-en="Pay Now" data-es="Pagar Ahora">Pay Now</button>
-          <button id="pay-back" type="button" class="btn btn-secondary" style="width: 100%; justify-content: center; margin-top: 0.5rem;" data-en="Back" data-es="Atrás">Back</button>
-        </div>
-
-        <!-- Step 3: Success -->
-        <div id="pay-success" style="display: none; text-align: center; padding: 3rem 0;">
-          <div style="font-size: 3rem; margin-bottom: 1rem; color: var(--purple);">✓</div>
-          <h3 data-en="Payment Received!" data-es="¡Pago Recibido!">Payment Received!</h3>
-          <p style="margin-top: 0.75rem;" data-en="Thank you for becoming a member of The Women and Children Foundation. We'll be in touch shortly with your welcome details." data-es="Gracias por convertirte en miembro de la Fundación de Mujeres y Niños. Nos pondremos en contacto contigo pronto con los detalles de bienvenida.">Thank you for becoming a member of The Women and Children Foundation. We'll be in touch shortly with your welcome details.</p>
-          <a href="contact.html" class="btn btn-secondary" style="margin-top: 1.5rem; display: inline-flex;" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- APPLICATION FORM -->
-    <section id="apply" class="section">
-      <div class="container" style="max-width: 680px;">
-        <div class="section-header">
-          <span class="tag tag-pink" data-en="Student Application" data-es="Solicitud Estudiantil">Student Application</span>
-          <h2 data-en="Student Membership Application" data-es="Solicitud de Membresía Estudiantil">Student Membership Application</h2>
-          <p data-en="Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership." data-es="Rellena el formulario y revisaremos tu solicitud. Una vez aprobada, te enviaremos un enlace de pago para completar tu membresía de $20.">Fill out the form below and we'll review your application. Once approved, we'll send you a payment link to complete your $20 membership.</p>
-        </div>
-
-        <div id="apply-success" class="form-success" style="display:none;">
-          <div class="success-check"></div>
-          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
-          <h3 data-en="Application received!" data-es="¡Solicitud recibida!">Application received!</h3>
-          <p data-en="Thank you for applying. We'll review your application and send you a payment link once approved." data-es="Gracias por aplicar. Revisaremos tu solicitud y te enviaremos un enlace de pago una vez aprobada.">Thank you for applying. We'll review your application and send you a payment link once approved.</p>
-          <div class="btn-row">
-            <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
-            <a href="volunteer.html" class="btn btn-secondary" data-en="Volunteer Too" data-es="También Voluntariar">Volunteer Too</a>
-          </div>
-        </div>
-        <form class="form-stack" action="https://formspree.io/f/mwvzoaba" method="POST" data-formspree data-success-target="apply-success">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="first-name" data-en="First Name" data-es="Nombre">First Name</label>
-              <input type="text" id="first-name" name="first_name" required data-en-placeholder="Jane" data-es-placeholder="María" placeholder="Jane" />
-            </div>
-            <div class="form-group">
-              <label for="last-name" data-en="Last Name" data-es="Apellido">Last Name</label>
-              <input type="text" id="last-name" name="last_name" required data-en-placeholder="Doe" data-es-placeholder="García" placeholder="Doe" />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="email" data-en="Email Address" data-es="Correo Electrónico">Email Address</label>
-            <input type="email" id="email" name="email" required data-en-placeholder="jane@example.com" data-es-placeholder="maria@ejemplo.com" placeholder="jane@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="phone" data-en="Phone Number" data-es="Número de Teléfono">Phone Number</label>
-            <input type="tel" id="phone" name="phone" data-en-placeholder="(555) 000-0000" data-es-placeholder="(555) 000-0000" placeholder="(555) 000-0000" />
-          </div>
-          <div class="form-group">
-            <label for="membership-type" data-en="Membership Type" data-es="Tipo de Membresía">Membership Type</label>
-            <select id="membership-type" name="membership_type" required>
-              <option value="" data-en="Select a membership type..." data-es="Selecciona un tipo de membresía...">Select a membership type...</option>
-              <option value="general" data-en="General Membership" data-es="Membresía General">General Membership</option>
-              <option value="student" data-en="Student Membership (High School)" data-es="Membresía Estudiantil (Preparatoria)">Student Membership (High School)</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="school" data-en="School / Organization (if applicable)" data-es="Escuela / Organización (si aplica)">School / Organization (if applicable)</label>
-            <input type="text" id="school" name="school" data-en-placeholder="School or organization name" data-es-placeholder="Nombre de escuela u organización" placeholder="School or organization name" />
-          </div>
-          <div class="form-group">
-            <label for="why" data-en="Why do you want to join?" data-es="¿Por qué quieres unirte?">Why do you want to join?</label>
-            <textarea id="why" name="why" data-en-placeholder="Tell us a little about yourself and why you'd like to become a member..." data-es-placeholder="Cuéntanos un poco sobre ti y por qué te gustaría ser miembro..." placeholder="Tell us a little about yourself and why you'd like to become a member..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="align-self: flex-start;" data-en="Submit Application" data-es="Enviar Solicitud">Submit Application</button>
-        </form>
       </div>
     </section>
 
@@ -231,25 +112,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -257,136 +139,18 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    (function () {
-      const STRIPE_PK = 'pk_live_51TZg8LFjVlpP57Og7x9EbOhpJbNfZF8uTWmyTN4UqmvHl6REGuuf8V86NV9Anqp11affWmGe6EWwL6kQaZ9PFtGI00ODGPq9Zd';
-      const labels  = { general: 'General Membership', student: 'Student Membership (High School)' };
-      const amounts = { general: '$35.00', student: '$20.00' };
-
-      const step1     = document.getElementById('pay-step-1');
-      const step2     = document.getElementById('pay-step-2');
-      const success   = document.getElementById('pay-success');
-      const payType   = document.getElementById('pay-type');
-      const payName   = document.getElementById('pay-name');
-      const payEmail  = document.getElementById('pay-email');
-      const err1      = document.getElementById('pay-step1-error');
-      const err2      = document.getElementById('pay-error');
-      const contBtn   = document.getElementById('pay-continue');
-      const submitBtn = document.getElementById('pay-submit');
-      const backBtn   = document.getElementById('pay-back');
-
-      let stripe, elements;
-
-      /* Pre-select tier from "Join" button click on tier cards */
-      document.querySelectorAll('[data-tier]').forEach(btn => {
-        btn.addEventListener('click', () => {
-          payType.value = btn.dataset.tier;
-        });
-      });
-
-      contBtn.addEventListener('click', async () => {
-        err1.style.display = 'none';
-        if (!payType.value || !payName.value.trim() || !payEmail.value.trim()) {
-          err1.textContent = 'Please fill in all fields.';
-          err1.style.display = 'block';
-          return;
-        }
-
-        contBtn.textContent = 'Loading…';
-        contBtn.disabled = true;
-
-        try {
-          const res = await fetch('/.netlify/functions/create-payment-intent', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              membershipType: payType.value,
-              name: payName.value.trim(),
-              email: payEmail.value.trim(),
-            }),
-          });
-          const data = await res.json();
-          if (!res.ok) throw new Error(data.error || 'Payment setup failed.');
-
-          stripe = Stripe(STRIPE_PK);
-          elements = stripe.elements({
-            clientSecret: data.clientSecret,
-            appearance: {
-              theme: 'stripe',
-              variables: {
-                colorPrimary: '#5C2D91',
-                colorBackground: '#ffffff',
-                colorText: '#1C1830',
-                colorDanger: '#df1b41',
-                fontFamily: 'Inter, Arial, sans-serif',
-                borderRadius: '12px',
-              },
-              rules: {
-                '.Input': { border: '1.5px solid rgba(92,45,145,0.18)', boxShadow: 'none' },
-                '.Input:focus': { border: '1.5px solid #5C2D91', boxShadow: '0 0 0 3px rgba(92,45,145,0.1)' },
-                '.Label': { color: '#1C1830', fontWeight: '500' },
-              },
-            },
-          });
-
-          elements.create('payment').mount('#payment-element');
-
-          document.getElementById('pay-label').textContent  = labels[payType.value];
-          document.getElementById('pay-amount').textContent = amounts[payType.value];
-
-          step1.style.display = 'none';
-          step2.style.display = 'block';
-        } catch (e) {
-          err1.textContent    = e.message;
-          err1.style.display  = 'block';
-          contBtn.textContent = 'Continue to Payment';
-          contBtn.disabled    = false;
-        }
-      });
-
-      backBtn.addEventListener('click', () => {
-        step2.style.display = 'none';
-        step1.style.display = 'flex';
-        contBtn.textContent = 'Continue to Payment';
-        contBtn.disabled    = false;
-        err2.style.display  = 'none';
-      });
-
-      submitBtn.addEventListener('click', async () => {
-        err2.style.display     = 'none';
-        submitBtn.textContent  = 'Processing…';
-        submitBtn.disabled     = true;
-
-        const { error } = await stripe.confirmPayment({
-          elements,
-          confirmParams: { return_url: window.location.href },
-          redirect: 'if_required',
-        });
-
-        if (error) {
-          err2.textContent   = error.message;
-          err2.style.display = 'block';
-          submitBtn.textContent = 'Pay Now';
-          submitBtn.disabled    = false;
-        } else {
-          step2.style.display   = 'none';
-          success.style.display = 'block';
-          success.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    })();
-  </script>
 </body>
 </html>

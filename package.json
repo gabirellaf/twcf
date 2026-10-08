@@ -1,0 +1,14 @@
+{
+  "name": "twcf-donation-checkout",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "stripe": "^22.6.0"
+  }
+}

@@ -64,47 +64,210 @@ img { max-width: 100%; height: auto; display: block; }
 
 /* ===== NAVIGATION ===== */
 .site-nav {
-  position: sticky; top: 0; z-index: 1000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: rgba(255, 249, 252, 0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
 }
-.nav-inner {
-  display: flex; align-items: center;
-  min-height: 80px; gap: 1rem;
+
+.site-nav .nav-inner {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0 32px;
+
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  gap: 1rem;
 }
-.nav-logo { display: flex; align-items: center; gap: 0.6rem; flex-shrink: 0; }
-.nav-logo img { height: 68px; width: auto; }
 
-.nav-links { display: flex; align-items: center; gap: 0.1rem; list-style: none; margin-left: auto; }
-.nav-links a {
-  display: block; padding: 0.45rem 0.65rem;
-  border-radius: var(--radius); font-size: 0.87rem; font-weight: 500;
-  color: var(--text); transition: all var(--ease); white-space: nowrap;
+/* Keep logo small and anchored left */
+.site-nav .nav-logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: 170px;
 }
-.nav-links a:hover, .nav-links a.active { background: var(--purple-pale); color: var(--purple); }
-.nav-links a.active { font-weight: 700; }
 
-.nav-right { display: flex; align-items: center; gap: 0.75rem; flex-shrink: 0; }
+.site-nav .nav-logo img {
+  display: block;
+  width: 170px;
+  height: auto;
+  max-height: 68px;
+  object-fit: contain;
+}
 
-.lang-toggle { display: flex; background: var(--purple-pale); border-radius: 999px; padding: 3px; }
+/* Main nav */
+.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  list-style: none;
+  margin-left: auto;
+  padding: 0;
+}
+
+.site-nav .nav-links a {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius);
+  font-size: 0.87rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: all var(--ease);
+  white-space: nowrap;
+}
+
+.site-nav .nav-links a:hover,
+.site-nav .nav-links a.active {
+  background: var(--purple-pale);
+  color: var(--purple);
+}
+
+.site-nav .nav-links a.active {
+  font-weight: 700;
+}
+
+.site-nav .nav-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Mobile-only copies of the Donate / Help Build a Kit buttons, shown inside
+   the hamburger menu; hidden on desktop where the nav-right versions show. */
+.nav-mobile-cta { display: none; }
+
+  
+/* ===== NAV DROPDOWNS ===== */
+.nav-dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.nav-dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.45rem 0.65rem;
+  border: 0;
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-size: 0.87rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all var(--ease);
+}
+
+.nav-dropdown-toggle:hover,
+.nav-dropdown-toggle.active,
+.nav-dropdown:focus-within > .nav-dropdown-toggle,
+.nav-dropdown.open > .nav-dropdown-toggle {
+  background: var(--purple-pale);
+  color: var(--purple);
+}
+
+.nav-dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  left: 0;
+  min-width: 190px;
+  padding: 0.45rem;
+  margin: 0;
+  list-style: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 1200;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu,
+.nav-dropdown.open .nav-dropdown-menu {
+  display: block;
+}
+
+.nav-dropdown-menu li {
+  width: 100%;
+}
+
+.site-nav .nav-dropdown-menu a {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 9px;
+  font-size: 0.86rem;
+}
+
+/* Language toggle */
+.lang-toggle {
+  display: flex;
+  background: var(--purple-pale);
+  border-radius: 999px;
+  padding: 3px;
+}
+
 .lang-btn {
-  background: none; border: none; padding: 0.28rem 0.65rem;
-  border-radius: 999px; font-size: 0.8rem; font-weight: 700;
-  cursor: pointer; color: var(--muted); transition: all var(--ease);
-  font-family: inherit; letter-spacing: 0.04em;
+  background: none;
+  border: none;
+  padding: 0.28rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all var(--ease);
+  font-family: inherit;
+  letter-spacing: 0.04em;
 }
-.lang-btn.active { background: var(--purple); color: var(--white); }
 
+.lang-btn.active {
+  background: var(--purple);
+  color: var(--white);
+}
+
+
+/* Mobile hamburger */
 .hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  background: none; border: none; cursor: pointer; padding: 0.5rem;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
 }
+
 .hamburger span {
-  display: block; width: 22px; height: 2px;
-  background: var(--purple); border-radius: 2px; transition: all var(--ease);
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--purple);
+  border-radius: 2px;
+  transition: all var(--ease);
 }
+
+/* Morph the hamburger into an X when the mobile menu is open. */
+.nav-inner:has(.nav-links.open) .hamburger span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-inner:has(.nav-links.open) .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+.nav-inner:has(.nav-links.open) .hamburger span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 
 /* ===== BUTTONS ===== */
 .btn {
@@ -487,17 +650,81 @@ img { max-width: 100%; height: auto; display: block; }
   .hero-visual   { display: none; }
 }
 @media (max-width: 768px) {
-  .nav-links {
-    display: none; position: absolute; top: 72px; left: 0; right: 0;
-    background: var(--cream); flex-direction: column;
-    padding: 0.75rem 1rem 1rem; border-bottom: 1px solid var(--border);
-    box-shadow: var(--shadow); gap: 0.15rem;
-  }
-  .nav-links.open { display: flex; }
-  .site-nav { position: relative; }
+
+  /* ---- Mobile nav: full-width dropdown panel under the header ---- */
+  .site-nav .nav-inner { padding: 0 16px; min-height: 72px; }
+  .site-nav .nav-right { margin-left: auto; gap: 0.5rem; }
   .hamburger { display: flex; }
-  .nav-links a { padding: 0.65rem 0.85rem; font-size: 0.95rem; }
   .btn-get-help-nav { display: none; }
+
+  .site-nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%; left: 0; right: 0;
+    margin: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0.25rem 0 0;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    overflow-y: auto;
+  }
+  .site-nav .nav-links.open { display: flex; }
+
+  /* Left-aligned rows with dividers */
+  .site-nav .nav-links > li { border-bottom: 1px solid var(--border); }
+  .site-nav .nav-links > li > a,
+  .site-nav .nav-dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0.95rem 1.25rem;
+    border-radius: 0;
+    font-size: 1.05rem;
+    text-align: left;
+  }
+  .site-nav .nav-links a.active { background: var(--purple-pale); }
+
+  /* Dropdowns become accordions */
+  .nav-dropdown { display: block; width: 100%; }
+  .nav-dropdown-menu {
+    position: static;
+    min-width: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 0 0.4rem;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: var(--purple-pale);
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: none; }
+  .nav-dropdown.open .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display: block; }
+  .site-nav .nav-dropdown-menu a {
+    padding: 0.75rem 1.25rem 0.75rem 2.25rem;
+    font-size: 0.98rem;
+    border-radius: 0;
+  }
+
+  /* Donate / Help Build a Kit: side by side at the bottom */
+  .site-nav .nav-right > a.btn { display: none; }
+  .nav-mobile-cta {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+    list-style: none;
+    margin: 0;
+    padding: 1rem 1.25rem 1.25rem;
+    border: 0 !important;
+  }
+  .nav-mobile-cta a { flex: 1; text-align: center; justify-content: center; }
+
   .grid-2 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 3.5rem 0; }

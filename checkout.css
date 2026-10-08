@@ -1,0 +1,157 @@
+:root {
+  --ink: #1d1930;
+  --paper: #f8f9fc;
+  --muted: #68647a;
+  --line: #ddd9e8;
+
+  --purple: #5c2d91;
+  --purple-dark: #351465;
+  --purple-pale: #f3eef9;
+
+  --blue: #4b86c6;
+  --blue-dark: #326ba9;
+  --blue-pale: #eef5fc;
+
+  --white: #ffffff;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  min-height:100vh;
+  background: linear-gradient(180deg, var(--purple-pale) 0%, var(--paper) 34%, var(--paper) 100%);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+.site-header{
+  max-width:980px;
+  margin:0 auto;
+  padding:28px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.brand{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  text-decoration:none;
+  color:inherit;
+}
+.brand-logo {
+  width: 210px;
+  height: auto;
+  display: block;
+}
+
+.back-link{
+  color:var(--muted);
+  text-underline-offset:3px;
+  font-size:14px;
+}
+.payment-shell{
+  max-width:760px;
+  margin:40px auto 80px;
+  padding:0 24px;
+}
+.payment-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(57, 35, 92, 0.07);
+}
+.eyebrow{
+  color:var(--purple);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+h1{
+  margin:10px 0 12px;
+  font-family:'Playfair Display', serif;
+  font-size: clamp(42px, 6vw, 60px);  line-height:1;
+  font-weight:600;
+  letter-spacing:-.03em;
+}
+.intro{
+  color:var(--muted);
+  font-size:16px;
+  margin:0 0 28px;
+}
+.donation-summary{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  margin-bottom:28px;
+}
+.donation-summary span{
+  color:var(--muted);
+}
+.donation-summary strong {
+  font-size: 30px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--purple);
+}
+.impact-note {
+  margin: -10px 0 28px;
+  padding: 16px 18px;
+  background: var(--purple-pale);
+  border-left: 4px solid var(--purple);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+#payment-element{
+  min-height:56px;
+}
+#payment-message{
+  margin-top:14px;
+  color:#9d243d;
+  font-size:14px;
+}
+#submit{
+  width:100%;
+  min-height:58px;
+  margin-top:24px;
+  border:0;
+  border-radius:999px;
+  background: var(--purple);
+  color:#fff;
+  font:inherit;
+  font-size:16px;
+  font-weight:750;
+  cursor:pointer;
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+#submit:hover:not(:disabled){
+  background: var(--purple-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(92,45,145,.18);
+}
+#submit:disabled{opacity:.55;cursor:not-allowed}
+.secure-note{
+  color:var(--muted);
+  text-align:center;
+  font-size:12px;
+  margin:18px 0 0;
+}
+.spinner{
+  display:inline-block;width:15px;height:15px;margin-left:10px;
+  border:2px solid rgba(255,255,255,.4);
+  border-top-color:#fff;border-radius:50%;
+  animation:spin .8s linear infinite;
+  vertical-align:-2px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(max-width:560px){
+  .site-header,.payment-shell{padding-left:18px;padding-right:18px}
+  .payment-card{padding:24px}
+}

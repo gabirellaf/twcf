@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sponsor a Kit — The Women and Children Foundation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
+      </ul>
+
+      <div class="nav-right">
+        <div class="lang-toggle">
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="es">ES</button>
+        </div>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
+        <button class="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="tag tag-pink" data-en="Sponsor a Kit" data-es="Patrocina un Kit">Sponsor a Kit</span>
+        <h1 id="sponsor-kit-name" data-en="Sponsor a Kit" data-es="Patrocina un Kit">Sponsor a Kit</h1>
+        <p id="sponsor-kit-desc" data-en="Fund a complete kit — we handle the shopping, assembly, and delivery." data-es="Financia un kit completo; nosotros nos encargamos de comprar, ensamblar y entregar.">Fund a complete kit — we handle the shopping, assembly, and delivery.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" style="max-width: 560px;">
+
+        <div id="sponsor-invalid" class="card text-center" style="display:none;">
+          <h3 data-en="We couldn't find that kit." data-es="No pudimos encontrar ese kit.">We couldn't find that kit.</h3>
+          <p data-en="Please choose a kit to sponsor from Our Care Kits." data-es="Por favor elige un kit para patrocinar desde Nuestros Kits.">Please choose a kit to sponsor from Our Care Kits.</p>
+          <a href="our-care-kits.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-flex;" data-en="Browse Kits" data-es="Ver Kits">Browse Kits</a>
+        </div>
+
+        <div id="sponsor-valid" style="display:none;">
+          <div class="card text-center" style="margin-bottom: 1.5rem;">
+            <span style="font-size: 0.85rem; color: var(--muted);" data-en="Sponsorship amount" data-es="Monto de patrocinio">Sponsorship amount</span>
+            <div id="sponsor-price" style="font-size: 2rem; font-weight: 700; color: var(--purple); font-family: 'Playfair Display', serif;"></div>
+          </div>
+
+          <p id="sponsor-loading" style="text-align: center; color: var(--muted); font-size: 0.9rem;" data-en="Preparing secure checkout…" data-es="Preparando pago seguro…">Preparing secure checkout…</p>
+          <p id="sponsor-error" style="text-align: center; color: var(--pink-dark); font-size: 0.9rem;"></p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
+          <ul>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
+          <ul>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="for-companies.html"  data-en="For Companies"  data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 data-en="Connect" data-es="Conectar">Connect</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
+            <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
+        <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function () {
+      const slug = new URLSearchParams(location.search).get('kit');
+      const kit = slug && typeof KIT_DATA !== 'undefined' ? KIT_DATA[slug] : null;
+
+      if (!kit || typeof kit.price !== 'number') {
+        document.getElementById('sponsor-invalid').style.display = 'block';
+        return;
+      }
+
+      document.getElementById('sponsor-valid').style.display = 'block';
+      const nameEl = document.getElementById('sponsor-kit-name');
+      nameEl.textContent = (currentLang === 'es' ? 'Patrocina: ' : 'Sponsor: ') + (currentLang === 'es' ? kit.es : kit.en);
+      document.getElementById('sponsor-price').textContent = '$' + kit.price;
+
+      const errorEl = document.getElementById('sponsor-error');
+      const loadingEl = document.getElementById('sponsor-loading');
+
+      // This flow is kept entirely separate from the general Donate flow:
+      // it only ever sends a kit slug (never an amount) to a dedicated
+      // endpoint that looks up the price server-side, and it redirects
+      // into its own checkout/complete pages with their own session key.
+      fetch('/api/create-kit-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ kit: slug }),
+      })
+        .then(r => r.json())
+        .then(data => {
+          if (!data.clientSecret) {
+            throw new Error(data.error || 'Unable to start checkout.');
+          }
+          sessionStorage.setItem('twcfKitPayment', JSON.stringify({
+            clientSecret: data.clientSecret,
+            amount: data.amount,
+            kitName: data.kitName,
+          }));
+          window.location.href = '/kit-checkout.html';
+        })
+        .catch(error => {
+          loadingEl.style.display = 'none';
+          errorEl.textContent = error.message || 'Something went wrong starting checkout. Please try again.';
+        });
+    })();
+  </script>
+</body>
+</html>

@@ -1,2 +1,15 @@
 # Local Netlify folder
 .netlify
+
+# Secrets — never commit (Stripe secret key lives here)
+.env
+.env.*
+
+# Local tooling / build output
+node_modules/
+.wrangler/
+.DS_Store
+
+# Local-only backups (excluded from deploys via .assetsignore too)
+html-backup/
+nav-backup/

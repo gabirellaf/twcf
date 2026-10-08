@@ -17,22 +17,67 @@
       <a href="index.html" class="nav-logo">
         <img src="images/logo-cropped.png" alt="The Women and Children Foundation" />
       </a>
+
       <ul class="nav-links">
-        <li><a href="index.html"       data-en="Home"        data-es="Inicio">Home</a></li>
-        <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-        <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-        <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>        <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
-        <li><a href="get-help.html"    data-en="Get Help"    data-es="Obtener Ayuda">Get Help</a></li>
-        <li><a href="resources.html"   data-en="Resources"   data-es="Recursos">Resources</a></li>
-        <li><a href="contact.html"     data-en="Contact"     data-es="Contacto">Contact</a></li>
+        <li><a href="index.html" data-en="Home" data-es="Inicio">Home</a></li>
+
+        <li><a href="our-care-kits.html" data-en="Our Care Kits" data-es="Nuestros Kits">Our Care Kits</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="Get Involved ▾" data-es="Participa ▾">
+            Get Involved ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="volunteer.html" data-en="Volunteer" data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="host-a-drive.html" data-en="Host a Drive" data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="give-supplies.html" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+          </ul>
+        </li>
+
+        <li><a href="get-help.html" data-en="Get Help" data-es="Pide Ayuda">Get Help</a></li>
+
+        <li><a href="where-kits-go.html" data-en="Where Kits Go" data-es="Adónde Van los Kits">Where Kits Go</a></li>
+
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-toggle" type="button" aria-expanded="false"
+                  data-en="About ▾" data-es="Nosotros ▾">
+            About ▾
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="about.html" data-en="About Us" data-es="Nosotros">About Us</a></li>
+            <li><a href="for-companies.html" data-en="For Companies" data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html" data-en="Contact" data-es="Contacto">Contact</a></li>
+          </ul>
+        </li>
+              <li class="nav-mobile-cta">
+          <a href="donate.html" class="btn" style="background:var(--purple); color:var(--white);" data-en="Donate" data-es="Donar">Donate</a>
+          <a href="give-supplies.html" class="btn btn-primary" data-en="Help Build a Kit" data-es="Ayuda a Construir un Kit">Help Build a Kit</a>
+        </li>
       </ul>
+
       <div class="nav-right">
         <div class="lang-toggle">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn" data-lang="es">ES</button>
         </div>
+
+        <a href="donate.html"
+           class="btn"
+           style="background:var(--purple); color:var(--white); box-shadow:var(--shadow-sm);"
+           data-en="Donate"
+           data-es="Donar">
+          Donate
+        </a>
+
+        <a href="give-supplies.html"
+           class="btn btn-primary"
+           data-en="Help Build a Kit"
+           data-es="Ayuda a Construir un Kit">
+          Help Build a Kit
+        </a>
+
         <button class="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -44,207 +89,134 @@
 
     <section class="page-hero">
       <div class="container">
-        <span class="tag tag-pink" data-en="You Are Not Alone" data-es="No Estás Sola">You Are Not Alone</span>
-        <h1 data-en="Get Help" data-es="Obtener Ayuda">Get Help</h1>
-        <p data-en="Whatever you're going through, help is available. Select the type of support you need and we'll show you the right resources." data-es="Sin importar lo que estés atravesando, hay ayuda disponible. Selecciona el tipo de apoyo que necesitas y te mostraremos los recursos adecuados.">Whatever you're going through, help is available. Select the type of support you need and we'll show you the right resources.</p>
+        <span class="tag tag-pink" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+        <h1 data-en="Get Help" data-es="Pide Ayuda">Get Help</h1>
+        <p data-en="Alongside our care kit drives, TWCF is building a direct family assistance program — reaching women, children, and families in Greater Lansing and surrounding communities who are facing financial hardship, housing instability, displacement, crisis, or an inability to obtain basic necessities. If that's you, or a family you know, you can ask us directly." data-es="Además de nuestras colectas de kits de cuidado, TWCF está creando un programa de asistencia familiar directa, para mujeres, niños y familias en el Gran Lansing y comunidades cercanas que enfrentan dificultades financieras, inestabilidad de vivienda, desplazamiento, crisis, o incapacidad para obtener artículos básicos. Si eres tú, o una familia que conoces, puedes pedirnos ayuda directamente.">Alongside our care kit drives, TWCF is building a direct family assistance program — reaching women, children, and families in Greater Lansing and surrounding communities who are facing financial hardship, housing instability, displacement, crisis, or an inability to obtain basic necessities. If that's you, or a family you know, you can ask us directly.</p>
       </div>
     </section>
 
-    <!-- EMPATHY STRIP -->
-    <section class="section-sm" style="background: var(--blush);">
-      <div class="container">
-        <div style="display:grid;grid-template-columns:minmax(0,420px) 1fr;gap:3rem;align-items:center;">
-          <img src="images/woman-support.jpg" alt="Woman sitting quietly, processing her thoughts" style="width:100%;height:380px;object-fit:cover;object-position:center 20%;border-radius:var(--radius-lg);box-shadow:var(--shadow);" />
-          <div>
-            <h2 style="margin-bottom:0.85rem;" data-en="You don't have to explain yourself to get help." data-es="No tienes que explicarte para recibir ayuda.">You don't have to explain yourself to get help.</h2>
-            <p data-en="Whatever brought you here — you deserve support. Browse the categories below and we'll connect you with the right resources for your situation. Everything is free and confidential." data-es="Lo que sea que te trajo aquí, mereces apoyo. Explora las categorías y te conectaremos con los recursos correctos para tu situación. Todo es gratuito y confidencial.">Whatever brought you here — you deserve support. Browse the categories below and we'll connect you with the right resources for your situation. Everything is free and confidential.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <div style="text-align:center; padding: 1rem 0 0; font-size: 0.9rem; color: var(--muted);" data-en="This is not a crisis line. If you or someone else is in immediate danger, call 911. For a directory of local emergency and support resources, visit our Greater Lansing Help Directory." data-es="Esto no es una línea de crisis. Si tú u otra persona está en peligro inmediato, llama al 911. Para un directorio de recursos locales de emergencia y apoyo, visita nuestro Directorio de Ayuda de Gran Lansing.">This is not a crisis line. If you or someone else is in immediate danger, call 911. For a directory of local emergency and support resources, visit our <a href="resources.html" style="color: var(--purple); font-weight: 600;">Greater Lansing Help Directory</a>.</div>
 
+    <!-- HOW IT WORKS -->
     <section class="section">
-      <div class="container" style="max-width: 860px;">
-
-        <!-- CATEGORY SELECTOR -->
+      <div class="container">
         <div class="section-header text-center">
-          <h2 data-en="What kind of help do you need?" data-es="¿Qué tipo de ayuda necesitas?">What kind of help do you need?</h2>
-          <p data-en="Select a category below — the resources will update to match your situation." data-es="Selecciona una categoría a continuación y los recursos se actualizarán según tu situación.">Select a category below — the resources will update to match your situation.</p>
+          <span class="tag tag-purple" data-en="How It Works" data-es="Cómo Funciona">How It Works</span>
+          <h2 data-en="A direct conversation, not a long application." data-es="Una conversación directa, no una solicitud larga.">A direct conversation, not a long application.</h2>
         </div>
-
-        <div class="category-grid">
-          <button class="category-btn" data-category="dv">
-            <span class="label" data-en="Domestic Violence" data-es="Violencia Doméstica">Domestic Violence</span>
-          </button>
-          <button class="category-btn" data-category="sa">
-            <span class="label" data-en="Sexual Assault" data-es="Agresión Sexual">Sexual Assault</span>
-          </button>
-          <button class="category-btn" data-category="sh">
-            <span class="label" data-en="Sexual Harassment" data-es="Acoso Sexual">Sexual Harassment</span>
-          </button>
-          <button class="category-btn" data-category="food">
-            <span class="label" data-en="Food" data-es="Alimentos">Food</span>
-          </button>
-          <button class="category-btn" data-category="medical">
-            <span class="label" data-en="Medical" data-es="Médico">Medical</span>
-          </button>
-          <button class="category-btn" data-category="housing">
-            <span class="label" data-en="Housing" data-es="Vivienda">Housing</span>
-          </button>
-        </div>
-
-        <!-- ===== DV ===== -->
-        <div class="help-content" data-category="dv">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Domestic Violence" data-es="Violencia Doméstica">Domestic Violence</span>
-            <h3 data-en="If you or someone you know is in immediate danger, call 911." data-es="Si tú o alguien que conoces está en peligro inmediato, llama al 911.">If you or someone you know is in immediate danger, call 911.</h3>
-            <p style="margin-top: 0.75rem;" data-en="Domestic violence includes physical, emotional, financial, and sexual abuse by an intimate partner or family member. You are not to blame, and help is available." data-es="La violencia doméstica incluye abuso físico, emocional, económico y sexual por parte de una pareja íntima o familiar. No es tu culpa y hay ayuda disponible.">Domestic violence includes physical, emotional, financial, and sexual abuse by an intimate partner or family member. You are not to blame, and help is available.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Hotlines &amp; Resources" data-es="Líneas de Ayuda y Recursos">Hotlines &amp; Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="National DV Hotline" data-es="Línea Nacional contra la VD">National DV Hotline</strong> <a href="tel:18007997233">1-800-799-7233</a></li>
-              <li><strong data-en="Crisis Text Line — Text HOME to" data-es="Línea de Texto de Crisis — Envía HOME al">Crisis Text Line — Text HOME to</strong> <a href="sms:741741">741741</a></li>
-              <li><strong data-en="Local shelter referrals" data-es="Referencias a albergues locales">Local shelter referrals</strong> <a href="resources.html" data-en="View Resources →" data-es="Ver Recursos →">View Resources →</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Reach Out to TWCF" data-es="Contactar a TWCF">Reach Out to TWCF</a>
-            </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2.5rem;">
+          <div class="card text-center">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">1</div>
+            <h3 data-en="Reach Out" data-es="Contáctanos">Reach Out</h3>
+            <p style="font-size: 0.88rem;" data-en="Fill out the short form below yourself, or have a shelter, school, church, or caseworker send us your information with your permission." data-es="Completa tú mismo el breve formulario a continuación, o pide a un albergue, escuela, iglesia o trabajador social que nos envíe tu información con tu permiso.">Fill out the short form below yourself, or have a shelter, school, church, or caseworker send us your information with your permission.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--pink); color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">2</div>
+            <h3 data-en="We Talk" data-es="Conversamos">We Talk</h3>
+            <p style="font-size: 0.88rem;" data-en="We'll follow up to understand what's actually needed — no long intake process, and never more detail than necessary." data-es="Te contactaremos para entender qué se necesita realmente; sin procesos largos de admisión, y nunca más detalles de los necesarios.">We'll follow up to understand what's actually needed — no long intake process, and never more detail than necessary.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--purple); color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">3</div>
+            <h3 data-en="We Put It Together" data-es="Lo Reunimos">We Put It Together</h3>
+            <p style="font-size: 0.88rem;" data-en="Based on what's needed and what we have available, we assemble the right assistance — often one of our care kits, sometimes something more specific." data-es="Según lo que se necesite y lo que tengamos disponible, reunimos la asistencia adecuada; a menudo uno de nuestros kits de cuidado, a veces algo más específico.">Based on what's needed and what we have available, we assemble the right assistance — often one of our care kits, sometimes something more specific.</p>
+          </div>
+          <div class="card text-center">
+            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--pink); color: white; font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">4</div>
+            <h3 data-en="We Connect, On Your Terms" data-es="Conectamos, en Tus Términos">We Connect, On Your Terms</h3>
+            <p style="font-size: 0.88rem;" data-en="You choose a safe, neutral place to receive assistance. We never require photos or your story as a condition of help." data-es="Tú eliges un lugar seguro y neutral para recibir la asistencia. Nunca exigimos fotos ni tu historia como condición para ayudar.">You choose a safe, neutral place to receive assistance. We never require photos or your story as a condition of help.</p>
           </div>
         </div>
-
-        <!-- ===== SA ===== -->
-        <div class="help-content" data-category="sa">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Sexual Assault" data-es="Agresión Sexual">Sexual Assault</span>
-            <h3 data-en="If you are in immediate danger, call 911." data-es="Si estás en peligro inmediato, llama al 911.">If you are in immediate danger, call 911.</h3>
-            <p style="margin-top: 0.75rem;" data-en="Sexual assault is never your fault. You deserve support, safety, and the space to heal at your own pace. Confidential help is available 24/7." data-es="La agresión sexual nunca es tu culpa. Mereces apoyo, seguridad y el espacio para sanar a tu propio ritmo. Hay ayuda confidencial disponible las 24 horas.">Sexual assault is never your fault. You deserve support, safety, and the space to heal at your own pace. Confidential help is available 24/7.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Hotlines &amp; Resources" data-es="Líneas de Ayuda y Recursos">Hotlines &amp; Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="RAINN Hotline" data-es="Línea RAINN">RAINN Hotline</strong> <a href="tel:18006564673">1-800-656-4673</a></li>
-              <li><strong data-en="Crisis Text Line — Text HOME to" data-es="Línea de Texto de Crisis — Envía HOME al">Crisis Text Line — Text HOME to</strong> <a href="sms:741741">741741</a></li>
-              <li><strong data-en="RAINN online chat" data-es="Chat en línea de RAINN">RAINN online chat</strong> <a href="https://www.rainn.org" target="_blank" rel="noopener">rainn.org</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Reach Out to TWCF" data-es="Contactar a TWCF">Reach Out to TWCF</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ===== SH ===== -->
-        <div class="help-content" data-category="sh">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Sexual Harassment" data-es="Acoso Sexual">Sexual Harassment</span>
-            <h3 data-en="You have the right to a safe environment." data-es="Tienes derecho a un entorno seguro.">You have the right to a safe environment.</h3>
-            <p style="margin-top: 0.75rem;" data-en="Sexual harassment in workplaces, schools, or public spaces is illegal and not something you have to endure. There are legal protections and support systems available to you." data-es="El acoso sexual en lugares de trabajo, escuelas o espacios públicos es ilegal y no es algo que tengas que soportar. Existen protecciones legales y sistemas de apoyo disponibles para ti.">Sexual harassment in workplaces, schools, or public spaces is illegal and not something you have to endure. There are legal protections and support systems available to you.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Hotlines &amp; Resources" data-es="Líneas de Ayuda y Recursos">Hotlines &amp; Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="EEOC (Workplace)" data-es="EEOC (Trabajo)">EEOC (Workplace)</strong> <a href="tel:18006694000">1-800-669-4000</a></li>
-              <li><strong data-en="Crisis Text Line — Text HOME to" data-es="Línea de Texto de Crisis — Envía HOME al">Crisis Text Line — Text HOME to</strong> <a href="sms:741741">741741</a></li>
-              <li><strong data-en="Legal referrals" data-es="Referencias legales">Legal referrals</strong> <a href="resources.html" data-en="View Resources →" data-es="Ver Recursos →">View Resources →</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Reach Out to TWCF" data-es="Contactar a TWCF">Reach Out to TWCF</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ===== FOOD ===== -->
-        <div class="help-content" data-category="food">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Food" data-es="Alimentos">Food</span>
-            <h3 data-en="No one should go hungry." data-es="Nadie debería pasar hambre.">No one should go hungry.</h3>
-            <p style="margin-top: 0.75rem;" data-en="If you or your children are experiencing food insecurity, there are resources available in your community right now. Our care kits include food items, and we can connect you with local food banks and pantries." data-es="Si tú o tus hijos están experimentando inseguridad alimentaria, hay recursos disponibles en tu comunidad ahora mismo. Nuestros kits de ayuda incluyen alimentos y podemos conectarte con bancos de alimentos locales.">If you or your children are experiencing food insecurity, there are resources available in your community right now. Our care kits include food items, and we can connect you with local food banks and pantries.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Resources" data-es="Recursos">Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="Feeding America" data-es="Feeding America">Feeding America</strong> <a href="https://www.feedingamerica.org" target="_blank" rel="noopener">feedingamerica.org</a></li>
-              <li><strong data-en="USDA Food Finder" data-es="Buscador de Alimentos USDA">USDA Food Finder</strong> <a href="https://www.usda.gov" target="_blank" rel="noopener">usda.gov</a></li>
-              <li><strong data-en="Local food banks (see Resources)" data-es="Bancos de alimentos locales (ver Recursos)">Local food banks (see Resources)</strong> <a href="resources.html" data-en="View Resources →" data-es="Ver Recursos →">View Resources →</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Request a Care Kit" data-es="Solicitar un Kit de Ayuda">Request a Care Kit</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ===== MEDICAL ===== -->
-        <div class="help-content" data-category="medical">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Medical" data-es="Médico">Medical</span>
-            <h3 data-en="Your health matters." data-es="Tu salud importa.">Your health matters.</h3>
-            <p style="margin-top: 0.75rem;" data-en="If you're in a medical emergency, call 911. For non-emergency health needs, we can connect you with community health clinics, women's health resources, and sliding-scale care providers in the Lansing area." data-es="Si estás en una emergencia médica, llama al 911. Para necesidades de salud no urgentes, podemos conectarte con clínicas comunitarias, recursos de salud para mujeres y proveedores de atención accesible en el área de Lansing.">If you're in a medical emergency, call 911. For non-emergency health needs, we can connect you with community health clinics, women's health resources, and sliding-scale care providers in the Lansing area.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Resources" data-es="Recursos">Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="Emergency" data-es="Emergencia">Emergency</strong> <a href="tel:911">911</a></li>
-              <li><strong data-en="HRSA Health Centers" data-es="Centros de Salud HRSA">HRSA Health Centers</strong> <a href="https://findahealthcenter.hrsa.gov" target="_blank" rel="noopener">findahealthcenter.hrsa.gov</a></li>
-              <li><strong data-en="Verified doctors (see Resources)" data-es="Médicos verificados (ver Recursos)">Verified doctors (see Resources)</strong> <a href="resources.html" data-en="View Resources →" data-es="Ver Recursos →">View Resources →</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Reach Out to TWCF" data-es="Contactar a TWCF">Reach Out to TWCF</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- ===== HOUSING ===== -->
-        <div class="help-content" data-category="housing">
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <span class="tag tag-pink" data-en="Housing" data-es="Vivienda">Housing</span>
-            <h3 data-en="You deserve a safe place to live." data-es="Mereces un lugar seguro donde vivir.">You deserve a safe place to live.</h3>
-            <p style="margin-top: 0.75rem;" data-en="If you or your children are experiencing housing instability or are in an unsafe home, we can connect you with local shelters and organizations that provide emergency housing and long-term support." data-es="Si tú o tus hijos están experimentando inestabilidad de vivienda o se encuentran en un hogar inseguro, podemos conectarlos con albergues locales y organizaciones que brindan vivienda de emergencia y apoyo a largo plazo.">If you or your children are experiencing housing instability or are in an unsafe home, we can connect you with local shelters and organizations that provide emergency housing and long-term support.</p>
-            <h3 style="margin-top: 1.5rem;" data-en="Resources" data-es="Recursos">Resources</h3>
-            <ul class="hotline-list">
-              <li><strong data-en="National Runaway Safeline" data-es="Línea Nacional de Seguridad para Jóvenes">National Runaway Safeline</strong> <a href="tel:18007864789">1-800-786-2929</a></li>
-              <li><strong data-en="HUD Housing Help" data-es="Ayuda de Vivienda HUD">HUD Housing Help</strong> <a href="https://www.hud.gov" target="_blank" rel="noopener">hud.gov</a></li>
-              <li><strong data-en="Local shelters (see Resources)" data-es="Albergues locales (ver Recursos)">Local shelters (see Resources)</strong> <a href="resources.html" data-en="View Resources →" data-es="Ver Recursos →">View Resources →</a></li>
-            </ul>
-            <div style="margin-top: 1.5rem;">
-              <a href="contact.html" class="btn btn-primary" data-en="Reach Out to TWCF" data-es="Contactar a TWCF">Reach Out to TWCF</a>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
 
     <div class="divider"></div>
 
-    <!-- FIND HELP NEAR YOU -->
-    <section id="find-help" class="section">
-      <div class="container" style="max-width: 860px;">
+    <!-- WHO WE SERVE / SAFETY -->
+    <section class="section" style="background: var(--purple-pale);">
+      <div class="container" style="max-width: 780px;">
+        <div class="grid-2" style="gap: 2rem; align-items: start;">
+          <div>
+            <span class="tag tag-purple" data-en="Who Qualifies" data-es="Quién Califica">Who Qualifies</span>
+            <h3 style="margin-top: 0.5rem;" data-en="Our service area &amp; eligibility" data-es="Nuestra área de servicio y elegibilidad">Our service area &amp; eligibility</h3>
+            <p style="font-size: 0.9rem;" data-en="We serve women, children, and families in Greater Lansing and surrounding communities experiencing financial hardship, housing instability, displacement, crisis, or an inability to obtain basic necessities. Assistance decisions are based on need, using consistent criteria applied to everyone who reaches out — not on personal connections." data-es="Servimos a mujeres, niños y familias en el Gran Lansing y comunidades cercanas que enfrentan dificultades financieras, inestabilidad de vivienda, desplazamiento, crisis, o incapacidad para obtener artículos básicos. Las decisiones de asistencia se basan en la necesidad, usando criterios consistentes aplicados a todos los que nos contactan, no en conexiones personales.">We serve women, children, and families in Greater Lansing and surrounding communities experiencing financial hardship, housing instability, displacement, crisis, or an inability to obtain basic necessities. Assistance decisions are based on need, using consistent criteria applied to everyone who reaches out — not on personal connections.</p>
+          </div>
+          <div>
+            <span class="tag tag-pink" data-en="Your Privacy" data-es="Tu Privacidad">Your Privacy</span>
+            <h3 style="margin-top: 0.5rem;" data-en="How we keep this safe" data-es="Cómo mantenemos esto seguro">How we keep this safe</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; padding: 0;">
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--muted);"><span style="color: var(--purple); font-weight: 700;">✓</span> <span data-en="Your information is kept confidential and used only to arrange your assistance." data-es="Tu información se mantiene confidencial y se usa solo para coordinar tu asistencia.">Your information is kept confidential and used only to arrange your assistance.</span></li>
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--muted);"><span style="color: var(--purple); font-weight: 700;">✓</span> <span data-en="You choose a safe, neutral pickup or meeting location — we don't require your home address." data-es="Tú eliges un lugar seguro y neutral para recoger o reunirte; no exigimos tu dirección de casa.">You choose a safe, neutral pickup or meeting location — we don't require your home address.</span></li>
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--muted);"><span style="color: var(--purple); font-weight: 700;">✓</span> <span data-en="In-person visits are staffed by at least two TWCF team members, for everyone's safety." data-es="Las visitas en persona cuentan con al menos dos miembros del equipo de TWCF, por la seguridad de todos.">In-person visits are staffed by at least two TWCF team members, for everyone's safety.</span></li>
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--muted);"><span style="color: var(--purple); font-weight: 700;">✓</span> <span data-en="Receiving assistance is never contingent on being photographed, interviewed, or sharing your story." data-es="Recibir asistencia nunca depende de que te fotografíen, entrevisten o compartas tu historia.">Receiving assistance is never contingent on being photographed, interviewed, or sharing your story.</span></li>
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--muted);"><span style="color: var(--purple); font-weight: 700;">✓</span> <span data-en="Children are never interviewed or photographed without appropriate consent." data-es="Nunca se entrevista ni fotografía a los niños sin el consentimiento apropiado.">Children are never interviewed or photographed without appropriate consent.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <div class="section-header text-center">
-          <span class="tag tag-purple" data-en="Find Help Near You" data-es="Encuentra Ayuda Cerca de Ti">Find Help Near You</span>
-          <h2 data-en="Partner Organizations &amp; Local Resources" data-es="Organizaciones Aliadas y Recursos Locales">Partner Organizations &amp; Local Resources</h2>
-          <p data-en="We work with organizations to get help to those who need it most. If you're in Michigan, these confirmed partners serve women and families directly." data-es="Trabajamos con organizaciones para llevar ayuda a quienes más la necesitan. Si estás en Michigan, estos aliados confirmados sirven directamente a mujeres y familias.">We work with organizations to get help to those who need it most. If you're in Michigan, these confirmed partners serve women and families directly.</p>
+    <div class="divider"></div>
+
+    <!-- REQUEST FORM -->
+    <section id="request-form" class="section">
+      <div class="container" style="max-width: 680px;">
+        <div class="section-header">
+          <span class="tag tag-purple" data-en="Request Assistance" data-es="Solicitar Asistencia">Request Assistance</span>
+          <h2 data-en="Tell us what's going on." data-es="Cuéntanos qué está pasando.">Tell us what's going on.</h2>
+          <p data-en="This form is for you, or for someone referring a family with their permission. We'll follow up using whatever contact method you say is safest." data-es="Este formulario es para ti, o para alguien que refiere a una familia con su permiso. Te contactaremos usando el método que digas que es más seguro.">This form is for you, or for someone referring a family with their permission. We'll follow up using whatever contact method you say is safest.</p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem; margin-top: 1.75rem;">
-
-          <div class="card" style="border-left: 4px solid var(--purple);">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 1rem; color: #3D1A6B;" data-en="Haven House" data-es="Haven House">Haven House</strong>
-            <p style="font-size: 0.84rem; color: var(--muted); margin: 0.3rem 0 0.6rem;">121 Whitehills Drive &nbsp;·&nbsp; East Lansing, MI 48823</p>
-            <p style="font-size: 0.84rem; line-height: 1.6; margin: 0 0 0.65rem;" data-en="Family shelter providing emergency housing and comprehensive support for women and children." data-es="Albergue familiar que proporciona vivienda de emergencia y apoyo integral para mujeres y niños.">Family shelter providing emergency housing and comprehensive support for women and children.</p>
-            <p style="font-size: 0.84rem; margin: 0;"><strong>Phone:</strong> <a href="tel:5173480691">(517) 348-0691</a> &nbsp;·&nbsp; <span style="color: var(--muted); font-size: 0.8rem;">6am–2pm</span></p>
+        <div id="get-help-success" class="form-success" style="display:none;">
+          <div class="success-check"></div>
+          <img class="success-logo" src="images/logo-cropped.png" alt="TWCF" />
+          <h3 data-en="We received your request." data-es="Recibimos tu solicitud.">We received your request.</h3>
+          <p data-en="Thank you for reaching out. We'll follow up using the safest contact method you provided." data-es="Gracias por contactarnos. Te responderemos usando el método de contacto más seguro que proporcionaste.">Thank you for reaching out. We'll follow up using the safest contact method you provided.</p>
+          <div class="btn-row">
+            <a href="index.html" class="btn btn-primary" data-en="Back to Home" data-es="Volver al Inicio">Back to Home</a>
           </div>
-
-          <div class="card" style="border-left: 4px solid var(--pink);">
-            <strong style="font-family: 'Playfair Display', serif; font-size: 1rem; color: #3D1A6B;" data-en="City Rescue Mission of Lansing" data-es="Misión de Rescate de la Ciudad de Lansing">City Rescue Mission of Lansing</strong>
-            <p style="font-size: 0.84rem; color: var(--muted); margin: 0.3rem 0 0.6rem;">Lansing, MI</p>
-            <p style="font-size: 0.84rem; line-height: 1.6; margin: 0 0 0.65rem;" data-en="Emergency shelter and comprehensive support services for individuals and families in crisis." data-es="Albergue de emergencia y servicios integrales de apoyo para personas y familias en crisis.">Emergency shelter and comprehensive support services for individuals and families in crisis.</p>
-            <p style="font-size: 0.84rem; margin: 0;"><strong>Phone:</strong> <a href="tel:5174850145">(517) 485-0145</a></p>
-          </div>
-
         </div>
 
-        <!-- Geolocation / National Resources -->
-        <div style="margin-top: 2.5rem; padding: 2rem 2.5rem; background: var(--purple-pale); border-radius: var(--radius-lg); text-align: center;">
-          <h3 style="margin: 0 0 0.4rem;" data-en="Not in Michigan? Find help near your location." data-es="¿No estás en Michigan? Encuentra ayuda cerca de ti.">Not in Michigan? Find help near your location.</h3>
-          <p style="font-size: 0.88rem; color: var(--muted); margin: 0 0 1.25rem;" data-en="We'll use your location to find shelters, food banks, and support programs nearby — or try 211, the national social services helpline." data-es="Usaremos tu ubicación para encontrar albergues, bancos de alimentos y programas de apoyo cercanos, o prueba el 211, la línea nacional de servicios sociales.">We'll use your location to find shelters, food banks, and support programs nearby — or try 211, the national social services helpline.</p>
-          <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
-            <button id="map-find-me" class="btn btn-primary" data-en="Find Help Near Me" data-es="Encontrar Ayuda Cerca de Mí">Find Help Near Me</button>
-            <a href="https://www.211.org/" target="_blank" rel="noopener" class="btn btn-secondary" data-en="211.org — National Resource Line" data-es="211.org — Línea Nacional de Recursos">211.org — National Resource Line</a>
+        <form class="form-stack" style="margin-top: 1.5rem;" action="https://formspree.io/f/xojbdywn" method="POST" data-formspree data-success-target="get-help-success">
+          <input type="hidden" name="_subject" value="New Direct Assistance Request" />
+          <input type="hidden" name="form_type" value="get-help-request" />
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gh-name" data-en="Name" data-es="Nombre">Name</label>
+              <input type="text" id="gh-name" name="name" required placeholder="Jane Doe" data-en-placeholder="Jane Doe" data-es-placeholder="María García" />
+            </div>
+            <div class="form-group">
+              <label for="gh-contact" data-en="Best/safest way to reach you" data-es="Mejor forma segura de contactarte">Best/safest way to reach you</label>
+              <input type="text" id="gh-contact" name="contact_method" required placeholder="Phone, email, or text — whichever is safest" data-en-placeholder="Phone, email, or text — whichever is safest" data-es-placeholder="Teléfono, correo o mensaje de texto; lo que sea más seguro" />
+            </div>
           </div>
-          <p id="map-status" style="font-size: 0.8rem; color: var(--muted); margin: 0.85rem 0 0; display: none;"></p>
-        </div>
-
+          <div class="form-group">
+            <label for="gh-location" data-en="City / County" data-es="Ciudad / Condado">City / County</label>
+            <input type="text" id="gh-location" name="city_county" required placeholder="e.g. Lansing, Ingham County" data-en-placeholder="e.g. Lansing, Ingham County" data-es-placeholder="Ej. Lansing, Condado de Ingham" />
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="gh-adults" data-en="Adults in household" data-es="Adultos en el hogar">Adults in household</label>
+              <input type="text" id="gh-adults" name="num_adults" placeholder="e.g. 1" data-en-placeholder="e.g. 1" data-es-placeholder="Ej. 1" />
+            </div>
+            <div class="form-group">
+              <label for="gh-children" data-en="Children in household (ages if possible)" data-es="Niños en el hogar (edades si es posible)">Children in household (ages if possible)</label>
+              <input type="text" id="gh-children" name="num_children" placeholder="e.g. 2 (ages 3 and 6)" data-en-placeholder="e.g. 2 (ages 3 and 6)" data-es-placeholder="Ej. 2 (edades 3 y 6)" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="gh-situation" data-en="What's going on? (as much or as little as you're comfortable sharing)" data-es="¿Qué está pasando? (comparte tanto como te sientas cómodo/a)">What's going on? (as much or as little as you're comfortable sharing)</label>
+            <textarea id="gh-situation" name="situation" placeholder="A brief description is enough — we'll ask follow-up questions if needed." data-en-placeholder="A brief description is enough — we'll ask follow-up questions if needed." data-es-placeholder="Una breve descripción es suficiente; te haremos preguntas de seguimiento si es necesario."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="gh-needs" data-en="What do you need right now? (sizes/ages if relevant)" data-es="¿Qué necesitas ahora mismo? (tallas/edades si aplica)">What do you need right now? (sizes/ages if relevant)</label>
+            <textarea id="gh-needs" name="needs" placeholder="e.g. kitchen basics for a new apartment, diapers size 4, winter coats size 8 and 10..." data-en-placeholder="e.g. kitchen basics for a new apartment, diapers size 4, winter coats size 8 and 10..." data-es-placeholder="Ej. artículos básicos de cocina para un nuevo apartamento, pañales talla 4, abrigos de invierno talla 8 y 10..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="gh-referral" data-en="Were you referred by another organization? (optional)" data-es="¿Te refirió otra organización? (opcional)">Were you referred by another organization? (optional)</label>
+            <input type="text" id="gh-referral" name="referred_by" placeholder="Organization name, or leave blank" data-en-placeholder="Organization name, or leave blank" data-es-placeholder="Nombre de la organización, o déjalo en blanco" />
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self: flex-start;" data-en="Submit Request" data-es="Enviar Solicitud">Submit Request</button>
+        </form>
       </div>
     </section>
 
@@ -255,25 +227,26 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img class="footer-logo-img" src="images/logo-cropped.png" alt="TWCF" />
-          <p data-en="Providing care and support to any woman or child who needs it." data-es="Brindando cuidado y apoyo a toda mujer o niño que lo necesite.">Providing care and support to any woman or child who needs it.</p>
+          <p data-en="Creating care kits for women and children facing hardship — in our communities and around the world." data-es="Creando kits de cuidado para mujeres y niños en situación de dificultad, en nuestras comunidades y en todo el mundo.">Creating care kits for women and children facing hardship — in our communities and around the world.</p>
         </div>
         <div class="footer-col">
-          <h4 data-en="Pages" data-es="Páginas">Pages</h4>
+          <h4 data-en="Get Involved" data-es="Participa">Get Involved</h4>
           <ul>
-            <li><a href="mission.html"     data-en="Mission"     data-es="Misión">Mission</a></li>
-            <li><a href="membership.html"  data-en="Membership"  data-es="Membresía">Membership</a></li>
-            <li><a href="volunteer.html"   data-en="Volunteer"   data-es="Voluntariado">Volunteer</a></li>
-        <li><a href="care-kit.html"    data-en="Care Kits"   data-es="Kits de Ayuda">Care Kits</a></li>
-        <li><a href="drives.html"         data-en="Drives"      data-es="Colectas">Drives</a></li>            <li><a href="information.html" data-en="Information" data-es="Información">Information</a></li>
+            <li><a href="events-drives.html" data-en="Events &amp; Drives" data-es="Eventos y Colectas">Events &amp; Drives</a></li>
+            <li><a href="give-supplies.html"  data-en="Give Supplies"  data-es="Donar Artículos">Give Supplies</a></li>
+            <li><a href="host-a-drive.html"   data-en="Host a Drive"   data-es="Organizar una Colecta">Host a Drive</a></li>
+            <li><a href="volunteer.html"      data-en="Volunteer"      data-es="Voluntariado">Volunteer</a></li>
+            <li><a href="our-care-kits.html"  data-en="Our Care Kits"  data-es="Nuestros Kits">Our Care Kits</a></li>
           </ul>
         </div>
         <div class="footer-col">
-          <h4 data-en="Support" data-es="Apoyo">Support</h4>
+          <h4 data-en="Organization" data-es="Organización">Organization</h4>
           <ul>
-            <li><a href="get-help.html"  data-en="Get Help"  data-es="Obtener Ayuda">Get Help</a></li>
-            <li><a href="resources.html" data-en="Resources" data-es="Recursos">Resources</a></li>
-            <li><a href="contact.html"   data-en="Contact"   data-es="Contacto">Contact</a></li>
-            <li><a href="donate-supplies.html"   data-en="Donate"    data-es="Donar">Donate</a></li>
+            <li><a href="about.html"          data-en="About"          data-es="Nosotros">About</a></li>
+            <li><a href="where-kits-go.html"  data-en="Where Kits Go"  data-es="Adónde Van los Kits">Where Kits Go</a></li>
+            <li><a href="get-help.html"       data-en="Get Help"       data-es="Pide Ayuda">Get Help</a></li>
+            <li><a href="for-companies.html"  data-en="For Companies"  data-es="Para Empresas">For Companies</a></li>
+            <li><a href="contact.html"        data-en="Contact"        data-es="Contacto">Contact</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -281,47 +254,18 @@
           <ul>
             <li><a href="https://www.instagram.com/thewomenandchildrenfoundation" target="_blank" rel="noopener">Instagram</a></li>
             <li><a href="https://www.facebook.com/share/1XwnpQLvDq/" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="tel:5178361504">517-836-1504</a></li>
             <li><a href="mailto:hello@thewomenandchildrenfoundation.org">hello@thewomenandchildrenfoundation.org</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span></p>
+        <p>&copy; 2026 The Women and Children Foundation. <span data-en="All rights reserved." data-es="Todos los derechos reservados.">All rights reserved.</span> <span style="opacity:0.7;" data-en="IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law." data-es="Organización benéfica pública reconocida por el IRS como 501(c)(3). EIN 42-2356765. Las contribuciones son deducibles de impuestos en la medida permitida por la ley.">IRS-recognized 501(c)(3) public charity. EIN 42-2356765. Contributions are tax-deductible to the extent permitted by law.</span></p>
         <p data-en="Built with care." data-es="Hecho con cariño.">Built with care.</p>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-  <script>
-    (function () {
-      var btn = document.getElementById('map-find-me');
-      var status = document.getElementById('map-status');
-      if (!btn) return;
-      btn.addEventListener('click', function () {
-        status.style.display = 'block';
-        status.textContent = 'Getting your location…';
-        if (!navigator.geolocation) {
-          status.textContent = 'Location not available in this browser. Try 211.org instead.';
-          return;
-        }
-        navigator.geolocation.getCurrentPosition(
-          function (pos) {
-            var lat = pos.coords.latitude;
-            var lng = pos.coords.longitude;
-            status.textContent = 'Opening map in a new tab…';
-            window.open(
-              'https://www.google.com/maps/search/women+shelter+OR+domestic+violence+shelter+OR+family+shelter/@' + lat + ',' + lng + ',13z',
-              '_blank'
-            );
-            status.textContent = 'Map opened in a new tab. If nothing appeared, check your pop-up settings.';
-          },
-          function () {
-            status.textContent = 'Location access denied. Try 211.org or search "women\'s shelter near me" in Google Maps.';
-          }
-        );
-      });
-    })();
-  </script>
 </body>
 </html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sponsor a Kit | TWCF</title>
+  <link rel="stylesheet" href="/checkout.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="/kit-checkout.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/our-care-kits.html" aria-label="Return to Our Care Kits">
+    <img class="brand-logo" src="/images/logo-cropped.png" alt="The Women and Children Foundation">
+    </a>
+    <a class="back-link" href="/our-care-kits.html">← Back</a>
+  </header>
+
+  <main class="payment-shell">
+    <section class="payment-card">
+      <div class="eyebrow">Sponsor a Kit</div>
+      <h1 id="kit-name-heading">Complete your sponsorship.</h1>
+      <p class="intro">
+        Your sponsorship covers the full cost of one complete care kit, shopped, assembled, and delivered by TWCF.
+      </p>
+
+      <div class="donation-summary">
+        <span>Sponsorship</span>
+        <strong id="donation-amount">$0.00</strong>
+      </div>
+
+      <p class="impact-note">
+        100% of this kit's cost goes toward the exact items it contains — no overhead, no waste.
+      </p>
+
+      <form id="payment-form">
+        <div id="payment-element"></div>
+        <div id="payment-message" role="alert" aria-live="polite"></div>
+
+        <button id="submit" type="submit" disabled>
+          <span id="button-text">Loading secure payment…</span>
+          <span id="spinner" class="spinner" hidden aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <p class="secure-note">
+        Payment information is securely processed. TWCF does not receive or store your card number.
+      </p>
+    </section>
+  </main>
+</body>
+</html>
