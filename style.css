@@ -642,17 +642,11 @@ img { max-width: 100%; height: auto; display: block; }
 .divider { height: 1px; background: var(--border); }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 960px) {
-  .grid-3        { grid-template-columns: repeat(2, 1fr); }
-  .category-grid { grid-template-columns: repeat(2, 1fr); }
-  .footer-grid   { grid-template-columns: 1fr 1fr; }
-  .hero-grid     { grid-template-columns: 1fr; }
-  .hero-visual   { display: none; }
-}
-@media (max-width: 768px) {
-
+/* The full desktop nav needs ~1160px; below that, use the hamburger menu so
+   the header never overflows. Logo stays left (nav-right uses margin-left:auto). */
+@media (max-width: 1200px) {
   /* ---- Mobile nav: full-width dropdown panel under the header ---- */
-  .site-nav .nav-inner { padding: 0 16px; min-height: 72px; }
+  .site-nav .nav-inner { min-height: 72px; }
   .site-nav .nav-right { margin-left: auto; gap: 0.5rem; }
   .hamburger { display: flex; }
   .btn-get-help-nav { display: none; }
@@ -724,11 +718,26 @@ img { max-width: 100%; height: auto; display: block; }
     border: 0 !important;
   }
   .nav-mobile-cta a { flex: 1; text-align: center; justify-content: center; }
+}
+@media (max-width: 960px) {
+  .grid-3        { grid-template-columns: repeat(2, 1fr); }
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid   { grid-template-columns: 1fr 1fr; }
+  .hero-grid     { grid-template-columns: 1fr; }
+  .hero-visual   { display: none; }
+}
+@media (max-width: 768px) {
+
+  .site-nav .nav-inner { padding: 0 16px; }
 
   .grid-2 { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
   .section { padding: 3.5rem 0; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 360px) {
+  .site-nav .nav-logo,
+  .site-nav .nav-logo img { width: 140px; }
 }
 @media (max-width: 520px) {
   .category-grid { grid-template-columns: 1fr 1fr; }
