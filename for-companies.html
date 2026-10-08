@@ -14,6 +14,10 @@
     .needs-table th, .needs-table td { text-align: left; padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
     .needs-table th { color: var(--purple); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
     .needs-table tr:last-child td { border-bottom: none; }
+    @media (max-width: 400px) {
+      .needs-table th, .needs-table td { padding: 0.65rem 0.5rem; }
+      .needs-table th { font-size: 0.72rem; letter-spacing: 0.02em; }
+    }
   </style>
 </head>
 <body>

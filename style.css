@@ -60,6 +60,10 @@ img { max-width: 100%; height: auto; display: block; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
 .text-center { text-align: center; }
+/* Let grid cells shrink to their column instead of stretching the page. */
+.grid-2 > *, .grid-3 > * { min-width: 0; }
+/* Long email addresses may wrap on narrow screens. */
+a[href^="mailto:"] { overflow-wrap: anywhere; }
 .mt-2 { margin-top: 2rem; }
 
 /* ===== NAVIGATION ===== */
@@ -718,6 +722,17 @@ img { max-width: 100%; height: auto; display: block; }
     border: 0 !important;
   }
   .nav-mobile-cta a { flex: 1; text-align: center; justify-content: center; }
+  /* Keep the menu's Donate / Help Build a Kit looking like buttons, not menu rows. */
+  .site-nav .nav-links li.nav-mobile-cta a,
+  .site-nav .nav-links li.nav-mobile-cta a:hover {
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .site-nav .nav-links li.nav-mobile-cta a.btn-primary:hover { background: var(--pink-dark); }
 }
 @media (max-width: 960px) {
   .grid-3        { grid-template-columns: repeat(2, 1fr); }
@@ -741,6 +756,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 @media (max-width: 520px) {
   .category-grid { grid-template-columns: 1fr 1fr; }
+  .grid-3        { grid-template-columns: 1fr; }
   .footer-grid   { grid-template-columns: 1fr; }
   .stat-strip    { grid-template-columns: 1fr; }
   .stat-item     { border-right: none; border-bottom: 1px solid var(--border); }
