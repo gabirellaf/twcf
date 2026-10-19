@@ -234,6 +234,7 @@
               <option value="care-kit-goal" data-en="1,000 Care Kits for Dzaleka — November 2026 Campaign" data-es="1,000 Kits para Dzaleka — Campaña de Noviembre de 2026">1,000 Care Kits for Dzaleka — November 2026 Campaign</option>
               <option value="toy-drive" data-en="Hospital Toy Drive (Nov 20 – Dec 15, 2026)" data-es="Colecta de Juguetes para Hospital (20 de nov. – 15 de dic., 2026)">Hospital Toy Drive (Nov 20 – Dec 15, 2026)</option>
               <option value="youth-outreach" data-en="Youth Community Outreach (Help Us Start It)" data-es="Alcance Comunitario Juvenil (Ayúdanos a Iniciarlo)">Youth Community Outreach (Help Us Start It)</option>
+              <option value="seasonal-drive" data-en="A Seasonal Drive (from the Events calendar)" data-es="Una Colecta de Temporada (del calendario de Eventos)">A Seasonal Drive (from the Events calendar)</option>
               <option value="any" data-en="Multiple / Any" data-es="Varias / Cualquiera">Multiple / Any</option>
             </select>
           </div>
@@ -298,5 +299,34 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    /* Prefill from the Events & Drives calendar ("I Want to Help" links) */
+    (function () {
+      const params = new URLSearchParams(location.search);
+      const select = document.getElementById('vol-opportunity');
+      const notes = document.getElementById('vol-notes');
+      if (!select || !notes) return;
+      const opp = params.get('opp');
+      if (opp && select.querySelector('option[value="' + CSS.escape(opp) + '"]')) select.value = opp;
+      const drives = {
+        'halloween': 'Halloween Candy Drive',
+        'dzaleka': '1,000 Care Kits for Dzaleka',
+        'city-rescue': 'Supply Drive for City Rescue Mission',
+        'fresh-start': 'Close to Home: A Fresh Start',
+        'fall-snack': 'Fall Snack Drive',
+        'winter-warmth': 'Winter Warmth',
+        'toy-drive': 'Holiday Hospital Toy Drive',
+        'holiday-tables': 'Holiday Tables',
+        'new-year': "New Year's Essentials Drive",
+        'summer-toy': 'Mid-Summer Toy & Fun Drive',
+        'back-to-school': 'Back-to-School Drive',
+        'comfort-care': 'Comfort & Care Drive'
+      };
+      const name = drives[params.get('drive')];
+      if (name && !notes.value) {
+        notes.value = (currentLang === 'es' ? 'Me gustaría ayudar con: ' : "I'd like to help with: ") + name + '\n';
+      }
+    })();
+  </script>
 </body>
 </html>

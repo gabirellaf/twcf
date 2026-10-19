@@ -9,6 +9,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="images/favicon-icon.png" type="image/png" />
+  <style>
+    /* Year-at-a-glance calendar (events-drives.html only) */
+    .cal-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem 1.5rem; margin-top: 2rem; }
+    .cal-chip-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    .cal-chip { font: inherit; font-size: 0.85rem; font-weight: 600; padding: 0.45rem 0.95rem; border-radius: 999px; border: 1.5px solid var(--border); background: var(--white); color: var(--purple); cursor: pointer; transition: background var(--ease), color var(--ease), border-color var(--ease); }
+    .cal-chip:hover { border-color: var(--purple-light); }
+    .cal-chip[aria-pressed="true"] { background: var(--purple); border-color: var(--purple); color: var(--white); }
+
+    .cal-months { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 4px; margin: 1.75rem auto 0; max-width: 900px; }
+    .cal-month { font: inherit; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 0.5rem 0; border-radius: 10px; border: 1.5px solid transparent; background: var(--white); color: var(--text); font-size: 0.82rem; font-weight: 600; cursor: pointer; min-width: 0; transition: background var(--ease), border-color var(--ease); }
+    .cal-month small { font-size: 0.68rem; font-weight: 500; color: var(--muted); }
+    .cal-month:hover { border-color: var(--purple-light); }
+    .cal-month.is-current { border-color: var(--pink); }
+    .cal-month[aria-pressed="true"] { background: var(--purple); color: var(--white); border-color: var(--purple); }
+    .cal-month[aria-pressed="true"] small { color: rgba(255,255,255,0.8); }
+    .cal-month-note { text-align: center; font-size: 0.88rem; margin-top: 0.75rem; }
+    .cal-clear { font: inherit; font-weight: 600; color: var(--purple); background: none; border: none; text-decoration: underline; cursor: pointer; padding: 0; }
+
+    .cal-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .cal-item { display: flex; flex-direction: column; min-width: 0; }
+    .cal-item[hidden] { display: none; }
+    .cal-item-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .cal-status, .cal-where { display: inline-block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.25rem 0.65rem; border-radius: 999px; }
+    .cal-st-now     { background: var(--purple); color: var(--white); }
+    .cal-st-soon    { background: var(--pink-pale); color: var(--pink-dark); }
+    .cal-st-planned { background: var(--cream); color: var(--muted); border: 1px solid var(--border); }
+    .cal-where { background: var(--purple-pale); color: var(--purple); }
+    .cal-item h3 { margin-top: 0.75rem; }
+    .card p.cal-when { font-size: 0.85rem; font-weight: 600; color: var(--purple); margin: 0.25rem 0 0; }
+    .card p.cal-purpose { font-size: 0.9rem; margin-top: 0.5rem; }
+    .card p.cal-note { font-size: 0.85rem; font-style: italic; margin-top: 0.25rem; }
+    .cal-bar { display: grid; grid-template-columns: repeat(12, 1fr); gap: 3px; margin-top: auto; padding-top: 1rem; }
+    .cal-bar span { height: 8px; border-radius: 4px; background: var(--purple-pale); }
+    .cal-bar span.on { background: var(--purple-light); }
+    .cal-item[data-status="now"] .cal-bar span.on { background: var(--purple); }
+    .cal-actions { margin-top: 1rem; }
+    .card p.cal-empty, .cal-empty { text-align: center; margin-top: 1.5rem; }
+    .cal-plan { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem; text-align: center; margin-top: 2rem; border: 1.5px dashed var(--border); }
+
+    @media (max-width: 520px) {
+      .cal-list { grid-template-columns: 1fr; }
+      .cal-months { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+      .cal-filters { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -95,7 +140,7 @@
         <p data-en="Everything happening right now, and everything coming up — in one place. Jump in on a current campaign, plan around an upcoming drive, or bring TWCF to your school, church, or business." data-es="Todo lo que está pasando ahora, y todo lo que viene, en un solo lugar. Únete a una campaña actual, planea en torno a una próxima colecta, o trae TWCF a tu escuela, iglesia o empresa.">Everything happening right now, and everything coming up — in one place. Jump in on a current campaign, plan around an upcoming drive, or bring TWCF to your school, church, or business.</p>
         <div class="btn-row" style="margin-top: 1.5rem;">
           <a href="#current-campaigns" class="btn btn-secondary" data-en="Current Campaigns ↓" data-es="Campañas Actuales ↓">Current Campaigns ↓</a>
-          <a href="#upcoming-events" class="btn btn-secondary" data-en="Upcoming Events ↓" data-es="Próximos Eventos ↓">Upcoming Events ↓</a>
+          <a href="#upcoming-events" class="btn btn-secondary" data-en="Calendar ↓" data-es="Calendario ↓">Calendar ↓</a>
           <a href="#host-a-drive" class="btn btn-primary" data-en="Host a Drive ↓" data-es="Organiza una Colecta ↓">Host a Drive ↓</a>
         </div>
       </div>
@@ -145,28 +190,213 @@
 
     <div class="divider"></div>
 
-    <!-- UPCOMING EVENTS -->
+    <!-- YEAR AT A GLANCE (calendar). Rollback: html-backup/events-drives.pre-calendar.html -->
     <section id="upcoming-events" class="section" style="background: var(--purple-pale);">
       <div class="container">
         <div class="section-header text-center">
-          <span class="tag tag-pink" data-en="Upcoming Events" data-es="Próximos Eventos">Upcoming Events</span>
+          <span class="tag tag-pink" data-en="Year at a Glance" data-es="El Año de un Vistazo">Year at a Glance</span>
           <h2 data-en="Mark your calendar." data-es="Marca tu calendario.">Mark your calendar.</h2>
+          <p style="max-width: 620px; margin: 0.75rem auto 0;" data-en="Every drive we have running or planned, October 2026 through September 2027. Tap a month to see what&#x27;s happening then." data-es="Todas las colectas en curso o planeadas, de octubre de 2026 a septiembre de 2027. Toca un mes para ver qué está pasando.">Every drive we have running or planned, October 2026 through September 2027. Tap a month to see what's happening then.</p>
         </div>
-        <div class="grid-2" style="margin-top: 2.5rem; gap: 2rem;">
-          <div class="card">
-            <span class="tag tag-purple" data-en="Nov 20 – Dec 15, 2026" data-es="20 de nov. – 15 de dic., 2026">Nov 20 – Dec 15, 2026</span>
-            <h3 style="margin-top: 0.5rem;" data-en="🎁 Hospital Toy Drive" data-es="🎁 Colecta de Juguetes para Hospital">🎁 Hospital Toy Drive</h3>
-            <p style="font-size: 0.9rem;" data-en="Collecting new stuffed animals, coloring books, and small comfort items for our Hospital Comfort Kits — timed so kits can be packed and delivered before Christmas." data-es="Recolectando peluches nuevos, libros para colorear y pequeños artículos de confort para nuestros Kits de Confort Hospitalario, programado para que los kits se puedan armar y entregar antes de Navidad.">Collecting new stuffed animals, coloring books, and small comfort items for our Hospital Comfort Kits — timed so kits can be packed and delivered before Christmas.</p>
-            <div class="btn-row" style="margin-top: 1.25rem;">
-              <a href="our-care-kits.html#hospital-comfort" class="btn btn-primary" data-en="See What's Needed" data-es="Ver Qué Se Necesita">See What's Needed</a>
-              <a href="volunteer.html#volunteer-form" class="btn btn-secondary" data-en="Volunteer" data-es="Voluntariado">Volunteer</a>
+
+        <div class="cal-filters" role="group" aria-label="Filter drives">
+          <div class="cal-chip-row" data-filter-group="status">
+            <button type="button" class="cal-chip" data-value="all" aria-pressed="true" data-en="All" data-es="Todas">All</button>
+            <button type="button" class="cal-chip" data-value="now" aria-pressed="false" data-en="Active now" data-es="Activas ahora">Active now</button>
+            <button type="button" class="cal-chip" data-value="soon" aria-pressed="false" data-en="Coming up" data-es="Próximamente">Coming up</button>
+            <button type="button" class="cal-chip" data-value="planned" aria-pressed="false" data-en="Planned" data-es="Planeadas">Planned</button>
+          </div>
+          <div class="cal-chip-row" data-filter-group="where">
+            <button type="button" class="cal-chip" data-value="all" aria-pressed="true" data-en="Everywhere" data-es="Todas partes">Everywhere</button>
+            <button type="button" class="cal-chip" data-value="home" aria-pressed="false" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</button>
+            <button type="button" class="cal-chip" data-value="world" aria-pressed="false" data-en="Around the World" data-es="Alrededor del Mundo">Around the World</button>
+          </div>
+        </div>
+
+        <div class="cal-months" role="group" aria-label="Filter by month">
+          <button type="button" class="cal-month" data-month="0" aria-pressed="false" title="Oct 2026"><span data-en="Oct" data-es="oct">Oct</span><small>26</small></button>
+          <button type="button" class="cal-month" data-month="1" aria-pressed="false" title="Nov 2026"><span data-en="Nov" data-es="nov">Nov</span><small>26</small></button>
+          <button type="button" class="cal-month" data-month="2" aria-pressed="false" title="Dec 2026"><span data-en="Dec" data-es="dic">Dec</span><small>26</small></button>
+          <button type="button" class="cal-month" data-month="3" aria-pressed="false" title="Jan 2027"><span data-en="Jan" data-es="ene">Jan</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="4" aria-pressed="false" title="Feb 2027"><span data-en="Feb" data-es="feb">Feb</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="5" aria-pressed="false" title="Mar 2027"><span data-en="Mar" data-es="mar">Mar</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="6" aria-pressed="false" title="Apr 2027"><span data-en="Apr" data-es="abr">Apr</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="7" aria-pressed="false" title="May 2027"><span data-en="May" data-es="may">May</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="8" aria-pressed="false" title="Jun 2027"><span data-en="Jun" data-es="jun">Jun</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="9" aria-pressed="false" title="Jul 2027"><span data-en="Jul" data-es="jul">Jul</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="10" aria-pressed="false" title="Aug 2027"><span data-en="Aug" data-es="ago">Aug</span><small>27</small></button>
+          <button type="button" class="cal-month" data-month="11" aria-pressed="false" title="Sep 2027"><span data-en="Sep" data-es="sep">Sep</span><small>27</small></button>
+        </div>
+        <p class="cal-month-note" id="cal-month-note" hidden><span data-en="Showing drives in the month you picked." data-es="Mostrando colectas del mes que elegiste.">Showing drives in the month you picked.</span> <button type="button" class="cal-clear" id="cal-clear" data-en="Show all months" data-es="Ver todos los meses">Show all months</button></p>
+
+        <div class="cal-list" id="cal-list">
+          <article class="card cal-item" data-status="now" data-where="home" data-months="0">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-now" data-en="Active now" data-es="Activa ahora">Active now</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
             </div>
-          </div>
-          <div class="card" style="border: 1.5px dashed var(--border); display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 0.75rem; padding: 2rem 1.5rem;">
-            <span class="tag tag-pink" data-en="Planning in Progress" data-es="En Planeación">Planning in Progress</span>
-            <p style="font-size: 0.9rem; color: var(--muted); margin: 0;" data-en="More events are being planned, including a possible fall community drive. Check back soon, or get in touch if you'd like to help plan one." data-es="Se están planeando más eventos, incluyendo una posible colecta comunitaria de otoño. Vuelve pronto, o contáctanos si quieres ayudar a planear uno.">More events are being planned, including a possible fall community drive. Check back soon, or get in touch if you'd like to help plan one.</p>
-            <a href="contact.html" class="btn btn-secondary" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
-          </div>
+            <h3 data-en="🎃 Halloween Candy Drive" data-es="🎃 Colecta de Dulces de Halloween">🎃 Halloween Candy Drive</h3>
+            <p class="cal-when" data-en="October 2026" data-es="Octubre de 2026">October 2026</p>
+            <p class="cal-purpose" data-en="Treats for children in hospitals, shelters, and underserved communities." data-es="Dulces para niños en hospitales, albergues y comunidades desatendidas.">Treats for children in hospitals, shelters, and underserved communities.</p>
+            <p class="cal-note" data-en="Happening now — we&#x27;re confirming the partners who will receive the candy." data-es="En curso — estamos confirmando las organizaciones que recibirán los dulces.">Happening now — we're confirming the partners who will receive the candy.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Oct"><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=halloween#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="now" data-where="world" data-months="0 1">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-now" data-en="Active now" data-es="Activa ahora">Active now</span>
+              <span class="cal-where" data-en="Around the World" data-es="Alrededor del Mundo">Around the World</span>
+            </div>
+            <h3 data-en="1,000 Care Kits for Dzaleka" data-es="1,000 Kits de Cuidado para Dzaleka">1,000 Care Kits for Dzaleka</h3>
+            <p class="cal-when" data-en="Now – November 2026" data-es="Ahora – noviembre de 2026">Now – November 2026</p>
+            <p class="cal-purpose" data-en="Care kits for women and children in and around Dzaleka Refugee Camp, Malawi, with Carewin Africa." data-es="Kits de cuidado para mujeres y niños en y alrededor del Campo de Refugiados Dzaleka, Malaui, con Carewin Africa.">Care kits for women and children in and around Dzaleka Refugee Camp, Malawi, with Carewin Africa.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Oct, Nov"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=care-kit-goal&amp;drive=dzaleka#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+              <a href="dzaleka-shipping-fund.html" class="btn btn-secondary" data-en="Shipping Fund" data-es="Fondo de Envío">Shipping Fund</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="now" data-where="home" data-months="0 1 2 3 4 5 6 7 8 9 10 11">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-now" data-en="Active now" data-es="Activa ahora">Active now</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="Supply Drive for City Rescue Mission" data-es="Colecta para City Rescue Mission">Supply Drive for City Rescue Mission</h3>
+            <p class="cal-when" data-en="Ongoing, year-round" data-es="Continua, todo el año">Ongoing, year-round</p>
+            <p class="cal-purpose" data-en="Food, hygiene items, new clothing, and household essentials for City Rescue Mission in Lansing." data-es="Alimentos, artículos de higiene, ropa nueva y esenciales del hogar para City Rescue Mission en Lansing.">Food, hygiene items, new clothing, and household essentials for City Rescue Mission in Lansing.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Oct, Nov, Dec, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=drive-pickups&amp;drive=city-rescue#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+              <a href="give-supplies.html" class="btn btn-secondary" data-en="Give Supplies" data-es="Donar Artículos">Give Supplies</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="now" data-where="home" data-months="0 1 2 3 4 5 6 7 8 9 10 11">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-now" data-en="Active now" data-es="Activa ahora">Active now</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="Close to Home: A Fresh Start" data-es="Cerca de Casa: Un Nuevo Comienzo">Close to Home: A Fresh Start</h3>
+            <p class="cal-when" data-en="Ongoing, year-round" data-es="Continua, todo el año">Ongoing, year-round</p>
+            <p class="cal-purpose" data-en="Cookware, dishes, towels, and household essentials for local families moving into their first stable home." data-es="Utensilios de cocina, vajilla, toallas y esenciales del hogar para familias locales que se mudan a su primer hogar estable.">Cookware, dishes, towels, and household essentials for local families moving into their first stable home.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Oct, Nov, Dec, Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=fresh-start#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+              <a href="our-care-kits.html#home-start" class="btn btn-secondary" data-en="See the Kit" data-es="Ver el Kit">See the Kit</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="0 1">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="🍎 Fall Snack Drive" data-es="🍎 Colecta de Snacks de Otoño">🍎 Fall Snack Drive</h3>
+            <p class="cal-when" data-en="Fall 2026 — dates coming soon" data-es="Otoño de 2026 — fechas próximamente">Fall 2026 — dates coming soon</p>
+            <p class="cal-purpose" data-en="Shelf-stable snacks for children and families." data-es="Snacks no perecederos para niños y familias.">Shelf-stable snacks for children and families.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Oct, Nov"><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=fall-snack#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="1 2 3 4">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="🧤 Winter Warmth" data-es="🧤 Calor de Invierno">🧤 Winter Warmth</h3>
+            <p class="cal-when" data-en="Fall – Winter 2026–27 — dates coming soon" data-es="Otoño – invierno 2026–27 — fechas próximamente">Fall – Winter 2026–27 — dates coming soon</p>
+            <p class="cal-purpose" data-en="Coats, blankets, gloves, hats, socks, and hand and foot warmers." data-es="Abrigos, cobijas, guantes, gorros, calcetines y calentadores de manos y pies.">Coats, blankets, gloves, hats, socks, and hand and foot warmers.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Nov, Dec, Jan, Feb"><span class=""></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=winter-warmth#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="soon" data-where="home" data-months="1 2">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-soon" data-en="Coming up" data-es="Próximamente">Coming up</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="🎁 Holiday Hospital Toy Drive" data-es="🎁 Colecta Navideña de Juguetes para Hospital">🎁 Holiday Hospital Toy Drive</h3>
+            <p class="cal-when" data-en="Nov 20 – Dec 15, 2026" data-es="20 de nov. – 15 de dic., 2026">Nov 20 – Dec 15, 2026</p>
+            <p class="cal-purpose" data-en="New stuffed animals, coloring books, toys, and comfort items for hospitalized children — packed and delivered before Christmas." data-es="Peluches nuevos, libros para colorear, juguetes y artículos de confort para niños hospitalizados, armados y entregados antes de Navidad.">New stuffed animals, coloring books, toys, and comfort items for hospitalized children — packed and delivered before Christmas.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Nov, Dec"><span class=""></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=toy-drive&amp;drive=toy-drive#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+              <a href="our-care-kits.html#hospital-comfort" class="btn btn-secondary" data-en="See What&#x27;s Needed" data-es="Ver Qué Se Necesita">See What's Needed</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="1 2">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="🍽️ Holiday Tables" data-es="🍽️ Mesas Festivas">🍽️ Holiday Tables</h3>
+            <p class="cal-when" data-en="Thanksgiving – Christmas 2026 — dates coming soon" data-es="Acción de Gracias – Navidad 2026 — fechas próximamente">Thanksgiving – Christmas 2026 — dates coming soon</p>
+            <p class="cal-purpose" data-en="Meals, grocery boxes, and food-service partnerships for families over the holidays." data-es="Comidas, cajas de despensa y alianzas de servicio de alimentos para familias durante las fiestas.">Meals, grocery boxes, and food-service partnerships for families over the holidays.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Nov, Dec"><span class=""></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=holiday-tables#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="3">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="New Year&#x27;s Essentials Drive" data-es="Colecta de Esenciales de Año Nuevo">New Year's Essentials Drive</h3>
+            <p class="cal-when" data-en="January 2027" data-es="Enero de 2027">January 2027</p>
+            <p class="cal-purpose" data-en="Household supplies and basic necessities for families starting the new year." data-es="Artículos del hogar y necesidades básicas para familias que comienzan el año.">Household supplies and basic necessities for families starting the new year.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Jan"><span class=""></span><span class=""></span><span class=""></span><span class="on"></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=new-year#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="8 9">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="☀️ Mid-Summer Toy &amp;amp; Fun Drive" data-es="☀️ Colecta de Juguetes y Diversión de Verano">☀️ Mid-Summer Toy &amp; Fun Drive</h3>
+            <p class="cal-when" data-en="Summer 2027" data-es="Verano de 2027">Summer 2027</p>
+            <p class="cal-purpose" data-en="Toys, games, and recreational supplies for children." data-es="Juguetes, juegos y artículos recreativos para niños.">Toys, games, and recreational supplies for children.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Jun, Jul"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class="on"></span><span class="on"></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=summer-toy#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="9 10">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="🎒 Back-to-School Drive" data-es="🎒 Colecta de Regreso a Clases">🎒 Back-to-School Drive</h3>
+            <p class="cal-when" data-en="Summer 2027" data-es="Verano de 2027">Summer 2027</p>
+            <p class="cal-purpose" data-en="Backpacks, school supplies, and educational materials." data-es="Mochilas, útiles escolares y materiales educativos.">Backpacks, school supplies, and educational materials.</p>
+            <div class="cal-bar" role="img" aria-label="Months: Jul, Aug"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class="on"></span><span class="on"></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=back-to-school#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+          <article class="card cal-item" data-status="planned" data-where="home" data-months="">
+            <div class="cal-item-tags">
+              <span class="cal-status cal-st-planned" data-en="Planned" data-es="Planeada">Planned</span>
+              <span class="cal-where" data-en="Close to Home" data-es="Cerca de Casa">Close to Home</span>
+            </div>
+            <h3 data-en="Comfort &amp;amp; Care Drive" data-es="Colecta de Confort y Cuidado">Comfort &amp; Care Drive</h3>
+            <p class="cal-when" data-en="Seasonal — dates to be announced" data-es="De temporada — fechas por anunciar">Seasonal — dates to be announced</p>
+            <p class="cal-purpose" data-en="Hygiene, personal-care, and household essentials." data-es="Artículos de higiene, cuidado personal y esenciales del hogar.">Hygiene, personal-care, and household essentials.</p>
+            <div class="cal-bar" role="img" aria-label="Dates to be announced"><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span><span class=""></span></div>
+            <div class="btn-row cal-actions">
+              <a href="volunteer.html?opp=seasonal-drive&amp;drive=comfort-care#volunteer-form" class="btn btn-primary" data-en="I Want to Help" data-es="Quiero Ayudar">I Want to Help</a>
+            </div>
+          </article>
+        </div>
+        <p class="cal-empty" id="cal-empty" hidden data-en="Nothing matches those filters right now." data-es="Nada coincide con esos filtros por ahora.">Nothing matches those filters right now.</p>
+
+        <div class="card cal-plan">
+          <p style="margin: 0;" data-en="Want to help plan one of these, host a collection point, or suggest a drive? We&#x27;d love to hear from you." data-es="¿Quieres ayudar a planear una de estas, organizar un punto de recolección o sugerir una colecta? Nos encantaría saber de ti.">Want to help plan one of these, host a collection point, or suggest a drive? We'd love to hear from you.</p>
+          <a href="contact.html" class="btn btn-secondary" data-en="Contact Us" data-es="Contáctanos">Contact Us</a>
         </div>
       </div>
     </section>
@@ -245,5 +475,60 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    /* Year-at-a-glance filters (events-drives.html only) */
+    (function () {
+      const list = document.getElementById('cal-list');
+      if (!list) return;
+      const items = Array.from(list.querySelectorAll('.cal-item'));
+      const months = Array.from(document.querySelectorAll('.cal-month'));
+      const note = document.getElementById('cal-month-note');
+      const empty = document.getElementById('cal-empty');
+      const state = { status: 'all', where: 'all', month: null };
+
+      // Calendar runs Oct 2026 (index 0) through Sep 2027 (index 11).
+      const now = new Date();
+      const currentIdx = (now.getFullYear() - 2026) * 12 + now.getMonth() - 9;
+      if (months[currentIdx]) months[currentIdx].classList.add('is-current');
+
+      function render() {
+        let shown = 0;
+        items.forEach(item => {
+          const itemMonths = item.dataset.months ? item.dataset.months.split(' ') : [];
+          const ok = (state.status === 'all' || item.dataset.status === state.status)
+                  && (state.where === 'all' || item.dataset.where === state.where)
+                  && (state.month === null || itemMonths.includes(state.month));
+          item.hidden = !ok;
+          if (ok) shown++;
+        });
+        empty.hidden = shown > 0;
+        note.hidden = state.month === null;
+        months.forEach(m => m.setAttribute('aria-pressed', String(m.dataset.month === state.month)));
+      }
+
+      document.querySelectorAll('.cal-chip-row').forEach(row => {
+        const group = row.dataset.filterGroup;
+        row.querySelectorAll('.cal-chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            state[group] = chip.dataset.value;
+            row.querySelectorAll('.cal-chip').forEach(c => c.setAttribute('aria-pressed', String(c === chip)));
+            render();
+          });
+        });
+      });
+
+      months.forEach(m => {
+        m.addEventListener('click', () => {
+          state.month = state.month === m.dataset.month ? null : m.dataset.month;
+          render();
+        });
+      });
+
+      document.getElementById('cal-clear').addEventListener('click', () => {
+        state.month = null;
+        render();
+      });
+    })();
+  </script>
 </body>
 </html>
