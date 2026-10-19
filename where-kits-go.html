@@ -186,7 +186,7 @@
     </section>
 
     <!-- SPONSOR A CARE KIT -->
-    <section class="section" style="background: var(--purple-pale);">
+    <section id="sponsor" class="section" style="background: var(--purple-pale);">
       <div class="container" style="max-width: 760px;">
         <div class="section-header text-center">
           <span class="tag tag-pink" data-en="Sponsor a Care Kit" data-es="Patrocina un Kit">Sponsor a Care Kit</span>
@@ -199,22 +199,18 @@
             <span class="tag tag-purple" data-en="$15" data-es="$15">$15</span>
             <h3 style="margin-top: 0.5rem;" data-en="Sponsor a Children's Education &amp; Comfort Kit" data-es="Patrocina un Kit de Educación y Confort para Niños">Sponsor a Children's Education &amp; Comfort Kit</h3>
             <p style="font-size: 0.9rem;" data-en="Notebooks, pencils, a backpack, hygiene basics, and a book or comfort item for a child at Dzaleka." data-es="Cuadernos, lápices, una mochila, artículos de higiene básicos y un libro o artículo de confort para un niño en Dzaleka.">Notebooks, pencils, a backpack, hygiene basics, and a book or comfort item for a child at Dzaleka.</p>
-            <a href="#sponsor-payment" class="btn btn-primary" style="margin-top: 1rem;" data-en="Sponsor for $15" data-es="Patrocinar por $15">Sponsor for $15</a>
+            <button type="button" class="btn btn-primary sponsor-kit-btn" data-amount="15" style="margin-top: 1rem;" data-en="Sponsor for $15" data-es="Patrocinar por $15">Sponsor for $15</button>
           </div>
           <div class="card">
             <span class="tag tag-purple" data-en="$30" data-es="$30">$30</span>
             <h3 style="margin-top: 0.5rem;" data-en="Sponsor a Baby &amp; Maternal Care Kit" data-es="Patrocina un Kit de Cuidado para Bebé y Madre">Sponsor a Baby &amp; Maternal Care Kit</h3>
             <p style="font-size: 0.9rem;" data-en="Baby wash, lotion, diaper rash cream, diapers, and maternal-care essentials for a mother and newborn at Dzaleka." data-es="Jabón para bebé, loción, crema para rozaduras, pañales y artículos esenciales de cuidado materno para una madre y su recién nacido en Dzaleka.">Baby wash, lotion, diaper rash cream, diapers, and maternal-care essentials for a mother and newborn at Dzaleka.</p>
-            <a href="#sponsor-payment" class="btn btn-primary" style="margin-top: 1rem;" data-en="Sponsor for $30" data-es="Patrocinar por $30">Sponsor for $30</a>
+            <button type="button" class="btn btn-primary sponsor-kit-btn" data-amount="30" style="margin-top: 1rem;" data-en="Sponsor for $30" data-es="Patrocinar por $30">Sponsor for $30</button>
           </div>
         </div>
 
-        <div id="sponsor-payment" class="stat-strip" style="grid-template-columns: 1fr; margin-top: 2.5rem; padding: 1.5rem;">
-          <div class="stat-item">
-            <span class="num">0 <span style="font-size: 1.1rem; color: var(--muted); font-weight: 600;">/ 1,000</span></span>
-            <span class="lbl" data-en="Kits sponsored so far — payment setup is in progress, check back soon" data-es="Kits patrocinados hasta ahora — la configuración de pagos está en proceso, vuelve pronto">Kits sponsored so far — payment setup is in progress, check back soon</span>
-          </div>
-        </div>
+        <p id="sponsor-loading" style="display:none; text-align:center; margin-top:1.25rem; font-size:0.9rem;" data-en="Opening secure checkout…" data-es="Abriendo el pago seguro…">Opening secure checkout…</p>
+        <p id="sponsor-error" role="alert" style="text-align:center; margin-top:1rem; font-size:0.9rem; color:#b4233f;"></p>
       </div>
     </section>
 
@@ -302,6 +298,36 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    /* Kit sponsorship buttons: one-time gift designated to Dzaleka Care Kit Sponsorship */
+    document.querySelectorAll('.sponsor-kit-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const errorEl = document.getElementById('sponsor-error');
+        const loadingEl = document.getElementById('sponsor-loading');
+        errorEl.textContent = '';
+        loadingEl.style.display = 'block';
+        document.querySelectorAll('.sponsor-kit-btn').forEach(b => b.disabled = true);
+        startEmbeddedCheckout({
+          type: 'donate',
+          customAmount: Number(btn.dataset.amount),
+          campaign: 'dzaleka_kit_sponsorship_2026',
+          errorEl,
+          loadingEl
+        }).then(ok => {
+          if (!ok) {
+            loadingEl.style.display = 'none';
+            document.querySelectorAll('.sponsor-kit-btn').forEach(b => b.disabled = false);
+          }
+        });
+      });
+    });
+    // Re-enable the buttons if the donor comes back from checkout with the Back button.
+    window.addEventListener('pageshow', () => {
+      document.querySelectorAll('.sponsor-kit-btn').forEach(b => b.disabled = false);
+      const loadingEl = document.getElementById('sponsor-loading');
+      if (loadingEl) loadingEl.style.display = 'none';
+    });
+  </script>
 
 </body>
 </html>

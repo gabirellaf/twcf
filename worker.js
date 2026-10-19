@@ -49,6 +49,10 @@ const DONATION_CAMPAIGNS = {
     name: 'Dzaleka Relief Shipping Fund',
     status: 'active',
   },
+  dzaleka_kit_sponsorship_2026: {
+    name: 'Dzaleka Care Kit Sponsorship',
+    status: 'active',
+  },
 };
 
 function json(data, status = 200) {

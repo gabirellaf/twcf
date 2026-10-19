@@ -38,6 +38,9 @@ async function verifyDonation() {
     if (data.campaignId === "dzaleka_shipping_2026") {
       link.setAttribute("href", "/dzaleka-shipping-fund.html");
       link.textContent = "Return to the Dzaleka Relief Shipping Fund →";
+    } else if (data.campaignId === "dzaleka_kit_sponsorship_2026") {
+      link.setAttribute("href", "/where-kits-go.html#sponsor");
+      link.textContent = "Return to Where Kits Go →";
     }
 
     link.style.display = "inline";

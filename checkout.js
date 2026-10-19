@@ -53,14 +53,19 @@ function initialize() {
   // Designated campaign gifts: show the fund before the donor confirms, and
   // send "Back" to the campaign page rather than the general Donate page.
   const campaignPages = {
-    dzaleka_shipping_2026: "/dzaleka-shipping-fund.html#donate"
+    dzaleka_shipping_2026: "/dzaleka-shipping-fund.html#donate",
+    dzaleka_kit_sponsorship_2026: "/where-kits-go.html#sponsor"
+  };
+  const campaignNotes = {
+    dzaleka_shipping_2026: "which covers transport and import logistics for donated care kits",
+    dzaleka_kit_sponsorship_2026: "which funds care kits for women and children at Dzaleka Refugee Camp, Malawi"
   };
 
   if (payment.campaign && payment.campaignName) {
     document.querySelector("#donation-campaign").textContent = payment.campaignName;
     document.querySelector("#donation-designation").hidden = false;
     document.querySelector("#impact-note").textContent =
-      `Your gift is designated to the ${payment.campaignName}, which covers transport and import logistics for donated care kits. This is a one-time gift.`;
+      `Your gift is designated to the ${payment.campaignName}${campaignNotes[payment.campaign] ? ", " + campaignNotes[payment.campaign] : ""}. This is a one-time gift.`;
 
     const backHref = campaignPages[payment.campaign];
     if (backHref) {
